@@ -14,6 +14,8 @@ public class MyCanvas extends View {
     private Path path;
     private float curX;
     private float curY;
+    private float startX;
+    private float startY;
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -45,6 +47,13 @@ public class MyCanvas extends View {
 
     private void actionUp() {
         path.lineTo(curX, curY);
+
+        // drawing dots
+        if (startX == curX && startY == curY) {
+            path.lineTo(curX, curY + 2);
+            path.lineTo(curX + 1, curY + 2);
+            path.lineTo(curX + 1, curY);
+        }
     }
 
     @Override
@@ -54,6 +63,8 @@ public class MyCanvas extends View {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                startX = x;
+                startY = y;
                 actionDown(x, y);
                 invalidate();
                 break;
