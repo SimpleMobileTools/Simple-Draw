@@ -25,6 +25,7 @@ public class MyCanvas extends View {
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(5f);
+        paint.setAntiAlias(true);
     }
 
     @Override
