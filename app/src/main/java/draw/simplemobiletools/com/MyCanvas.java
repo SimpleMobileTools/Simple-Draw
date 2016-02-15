@@ -66,19 +66,18 @@ public class MyCanvas extends View {
                 startX = x;
                 startY = y;
                 actionDown(x, y);
-                invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 actionMove(x, y);
-                invalidate();
                 break;
             case MotionEvent.ACTION_UP:
                 actionUp();
-                invalidate();
                 break;
             default:
                 break;
         }
+
+        invalidate();
 
         return true;
     }
