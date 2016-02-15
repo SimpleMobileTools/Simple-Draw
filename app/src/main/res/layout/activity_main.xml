@@ -12,11 +12,18 @@
         android:layout_height="match_parent"/>
 
     <ImageView
+        android:id="@+id/color_picker"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
         android:id="@+id/undo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_alignParentRight="true"
-        android:padding="@dimen/activity_margin"
+        android:layout_below="@id/color_picker"
+        android:padding="4dp"
         android:src="@mipmap/undo"/>
 
 </RelativeLayout>

@@ -44,6 +44,10 @@ public class MyCanvas extends View {
         invalidate();
     }
 
+    public void setColor(int color) {
+        paint.setColor(color);
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
