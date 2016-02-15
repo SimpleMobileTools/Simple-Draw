@@ -9,12 +9,14 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class MyCanvas extends View {
     private Paint paint;
     private Path path;
-    private ArrayList<Path> paths;
+    private Map<Path, Integer> paths;
+    private int color;
     private float curX;
     private float curY;
     private float startX;
@@ -32,29 +34,37 @@ public class MyCanvas extends View {
         paint.setStrokeWidth(5f);
         paint.setAntiAlias(true);
 
-        paths = new ArrayList<>();
-        paths.add(path);
+        paths = new LinkedHashMap<>();
+        paths.put(path, paint.getColor());
     }
 
     public void undo() {
         if (paths.size() <= 0)
             return;
 
-        paths.remove(paths.size() - 1);
+        Path lastKey = null;
+        for (Path key : paths.keySet()) {
+            lastKey = key;
+        }
+
+        paths.remove(lastKey);
         invalidate();
     }
 
-    public void setColor(int color) {
-        paint.setColor(color);
+    public void setColor(int newColor) {
+        color = newColor;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        for (Path p : paths) {
-            canvas.drawPath(p, paint);
+        for (Map.Entry<Path, Integer> entry : paths.entrySet()) {
+            paint.setColor(entry.getValue());
+            canvas.drawPath(entry.getKey(), paint);
         }
+
+        paint.setColor(color);
         canvas.drawPath(path, paint);
     }
 
@@ -81,7 +91,7 @@ public class MyCanvas extends View {
             path.lineTo(curX + 1, curY);
         }
 
-        paths.add(path);
+        paths.put(path, paint.getColor());
         path = new Path();
     }
 
@@ -107,7 +117,6 @@ public class MyCanvas extends View {
         }
 
         invalidate();
-
         return true;
     }
 }
