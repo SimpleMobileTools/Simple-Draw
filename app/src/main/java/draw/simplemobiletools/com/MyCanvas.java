@@ -12,8 +12,8 @@ import android.view.View;
 public class MyCanvas extends View {
     private Paint paint;
     private Path path;
-    private float startX;
-    private float startY;
+    private float curX;
+    private float curY;
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -33,18 +33,18 @@ public class MyCanvas extends View {
 
     private void actionDown(float x, float y) {
         path.moveTo(x, y);
-        startX = x;
-        startY = y;
+        curX = x;
+        curY = y;
     }
 
     private void actionMove(float x, float y) {
-        path.quadTo(startX, startY, (x + startX) / 2, (y + startY) / 2);
-        startX = x;
-        startY = y;
+        path.quadTo(curX, curY, (x + curX) / 2, (y + curY) / 2);
+        curX = x;
+        curY = y;
     }
 
     private void actionUp() {
-        path.lineTo(startX, startY);
+        path.lineTo(curX, curY);
     }
 
     @Override
