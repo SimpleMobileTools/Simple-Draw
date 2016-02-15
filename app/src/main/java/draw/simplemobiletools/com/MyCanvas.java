@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class MyCanvas extends View {
-    private static final float THRESHOLD = 5;
     private Paint paint;
     private Path path;
     private float startX;
@@ -39,13 +38,9 @@ public class MyCanvas extends View {
     }
 
     private void actionMove(float x, float y) {
-        final float dx = Math.abs(x - startX);
-        final float dy = Math.abs(y - startY);
-        if (dx >= THRESHOLD || dy >= THRESHOLD) {
-            path.quadTo(startX, startY, (x + startX) / 2, (y + startY) / 2);
-            startX = x;
-            startY = y;
-        }
+        path.quadTo(startX, startY, (x + startX) / 2, (y + startY) / 2);
+        startX = x;
+        startY = y;
     }
 
     private void actionUp() {
