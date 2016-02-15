@@ -24,6 +24,8 @@ public class MyCanvas extends View {
         paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(5f);
         paint.setAntiAlias(true);
     }
