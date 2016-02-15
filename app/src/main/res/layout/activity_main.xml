@@ -7,7 +7,16 @@
     tools:context="draw.simplemobiletools.com.MainActivity">
 
     <draw.simplemobiletools.com.MyCanvas
+        android:id="@+id/my_canvas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/undo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/activity_margin"
+        android:src="@mipmap/undo"/>
 
 </RelativeLayout>

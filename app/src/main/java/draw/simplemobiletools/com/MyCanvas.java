@@ -36,12 +36,22 @@ public class MyCanvas extends View {
         paths.add(path);
     }
 
+    public void undo() {
+        if (paths.size() <= 0)
+            return;
+
+        paths.remove(paths.size() - 1);
+        invalidate();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
         for (Path p : paths) {
             canvas.drawPath(p, paint);
         }
+        canvas.drawPath(path, paint);
     }
 
     private void actionDown(float x, float y) {
@@ -60,15 +70,15 @@ public class MyCanvas extends View {
     private void actionUp() {
         path.lineTo(curX, curY);
 
-        // drawing dots
+        // drawing dots on click
         if (startX == curX && startY == curY) {
             path.lineTo(curX, curY + 2);
             path.lineTo(curX + 1, curY + 2);
             path.lineTo(curX + 1, curY);
         }
 
-        path = new Path();
         paths.add(path);
+        path = new Path();
     }
 
     @Override
