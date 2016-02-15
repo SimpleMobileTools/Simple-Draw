@@ -9,9 +9,12 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class MyCanvas extends View {
     private Paint paint;
     private Path path;
+    private ArrayList<Path> paths;
     private float curX;
     private float curY;
     private float startX;
@@ -28,15 +31,21 @@ public class MyCanvas extends View {
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(5f);
         paint.setAntiAlias(true);
+
+        paths = new ArrayList<>();
+        paths.add(path);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawPath(path, paint);
+        for (Path p : paths) {
+            canvas.drawPath(p, paint);
+        }
     }
 
     private void actionDown(float x, float y) {
+        path.reset();
         path.moveTo(x, y);
         curX = x;
         curY = y;
@@ -57,6 +66,9 @@ public class MyCanvas extends View {
             path.lineTo(curX + 1, curY + 2);
             path.lineTo(curX + 1, curY);
         }
+
+        path = new Path();
+        paths.add(path);
     }
 
     @Override
