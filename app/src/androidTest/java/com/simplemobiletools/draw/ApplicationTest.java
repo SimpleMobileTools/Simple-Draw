@@ -1,4 +1,4 @@
-package draw.simplemobiletools.com;
+package com.simplemobiletools.draw;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

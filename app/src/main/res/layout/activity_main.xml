@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="draw.simplemobiletools.com.MainActivity">
+    android:layout_height="match_parent">
 
-    <draw.simplemobiletools.com.MyCanvas
+    <com.simplemobiletools.draw.MyCanvas
         android:id="@+id/my_canvas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -1,4 +1,4 @@
-package draw.simplemobiletools.com;
+package com.simplemobiletools.draw;
 
 import org.junit.Test;
 
