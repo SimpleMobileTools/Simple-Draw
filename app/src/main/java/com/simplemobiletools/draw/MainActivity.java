@@ -3,6 +3,8 @@ package com.simplemobiletools.draw;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import butterknife.Bind;
@@ -22,6 +24,27 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setColor(Color.BLACK);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_share:
+                shareImage();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void shareImage() {
+
     }
 
     @OnClick(R.id.undo)
