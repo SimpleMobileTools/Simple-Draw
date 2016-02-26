@@ -1,6 +1,7 @@
 package com.simplemobiletools.draw;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -53,6 +54,14 @@ public class MyCanvas extends View {
 
     public void setColor(int newColor) {
         color = newColor;
+    }
+
+    public Bitmap getBitmap() {
+        final Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        final Canvas canvas = new Canvas(bitmap);
+        canvas.drawColor(Color.WHITE);
+        draw(canvas);
+        return bitmap;
     }
 
     @Override
