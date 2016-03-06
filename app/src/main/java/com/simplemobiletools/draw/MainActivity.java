@@ -5,12 +5,16 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -26,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String FOLDER_NAME = "images";
     private static final String FILE_NAME = "simple-draw.png";
+    private static final String SAVE_FOLDER_NAME = "Simple Draw";
     @Bind(R.id.my_canvas) MyCanvas myCanvas;
     @Bind(R.id.color_picker) View colorPicker;
     private int color;
+    private String curFileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +54,82 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menu_save:
+                saveImage();
+                return true;
             case R.id.menu_share:
                 shareImage();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void saveImage() {
+        final View saveFileView = getLayoutInflater().inflate(R.layout.save_file, null);
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.save_file));
+
+        final EditText fileNameET = (EditText) saveFileView.findViewById(R.id.file_name);
+        fileNameET.setText(curFileName);
+        builder.setView(saveFileView);
+
+        builder.setPositiveButton("OK", null);
+        builder.setNegativeButton("Cancel", null);
+
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String fileName = fileNameET.getText().toString().trim();
+
+                if (!fileName.isEmpty()) {
+                    if (saveFile(fileName + ".png")) {
+                        curFileName = fileName;
+                        Utils.showToast(getApplicationContext(), R.string.saving_ok);
+                        alertDialog.dismiss();
+                    } else {
+                        Utils.showToast(getApplicationContext(), R.string.saving_error);
+                    }
+                } else {
+                    Utils.showToast(getApplicationContext(), R.string.enter_file_name);
+                }
+            }
+        });
+    }
+
+    private boolean saveFile(final String fileName) {
+        final String path = Environment.getExternalStorageDirectory().toString();
+        final File directory = new File(path, SAVE_FOLDER_NAME);
+        if (!directory.exists()) {
+            if (!directory.mkdir()) {
+                return false;
+            }
+        }
+
+        final Bitmap bitmap = myCanvas.getBitmap();
+        FileOutputStream out = null;
+        try {
+            final File file = new File(directory, fileName);
+            out = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+            MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());
+        } catch (Exception e) {
+            Log.e(TAG, "MainActivity SaveFile " + e.getMessage());
+            return false;
+        } finally {
+            try {
+                if (out != null) {
+                    out.close();
+                }
+            } catch (IOException e) {
+                Log.e(TAG, "MainActivity SaveFile 2 " + e.getMessage());
+            }
+        }
+
+        return true;
     }
 
     private void shareImage() {
