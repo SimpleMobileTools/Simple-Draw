@@ -3,6 +3,7 @@ package com.simplemobiletools.draw;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -116,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             out = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
             MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());
+            MediaScannerConnection.scanFile(getApplicationContext(), new String[]{file.getAbsolutePath()}, null, null);
         } catch (Exception e) {
             Log.e(TAG, "MainActivity SaveFile " + e.getMessage());
             return false;
