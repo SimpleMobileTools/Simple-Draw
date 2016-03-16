@@ -1,6 +1,8 @@
 package com.simplemobiletools.draw;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.MediaScannerConnection;
@@ -8,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String FOLDER_NAME = "images";
     private static final String FILE_NAME = "simple-draw.png";
     private static final String SAVE_FOLDER_NAME = "Simple Draw";
+    private final int STORAGE_PERMISSION = 1;
     @Bind(R.id.my_canvas) MyCanvas myCanvas;
     @Bind(R.id.color_picker) View colorPicker;
     private int color;
@@ -66,7 +72,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == STORAGE_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                saveImage();
+            } else {
+                Toast.makeText(this, getResources().getString(R.string.no_permissions), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     private void saveImage() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION);
+            return;
+        }
+
         final View saveFileView = getLayoutInflater().inflate(R.layout.save_file, null);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
