@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/file_name_label"
         android:layout_marginBottom="@dimen/activity_margin"
-        android:layout_toLeftOf="@+id/file_extension"/>
+        android:layout_toLeftOf="@+id/file_extension"
+        android:singleLine="true"/>
 
     <TextView
         android:id="@+id/file_extension"
