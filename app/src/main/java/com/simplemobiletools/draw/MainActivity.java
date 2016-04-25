@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String FOLDER_NAME = "images";
     private static final String FILE_NAME = "simple-draw.png";
     private static final String SAVE_FOLDER_NAME = "Simple Draw";
-    private final int STORAGE_PERMISSION = 1;
+    private static final int STORAGE_PERMISSION = 1;
+
     @Bind(R.id.my_canvas) MyCanvas myCanvas;
     @Bind(R.id.color_picker) View colorPicker;
+
     private int color;
     private String curFileName;
 
