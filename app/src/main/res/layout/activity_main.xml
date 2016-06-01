@@ -21,7 +21,7 @@
         android:layout_height="@dimen/icon_size"
         android:layout_alignParentRight="true"
         android:layout_below="@id/color_picker"
-        android:padding="4dp"
+        android:padding="@dimen/icon_padding"
         android:src="@mipmap/undo"/>
 
 </RelativeLayout>

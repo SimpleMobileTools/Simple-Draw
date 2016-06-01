@@ -3,14 +3,14 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_save"
-        android:icon="@android:drawable/ic_menu_save"
-        android:title="Save"
-        app:showAsAction="always"/>
+        android:icon="@mipmap/save"
+        android:title="@string/save"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/menu_share"
-        android:icon="@android:drawable/ic_menu_share"
-        android:title="Share"
-        app:showAsAction="always"/>
+        android:icon="@mipmap/share"
+        android:title="@string/share"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/about"
         android:title="@string/about"
