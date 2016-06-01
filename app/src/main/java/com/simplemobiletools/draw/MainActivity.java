@@ -27,7 +27,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yuku.ambilwarna.AmbilWarnaDialog;
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String SAVE_FOLDER_NAME = "Simple Draw";
     private static final int STORAGE_PERMISSION = 1;
 
-    @Bind(R.id.my_canvas) MyCanvas myCanvas;
-    @Bind(R.id.color_picker) View colorPicker;
+    @BindView(R.id.my_canvas) MyCanvas myCanvas;
+    @BindView(R.id.color_picker) View colorPicker;
 
     private int color;
     private String curFileName;
