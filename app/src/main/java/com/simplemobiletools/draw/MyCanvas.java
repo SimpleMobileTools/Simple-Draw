@@ -22,6 +22,7 @@ public class MyCanvas extends View {
     private float curY;
     private float startX;
     private float startY;
+    private PathsChangedListener listener;
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -37,6 +38,11 @@ public class MyCanvas extends View {
 
         paths = new LinkedHashMap<>();
         paths.put(path, paint.getColor());
+        pathsUpdated();
+    }
+
+    public void setListener(PathsChangedListener listener) {
+        this.listener = listener;
     }
 
     public void undo() {
@@ -49,6 +55,7 @@ public class MyCanvas extends View {
         }
 
         paths.remove(lastKey);
+        pathsUpdated();
         invalidate();
     }
 
@@ -93,7 +100,7 @@ public class MyCanvas extends View {
     private void actionUp() {
         path.lineTo(curX, curY);
 
-        // drawing dots on click
+        // draw a dot on click
         if (startX == curX && startY == curY) {
             path.lineTo(curX, curY + 2);
             path.lineTo(curX + 1, curY + 2);
@@ -101,7 +108,14 @@ public class MyCanvas extends View {
         }
 
         paths.put(path, paint.getColor());
+        pathsUpdated();
         path = new Path();
+    }
+
+    private void pathsUpdated() {
+        if (listener != null && paths != null) {
+            listener.pathsChanged(paths.size());
+        }
     }
 
     @Override
@@ -127,5 +141,9 @@ public class MyCanvas extends View {
 
         invalidate();
         return true;
+    }
+
+    public interface PathsChangedListener {
+        void pathsChanged(int cnt);
     }
 }

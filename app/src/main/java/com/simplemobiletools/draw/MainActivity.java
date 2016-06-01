@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yuku.ambilwarna.AmbilWarnaDialog;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyCanvas.PathsChangedListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String FOLDER_NAME = "images";
     private static final String FILE_NAME = "simple-draw.png";
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int STORAGE_PERMISSION = 1;
 
     @BindView(R.id.my_canvas) MyCanvas myCanvas;
+    @BindView(R.id.undo) View undoBtn;
     @BindView(R.id.color_picker) View colorPicker;
 
     private int color;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        myCanvas.setListener(this);
 
         setColor(Color.BLACK);
     }
@@ -234,5 +236,10 @@ public class MainActivity extends AppCompatActivity {
         color = pickedColor;
         colorPicker.setBackgroundColor(color);
         myCanvas.setColor(color);
+    }
+
+    @Override
+    public void pathsChanged(int cnt) {
+        undoBtn.setVisibility(cnt > 0 ? View.VISIBLE : View.GONE);
     }
 }

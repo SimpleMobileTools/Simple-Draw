@@ -22,6 +22,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/color_picker"
         android:padding="@dimen/icon_padding"
-        android:src="@mipmap/undo"/>
+        android:src="@mipmap/undo"
+        android:visibility="gone"/>
 
 </RelativeLayout>
