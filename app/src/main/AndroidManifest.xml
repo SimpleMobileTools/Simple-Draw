@@ -26,6 +26,11 @@
             android:label="@string/about"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".LicenseActivity"
+            android:label="@string/third_party_licences"
+            android:screenOrientation="portrait"/>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.simplemobiletools.draw.fileprovider"
