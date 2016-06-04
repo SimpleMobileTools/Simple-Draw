@@ -6,6 +6,7 @@ A canvas you can draw on with different colors.
 Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing, or share it directly through email or a social network.
 
 <img alt="App image" src="screenshots/app.png" width="250">
+<img alt="App image" src="screenshots/app_2.png" width="250">
 
 License
 -------
