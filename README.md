@@ -5,6 +5,8 @@ A canvas you can draw on with different colors.
 
 Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
 
+<a href='https://play.google.com/store/apps/details?id=com.simplemobiletools.draw'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
+
 <img alt="App image" src="screenshots/app.png" width="250">
 <img alt="App image" src="screenshots/app_2.png" width="250">
 
