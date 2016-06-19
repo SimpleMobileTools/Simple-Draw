@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw;
+package com.simplemobiletools.draw.activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -21,6 +21,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.simplemobiletools.draw.MyCanvas;
+import com.simplemobiletools.draw.R;
+import com.simplemobiletools.draw.Utils;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -38,19 +42,20 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
     private static final String SAVE_FOLDER_NAME = "Simple Draw";
     private static final int STORAGE_PERMISSION = 1;
 
-    @BindView(R.id.my_canvas) MyCanvas myCanvas;
-    @BindView(R.id.undo) View undoBtn;
-    @BindView(R.id.color_picker) View colorPicker;
+    @BindView(R.id.my_canvas) MyCanvas mMyCanvas;
+    @BindView(R.id.undo) View mUndoBtn;
+    @BindView(R.id.color_picker) View mColorPicker;
+
+    private String curFileName;
 
     private int color;
-    private String curFileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        myCanvas.setListener(this);
+        mMyCanvas.setListener(this);
 
         setColor(Color.BLACK);
     }
@@ -141,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
             }
         }
 
-        final Bitmap bitmap = myCanvas.getBitmap();
+        final Bitmap bitmap = mMyCanvas.getBitmap();
         FileOutputStream out = null;
         try {
             final File file = new File(directory, fileName);
@@ -166,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
 
     private void shareImage() {
         final String shareTitle = getResources().getString(R.string.share_via);
-        final Bitmap bitmap = myCanvas.getBitmap();
+        final Bitmap bitmap = mMyCanvas.getBitmap();
         final Intent sendIntent = new Intent();
         final Uri uri = getImageUri(bitmap);
         if (uri == null)
@@ -211,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
 
     @OnClick(R.id.undo)
     public void undo() {
-        myCanvas.undo();
+        mMyCanvas.undo();
     }
 
     @OnClick(R.id.color_picker)
@@ -232,12 +237,12 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
 
     private void setColor(int pickedColor) {
         color = pickedColor;
-        colorPicker.setBackgroundColor(color);
-        myCanvas.setColor(color);
+        mColorPicker.setBackgroundColor(color);
+        mMyCanvas.setColor(color);
     }
 
     @Override
     public void pathsChanged(int cnt) {
-        undoBtn.setVisibility(cnt > 0 ? View.VISIBLE : View.GONE);
+        mUndoBtn.setVisibility(cnt > 0 ? View.VISIBLE : View.GONE);
     }
 }

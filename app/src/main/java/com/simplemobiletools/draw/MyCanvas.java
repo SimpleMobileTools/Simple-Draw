@@ -14,53 +14,54 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MyCanvas extends View {
-    private Paint paint;
-    private Path path;
-    private Map<Path, Integer> paths;
-    private int color;
-    private float curX;
-    private float curY;
-    private float startX;
-    private float startY;
-    private PathsChangedListener listener;
+    private Paint mPaint;
+    private Path mPath;
+    private Map<Path, Integer> mPaths;
+    private PathsChangedListener mListener;
+
+    private int mColor;
+    private float mCurX;
+    private float mCurY;
+    private float mStartX;
+    private float mStartY;
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        path = new Path();
-        paint = new Paint();
-        paint.setColor(Color.BLACK);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(5f);
-        paint.setAntiAlias(true);
+        mPath = new Path();
+        mPaint = new Paint();
+        mPaint.setColor(Color.BLACK);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        mPaint.setStrokeWidth(5f);
+        mPaint.setAntiAlias(true);
 
-        paths = new LinkedHashMap<>();
-        paths.put(path, paint.getColor());
+        mPaths = new LinkedHashMap<>();
+        mPaths.put(mPath, mPaint.getColor());
         pathsUpdated();
     }
 
     public void setListener(PathsChangedListener listener) {
-        this.listener = listener;
+        this.mListener = listener;
     }
 
     public void undo() {
-        if (paths.size() <= 0)
+        if (mPaths.size() <= 0)
             return;
 
         Path lastKey = null;
-        for (Path key : paths.keySet()) {
+        for (Path key : mPaths.keySet()) {
             lastKey = key;
         }
 
-        paths.remove(lastKey);
+        mPaths.remove(lastKey);
         pathsUpdated();
         invalidate();
     }
 
     public void setColor(int newColor) {
-        color = newColor;
+        mColor = newColor;
     }
 
     public Bitmap getBitmap() {
@@ -75,46 +76,46 @@ public class MyCanvas extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        for (Map.Entry<Path, Integer> entry : paths.entrySet()) {
-            paint.setColor(entry.getValue());
-            canvas.drawPath(entry.getKey(), paint);
+        for (Map.Entry<Path, Integer> entry : mPaths.entrySet()) {
+            mPaint.setColor(entry.getValue());
+            canvas.drawPath(entry.getKey(), mPaint);
         }
 
-        paint.setColor(color);
-        canvas.drawPath(path, paint);
+        mPaint.setColor(mColor);
+        canvas.drawPath(mPath, mPaint);
     }
 
     private void actionDown(float x, float y) {
-        path.reset();
-        path.moveTo(x, y);
-        curX = x;
-        curY = y;
+        mPath.reset();
+        mPath.moveTo(x, y);
+        mCurX = x;
+        mCurY = y;
     }
 
     private void actionMove(float x, float y) {
-        path.quadTo(curX, curY, (x + curX) / 2, (y + curY) / 2);
-        curX = x;
-        curY = y;
+        mPath.quadTo(mCurX, mCurY, (x + mCurX) / 2, (y + mCurY) / 2);
+        mCurX = x;
+        mCurY = y;
     }
 
     private void actionUp() {
-        path.lineTo(curX, curY);
+        mPath.lineTo(mCurX, mCurY);
 
         // draw a dot on click
-        if (startX == curX && startY == curY) {
-            path.lineTo(curX, curY + 2);
-            path.lineTo(curX + 1, curY + 2);
-            path.lineTo(curX + 1, curY);
+        if (mStartX == mCurX && mStartY == mCurY) {
+            mPath.lineTo(mCurX, mCurY + 2);
+            mPath.lineTo(mCurX + 1, mCurY + 2);
+            mPath.lineTo(mCurX + 1, mCurY);
         }
 
-        paths.put(path, paint.getColor());
+        mPaths.put(mPath, mPaint.getColor());
         pathsUpdated();
-        path = new Path();
+        mPath = new Path();
     }
 
     private void pathsUpdated() {
-        if (listener != null && paths != null) {
-            listener.pathsChanged(paths.size());
+        if (mListener != null && mPaths != null) {
+            mListener.pathsChanged(mPaths.size());
         }
     }
 
@@ -125,8 +126,8 @@ public class MyCanvas extends View {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                startX = x;
-                startY = y;
+                mStartX = x;
+                mStartY = y;
                 actionDown(x, y);
                 break;
             case MotionEvent.ACTION_MOVE:
