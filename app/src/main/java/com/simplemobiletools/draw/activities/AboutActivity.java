@@ -22,7 +22,7 @@ public class AboutActivity extends AppCompatActivity {
     @BindView(R.id.about_version) TextView mVersion;
     @BindView(R.id.about_email) TextView mEmailTV;
 
-    private Resources mRes;
+    private static Resources mRes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
