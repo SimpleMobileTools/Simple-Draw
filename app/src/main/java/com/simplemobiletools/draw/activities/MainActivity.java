@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.simplemobiletools.draw.Config;
 import com.simplemobiletools.draw.MyCanvas;
 import com.simplemobiletools.draw.R;
 import com.simplemobiletools.draw.Utils;
@@ -58,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
         mMyCanvas.setListener(this);
 
         setColor(Color.BLACK);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Config.newInstance(getApplicationContext()).setIsFirstRun(false);
     }
 
     @Override
