@@ -120,8 +120,8 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         fileNameET.setText(curFileName);
         builder.setView(saveFileView);
 
-        builder.setPositiveButton("OK", null);
-        builder.setNegativeButton("Cancel", null);
+        builder.setPositiveButton(android.R.string.ok, null);
+        builder.setNegativeButton(android.R.string.cancel, null);
 
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
