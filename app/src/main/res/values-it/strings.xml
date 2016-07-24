@@ -10,6 +10,10 @@
     <string name="enter_file_name">Inserisci un nome per il file</string>
     <string name="no_permissions">Impossibile salvare il file senza l\'accesso all\'archiviazione esterna</string>
 
+    <!-- Settings -->
+    <string name="settings">Impostazioni</string>
+    <string name="dark_theme">Tema scuro</string>
+
     <!-- About -->
     <string name="about">Informazioni</string>
     <string name="website">Altre semplici app e codici sorgenti in:\nhttp://simplemobiletools.com</string>

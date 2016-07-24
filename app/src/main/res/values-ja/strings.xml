@@ -10,6 +10,10 @@
     <string name="enter_file_name">ファイル名を入力してください</string>
     <string name="no_permissions">外部ストレージにアクセスできないためファイルを保存できませんでした</string>
 
+    <!-- Settings -->
+    <string name="settings">設定</string>
+    <string name="dark_theme">ダークテーマ</string>
+
     <!-- About -->
     <string name="about">アプリについて</string>
     <string name="website">もっとシンプルなアプリとソースコードは:\nhttp://simplemobiletools.com</string>

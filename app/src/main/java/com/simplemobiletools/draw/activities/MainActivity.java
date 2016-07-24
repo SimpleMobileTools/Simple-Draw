@@ -13,7 +13,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,7 +35,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yuku.ambilwarna.AmbilWarnaDialog;
 
-public class MainActivity extends AppCompatActivity implements MyCanvas.PathsChangedListener {
+public class MainActivity extends SimpleActivity implements MyCanvas.PathsChangedListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String FOLDER_NAME = "images";
     private static final String FILE_NAME = "simple-draw.png";
@@ -82,9 +81,11 @@ public class MainActivity extends AppCompatActivity implements MyCanvas.PathsCha
             case R.id.menu_share:
                 shareImage();
                 return true;
+            case R.id.settings:
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                return true;
             case R.id.about:
-                final Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

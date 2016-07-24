@@ -10,6 +10,10 @@
     <string name="enter_file_name">Ange ett filnamn</string>
     <string name="no_permissions">Kunde inte spara filen utan tillgång till extern lagringsutrymme</string>
 
+    <!-- Settings -->
+    <string name="settings">Inställningar</string>
+    <string name="dark_theme">Mörkt tema</string>
+
     <!-- About -->
     <string name="about">Om</string>
     <string name="website">Fler enkla appar och källkod här:\nhttp://simplemobiletools.com</string>
