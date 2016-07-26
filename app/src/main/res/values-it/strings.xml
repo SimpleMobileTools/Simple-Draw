@@ -13,6 +13,7 @@
     <!-- Settings -->
     <string name="settings">Impostazioni</string>
     <string name="dark_theme">Tema scuro</string>
+    <string name="clear">Clear</string>
 
     <!-- About -->
     <string name="about">Informazioni</string>

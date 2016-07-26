@@ -86,8 +86,8 @@ public class MyCanvas extends View {
     }
 
     public void clearCanvas(){
-        mPath = new Path();
-        mPaths = new LinkedHashMap<>();
+        mPath.reset();
+        mPaths.clear();
         pathsUpdated();
         invalidate();
     }
