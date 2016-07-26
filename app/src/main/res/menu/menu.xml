@@ -16,6 +16,10 @@
         android:title="@string/settings"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/clear"
+        android:title="@string/clear"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/about"
         android:title="@string/about"
         app:showAsAction="never"/>

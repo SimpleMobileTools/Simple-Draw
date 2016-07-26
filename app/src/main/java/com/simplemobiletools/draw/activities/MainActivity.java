@@ -84,6 +84,9 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
             case R.id.settings:
                 startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                 return true;
+            case R.id.clear:
+                mMyCanvas.clearCanvas();
+                return true;
             case R.id.about:
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 return true;

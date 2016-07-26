@@ -12,6 +12,7 @@
 
     <!-- Settings -->
     <string name="settings">Settings</string>
+    <string name="clear">Clear</string>
     <string name="dark_theme">Dark theme</string>
 
     <!-- About -->
