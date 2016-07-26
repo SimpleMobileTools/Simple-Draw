@@ -85,6 +85,13 @@ public class MyCanvas extends View {
         canvas.drawPath(mPath, mPaint);
     }
 
+    public void clearCanvas(){
+        mPath = new Path();
+        mPaths = new LinkedHashMap<>();
+        pathsUpdated();
+        invalidate();
+    }
+
     private void actionDown(float x, float y) {
         mPath.reset();
         mPath.moveTo(x, y);
