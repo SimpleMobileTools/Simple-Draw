@@ -9,6 +9,8 @@
     <string name="save_file">Save file</string>
     <string name="enter_file_name">Please enter a file name</string>
     <string name="no_permissions">Could not save the file without accessing the external storage</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
     <string name="settings">Settings</string>

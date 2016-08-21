@@ -9,6 +9,8 @@
     <string name="save_file">Salva file</string>
     <string name="enter_file_name">Inserisci un nome per il file</string>
     <string name="no_permissions">Impossibile salvare il file senza l\'accesso all\'archiviazione esterna</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
     <string name="settings">Impostazioni</string>

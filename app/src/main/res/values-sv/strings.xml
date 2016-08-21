@@ -9,6 +9,8 @@
     <string name="save_file">Spara fil</string>
     <string name="enter_file_name">Ange ett filnamn</string>
     <string name="no_permissions">Kunde inte spara filen utan tillgång till extern lagringsutrymme</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
     <string name="settings">Inställningar</string>

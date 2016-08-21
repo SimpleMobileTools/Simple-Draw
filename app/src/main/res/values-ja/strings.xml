@@ -9,6 +9,8 @@
     <string name="save_file">ファイルを保存</string>
     <string name="enter_file_name">ファイル名を入力してください</string>
     <string name="no_permissions">外部ストレージにアクセスできないためファイルを保存できませんでした</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
     <string name="settings">設定</string>
