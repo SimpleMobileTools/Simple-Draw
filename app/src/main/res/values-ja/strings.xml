@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">素描</string>
+    <string name="save">保存</string>
+    <string name="share">共有</string>
+    <string name="share_via">共有...</string>
+    <string name="saving_error">ファイルを保存できませんでした</string>
+    <string name="saving_ok">画像を正常に保存しました</string>
+    <string name="file_name">ファイル名</string>
+    <string name="save_file">ファイルを保存</string>
+    <string name="enter_file_name">ファイル名を入力してください</string>
+    <string name="no_permissions">外部ストレージにアクセスできないためファイルを保存できませんでした</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Settings -->
+    <string name="settings">設定</string>
+    <string name="dark_theme">ダークテーマ</string>
+    <string name="clear">Clear</string>
+
+    <!-- About -->
+    <string name="about">アプリについて</string>
+    <string name="website">もっとシンプルなアプリとソースコードは:\nhttp://simplemobiletools.com</string>
+    <string name="email_label">ご意見やご提案をお送りください:</string>
+    <string name="third_party_licences_underlined"><u>サードパーティー ライセンス</u></string>
+    <string name="invite_friends_underlined"><u>Invite friends</u></string>
+    <string name="share_text">Hey, come check out %1$s at %2$s</string>
+    <string name="invite_via">Invite via</string>
+    <string name="rate_us_underlined"><u>Play ストアで評価してください</u></string>
+    <string name="follow_us">フォローしてください:</string>
+    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
+
+    <!--License-->
+    <string name="notice">このアプリは、私の人生を容易にするために、次のサードパーティのライブラリーを使用しています。 ありがとうございます。</string>
+    <string name="third_party_licences">サードパーティー ライセンス</string>
+    <string name="butterknife_title"><u>Butter Knife (ビュー インジェクター)</u></string>
+    <string name="ambilwarna_title"><u>AmbilWarna (カラー ピッカー)</u></string>
+
+</resources>
