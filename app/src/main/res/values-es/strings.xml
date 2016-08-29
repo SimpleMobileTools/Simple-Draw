@@ -1,27 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
-    <string name="about">Acerca de</string>
-    <string name="ambilwarna_title"><u>AmbilWarna (color picker)</u></string>
-    <string name="rate_us_underlined"><u>Valóranos en Play Store</u></string>
     <string name="save">Guardar</string>
-    <string name="save_file">Guardar archivo</string>
-    <string name="saving_error">No se pudo guardar el archivo</string>
-    <string name="saving_ok">La imagen se ha guardado correctamente</string>
-    <string name="settings">Ajustes</string>
     <string name="share">Compartir</string>
     <string name="share_via">Compartir via</string>
-    <string name="third_party_licences">Licencias de terceros</string>
-    <string name="third_party_licences_underlined"><u>Licencias de terceros</u></string>
-    <string name="website">Más aplicaciones sencillas y su código fuente en:\nhttp://simplemobiletools.com</string>
-    <string name="butterknife_title"><u>Butter Knife (view injector)</u></string>
-    <string name="clear">Limpiar</string>
-    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
-    <string name="dark_theme">Tema oscuro</string>
-    <string name="email_label">Envíanos tu feedback o sugerencias a:</string>
-    <string name="enter_file_name">Por favor introduce el nombre del archivo</string>
+    <string name="saving_error">No se pudo guardar el archivo</string>
+    <string name="saving_ok">La imagen se ha guardado correctamente</string>
     <string name="file_name">Nombre del archivo</string>
-    <string name="follow_us">Síguenos:</string>
+    <string name="save_file">Guardar archivo</string>
+    <string name="enter_file_name">Por favor introduce el nombre del archivo</string>
     <string name="no_permissions">No se puede guardar el archivo sin acceder al almacenamiento externo</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Settings -->
+    <string name="settings">Ajustes</string>
+    <string name="dark_theme">Tema oscuro</string>
+    <string name="clear">Limpiar</string>
+
+    <!-- About -->
+    <string name="about">Acerca de</string>
+    <string name="website">Más aplicaciones sencillas y su código fuente en:\nhttp://simplemobiletools.com</string>
+    <string name="email_label">Envíanos tu feedback o sugerencias a:</string>
+    <string name="third_party_licences_underlined"><u>Licencias de terceros</u></string>
+    <string name="invite_friends_underlined"><u>Invite friends</u></string>
+    <string name="share_text">Hey, come check out %1$s at %2$s</string>
+    <string name="invite_via">Invite via</string>
+    <string name="rate_us_underlined"><u>Valóranos en Play Store</u></string>
+    <string name="follow_us">Síguenos:</string>
+    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
+
+    <!--License-->
     <string name="notice">Esta aplicación utiliza licencias de terceros para hacer mi vida más fácil. Gracias.</string>
+    <string name="third_party_licences">Licencias de terceros</string>
+    <string name="butterknife_title"><u>Butter Knife (view injector)</u></string>
+    <string name="ambilwarna_title"><u>AmbilWarna (color picker)</u></string>
+
 </resources>
