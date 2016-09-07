@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Draw</string>
+    <string name="save">Speichern</string>
+    <string name="share">Teilen</string>
+    <string name="share_via">Teile via</string>
+    <string name="saving_error">Konnte die Datei nicht speichern</string>
+    <string name="saving_ok">Bild wurde erfolgreich gespeichert</string>
+    <string name="file_name">Dateiname</string>
+    <string name="save_file">Speichere Datei</string>
+    <string name="enter_file_name">Bitte gib einen Dateinamen ein</string>
+    <string name="no_permissions">Konnte die Datei ohne Zugriff auf den externen Speicher nicht speichern</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!-- Settings -->
+    <string name="settings">Einstellungen</string>
+    <string name="dark_theme">Dunkles Thema</string>
+    <string name="clear">Leeren</string>
+
+    <!-- About -->
+    <string name="about">Über</string>
+    <string name="website">Weitere einfache Apps und Quellcode findest du auf:\nhttp://simplemobiletools.com</string>
+    <string name="email_label">Sende Vorschläge und Feedback an:</string>
+    <string name="third_party_licences_underlined"><u>Drittanbieterlizenzen</u></string>
+    <string name="invite_friends_underlined"><u>Lade Freunde ein</u></string>
+    <string name="share_text">Hey, wirf mal einen Blick auf %1$s bei %2$s</string>
+    <string name="invite_via">Einladen via</string>
+    <string name="rate_us_underlined"><u>Bewerte uns im Play Store</u></string>
+    <string name="follow_us">Folge uns:</string>
+    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
+
+    <!--License-->
+    <string name="notice">Diese App nutzt folgende Drittanbieterbibliotheken, die mein Leben einfacher machen. Danke.</string>
+    <string name="third_party_licences">Drittanbieterlizenzen</string>
+    <string name="butterknife_title"><u>Butter Knife (view injector)</u></string>
+    <string name="ambilwarna_title"><u>AmbilWarna (color picker)</u></string>
+
+</resources>
