@@ -7,6 +7,8 @@ Want to draw something but you have no paper? This app will suit you perfectly. 
 
 Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
 
+This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+
 <a href='https://play.google.com/store/apps/details?id=com.simplemobiletools.draw'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
 <a href="https://f-droid.org/app/com.simplemobiletools.draw"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="60"></a>
 
