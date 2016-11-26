@@ -37,13 +37,13 @@
     <string name="ambilwarna_title"><u>AmbilWarna (seletor de cores)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <string name="app_short_description">A canvas you can draw on with different colors.</string>
+    <string name="app_short_description">Uma tela para desenhar o que quiser e com diversas cores.</string>
     <string name="app_long_description">
-        Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
+        Gostaria de desenhar algo mas não tem papel? Então, esta aplicação é para si. Basta escolher uma cor e desenhar. Após criar o desenho, pode guardar ou partilhar o ficheiro através de e-mail ou das redes sociais.
 
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+        Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente 'open source'.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        Esta aplicação é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em http://www.simplemobiletools.com
     </string>
 </resources>
