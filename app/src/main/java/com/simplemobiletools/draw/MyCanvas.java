@@ -85,7 +85,7 @@ public class MyCanvas extends View {
         canvas.drawPath(mPath, mPaint);
     }
 
-    public void clearCanvas(){
+    public void clearCanvas() {
         mPath.reset();
         mPaths.clear();
         pathsUpdated();

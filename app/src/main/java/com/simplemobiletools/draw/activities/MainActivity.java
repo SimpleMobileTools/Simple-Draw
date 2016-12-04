@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.simplemobiletools.draw.Config;
@@ -86,6 +88,27 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 return true;
             case R.id.clear:
                 mMyCanvas.clearCanvas();
+                return true;
+            case R.id.change_background:
+                int oldColor = ((ColorDrawable)mMyCanvas.getBackground()).getColor();
+                AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, oldColor,
+                        new AmbilWarnaDialog.OnAmbilWarnaListener() {
+                            @Override
+                            public void onCancel(AmbilWarnaDialog dialog) {
+                            }
+
+                            @Override
+                            public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
+                                if (Utils.shouldUseWhite(pickedColor)) {
+                                    ((ImageView)mUndoBtn).setImageResource(R.mipmap.undo_white);
+                                } else {
+                                    ((ImageView)mUndoBtn).setImageResource(R.mipmap.undo_black);
+                                }
+                                mMyCanvas.setBackgroundColor(pickedColor);
+                            }
+                        });
+
+                dialog.show();
                 return true;
             case R.id.about:
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
