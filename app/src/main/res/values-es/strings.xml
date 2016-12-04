@@ -17,6 +17,7 @@
     <string name="settings">Ajustes</string>
     <string name="dark_theme">Tema oscuro</string>
     <string name="clear">Limpiar</string>
+    <string name="change_background">Cambiar fondo</string>
 
     <!-- About -->
     <string name="about">Acerca de</string>

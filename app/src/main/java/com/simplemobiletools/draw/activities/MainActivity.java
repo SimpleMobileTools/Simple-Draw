@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
@@ -85,17 +86,21 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                 return true;
             case R.id.clear:
-                AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, mMyCanvas.getBackgroundColor(),
+                mMyCanvas.clearCanvas();
+                return true;
+            case R.id.change_background:
+                int oldColor = ((ColorDrawable)mMyCanvas.getBackground()).getColor();
+                AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, oldColor,
                         new AmbilWarnaDialog.OnAmbilWarnaListener() {
-                    @Override
-                    public void onCancel(AmbilWarnaDialog dialog) {
-                    }
+                            @Override
+                            public void onCancel(AmbilWarnaDialog dialog) {
+                            }
 
-                    @Override
-                    public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
-                        mMyCanvas.clearCanvas(pickedColor);
-                    }
-                });
+                            @Override
+                            public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
+                                mMyCanvas.setBackgroundColor(pickedColor);
+                            }
+                        });
 
                 dialog.show();
                 return true;

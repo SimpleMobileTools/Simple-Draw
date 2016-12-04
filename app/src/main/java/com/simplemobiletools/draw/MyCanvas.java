@@ -14,8 +14,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MyCanvas extends View {
-    private Paint mBackgroundPaint;
-
     private Paint mPaint;
     private Path mPath;
     private Map<Path, Integer> mPaths;
@@ -29,10 +27,6 @@ public class MyCanvas extends View {
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        mBackgroundPaint = new Paint();
-        mBackgroundPaint.setColor(Color.WHITE);
-        mBackgroundPaint.setStyle(Paint.Style.FILL);
 
         mPath = new Path();
         mPaint = new Paint();
@@ -66,10 +60,6 @@ public class MyCanvas extends View {
         invalidate();
     }
 
-    public int getBackgroundColor() {
-        return mBackgroundPaint.getColor();
-    }
-
     public void setColor(int newColor) {
         mColor = newColor;
     }
@@ -86,9 +76,6 @@ public class MyCanvas extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // Clear canvas background
-        canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), mBackgroundPaint);
-
         for (Map.Entry<Path, Integer> entry : mPaths.entrySet()) {
             mPaint.setColor(entry.getValue());
             canvas.drawPath(entry.getKey(), mPaint);
@@ -98,9 +85,7 @@ public class MyCanvas extends View {
         canvas.drawPath(mPath, mPaint);
     }
 
-    public void clearCanvas(int color) {
-        mBackgroundPaint.setColor(color);
-
+    public void clearCanvas() {
         mPath.reset();
         mPaths.clear();
         pathsUpdated();
