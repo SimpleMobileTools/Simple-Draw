@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.13 *(2016-12-04)*
+----------------------------
+
+ * Added an option for changing the background color by XyLoNaMiyX
+ * A couple translation fixes
+
 Version 1.12 *(2016-09-07)*
 ----------------------------
 
