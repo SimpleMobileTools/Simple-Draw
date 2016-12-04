@@ -90,7 +90,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 mMyCanvas.clearCanvas();
                 return true;
             case R.id.change_background:
-                int oldColor = ((ColorDrawable)mMyCanvas.getBackground()).getColor();
+                int oldColor = ((ColorDrawable) mMyCanvas.getBackground()).getColor();
                 AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, oldColor,
                         new AmbilWarnaDialog.OnAmbilWarnaListener() {
                             @Override
@@ -100,9 +100,9 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                             @Override
                             public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
                                 if (Utils.shouldUseWhite(pickedColor)) {
-                                    ((ImageView)mUndoBtn).setImageResource(R.mipmap.undo_white);
+                                    ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_white);
                                 } else {
-                                    ((ImageView)mUndoBtn).setImageResource(R.mipmap.undo_black);
+                                    ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_black);
                                 }
                                 mMyCanvas.setBackgroundColor(pickedColor);
                             }

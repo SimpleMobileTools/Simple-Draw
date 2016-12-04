@@ -17,6 +17,7 @@
     <string name="settings">設定</string>
     <string name="dark_theme">ダークテーマ</string>
     <string name="clear">クリア</string>
+    <string name="change_background">Change background</string>
 
     <!-- About -->
     <string name="about">アプリについて</string>

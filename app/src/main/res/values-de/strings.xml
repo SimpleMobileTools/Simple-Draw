@@ -17,6 +17,7 @@
     <string name="settings">Einstellungen</string>
     <string name="dark_theme">Dunkles Design</string>
     <string name="clear">Leeren</string>
+    <string name="change_background">Change background</string>
 
     <!-- About -->
     <string name="about">Über</string>
