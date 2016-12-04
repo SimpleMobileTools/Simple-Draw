@@ -85,7 +85,19 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                 return true;
             case R.id.clear:
-                mMyCanvas.clearCanvas();
+                AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, mMyCanvas.getBackgroundColor(),
+                        new AmbilWarnaDialog.OnAmbilWarnaListener() {
+                    @Override
+                    public void onCancel(AmbilWarnaDialog dialog) {
+                    }
+
+                    @Override
+                    public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
+                        mMyCanvas.clearCanvas(pickedColor);
+                    }
+                });
+
+                dialog.show();
                 return true;
             case R.id.about:
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
