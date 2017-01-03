@@ -2,6 +2,7 @@ package com.simplemobiletools.draw;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 
 public class Config {
     private SharedPreferences mPrefs;
@@ -28,5 +29,19 @@ public class Config {
 
     public void setIsDarkTheme(boolean isDarkTheme) {
         mPrefs.edit().putBoolean(Constants.IS_DARK_THEME, isDarkTheme).apply();
+    }
+
+    public int getBrushColor() {
+        return mPrefs.getInt(Constants.BRUSH_COLOR_KEY, Color.BLACK);
+    }
+
+    public void setBrushColor(int color){
+        mPrefs.edit().putInt(Constants.BRUSH_COLOR_KEY, color).apply();
+    }
+
+    public int getBackgroundColor() { return mPrefs.getInt(Constants.BACKGROUND_COLOR_KEY, Color.WHITE); }
+
+    public void setBackgroundColor(int color){
+        mPrefs.edit().putInt(Constants.BACKGROUND_COLOR_KEY, color).apply();
     }
 }
