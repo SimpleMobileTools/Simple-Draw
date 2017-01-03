@@ -35,13 +35,15 @@ public class Config {
         return mPrefs.getInt(Constants.BRUSH_COLOR_KEY, Color.BLACK);
     }
 
-    public void setBrushColor(int color){
+    public void setBrushColor(int color) {
         mPrefs.edit().putInt(Constants.BRUSH_COLOR_KEY, color).apply();
     }
 
-    public int getBackgroundColor() { return mPrefs.getInt(Constants.BACKGROUND_COLOR_KEY, Color.WHITE); }
+    public int getBackgroundColor() {
+        return mPrefs.getInt(Constants.BACKGROUND_COLOR_KEY, Color.WHITE);
+    }
 
-    public void setBackgroundColor(int color){
+    public void setBackgroundColor(int color) {
         mPrefs.edit().putInt(Constants.BACKGROUND_COLOR_KEY, color).apply();
     }
 }
