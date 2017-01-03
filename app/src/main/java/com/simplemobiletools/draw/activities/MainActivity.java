@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -59,7 +58,14 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         ButterKnife.bind(this);
         mMyCanvas.setListener(this);
 
-        setColor(Color.BLACK);
+        mMyCanvas.setBackgroundColor(mConfig.getBackgroundColor());
+        setColor(mConfig.getBrushColor());
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mConfig.setBrushColor(color);
     }
 
     @Override
@@ -105,6 +111,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                                     ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_black);
                                 }
                                 mMyCanvas.setBackgroundColor(pickedColor);
+                                mConfig.setBackgroundColor(pickedColor);
                             }
                         });
 
