@@ -58,7 +58,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         ButterKnife.bind(this);
         mMyCanvas.setListener(this);
 
-        mMyCanvas.setBackgroundColor(mConfig.getBackgroundColor());
+        setBackgroundColor(mConfig.getBackgroundColor());
         setColor(mConfig.getBrushColor());
     }
 
@@ -105,12 +105,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
 
                             @Override
                             public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
-                                if (Utils.shouldUseWhite(pickedColor)) {
-                                    ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_white);
-                                } else {
-                                    ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_black);
-                                }
-                                mMyCanvas.setBackgroundColor(pickedColor);
+                                setBackgroundColor(pickedColor);
                                 mConfig.setBackgroundColor(pickedColor);
                             }
                         });
@@ -274,6 +269,15 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         });
 
         dialog.show();
+    }
+
+    private void setBackgroundColor(int pickedColor) {
+        if (Utils.shouldUseWhite(pickedColor)) {
+            ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_white);
+        } else {
+            ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_black);
+        }
+        mMyCanvas.setBackgroundColor(pickedColor);
     }
 
     private void setColor(int pickedColor) {
