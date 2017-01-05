@@ -57,8 +57,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mMyCanvas.setListener(this);
-
-
+        
         mMyCanvas.setBackgroundColor(mConfig.getBackgroundColor());
         setColor(mConfig.getBrushColor());
     }
