@@ -5,7 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,8 +16,8 @@ import java.util.Map;
 
 public class MyCanvas extends View {
     private Paint mPaint;
-    private Path mPath;
-    private Map<Path, Integer> mPaths;
+    private MyPath mPath;
+    private Map<MyPath, Integer> mPaths;
     private PathsChangedListener mListener;
 
     private int mColor;
@@ -28,7 +29,7 @@ public class MyCanvas extends View {
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mPath = new Path();
+        mPath = new MyPath();
         mPaint = new Paint();
         mPaint.setColor(Color.BLACK);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -50,8 +51,8 @@ public class MyCanvas extends View {
         if (mPaths.size() <= 0)
             return;
 
-        Path lastKey = null;
-        for (Path key : mPaths.keySet()) {
+        MyPath lastKey = null;
+        for (MyPath key : mPaths.keySet()) {
             lastKey = key;
         }
 
@@ -76,7 +77,7 @@ public class MyCanvas extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        for (Map.Entry<Path, Integer> entry : mPaths.entrySet()) {
+        for (Map.Entry<MyPath, Integer> entry : mPaths.entrySet()) {
             mPaint.setColor(entry.getValue());
             canvas.drawPath(entry.getKey(), mPaint);
         }
@@ -117,7 +118,7 @@ public class MyCanvas extends View {
 
         mPaths.put(mPath, mPaint.getColor());
         pathsUpdated();
-        mPath = new Path();
+        mPath = new MyPath();
     }
 
     private void pathsUpdated() {
@@ -153,5 +154,70 @@ public class MyCanvas extends View {
 
     public interface PathsChangedListener {
         void pathsChanged(int cnt);
+    }
+
+    // Parcelable
+
+    @Override
+    public Parcelable onSaveInstanceState() {
+        Parcelable superState = super.onSaveInstanceState();
+        SavedState ss = new SavedState(superState);
+
+        ss.mPaths = mPaths;
+        return ss;
+    }
+
+    @Override
+    public void onRestoreInstanceState(Parcelable state) {
+        if(!(state instanceof SavedState)) {
+            super.onRestoreInstanceState(state);
+            return;
+        }
+        SavedState ss = (SavedState)state;
+        super.onRestoreInstanceState(ss.getSuperState());
+
+        mPaths = ss.mPaths;
+        pathsUpdated(); // This doesn't seem to be necessary
+    }
+
+    static class SavedState extends BaseSavedState {
+        // Members
+        Map<MyPath, Integer> mPaths;
+
+        SavedState(Parcelable superState) {
+            super(superState);
+        }
+
+        // Save
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            super.writeToParcel(out, flags);
+            out.writeInt(mPaths.size());
+            for (Map.Entry<MyPath, Integer> entry : mPaths.entrySet()) {
+                out.writeSerializable(entry.getKey());
+                out.writeInt(entry.getValue());
+            }
+        }
+
+        // Load
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+                    public SavedState createFromParcel(Parcel in) {
+                        return new SavedState(in);
+                    }
+                    public SavedState[] newArray(int size) {
+                        return new SavedState[size];
+                    }
+                };
+
+        private SavedState(Parcel in) {
+            super(in);
+            int size = in.readInt();
+            for (int i = 0; i < size; i++) {
+                MyPath key = (MyPath)in.readSerializable();
+                int value = in.readInt();
+                mPaths.put(key, value);
+            }
+        }
     }
 }
