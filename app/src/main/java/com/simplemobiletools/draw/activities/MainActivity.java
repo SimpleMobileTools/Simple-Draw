@@ -44,9 +44,9 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     private static final int STORAGE_PERMISSION = 1;
 
     @BindView(R.id.my_canvas) MyCanvas mMyCanvas;
-    @BindView(R.id.undo) View mUndoBtn;
     @BindView(R.id.color_picker) View mColorPicker;
 
+    private Menu menu;
     private String curFileName;
 
     private int color;
@@ -57,8 +57,8 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mMyCanvas.setListener(this);
-
-        setBackgroundColor(mConfig.getBackgroundColor());
+        
+        mMyCanvas.setBackgroundColor(mConfig.getBackgroundColor());
         setColor(mConfig.getBrushColor());
     }
 
@@ -77,6 +77,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        this.menu = menu;
         return true;
     }
 
@@ -88,6 +89,12 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 return true;
             case R.id.menu_share:
                 shareImage();
+                return true;
+            case R.id.menu_color_picker:
+                pickColor();
+                return true;
+            case R.id.menu_undo:
+                mMyCanvas.undo();
                 return true;
             case R.id.settings:
                 startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
@@ -105,7 +112,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
 
                             @Override
                             public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
-                                setBackgroundColor(pickedColor);
+                                mMyCanvas.setBackgroundColor(pickedColor);
                                 mConfig.setBackgroundColor(pickedColor);
                             }
                         });
@@ -250,11 +257,6 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         return FileProvider.getUriForFile(this, "com.simplemobiletools.draw.fileprovider", file);
     }
 
-    @OnClick(R.id.undo)
-    public void undo() {
-        mMyCanvas.undo();
-    }
-
     @OnClick(R.id.color_picker)
     public void pickColor() {
         AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, color, new AmbilWarnaDialog.OnAmbilWarnaListener() {
@@ -271,15 +273,6 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         dialog.show();
     }
 
-    private void setBackgroundColor(int pickedColor) {
-        if (Utils.shouldUseWhite(pickedColor)) {
-            ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_white);
-        } else {
-            ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_black);
-        }
-        mMyCanvas.setBackgroundColor(pickedColor);
-    }
-
     private void setColor(int pickedColor) {
         color = pickedColor;
         mColorPicker.setBackgroundColor(color);
@@ -288,6 +281,6 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
 
     @Override
     public void pathsChanged(int cnt) {
-        mUndoBtn.setVisibility(cnt > 0 ? View.VISIBLE : View.GONE);
+        menu.findItem(R.id.menu_undo).setVisible(cnt > 0);
     }
 }
