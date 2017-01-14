@@ -17,29 +17,31 @@ import java.util.Map;
 public class MyCanvas extends View {
     private Paint mPaint;
     private MyPath mPath;
-    private Map<MyPath, Integer> mPaths;
+    private Map<MyPath, PaintOptions> mPaths;
     private PathsChangedListener mListener;
 
-    private int mColor;
+    private PaintOptions mPaintOptions;
     private float mCurX;
     private float mCurY;
     private float mStartX;
     private float mStartY;
+    private boolean mIsSaving = false;
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         mPath = new MyPath();
         mPaint = new Paint();
-        mPaint.setColor(Color.BLACK);
+        mPaintOptions = new PaintOptions();
+        mPaint.setColor(mPaintOptions.color);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(5f);
+        mPaint.setStrokeWidth(mPaintOptions.strokeWidth);
         mPaint.setAntiAlias(true);
 
         mPaths = new LinkedHashMap<>();
-        mPaths.put(mPath, mPaint.getColor());
+        mPaths.put(mPath, mPaintOptions);
         pathsUpdated();
     }
 
@@ -62,14 +64,22 @@ public class MyCanvas extends View {
     }
 
     public void setColor(int newColor) {
-        mColor = newColor;
+        mPaintOptions.color = newColor;
+        invalidate();
+    }
+
+    public void setStrokeWidth(float newStrokeWidth){
+        mPaintOptions.strokeWidth = newStrokeWidth;
+        invalidate();
     }
 
     public Bitmap getBitmap() {
         final Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
         final Canvas canvas = new Canvas(bitmap);
         canvas.drawColor(Color.WHITE);
+        mIsSaving = true;
         draw(canvas);
+        mIsSaving = false;
         return bitmap;
     }
 
@@ -77,13 +87,30 @@ public class MyCanvas extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        for (Map.Entry<MyPath, Integer> entry : mPaths.entrySet()) {
-            mPaint.setColor(entry.getValue());
+        for (Map.Entry<MyPath, PaintOptions> entry : mPaths.entrySet()) {
+            changePaint(entry.getValue());
             canvas.drawPath(entry.getKey(), mPaint);
         }
 
-        mPaint.setColor(mColor);
+        changePaint(mPaintOptions);
         canvas.drawPath(mPath, mPaint);
+
+        if(!mIsSaving) {
+            drawPreviewDot(canvas);
+        }
+    }
+
+    private void drawPreviewDot(Canvas canvas) {
+        mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.color)?Color.WHITE:Color.BLACK);
+        mPaint.setStrokeWidth(100);
+        canvas.drawPoint(getWidth()/2, getHeight() - 100, mPaint);
+        changePaint(mPaintOptions);
+        canvas.drawPoint(getWidth()/2, getHeight() - 100, mPaint);
+    }
+
+    private void changePaint(PaintOptions paintOptions) {
+        mPaint.setColor(paintOptions.color);
+        mPaint.setStrokeWidth(paintOptions.strokeWidth);
     }
 
     public void clearCanvas() {
@@ -116,9 +143,10 @@ public class MyCanvas extends View {
             mPath.lineTo(mCurX + 1, mCurY);
         }
 
-        mPaths.put(mPath, mPaint.getColor());
+        mPaths.put(mPath, mPaintOptions);
         pathsUpdated();
         mPath = new MyPath();
+        mPaintOptions = new PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth);
     }
 
     private void pathsUpdated() {
@@ -179,7 +207,7 @@ public class MyCanvas extends View {
     }
 
     static class SavedState extends BaseSavedState {
-        Map<MyPath, Integer> mPaths;
+        Map<MyPath, PaintOptions> mPaths;
 
         SavedState(Parcelable superState) {
             super(superState);
@@ -189,9 +217,11 @@ public class MyCanvas extends View {
         public void writeToParcel(Parcel out, int flags) {
             super.writeToParcel(out, flags);
             out.writeInt(mPaths.size());
-            for (Map.Entry<MyPath, Integer> entry : mPaths.entrySet()) {
+            for (Map.Entry<MyPath, PaintOptions> entry : mPaths.entrySet()) {
                 out.writeSerializable(entry.getKey());
-                out.writeInt(entry.getValue());
+                PaintOptions paintOptions = entry.getValue();
+                out.writeInt(paintOptions.color);
+                out.writeFloat(paintOptions.strokeWidth);
             }
         }
 
@@ -211,8 +241,8 @@ public class MyCanvas extends View {
             int size = in.readInt();
             for (int i = 0; i < size; i++) {
                 MyPath key = (MyPath) in.readSerializable();
-                int value = in.readInt();
-                mPaths.put(key, value);
+                PaintOptions paintOptions = new PaintOptions(in.readInt(), in.readFloat());
+                mPaths.put(key, paintOptions);
             }
         }
     }

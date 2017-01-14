@@ -39,6 +39,14 @@ public class Config {
         mPrefs.edit().putInt(Constants.BRUSH_COLOR_KEY, color).apply();
     }
 
+    public float getStrokeWidth() {
+        return mPrefs.getFloat(Constants.STROKE_WIDTH_KEY, 5.0f);
+    }
+
+    public void setStrokeWidth(float strokeWidth) {
+        mPrefs.edit().putFloat(Constants.STROKE_WIDTH_KEY, strokeWidth).apply();
+    }
+
     public int getBackgroundColor() {
         return mPrefs.getInt(Constants.BACKGROUND_COLOR_KEY, Color.WHITE);
     }
