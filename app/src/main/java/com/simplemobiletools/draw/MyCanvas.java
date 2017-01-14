@@ -156,39 +156,35 @@ public class MyCanvas extends View {
         void pathsChanged(int cnt);
     }
 
-    // Parcelable
-
     @Override
     public Parcelable onSaveInstanceState() {
         Parcelable superState = super.onSaveInstanceState();
-        SavedState ss = new SavedState(superState);
+        SavedState savedState = new SavedState(superState);
 
-        ss.mPaths = mPaths;
-        return ss;
+        savedState.mPaths = mPaths;
+        return savedState;
     }
 
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        if(!(state instanceof SavedState)) {
+        if (!(state instanceof SavedState)) {
             super.onRestoreInstanceState(state);
             return;
         }
-        SavedState ss = (SavedState)state;
-        super.onRestoreInstanceState(ss.getSuperState());
+        SavedState savedState = (SavedState) state;
+        super.onRestoreInstanceState(savedState.getSuperState());
 
-        mPaths = ss.mPaths;
+        mPaths = savedState.mPaths;
         pathsUpdated(); // This doesn't seem to be necessary
     }
 
     static class SavedState extends BaseSavedState {
-        // Members
         Map<MyPath, Integer> mPaths;
 
         SavedState(Parcelable superState) {
             super(superState);
         }
 
-        // Save
         @Override
         public void writeToParcel(Parcel out, int flags) {
             super.writeToParcel(out, flags);
@@ -199,12 +195,12 @@ public class MyCanvas extends View {
             }
         }
 
-        // Load
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
                     public SavedState createFromParcel(Parcel in) {
                         return new SavedState(in);
                     }
+
                     public SavedState[] newArray(int size) {
                         return new SavedState[size];
                     }
@@ -214,7 +210,7 @@ public class MyCanvas extends View {
             super(in);
             int size = in.readInt();
             for (int i = 0; i < size; i++) {
-                MyPath key = (MyPath)in.readSerializable();
+                MyPath key = (MyPath) in.readSerializable();
                 int value = in.readInt();
                 mPaths.put(key, value);
             }
