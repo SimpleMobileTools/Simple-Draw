@@ -13,6 +13,7 @@ import butterknife.OnClick;
 
 public class SettingsActivity extends SimpleActivity {
     @BindView(R.id.settings_dark_theme) SwitchCompat mDarkThemeSwitch;
+    @BindView(R.id.settings_brush_size) SwitchCompat mBrushSizeSwitch;
 
     private static Config mConfig;
 
@@ -23,11 +24,12 @@ public class SettingsActivity extends SimpleActivity {
         mConfig = Config.newInstance(getApplicationContext());
         ButterKnife.bind(this);
 
-        setupDarkTheme();
+        setupSwitches();
     }
 
-    private void setupDarkTheme() {
+    private void setupSwitches() {
         mDarkThemeSwitch.setChecked(mConfig.getIsDarkTheme());
+        mBrushSizeSwitch.setChecked(mConfig.getIsStrokeWidthBarEnabled());
     }
 
     @OnClick(R.id.settings_dark_theme_holder)
@@ -35,6 +37,12 @@ public class SettingsActivity extends SimpleActivity {
         mDarkThemeSwitch.setChecked(!mDarkThemeSwitch.isChecked());
         mConfig.setIsDarkTheme(mDarkThemeSwitch.isChecked());
         restartActivity();
+    }
+
+    @OnClick(R.id.settings_brush_size_holder)
+    public void handleBrushSize() {
+        mBrushSizeSwitch.setChecked(!mBrushSizeSwitch.isChecked());
+        mConfig.setIsStrokeWidthBarEnabled(mBrushSizeSwitch.isChecked());
     }
 
     private void restartActivity() {

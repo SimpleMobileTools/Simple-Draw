@@ -31,6 +31,14 @@ public class Config {
         mPrefs.edit().putBoolean(Constants.IS_DARK_THEME, isDarkTheme).apply();
     }
 
+    public boolean getIsStrokeWidthBarEnabled() {
+        return mPrefs.getBoolean(Constants.IS_STROKE_WIDTH_BAR_ENABLED, false);
+    }
+
+    public void setIsStrokeWidthBarEnabled(boolean isStrokeWidthBarEnabled) {
+        mPrefs.edit().putBoolean(Constants.IS_STROKE_WIDTH_BAR_ENABLED, isStrokeWidthBarEnabled).apply();
+    }
+
     public int getBrushColor() {
         return mPrefs.getInt(Constants.BRUSH_COLOR_KEY, Color.BLACK);
     }

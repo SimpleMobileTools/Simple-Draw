@@ -71,6 +71,14 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        boolean isStrokeWidthBarEnabled = mConfig.getIsStrokeWidthBarEnabled();
+        mStrokeWidthBar.setVisibility(isStrokeWidthBarEnabled? View.VISIBLE:View.GONE);
+        mMyCanvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled);
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
         mConfig.setBrushColor(color);

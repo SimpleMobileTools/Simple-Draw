@@ -26,6 +26,7 @@ public class MyCanvas extends View {
     private float mStartX;
     private float mStartY;
     private boolean mIsSaving = false;
+    private boolean mIsStrokeWidthBarEnabled = false;
 
     public MyCanvas(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -65,11 +66,20 @@ public class MyCanvas extends View {
 
     public void setColor(int newColor) {
         mPaintOptions.color = newColor;
-        invalidate();
+        if(mIsStrokeWidthBarEnabled) {
+            invalidate();
+        }
     }
 
     public void setStrokeWidth(float newStrokeWidth){
         mPaintOptions.strokeWidth = newStrokeWidth;
+        if(mIsStrokeWidthBarEnabled) {
+            invalidate();
+        }
+    }
+
+    public void setIsStrokeWidthBarEnabled(boolean isStrokeWidthBarEnabled) {
+        mIsStrokeWidthBarEnabled = isStrokeWidthBarEnabled;
         invalidate();
     }
 
@@ -95,7 +105,7 @@ public class MyCanvas extends View {
         changePaint(mPaintOptions);
         canvas.drawPath(mPath, mPaint);
 
-        if(!mIsSaving) {
+        if(mIsStrokeWidthBarEnabled && !mIsSaving) {
             drawPreviewDot(canvas);
         }
     }
@@ -103,9 +113,9 @@ public class MyCanvas extends View {
     private void drawPreviewDot(Canvas canvas) {
         mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.color)?Color.WHITE:Color.BLACK);
         mPaint.setStrokeWidth(100);
-        canvas.drawPoint(getWidth()/2, getHeight() - 100, mPaint);
+        canvas.drawPoint(getWidth()/2, getHeight() - 120, mPaint);
         changePaint(mPaintOptions);
-        canvas.drawPoint(getWidth()/2, getHeight() - 100, mPaint);
+        canvas.drawPoint(getWidth()/2, getHeight() - 120, mPaint);
     }
 
     private void changePaint(PaintOptions paintOptions) {
