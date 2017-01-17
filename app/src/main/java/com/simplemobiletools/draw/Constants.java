@@ -9,4 +9,7 @@ public class Constants {
     public static final String IS_FIRST_RUN = "is_first_run";
     public static final String IS_DARK_THEME = "is_dark_theme";
     public static final String IS_STROKE_WIDTH_BAR_ENABLED = "is_stroke_width_bar_enabled";
+    // canvas
+    public static final int PREVIEW_DOT_STROKE_SIZE = 5;
+    public static final int PREVIEW_DOT_OFFSET_Y = 120;
 }
