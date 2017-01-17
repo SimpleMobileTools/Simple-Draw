@@ -74,7 +74,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     protected void onResume() {
         super.onResume();
         boolean isStrokeWidthBarEnabled = mConfig.getIsStrokeWidthBarEnabled();
-        mStrokeWidthBar.setVisibility(isStrokeWidthBarEnabled? View.VISIBLE:View.GONE);
+        mStrokeWidthBar.setVisibility(isStrokeWidthBarEnabled ? View.VISIBLE : View.GONE);
         mMyCanvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled);
     }
 
