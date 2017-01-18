@@ -31,12 +31,28 @@ public class Config {
         mPrefs.edit().putBoolean(Constants.IS_DARK_THEME, isDarkTheme).apply();
     }
 
+    public boolean getIsStrokeWidthBarEnabled() {
+        return mPrefs.getBoolean(Constants.IS_STROKE_WIDTH_BAR_ENABLED, false);
+    }
+
+    public void setIsStrokeWidthBarEnabled(boolean isStrokeWidthBarEnabled) {
+        mPrefs.edit().putBoolean(Constants.IS_STROKE_WIDTH_BAR_ENABLED, isStrokeWidthBarEnabled).apply();
+    }
+
     public int getBrushColor() {
         return mPrefs.getInt(Constants.BRUSH_COLOR_KEY, Color.BLACK);
     }
 
     public void setBrushColor(int color) {
         mPrefs.edit().putInt(Constants.BRUSH_COLOR_KEY, color).apply();
+    }
+
+    public float getStrokeWidth() {
+        return mPrefs.getFloat(Constants.STROKE_WIDTH_KEY, 5.0f);
+    }
+
+    public void setStrokeWidth(float strokeWidth) {
+        mPrefs.edit().putFloat(Constants.STROKE_WIDTH_KEY, strokeWidth).apply();
     }
 
     public int getBackgroundColor() {

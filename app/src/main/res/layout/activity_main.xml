@@ -26,4 +26,15 @@
         android:src="@mipmap/undo_black"
         android:visibility="gone"/>
 
+    <SeekBar
+        android:id="@+id/stroke_width_bar"
+        android:layout_width="@dimen/stroke_bar_size"
+        android:layout_height="wrap_content"
+        android:progress="5"
+        android:max="75"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="9dp"
+        android:visibility="gone"/>
+
 </RelativeLayout>

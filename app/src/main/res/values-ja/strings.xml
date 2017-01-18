@@ -16,6 +16,7 @@
     <!-- Settings -->
     <string name="settings">設定</string>
     <string name="dark_theme">ダークテーマ</string>
+    <string name="brush_size">Show brush size tool</string>
     <string name="clear">クリア</string>
     <string name="change_background">Change background</string>
 

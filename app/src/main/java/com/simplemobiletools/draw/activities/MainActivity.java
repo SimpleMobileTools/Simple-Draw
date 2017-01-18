@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.simplemobiletools.draw.Config;
@@ -46,10 +47,12 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     @BindView(R.id.my_canvas) MyCanvas mMyCanvas;
     @BindView(R.id.undo) View mUndoBtn;
     @BindView(R.id.color_picker) View mColorPicker;
+    @BindView(R.id.stroke_width_bar) SeekBar mStrokeWidthBar;
 
     private String curFileName;
 
     private int color;
+    private float strokeWidth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,15 +60,29 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mMyCanvas.setListener(this);
+        mStrokeWidthBar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener);
 
         setBackgroundColor(mConfig.getBackgroundColor());
         setColor(mConfig.getBrushColor());
+
+        float savedStrokeWidth = mConfig.getStrokeWidth();
+        mMyCanvas.setStrokeWidth(savedStrokeWidth);
+        mStrokeWidthBar.setProgress((int) savedStrokeWidth);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        boolean isStrokeWidthBarEnabled = mConfig.getIsStrokeWidthBarEnabled();
+        mStrokeWidthBar.setVisibility(isStrokeWidthBarEnabled ? View.VISIBLE : View.GONE);
+        mMyCanvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         mConfig.setBrushColor(color);
+        mConfig.setStrokeWidth(strokeWidth);
     }
 
     @Override
@@ -290,4 +307,18 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     public void pathsChanged(int cnt) {
         mUndoBtn.setVisibility(cnt > 0 ? View.VISIBLE : View.GONE);
     }
+
+    SeekBar.OnSeekBarChangeListener onStrokeWidthBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            mMyCanvas.setStrokeWidth(progress);
+            strokeWidth = progress;
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) { }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) { }
+    };
 }

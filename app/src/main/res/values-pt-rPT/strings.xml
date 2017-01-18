@@ -16,6 +16,7 @@
     <!-- Settings -->
     <string name="settings">Definições</string>
     <string name="dark_theme">Tema escuro</string>
+    <string name="brush_size">Show brush size tool</string>
     <string name="clear">Limpar</string>
     <string name="change_background">Alterar fundo</string>
 
