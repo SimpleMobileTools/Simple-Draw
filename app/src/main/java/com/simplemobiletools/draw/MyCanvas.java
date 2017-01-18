@@ -1,6 +1,7 @@
 package com.simplemobiletools.draw;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -111,11 +112,12 @@ public class MyCanvas extends View {
     }
 
     private void drawPreviewDot(Canvas canvas) {
+        Resources res = getResources();
         mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.color) ? Color.WHITE : Color.BLACK);
-        mPaint.setStrokeWidth(mPaintOptions.strokeWidth + Constants.PREVIEW_DOT_STROKE_SIZE);
-        canvas.drawPoint(getWidth() / 2, getHeight() - Constants.PREVIEW_DOT_OFFSET_Y, mPaint);
+        mPaint.setStrokeWidth(mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size));
+        canvas.drawPoint(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), mPaint);
         changePaint(mPaintOptions);
-        canvas.drawPoint(getWidth() / 2, getHeight() - Constants.PREVIEW_DOT_OFFSET_Y, mPaint);
+        canvas.drawPoint(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), mPaint);
     }
 
     private void changePaint(PaintOptions paintOptions) {
