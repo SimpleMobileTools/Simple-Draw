@@ -30,11 +30,12 @@
         android:id="@+id/stroke_width_bar"
         android:layout_width="@dimen/stroke_bar_size"
         android:layout_height="wrap_content"
-        android:progress="5"
-        android:max="75"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="9dp"
+        android:layout_marginBottom="12dp"
+        android:max="75"
+        android:padding="@dimen/icon_padding"
+        android:progress="5"
         android:visibility="gone"/>
 
 </RelativeLayout>
