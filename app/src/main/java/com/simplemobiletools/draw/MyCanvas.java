@@ -107,18 +107,23 @@ public class MyCanvas extends View {
         canvas.drawPath(mPath, mPaint);
 
         if (mIsStrokeWidthBarEnabled && !mIsSaving) {
-            drawPreviewDot(canvas);
+            drawPreviewCircle(canvas);
         }
     }
 
-    private void drawPreviewDot(Canvas canvas) {
+    private void drawPreviewCircle(Canvas canvas) {
         Resources res = getResources();
         mPaint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), mPaintOptions.strokeWidth / 2, mPaint);
+
+        float y = getHeight() - res.getDimension(R.dimen.preview_dot_offset_y);
+        canvas.drawCircle(getWidth() / 2, y, mPaintOptions.strokeWidth / 2, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.color) ? Color.WHITE : Color.BLACK);
         mPaint.setStrokeWidth(res.getDimension(R.dimen.preview_dot_stroke_size));
-        canvas.drawCircle(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), (mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2, mPaint);
+
+        y = getHeight() - res.getDimension(R.dimen.preview_dot_offset_y);
+        float radius = (mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2;
+        canvas.drawCircle(getWidth() / 2, y, radius, mPaint);
         changePaint(mPaintOptions);
     }
 
