@@ -52,6 +52,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     @BindView(R.id.stroke_width_bar) SeekBar mStrokeWidthBar;
 
     private String curFileName;
+    private int curExtensionIndex;
 
     private int color;
     private float strokeWidth;
@@ -167,6 +168,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         fileNameET.setText(curFileName);
 
         final Spinner fileExtensionS = (Spinner) saveFileView.findViewById(R.id.file_extension);
+        fileExtensionS.setSelection(curExtensionIndex);
         builder.setView(saveFileView);
 
         builder.setPositiveButton(R.string.ok, null);
@@ -182,6 +184,8 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 if (!fileName.isEmpty()) {
                     if (saveFile(fileName, extension)) {
                         curFileName = fileName;
+                        curExtensionIndex = fileExtensionS.getSelectedItemPosition();
+
                         Utils.showToast(getApplicationContext(), R.string.saving_ok);
                         alertDialog.dismiss();
                     } else {
