@@ -52,6 +52,6 @@ public class Svg {
         writer.write(Integer.toHexString(options.color).substring(2)); // Skip the alpha FF
         writer.write("\" stroke-width=\"");
         writer.write(String.valueOf(options.strokeWidth));
-        writer.write("\"/>");
+        writer.write("\" stroke-linecap=\"round\"/>");
     }
 }
