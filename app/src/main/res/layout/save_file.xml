@@ -20,7 +20,7 @@
         android:layout_toLeftOf="@+id/file_extension"
         android:singleLine="true"/>
 
-    <TextView
+    <Spinner
         android:id="@+id/file_extension"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -29,6 +29,6 @@
         android:layout_alignTop="@+id/file_name"
         android:layout_below="@+id/file_name_label"
         android:gravity="center_vertical"
-        android:text=".png"/>
+        android:entries="@array/save_formats"/>
 
 </RelativeLayout>
