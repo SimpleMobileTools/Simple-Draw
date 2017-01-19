@@ -113,11 +113,13 @@ public class MyCanvas extends View {
 
     private void drawPreviewDot(Canvas canvas) {
         Resources res = getResources();
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), mPaintOptions.strokeWidth / 2, mPaint);
+        mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.color) ? Color.WHITE : Color.BLACK);
-        mPaint.setStrokeWidth(mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size));
-        canvas.drawPoint(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), mPaint);
+        mPaint.setStrokeWidth(res.getDimension(R.dimen.preview_dot_stroke_size));
+        canvas.drawCircle(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), (mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2, mPaint);
         changePaint(mPaintOptions);
-        canvas.drawPoint(getWidth() / 2, getHeight() - res.getDimension(R.dimen.preview_dot_offset_y), mPaint);
     }
 
     private void changePaint(PaintOptions paintOptions) {
