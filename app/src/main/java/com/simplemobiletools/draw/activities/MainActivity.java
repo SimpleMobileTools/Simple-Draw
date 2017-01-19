@@ -218,7 +218,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                     MediaScannerConnection.scanFile(getApplicationContext(),
                             new String[]{file.getAbsolutePath()}, null, null);
                 } catch (Exception e) {
-                    Log.e(TAG, "MainActivity SaveFile " + e.getMessage());
+                    Log.e(TAG, "MainActivity SaveFile (.png) " + e.getMessage());
                     return false;
                 } finally {
                     try {
@@ -226,14 +226,16 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                             out.close();
                         }
                     } catch (IOException e) {
-                        Log.e(TAG, "MainActivity SaveFile 2 " + e.getMessage());
+                        Log.e(TAG, "MainActivity SaveFile (.png) 2 " + e.getMessage());
                     }
                 }
                 break;
 
             case ".svg":
-                if (!Svg.saveSvg(file, mMyCanvas)) {
-                    Log.e(TAG, "MainActivity SaveFile failed.");
+                try {
+                    Svg.saveSvg(file, mMyCanvas);
+                } catch (IOException e) {
+                    Log.e(TAG, "MainActivity SaveFile (.svg) " + e.getMessage());
                     return false;
                 }
                 break;
