@@ -1,5 +1,7 @@
 package com.simplemobiletools.draw;
 
+import android.graphics.drawable.ColorDrawable;
+
 import com.simplemobiletools.draw.actions.Action;
 
 import java.io.BufferedWriter;
@@ -13,14 +15,18 @@ import java.util.Map;
 public class Svg {
 
     public static void saveSvg(File output, MyCanvas canvas)
-            throws IOException {
+            throws Exception {
+        // This might throw ClassCastException
+        int backgroundColor = ((ColorDrawable) canvas.getBackground()).getColor();
+
+        // This might throw IOException
         FileOutputStream out = new FileOutputStream(output);
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out));
-        writeSvg(writer, canvas.getPaths(), canvas.getWidth(), canvas.getHeight());
+        writeSvg(writer, backgroundColor, canvas.getPaths(), canvas.getWidth(), canvas.getHeight());
         writer.close();
     }
 
-    private static void writeSvg(Writer writer,
+    private static void writeSvg(Writer writer, int backgroundColor,
                                  Map<MyPath, PaintOptions> paths, int width, int height)
             throws IOException {
         writer.write("<svg width=\"");
@@ -28,6 +34,17 @@ public class Svg {
         writer.write("\" height=\"");
         writer.write(String.valueOf(height));
         writer.write("\" xmlns=\"http://www.w3.org/2000/svg\">");
+
+        // Background color (use a rect)
+        writer.write("<rect width=\"");
+        writer.write(String.valueOf(width));
+        writer.write("\" height=\"");
+        writer.write(String.valueOf(height));
+        writer.write("\" fill=\"#");
+        writer.write(Integer.toHexString(backgroundColor).substring(2)); // Skip the alpha FF
+        writer.write("\"/>");
+
+        // Write the paths
         for (Map.Entry<MyPath, PaintOptions> entry : paths.entrySet()) {
             writePath(writer, entry.getKey(), entry.getValue());
         }
