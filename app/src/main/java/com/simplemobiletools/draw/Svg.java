@@ -12,12 +12,11 @@ import java.util.Map;
 
 public class Svg {
 
-    public static boolean saveSvg(File output,
-                                  Map<MyPath, PaintOptions> paths, int width, int height) {
+    public static boolean saveSvg(File output, MyCanvas canvas) {
         try {
             FileOutputStream out = new FileOutputStream(output);
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out));
-            writeSvg(writer, paths, width, height);
+            writeSvg(writer, canvas.getPaths(), canvas.getWidth(), canvas.getHeight());
             writer.close();
             return true;
         } catch (IOException e) {

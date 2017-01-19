@@ -20,11 +20,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.simplemobiletools.draw.Config;
 import com.simplemobiletools.draw.MyCanvas;
 import com.simplemobiletools.draw.R;
+import com.simplemobiletools.draw.Svg;
 import com.simplemobiletools.draw.Utils;
 
 import java.io.ByteArrayOutputStream;
@@ -163,6 +165,8 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
 
         final EditText fileNameET = (EditText) saveFileView.findViewById(R.id.file_name);
         fileNameET.setText(curFileName);
+
+        final Spinner fileExtensionS = (Spinner) saveFileView.findViewById(R.id.file_extension);
         builder.setView(saveFileView);
 
         builder.setPositiveButton(R.string.ok, null);
@@ -174,9 +178,9 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
             @Override
             public void onClick(View v) {
                 final String fileName = fileNameET.getText().toString().trim();
-
+                final String extension = (String) fileExtensionS.getSelectedItem();
                 if (!fileName.isEmpty()) {
-                    if (saveFile(fileName + ".png")) {
+                    if (saveFile(fileName, extension)) {
                         curFileName = fileName;
                         Utils.showToast(getApplicationContext(), R.string.saving_ok);
                         alertDialog.dismiss();
@@ -190,7 +194,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         });
     }
 
-    private boolean saveFile(final String fileName) {
+    private boolean saveFile(final String fileName, final String extension) {
         final String path = Environment.getExternalStorageDirectory().toString();
         final File directory = new File(path, SAVE_FOLDER_NAME);
         if (!directory.exists()) {
@@ -199,24 +203,39 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
             }
         }
 
-        final Bitmap bitmap = mMyCanvas.getBitmap();
-        FileOutputStream out = null;
-        try {
-            final File file = new File(directory, fileName);
-            out = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-            MediaScannerConnection.scanFile(getApplicationContext(), new String[]{file.getAbsolutePath()}, null, null);
-        } catch (Exception e) {
-            Log.e(TAG, "MainActivity SaveFile " + e.getMessage());
-            return false;
-        } finally {
-            try {
-                if (out != null) {
-                    out.close();
+        final File file = new File(directory, fileName+extension);
+        switch (extension) {
+            case ".png":
+                final Bitmap bitmap = mMyCanvas.getBitmap();
+                FileOutputStream out = null;
+                try {
+                    out = new FileOutputStream(file);
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                    MediaScannerConnection.scanFile(getApplicationContext(),
+                            new String[]{file.getAbsolutePath()}, null, null);
+                } catch (Exception e) {
+                    Log.e(TAG, "MainActivity SaveFile " + e.getMessage());
+                    return false;
+                } finally {
+                    try {
+                        if (out != null) {
+                            out.close();
+                        }
+                    } catch (IOException e) {
+                        Log.e(TAG, "MainActivity SaveFile 2 " + e.getMessage());
+                    }
                 }
-            } catch (IOException e) {
-                Log.e(TAG, "MainActivity SaveFile 2 " + e.getMessage());
-            }
+                break;
+
+            case ".svg":
+                if (!Svg.saveSvg(file, mMyCanvas)) {
+                    Log.e(TAG, "MainActivity SaveFile failed.");
+                    return false;
+                }
+                break;
+
+            default:
+                return false;
         }
 
         return true;
