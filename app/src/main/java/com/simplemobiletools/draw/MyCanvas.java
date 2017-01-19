@@ -94,6 +94,10 @@ public class MyCanvas extends View {
         return bitmap;
     }
 
+    public Map<MyPath,PaintOptions> getPaths() {
+        return mPaths;
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
