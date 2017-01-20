@@ -17,18 +17,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/file_name_label"
         android:layout_marginBottom="@dimen/activity_margin"
-        android:layout_toLeftOf="@+id/file_extension"
         android:singleLine="true"/>
 
-    <TextView
-        android:id="@+id/file_extension"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/file_name"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/file_name"
-        android:layout_below="@+id/file_name_label"
-        android:gravity="center_vertical"
-        android:text=".png"/>
+    <RadioGroup
+        android:id="@+id/extension_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_name"
+        android:checkedButton="@+id/extension_radio_png">
+
+        <RadioButton
+            android:id="@+id/extension_radio_png"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=".png"/>
+
+        <RadioButton
+            android:id="@+id/extension_radio_svg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=".svg"/>
+    </RadioGroup>
 
 </RelativeLayout>
