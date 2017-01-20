@@ -1,6 +1,5 @@
 package com.simplemobiletools.draw.actions;
 
-
 import android.graphics.Path;
 
 import java.io.IOException;

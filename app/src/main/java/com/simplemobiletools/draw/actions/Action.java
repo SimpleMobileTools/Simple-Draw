@@ -8,5 +8,6 @@ import java.io.Writer;
 
 public interface Action extends Serializable {
     void perform(Path path);
+
     void perform(Writer writer) throws IOException;
 }

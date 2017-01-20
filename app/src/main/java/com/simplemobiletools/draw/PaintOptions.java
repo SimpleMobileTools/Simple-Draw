@@ -7,7 +7,7 @@ class PaintOptions {
     float strokeWidth = 5f;
 
     PaintOptions() {
-        //Empty constructor for instantiating with default values
+
     }
 
     PaintOptions(int color, float strokeWidth) {

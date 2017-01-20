@@ -185,9 +185,12 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                 if (!fileName.isEmpty()) {
                     final String extension;
                     switch (fileExtensionRG.getCheckedRadioButtonId()) {
+                        case R.id.extension_radio_svg:
+                            extension = ".svg";
+                            break;
                         default:
-                        case R.id.extension_radio_png: extension = ".png"; break;
-                        case R.id.extension_radio_svg: extension = ".svg"; break;
+                            extension = ".png";
+                            break;
                     }
 
                     if (saveFile(fileName, extension)) {
@@ -215,16 +218,15 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
             }
         }
 
-        final File file = new File(directory, fileName+extension);
+        final File file = new File(directory, fileName + extension);
         switch (extension) {
-            case ".png":
+            case ".png": {
                 final Bitmap bitmap = mMyCanvas.getBitmap();
                 FileOutputStream out = null;
                 try {
                     out = new FileOutputStream(file);
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-                    MediaScannerConnection.scanFile(getApplicationContext(),
-                            new String[]{file.getAbsolutePath()}, null, null);
+                    MediaScannerConnection.scanFile(getApplicationContext(), new String[]{file.getAbsolutePath()}, null, null);
                 } catch (Exception e) {
                     Log.e(TAG, "MainActivity SaveFile (.png) " + e.getMessage());
                     return false;
@@ -238,8 +240,8 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                     }
                 }
                 break;
-
-            case ".svg":
+            }
+            case ".svg": {
                 try {
                     Svg.saveSvg(file, mMyCanvas);
                 } catch (Exception e) {
@@ -247,7 +249,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                     return false;
                 }
                 break;
-
+            }
             default:
                 return false;
         }
@@ -349,9 +351,11 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         }
 
         @Override
-        public void onStartTrackingTouch(SeekBar seekBar) { }
+        public void onStartTrackingTouch(SeekBar seekBar) {
+        }
 
         @Override
-        public void onStopTrackingTouch(SeekBar seekBar) { }
+        public void onStopTrackingTouch(SeekBar seekBar) {
+        }
     };
 }

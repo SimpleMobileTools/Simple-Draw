@@ -94,7 +94,7 @@ public class MyCanvas extends View {
         return bitmap;
     }
 
-    public Map<MyPath,PaintOptions> getPaths() {
+    public Map<MyPath, PaintOptions> getPaths() {
         return mPaths;
     }
 
