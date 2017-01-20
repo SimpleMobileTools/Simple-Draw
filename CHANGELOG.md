@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.16 *(2017-01-20)*
+----------------------------
+
+ * Allow changing the brush width (by BrianPinsard)
+ * Allow saving into an .svg file (by XyLoNaMiyX)
+
 Version 1.15 *(2017-01-14)*
 ----------------------------
 
