@@ -19,8 +19,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.simplemobiletools.draw.Config;
@@ -52,7 +52,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     @BindView(R.id.stroke_width_bar) SeekBar mStrokeWidthBar;
 
     private String curFileName;
-    private int curExtensionIndex;
+    private int curExtensionId;
 
     private int color;
     private float strokeWidth;
@@ -167,8 +167,10 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         final EditText fileNameET = (EditText) saveFileView.findViewById(R.id.file_name);
         fileNameET.setText(curFileName);
 
-        final Spinner fileExtensionS = (Spinner) saveFileView.findViewById(R.id.file_extension);
-        fileExtensionS.setSelection(curExtensionIndex);
+        final RadioGroup fileExtensionRG = (RadioGroup) saveFileView.findViewById(R.id.extension_radio_group);
+        if (curExtensionId != 0) {
+            fileExtensionRG.check(curExtensionId);
+        }
         builder.setView(saveFileView);
 
         builder.setPositiveButton(R.string.ok, null);
@@ -180,11 +182,17 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
             @Override
             public void onClick(View v) {
                 final String fileName = fileNameET.getText().toString().trim();
-                final String extension = (String) fileExtensionS.getSelectedItem();
                 if (!fileName.isEmpty()) {
+                    final String extension;
+                    switch (fileExtensionRG.getCheckedRadioButtonId()) {
+                        default:
+                        case R.id.extension_radio_png: extension = ".png"; break;
+                        case R.id.extension_radio_svg: extension = ".svg"; break;
+                    }
+
                     if (saveFile(fileName, extension)) {
                         curFileName = fileName;
-                        curExtensionIndex = fileExtensionS.getSelectedItemPosition();
+                        curExtensionId = fileExtensionRG.getCheckedRadioButtonId();
 
                         Utils.showToast(getApplicationContext(), R.string.saving_ok);
                         alertDialog.dismiss();
