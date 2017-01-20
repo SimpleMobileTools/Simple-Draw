@@ -12,10 +12,6 @@
     <string name="no_permissions">Could not save the file without accessing the external storage</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-    <string-array name="save_formats" translatable="false">
-        <item>.png</item>
-        <item>.svg</item>
-    </string-array>
 
     <!-- Settings -->
     <string name="settings">Settings</string>
