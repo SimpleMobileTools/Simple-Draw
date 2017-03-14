@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 1.17 *(2017-03-14)*
+----------------------------
+
+ * Fixed too thin line after repeated app launch
+
 Version 1.16 *(2017-01-20)*
 ----------------------------
 
