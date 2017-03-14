@@ -68,9 +68,9 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         setBackgroundColor(mConfig.getBackgroundColor());
         setColor(mConfig.getBrushColor());
 
-        float savedStrokeWidth = mConfig.getStrokeWidth();
-        mMyCanvas.setStrokeWidth(savedStrokeWidth);
-        mStrokeWidthBar.setProgress((int) savedStrokeWidth);
+        strokeWidth = mConfig.getStrokeWidth();
+        mMyCanvas.setStrokeWidth(strokeWidth);
+        mStrokeWidthBar.setProgress((int) strokeWidth);
     }
 
     @Override
