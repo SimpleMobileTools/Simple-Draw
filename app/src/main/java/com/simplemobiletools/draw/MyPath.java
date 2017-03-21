@@ -10,6 +10,7 @@ import com.simplemobiletools.draw.actions.Quad;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.security.InvalidParameterException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,10 +27,45 @@ class MyPath extends Path implements Serializable {
         }
     }
 
+    public void readObject(String pathData) throws InvalidParameterException {
+        String[] tokens = pathData.split("\\s+");
+        for (int i = 0; i < tokens.length; ++i) {
+            switch (tokens[i].charAt(0)) {
+                case 'M':
+                    addAction(new Move(tokens[i]));
+                    break;
+                case 'L':
+                    addAction(new Line(tokens[i]));
+                    break;
+                case 'Q':
+                    // Quad actions are of the following form:
+                    // "Qx1,y1 x2,y2"
+                    // Since we split the tokens by whitespace, we need to join them again
+                    if (i+1 >= tokens.length)
+                        throw new InvalidParameterException("Error parsing the data for a Quad.");
+
+                    addAction(new Quad(tokens[i]+" "+tokens[i+1]));
+                    ++i;
+                    break;
+            }
+        }
+    }
+
     @Override
     public void reset() {
         actions.clear();
         super.reset();
+    }
+
+    private void addAction(Action action) {
+        if (action instanceof Move) {
+            moveTo(((Move)action).x, ((Move)action).y);
+        } else if (action instanceof Line) {
+            lineTo(((Line)action).x, ((Line)action).y);
+        } else if (action instanceof Quad) {
+            final Quad q = (Quad)action;
+            quadTo(q.x1, q.y1, q.x2, q.y2);
+        }
     }
 
     @Override

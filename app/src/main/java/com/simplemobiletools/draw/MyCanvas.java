@@ -98,6 +98,11 @@ public class MyCanvas extends View {
         return mPaths;
     }
 
+    public void addPath(MyPath path, PaintOptions options) {
+        mPaths.put(path, options);
+        pathsUpdated();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
