@@ -76,7 +76,22 @@ public class Svg {
 
     //region Loading
 
-    public static void parseSvg(File file) throws Exception {
+    public static void loadSvg(File file, MyCanvas canvas) throws Exception {
+        SSvg svg = parseSvg(file);
+
+        canvas.clearCanvas();
+        canvas.setBackgroundColor(svg.background.color);
+
+        for (SPath sp : svg.paths) {
+            MyPath path = new MyPath();
+            path.readObject(sp.data);
+            PaintOptions options = new PaintOptions(sp.color, sp.strokeWidth);
+
+            canvas.addPath(path, options);
+        }
+    }
+
+    public static SSvg parseSvg(File file) throws Exception {
         InputStream is = null;
         final SSvg svg = new SSvg();
         try {
@@ -125,6 +140,7 @@ public class Svg {
             if (is != null)
                 is.close();
         }
+        return svg;
     }
 
     //region Svg serializable classes
