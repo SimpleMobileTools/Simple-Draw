@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.simplemobiletools.draw"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.simplemobiletools.draw">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 

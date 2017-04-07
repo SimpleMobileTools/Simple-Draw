@@ -59,12 +59,12 @@ class MyPath extends Path implements Serializable {
 
     private void addAction(Action action) {
         if (action instanceof Move) {
-            moveTo(((Move)action).x, ((Move)action).y);
+            moveTo(((Move) action).getX(), ((Move) action).getY());
         } else if (action instanceof Line) {
-            lineTo(((Line)action).x, ((Line)action).y);
+            lineTo(((Line) action).getX(), ((Line) action).getY());
         } else if (action instanceof Quad) {
             final Quad q = (Quad)action;
-            quadTo(q.x1, q.y1, q.x2, q.y2);
+            quadTo(q.getX1(), q.getY1(), q.getX2(), q.getY2());
         }
     }
 
