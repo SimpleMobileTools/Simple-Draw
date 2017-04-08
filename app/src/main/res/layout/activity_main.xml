@@ -23,7 +23,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/color_picker"
         android:padding="@dimen/medium_margin"
-        android:src="@mipmap/undo_black"
+        android:src="@drawable/ic_undo"
         android:visibility="gone"/>
 
     <SeekBar

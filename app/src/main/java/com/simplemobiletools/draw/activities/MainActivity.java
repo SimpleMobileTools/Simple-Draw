@@ -329,11 +329,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     }
 
     private void setBackgroundColor(int pickedColor) {
-        if (Utils.shouldUseWhite(pickedColor)) {
-            ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_white);
-        } else {
-            ((ImageView) mUndoBtn).setImageResource(R.mipmap.undo_black);
-        }
+        ((ImageView) mUndoBtn).setImageResource(R.drawable.ic_undo);
         mMyCanvas.setBackgroundColor(pickedColor);
     }
 
