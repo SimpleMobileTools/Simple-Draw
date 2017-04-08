@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -13,10 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.hasWriteStoragePermission
-import com.simplemobiletools.commons.extensions.storeStoragePaths
-import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
@@ -175,7 +173,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun setBackgroundColor(pickedColor: Int) {
-        undo.setImageResource(R.drawable.ic_undo)
+        undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
         my_canvas.setBackgroundColor(pickedColor)
     }
 
