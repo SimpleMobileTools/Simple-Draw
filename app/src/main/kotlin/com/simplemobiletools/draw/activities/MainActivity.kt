@@ -28,7 +28,7 @@ import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
-import com.simplemobiletools.draw.helpers.Config
+import com.simplemobiletools.draw.extensions.config
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -56,10 +56,10 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         my_canvas.setListener(this)
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
-        setBackgroundColor(Config.newInstance(this).canvasBackgroundColor)
-        setColor(Config.newInstance(this).brushColor)
+        setBackgroundColor(config.canvasBackgroundColor)
+        setColor(config.brushColor)
 
-        strokeWidth = Config.newInstance(this).brushSize
+        strokeWidth = config.brushSize
         my_canvas.setStrokeWidth(strokeWidth)
         stroke_width_bar.progress = strokeWidth.toInt()
 
@@ -69,20 +69,20 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     override fun onResume() {
         super.onResume()
-        val isStrokeWidthBarEnabled = Config.newInstance(this).showBrushSize
+        val isStrokeWidthBarEnabled = config.showBrushSize
         stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
         my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
     }
 
     override fun onPause() {
         super.onPause()
-        Config.newInstance(this).brushColor = color
-        Config.newInstance(this).brushSize = strokeWidth
+        config.brushColor = color
+        config.brushSize = strokeWidth
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Config.newInstance(applicationContext).isFirstRun = false
+        config.isFirstRun = false
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -112,7 +112,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 val oldColor = (my_canvas.background as ColorDrawable).color
                 ColorPickerDialog(this, oldColor) {
                     setBackgroundColor(it)
-                    Config.newInstance(applicationContext).canvasBackgroundColor = it
+                    config.canvasBackgroundColor = it
                 }
                 return true
             }
