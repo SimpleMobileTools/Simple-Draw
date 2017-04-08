@@ -20,10 +20,11 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.Toast
-import com.simplemobiletools.commons.activities.AboutActivity
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
+import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
@@ -116,7 +117,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 return true
             }
             R.id.about -> {
-                startActivity(Intent(applicationContext, AboutActivity::class.java))
+                launchAbout()
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
@@ -133,6 +134,10 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 Toast.makeText(this, resources.getString(R.string.no_permissions), Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun launchAbout() {
+        startAboutActivity(R.string.app_name, LICENSE_KOTLIN, BuildConfig.VERSION_NAME)
     }
 
     private fun saveImage() {
