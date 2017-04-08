@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    android:id="@+id/settings_scrollview"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_scrollview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,54 +12,41 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/settings_dark_theme_holder"
+            android:id="@+id/settings_customize_colors_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
             android:padding="@dimen/activity_margin">
 
-            <TextView
-                android:id="@+id/settings_dark_theme_label"
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/settings_customize_colors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:paddingLeft="@dimen/medium_margin"
-                android:text="@string/dark_theme"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/settings_dark_theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:clickable="false"/>
+                android:paddingStart="@dimen/medium_margin"
+                android:text="@string/customize_colors"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/settings_brush_size_holder"
+            android:id="@+id/settings_show_brush_size_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
             android:padding="@dimen/activity_margin">
 
-            <TextView
-                android:id="@+id/settings_brush_size_label"
-                android:layout_width="wrap_content"
+            <com.simplemobiletools.commons.views.MySwitchCompat
+                android:id="@+id/settings_show_brush_size"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/medium_margin"
-                android:text="@string/brush_size"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/settings_brush_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:background="@null"
-                android:clickable="false"/>
+                android:clickable="false"
+                android:paddingLeft="@dimen/medium_margin"
+                android:paddingStart="@dimen/medium_margin"
+                android:text="@string/show_brush_size"/>
 
         </RelativeLayout>
     </LinearLayout>

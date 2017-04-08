@@ -70,10 +70,10 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
         mMyCanvas.setListener(this);
         mStrokeWidthBar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener);
 
-        setBackgroundColor(mConfig.getBackgroundColor());
-        setColor(mConfig.getBrushColor());
+        setBackgroundColor(Config.newInstance(this).getBackgroundColor());
+        setColor(Config.newInstance(this).getBrushColor());
 
-        strokeWidth = mConfig.getStrokeWidth();
+        strokeWidth = Config.newInstance(this).getStrokeWidth();
         mMyCanvas.setStrokeWidth(strokeWidth);
         mStrokeWidthBar.setProgress((int) strokeWidth);
     }
@@ -81,7 +81,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     @Override
     protected void onResume() {
         super.onResume();
-        boolean isStrokeWidthBarEnabled = mConfig.getIsStrokeWidthBarEnabled();
+        boolean isStrokeWidthBarEnabled = Config.newInstance(this).getShowBrushSizeEnabled();
         mStrokeWidthBar.setVisibility(isStrokeWidthBarEnabled ? View.VISIBLE : View.GONE);
         mMyCanvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled);
     }
@@ -89,8 +89,8 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     @Override
     protected void onPause() {
         super.onPause();
-        mConfig.setBrushColor(color);
-        mConfig.setStrokeWidth(strokeWidth);
+        Config.newInstance(this).setBrushColor(color);
+        Config.newInstance(this).setStrokeWidth(strokeWidth);
     }
 
     @Override
@@ -131,7 +131,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
                             @Override
                             public void onOk(AmbilWarnaDialog dialog, int pickedColor) {
                                 setBackgroundColor(pickedColor);
-                                mConfig.setBackgroundColor(pickedColor);
+                                Config.newInstance(getApplicationContext()).setBackgroundColor(pickedColor);
                             }
                         });
 

@@ -15,7 +15,7 @@
 
     <!-- Settings -->
     <string name="dark_theme">Thème sombre</string>
-    <string name="brush_size">Show brush size tool</string>
+    <string name="show_brush_size">Show brush size tool</string>
     <string name="clear">Tout effacer</string>
     <string name="change_background">Changer le fond</string>
 

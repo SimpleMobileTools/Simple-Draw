@@ -8,5 +8,5 @@ public class Constants {
     public static final String BACKGROUND_COLOR_KEY = "background_color";
     public static final String IS_FIRST_RUN = "is_first_run";
     public static final String IS_DARK_THEME = "is_dark_theme";
-    public static final String IS_STROKE_WIDTH_BAR_ENABLED = "is_stroke_width_bar_enabled";
+    public static final String SHOW_BRUSH_SIZE = "show_brush_size";
 }

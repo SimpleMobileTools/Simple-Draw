@@ -23,20 +23,16 @@ public class Config {
         mPrefs.edit().putBoolean(Constants.IS_FIRST_RUN, firstRun).apply();
     }
 
-    public boolean getIsDarkTheme() {
-        return mPrefs.getBoolean(Constants.IS_DARK_THEME, false);
-    }
-
     public void setIsDarkTheme(boolean isDarkTheme) {
         mPrefs.edit().putBoolean(Constants.IS_DARK_THEME, isDarkTheme).apply();
     }
 
-    public boolean getIsStrokeWidthBarEnabled() {
-        return mPrefs.getBoolean(Constants.IS_STROKE_WIDTH_BAR_ENABLED, false);
+    public boolean getShowBrushSizeEnabled() {
+        return mPrefs.getBoolean(Constants.SHOW_BRUSH_SIZE, false);
     }
 
-    public void setIsStrokeWidthBarEnabled(boolean isStrokeWidthBarEnabled) {
-        mPrefs.edit().putBoolean(Constants.IS_STROKE_WIDTH_BAR_ENABLED, isStrokeWidthBarEnabled).apply();
+    public void setShowBrushSizeEnabled(boolean showBrushSize) {
+        mPrefs.edit().putBoolean(Constants.SHOW_BRUSH_SIZE, showBrushSize).apply();
     }
 
     public int getBrushColor() {
