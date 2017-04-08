@@ -8,7 +8,6 @@ import java.io.*
 import java.util.*
 
 object Svg {
-    @Throws(Exception::class)
     fun saveSvg(output: File, canvas: MyCanvas) {
         val backgroundColor = (canvas.background as ColorDrawable).color
 
@@ -18,7 +17,6 @@ object Svg {
         writer.close()
     }
 
-    @Throws(IOException::class)
     private fun writeSvg(writer: Writer, backgroundColor: Int, paths: Map<MyPath, PaintOptions>, width: Int, height: Int) {
         writer.write("<svg width=\"")
         writer.write(width.toString())
@@ -41,7 +39,6 @@ object Svg {
         writer.write("</svg>")
     }
 
-    @Throws(IOException::class)
     private fun writePath(writer: Writer, path: MyPath, options: PaintOptions) {
         writer.write("<path d=\"")
         for (action in path.getActions()) {
@@ -56,7 +53,6 @@ object Svg {
         writer.write("\" stroke-linecap=\"round\"/>")
     }
 
-    @Throws(Exception::class)
     fun loadSvg(file: File, canvas: MyCanvas) {
         val svg = parseSvg(file)
 
@@ -72,7 +68,6 @@ object Svg {
         }
     }
 
-    @Throws(Exception::class)
     private fun parseSvg(file: File): SSvg {
         var inputStream: InputStream? = null
         val svg = SSvg()

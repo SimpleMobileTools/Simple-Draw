@@ -80,7 +80,6 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
                 try {
                     out = FileOutputStream(file)
                     canvas.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, out)
-                    activity.scanFile(file) {}
                 } catch (e: Exception) {
                     return false
                 } finally {
@@ -89,6 +88,7 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
             }
             SVG -> Svg.saveSvg(file, canvas)
         }
+        activity.scanFile(file) {}
         return true
     }
 }
