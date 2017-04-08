@@ -1,44 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/save_image_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/activity_margin">
 
     <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/file_name_label"
+        android:id="@+id/save_image_path_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/file_name"/>
+        android:text="@string/path"
+        android:textSize="@dimen/smaller_text_size"/>
 
-    <com.simplemobiletools.commons.views.MyEditText
-        android:id="@+id/file_name"
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/save_image_path"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/file_name_label"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/small_margin"
+        android:paddingTop="@dimen/small_margin"/>
+
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/save_image_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filename"
+        android:textSize="@dimen/smaller_text_size"/>
+
+    <com.simplemobiletools.commons.views.MyEditText
+        android:id="@+id/save_image_filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
         android:singleLine="true"
         android:textCursorDrawable="@null"/>
 
     <RadioGroup
-        android:id="@+id/extension_radio_group"
+        android:id="@+id/save_image_radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/file_name"
-        android:checkedButton="@+id/extension_radio_png">
+        android:checkedButton="@+id/save_image_radio_png">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/extension_radio_png"
+            android:id="@+id/save_image_radio_png"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=".png"/>
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/extension_radio_svg"
+            android:id="@+id/save_image_radio_svg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=".svg"/>
 
     </RadioGroup>
-</RelativeLayout>
+</LinearLayout>

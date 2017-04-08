@@ -5,44 +5,35 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.drawable.ColorDrawable
-import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.FileProvider
-import android.support.v7.app.AlertDialog
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.RadioGroup
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.hasWriteStoragePermission
+import com.simplemobiletools.commons.extensions.storeStoragePaths
 import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.Svg
+import com.simplemobiletools.draw.dialogs.SaveImageDialog
 import com.simplemobiletools.draw.extensions.config
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
-import java.io.IOException
 
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
-    private val SAVE_FOLDER_NAME = "Simple Draw"
     private val STORAGE_PERMISSION = 1
 
-    private var curFileName: String? = null
-    private var curExtensionId = 0
-
+    private var curPath = ""
     private var color = 0
     private var strokeWidth = 0f
 
@@ -61,6 +52,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
+        storeStoragePaths()
     }
 
     override fun onResume() {
@@ -131,88 +123,9 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun saveImage() {
-        val saveFileView = layoutInflater.inflate(R.layout.dialog_save_file, null)
-
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(resources.getString(R.string.save_file))
-
-        val fileNameET = saveFileView.findViewById(R.id.file_name) as EditText
-        fileNameET.setText(curFileName)
-
-        val fileExtensionRG = saveFileView.findViewById(R.id.extension_radio_group) as RadioGroup
-        if (curExtensionId != 0) {
-            fileExtensionRG.check(curExtensionId)
+        SaveImageDialog(this, curPath, my_canvas) {
+            curPath = it
         }
-        builder.setView(saveFileView)
-
-        builder.setPositiveButton(R.string.ok, null)
-        builder.setNegativeButton(R.string.cancel, null)
-
-        builder.create().apply {
-            show()
-            getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                val fileName = fileNameET.value
-                if (!fileName.isEmpty()) {
-                    val extension = when (fileExtensionRG.checkedRadioButtonId) {
-                        R.id.extension_radio_svg -> ".svg"
-                        else -> ".png"
-                    }
-
-                    if (saveFile(fileName, extension)) {
-                        curFileName = fileName
-                        curExtensionId = fileExtensionRG.checkedRadioButtonId
-
-                        toast(R.string.saving_ok)
-                        dismiss()
-                    } else {
-                        toast(R.string.saving_error)
-                    }
-                } else {
-                    toast(R.string.enter_file_name)
-                }
-            }
-        }
-    }
-
-    private fun saveFile(fileName: String, extension: String): Boolean {
-        val path = Environment.getExternalStorageDirectory().toString()
-        val directory = File(path, SAVE_FOLDER_NAME)
-        if (!directory.exists()) {
-            if (!directory.mkdir()) {
-                return false
-            }
-        }
-
-        val file = File(directory, fileName + extension)
-        when (extension) {
-            ".png" -> {
-                var out: FileOutputStream? = null
-                try {
-                    out = FileOutputStream(file)
-                    my_canvas.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, out)
-                    MediaScannerConnection.scanFile(applicationContext, arrayOf(file.absolutePath), null, null)
-                } catch (e: Exception) {
-                    return false
-                } finally {
-                    try {
-                        out?.close()
-                    } catch (e: IOException) {
-                    }
-
-                }
-            }
-            ".svg" -> {
-                try {
-                    Svg.saveSvg(file, my_canvas)
-                } catch (e: Exception) {
-                    return false
-                }
-
-            }
-            else -> return false
-        }
-
-        return true
     }
 
     private fun shareImage() {
