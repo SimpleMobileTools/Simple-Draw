@@ -219,11 +219,19 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         super.onRestoreInstanceState(savedState.superState)
 
         mPaths = savedState.mPaths
-        pathsUpdated() // This doesn't seem to be necessary
+        pathsUpdated()
     }
 
     internal class SavedState : View.BaseSavedState {
         var mPaths: MutableMap<MyPath, PaintOptions>? = null
+
+        companion object {
+            val CREATOR: Parcelable.Creator<SavedState> = object : Parcelable.Creator<SavedState> {
+                override fun newArray(size: Int): Array<SavedState> = arrayOf()
+
+                override fun createFromParcel(source: Parcel) = SavedState(source)
+            }
+        }
 
         constructor(superState: Parcelable) : super(superState)
 
@@ -243,14 +251,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 val key = parcel.readSerializable() as MyPath
                 val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat())
                 mPaths!!.put(key, paintOptions)
-            }
-        }
-
-        companion object {
-            val CREATOR: Parcelable.Creator<SavedState> = object : Parcelable.Creator<SavedState> {
-                override fun newArray(size: Int): Array<SavedState> = arrayOf()
-
-                override fun createFromParcel(source: Parcel) = SavedState(source)
             }
         }
     }
