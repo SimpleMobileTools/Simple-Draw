@@ -14,12 +14,12 @@ import com.simplemobiletools.commons.extensions.getContrastColor
 import java.util.*
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
-    private val mPaint: Paint
-    private var mPath: MyPath? = null
-    private var mPaths: MutableMap<MyPath, PaintOptions>? = null
-    private var mListener: PathsChangedListener? = null
+    var mPaths: MutableMap<MyPath, PaintOptions>
+    private var mPaint: Paint
+    private var mPath: MyPath
+    private var mPaintOptions: PaintOptions
 
-    private var mPaintOptions: PaintOptions? = null
+    private var mListener: PathsChangedListener? = null
     private var mCurX = 0f
     private var mCurY = 0f
     private var mStartX = 0f
@@ -28,19 +28,19 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mIsStrokeWidthBarEnabled = false
 
     init {
-
         mPath = MyPath()
-        mPaint = Paint()
         mPaintOptions = PaintOptions()
-        mPaint.color = mPaintOptions!!.color
-        mPaint.style = Paint.Style.STROKE
-        mPaint.strokeJoin = Paint.Join.ROUND
-        mPaint.strokeCap = Paint.Cap.ROUND
-        mPaint.strokeWidth = mPaintOptions!!.strokeWidth
-        mPaint.isAntiAlias = true
+        mPaint = Paint().apply {
+            color = mPaintOptions.color
+            style = Paint.Style.STROKE
+            strokeJoin = Paint.Join.ROUND
+            strokeCap = Paint.Cap.ROUND
+            strokeWidth = mPaintOptions.strokeWidth
+            isAntiAlias = true
+        }
 
         mPaths = LinkedHashMap<MyPath, PaintOptions>()
-        mPaths!!.put(mPath!!, mPaintOptions!!)
+        mPaths.put(mPath, mPaintOptions)
         pathsUpdated()
     }
 
@@ -49,28 +49,25 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun undo() {
-        if (mPaths!!.isEmpty())
+        if (mPaths.isEmpty())
             return
 
-        var lastKey: MyPath? = null
-        for (key in mPaths!!.keys) {
-            lastKey = key
-        }
+        val lastKey: MyPath? = mPaths.keys.lastOrNull()
 
-        mPaths!!.remove(lastKey)
+        mPaths.remove(lastKey)
         pathsUpdated()
         invalidate()
     }
 
     fun setColor(newColor: Int) {
-        mPaintOptions!!.color = newColor
+        mPaintOptions.color = newColor
         if (mIsStrokeWidthBarEnabled) {
             invalidate()
         }
     }
 
     fun setStrokeWidth(newStrokeWidth: Float) {
-        mPaintOptions!!.strokeWidth = newStrokeWidth
+        mPaintOptions.strokeWidth = newStrokeWidth
         if (mIsStrokeWidthBarEnabled) {
             invalidate()
         }
@@ -81,35 +78,31 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         invalidate()
     }
 
-    val bitmap: Bitmap
-        get() {
-            val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-            val canvas = Canvas(bitmap)
-            canvas.drawColor(Color.WHITE)
-            mIsSaving = true
-            draw(canvas)
-            mIsSaving = false
-            return bitmap
-        }
-
-    val paths: Map<MyPath, PaintOptions>
-        get() = mPaths!!
+    fun getBitmap(): Bitmap {
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        canvas.drawColor(Color.WHITE)
+        mIsSaving = true
+        draw(canvas)
+        mIsSaving = false
+        return bitmap
+    }
 
     fun addPath(path: MyPath, options: PaintOptions) {
-        mPaths!!.put(path, options)
+        mPaths.put(path, options)
         pathsUpdated()
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        for ((key, value) in mPaths!!) {
+        for ((key, value) in mPaths) {
             changePaint(value)
             canvas.drawPath(key, mPaint)
         }
 
-        changePaint(mPaintOptions!!)
-        canvas.drawPath(mPath!!, mPaint)
+        changePaint(mPaintOptions)
+        canvas.drawPath(mPath, mPaint)
 
         if (mIsStrokeWidthBarEnabled && !mIsSaving) {
             drawPreviewCircle(canvas)
@@ -121,15 +114,15 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mPaint.style = Paint.Style.FILL
 
         var y = height - res.getDimension(R.dimen.preview_dot_offset_y)
-        canvas.drawCircle((width / 2).toFloat(), y, mPaintOptions!!.strokeWidth / 2, mPaint)
+        canvas.drawCircle((width / 2).toFloat(), y, mPaintOptions.strokeWidth / 2, mPaint)
         mPaint.style = Paint.Style.STROKE
-        mPaint.color = mPaintOptions!!.color.getContrastColor()
+        mPaint.color = mPaintOptions.color.getContrastColor()
         mPaint.strokeWidth = res.getDimension(R.dimen.preview_dot_stroke_size)
 
         y = height - res.getDimension(R.dimen.preview_dot_offset_y)
-        val radius = (mPaintOptions!!.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2
+        val radius = (mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2
         canvas.drawCircle((width / 2).toFloat(), y, radius, mPaint)
-        changePaint(mPaintOptions!!)
+        changePaint(mPaintOptions)
     }
 
     private fun changePaint(paintOptions: PaintOptions) {
@@ -138,45 +131,43 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun clearCanvas() {
-        mPath!!.reset()
-        mPaths!!.clear()
+        mPath.reset()
+        mPaths.clear()
         pathsUpdated()
         invalidate()
     }
 
     private fun actionDown(x: Float, y: Float) {
-        mPath!!.reset()
-        mPath!!.moveTo(x, y)
+        mPath.reset()
+        mPath.moveTo(x, y)
         mCurX = x
         mCurY = y
     }
 
     private fun actionMove(x: Float, y: Float) {
-        mPath!!.quadTo(mCurX, mCurY, (x + mCurX) / 2, (y + mCurY) / 2)
+        mPath.quadTo(mCurX, mCurY, (x + mCurX) / 2, (y + mCurY) / 2)
         mCurX = x
         mCurY = y
     }
 
     private fun actionUp() {
-        mPath!!.lineTo(mCurX, mCurY)
+        mPath.lineTo(mCurX, mCurY)
 
         // draw a dot on click
         if (mStartX == mCurX && mStartY == mCurY) {
-            mPath!!.lineTo(mCurX, mCurY + 2)
-            mPath!!.lineTo(mCurX + 1, mCurY + 2)
-            mPath!!.lineTo(mCurX + 1, mCurY)
+            mPath.lineTo(mCurX, mCurY + 2)
+            mPath.lineTo(mCurX + 1, mCurY + 2)
+            mPath.lineTo(mCurX + 1, mCurY)
         }
 
-        mPaths!!.put(mPath!!, mPaintOptions!!)
+        mPaths.put(mPath, mPaintOptions)
         pathsUpdated()
         mPath = MyPath()
-        mPaintOptions = PaintOptions(mPaintOptions!!.color, mPaintOptions!!.strokeWidth)
+        mPaintOptions = PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth)
     }
 
     private fun pathsUpdated() {
-        if (mListener != null && mPaths != null) {
-            mListener!!.pathsChanged(mPaths!!.size)
-        }
+        mListener?.pathsChanged(mPaths.size)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -207,7 +198,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val superState = super.onSaveInstanceState()
         val savedState = SavedState(superState)
 
-        savedState.mPaths = mPaths
+        savedState.paths = mPaths
         return savedState
     }
 
@@ -219,12 +210,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val savedState = state
         super.onRestoreInstanceState(savedState.superState)
 
-        mPaths = savedState.mPaths
+        mPaths = savedState.paths
         pathsUpdated()
     }
 
     internal class SavedState : View.BaseSavedState {
-        var mPaths: MutableMap<MyPath, PaintOptions>? = null
+        var paths: MutableMap<MyPath, PaintOptions> = HashMap()
 
         companion object {
             val CREATOR: Parcelable.Creator<SavedState> = object : Parcelable.Creator<SavedState> {
@@ -238,8 +229,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         override fun writeToParcel(out: Parcel, flags: Int) {
             super.writeToParcel(out, flags)
-            out.writeInt(mPaths!!.size)
-            for ((key, paintOptions) in mPaths!!) {
+            out.writeInt(paths.size)
+            for ((key, paintOptions) in paths) {
                 out.writeSerializable(key)
                 out.writeInt(paintOptions.color)
                 out.writeFloat(paintOptions.strokeWidth)
@@ -251,7 +242,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             for (i in 0..size - 1) {
                 val key = parcel.readSerializable() as MyPath
                 val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat())
-                mPaths!!.put(key, paintOptions)
+                paths.put(key, paintOptions)
             }
         }
     }

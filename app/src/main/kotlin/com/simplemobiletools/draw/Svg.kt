@@ -14,7 +14,7 @@ object Svg {
 
         val out = FileOutputStream(output)
         val writer = BufferedWriter(OutputStreamWriter(out))
-        writeSvg(writer, backgroundColor, canvas.paths, canvas.width, canvas.height)
+        writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
         writer.close()
     }
 
@@ -32,7 +32,7 @@ object Svg {
         writer.write("\" height=\"")
         writer.write(height.toString())
         writer.write("\" fill=\"#")
-        writer.write(Integer.toHexString(backgroundColor).substring(2)) // Skip the alpha FF
+        writer.write(Integer.toHexString(backgroundColor).substring(2))
         writer.write("\"/>")
 
         for ((key, value) in paths) {
@@ -50,7 +50,7 @@ object Svg {
         }
 
         writer.write("\" fill=\"none\" stroke=\"#")
-        writer.write(Integer.toHexString(options.color).substring(2)) // Skip the alpha FF
+        writer.write(Integer.toHexString(options.color).substring(2))
         writer.write("\" stroke-width=\"")
         writer.write(options.strokeWidth.toString())
         writer.write("\" stroke-linecap=\"round\"/>")
@@ -115,11 +115,11 @@ object Svg {
         return svg
     }
 
-    private class SSvg internal constructor() : Serializable {
-        internal var width: Int = 0
-        internal var height: Int = 0
-        internal var background: SRect? = null
-        internal val paths: ArrayList<SPath> = ArrayList()
+    private class SSvg : Serializable {
+        var background: SRect? = null
+        val paths: ArrayList<SPath> = ArrayList()
+        private var width = 0
+        private var height = 0
 
         internal fun setSize(w: Int, h: Int) {
             width = w
@@ -127,7 +127,7 @@ object Svg {
         }
     }
 
-    private class SRect internal constructor(internal val width: Int, internal val height: Int, internal val color: Int) : Serializable
+    private class SRect(val width: Int, val height: Int, val color: Int) : Serializable
 
-    private class SPath internal constructor(internal var data: String, internal var color: Int, internal var strokeWidth: Float) : Serializable
+    private class SPath(var data: String, var color: Int, var strokeWidth: Float) : Serializable
 }

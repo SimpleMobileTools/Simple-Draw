@@ -10,19 +10,18 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AlertDialog
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.SeekBar
-import android.widget.Toast
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.hasWriteStoragePermission
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
@@ -43,7 +42,6 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private var strokeWidth = 0f
 
     companion object {
-        private val TAG = MainActivity::class.java.simpleName
         private val FOLDER_NAME = "images"
         private val FILE_NAME = "simple-draw.png"
         private val SAVE_FOLDER_NAME = "Simple Draw"
@@ -64,7 +62,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         stroke_width_bar.progress = strokeWidth.toInt()
 
         color_picker.setOnClickListener { pickColor() }
-        undo.setOnClickListener { undo() }
+        undo.setOnClickListener { my_canvas.undo() }
     }
 
     override fun onResume() {
@@ -80,11 +78,6 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         config.brushSize = strokeWidth
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        config.isFirstRun = false
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return true
@@ -92,36 +85,15 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_save -> {
-                saveImage()
-                return true
-            }
-            R.id.menu_share -> {
-                shareImage()
-                return true
-            }
-            R.id.settings -> {
-                startActivity(Intent(applicationContext, SettingsActivity::class.java))
-                return true
-            }
-            R.id.clear -> {
-                my_canvas.clearCanvas()
-                return true
-            }
-            R.id.change_background -> {
-                val oldColor = (my_canvas.background as ColorDrawable).color
-                ColorPickerDialog(this, oldColor) {
-                    setBackgroundColor(it)
-                    config.canvasBackgroundColor = it
-                }
-                return true
-            }
-            R.id.about -> {
-                launchAbout()
-                return true
-            }
+            R.id.menu_save -> saveImage()
+            R.id.menu_share -> shareImage()
+            R.id.clear -> my_canvas.clearCanvas()
+            R.id.change_background -> changeBackgroundClicked()
+            R.id.settings -> launchSettings()
+            R.id.about -> launchAbout()
             else -> return super.onOptionsItemSelected(item)
         }
+        return true
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -131,17 +103,29 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 saveImage()
             } else {
-                Toast.makeText(this, resources.getString(R.string.no_permissions), Toast.LENGTH_SHORT).show()
+                toast(R.string.no_permissions)
             }
         }
+    }
+
+    private fun launchSettings() {
+        startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 
     private fun launchAbout() {
         startAboutActivity(R.string.app_name, LICENSE_KOTLIN, BuildConfig.VERSION_NAME)
     }
 
+    private fun changeBackgroundClicked() {
+        val oldColor = (my_canvas.background as ColorDrawable).color
+        ColorPickerDialog(this, oldColor) {
+            setBackgroundColor(it)
+            config.canvasBackgroundColor = it
+        }
+    }
+
     private fun saveImage() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (!hasWriteStoragePermission()) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), STORAGE_PERMISSION)
             return
         }
@@ -163,28 +147,28 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         builder.setPositiveButton(R.string.ok, null)
         builder.setNegativeButton(R.string.cancel, null)
 
-        val alertDialog = builder.create()
-        alertDialog.show()
-        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-            val fileName = fileNameET.text.toString().trim { it <= ' ' }
-            if (!fileName.isEmpty()) {
-                val extension: String
-                when (fileExtensionRG.checkedRadioButtonId) {
-                    R.id.extension_radio_svg -> extension = ".svg"
-                    else -> extension = ".png"
-                }
+        builder.create().apply {
+            show()
+            getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                val fileName = fileNameET.value
+                if (!fileName.isEmpty()) {
+                    val extension = when (fileExtensionRG.checkedRadioButtonId) {
+                        R.id.extension_radio_svg -> ".svg"
+                        else -> ".png"
+                    }
 
-                if (saveFile(fileName, extension)) {
-                    curFileName = fileName
-                    curExtensionId = fileExtensionRG.checkedRadioButtonId
+                    if (saveFile(fileName, extension)) {
+                        curFileName = fileName
+                        curExtensionId = fileExtensionRG.checkedRadioButtonId
 
-                    toast(R.string.saving_ok)
-                    alertDialog.dismiss()
+                        toast(R.string.saving_ok)
+                        dismiss()
+                    } else {
+                        toast(R.string.saving_error)
+                    }
                 } else {
-                    toast(R.string.saving_error)
+                    toast(R.string.enter_file_name)
                 }
-            } else {
-                toast(R.string.enter_file_name)
             }
         }
     }
@@ -201,20 +185,17 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         val file = File(directory, fileName + extension)
         when (extension) {
             ".png" -> {
-                val bitmap = my_canvas.bitmap
                 var out: FileOutputStream? = null
                 try {
                     out = FileOutputStream(file)
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
+                    my_canvas.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, out)
                     MediaScannerConnection.scanFile(applicationContext, arrayOf(file.absolutePath), null, null)
                 } catch (e: Exception) {
-                    Log.e(TAG, "MainActivity SaveFile (.png) " + e.message)
                     return false
                 } finally {
                     try {
                         out?.close()
                     } catch (e: IOException) {
-                        Log.e(TAG, "MainActivity SaveFile (.png) 2 " + e.message)
                     }
 
                 }
@@ -223,7 +204,6 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 try {
                     Svg.saveSvg(file, my_canvas)
                 } catch (e: Exception) {
-                    Log.e(TAG, "MainActivity SaveFile (.svg) " + e.message)
                     return false
                 }
 
@@ -236,16 +216,16 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun shareImage() {
         val shareTitle = resources.getString(R.string.share_via)
-        val bitmap = my_canvas.bitmap
-        val sendIntent = Intent()
-        val uri = getImageUri(bitmap) ?: return
+        val uri = getImageUri(my_canvas.getBitmap()) ?: return
 
-        sendIntent.action = Intent.ACTION_SEND
-        sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        sendIntent.setDataAndType(uri, contentResolver.getType(uri))
-        sendIntent.putExtra(Intent.EXTRA_STREAM, uri)
-        sendIntent.type = "image/*"
-        startActivity(Intent.createChooser(sendIntent, shareTitle))
+        Intent().apply {
+            action = Intent.ACTION_SEND
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            setDataAndType(uri, contentResolver.getType(uri))
+            putExtra(Intent.EXTRA_STREAM, uri)
+            type = "image/*"
+            startActivity(Intent.createChooser(this, shareTitle))
+        }
     }
 
     private fun getImageUri(bitmap: Bitmap): Uri? {
@@ -264,21 +244,14 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             fileOutputStream = FileOutputStream(file)
             fileOutputStream.write(bytes.toByteArray())
         } catch (e: Exception) {
-            Log.e(TAG, "getImageUri 1 " + e.message)
         } finally {
             try {
                 fileOutputStream?.close()
-            } catch (e: IOException) {
-                Log.e(TAG, "getImageUri 2 " + e.message)
+            } catch (e: Exception) {
             }
-
         }
 
         return FileProvider.getUriForFile(this, "com.simplemobiletools.draw.fileprovider", file)
-    }
-
-    fun undo() {
-        my_canvas.undo()
     }
 
     fun pickColor() {
