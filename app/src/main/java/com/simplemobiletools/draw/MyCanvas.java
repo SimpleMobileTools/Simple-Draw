@@ -35,11 +35,11 @@ public class MyCanvas extends View {
         mPath = new MyPath();
         mPaint = new Paint();
         mPaintOptions = new PaintOptions();
-        mPaint.setColor(mPaintOptions.color);
+        mPaint.setColor(mPaintOptions.getColor());
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(mPaintOptions.strokeWidth);
+        mPaint.setStrokeWidth(mPaintOptions.getStrokeWidth());
         mPaint.setAntiAlias(true);
 
         mPaths = new LinkedHashMap<>();
@@ -66,14 +66,14 @@ public class MyCanvas extends View {
     }
 
     public void setColor(int newColor) {
-        mPaintOptions.color = newColor;
+        mPaintOptions.setColor(newColor);
         if (mIsStrokeWidthBarEnabled) {
             invalidate();
         }
     }
 
     public void setStrokeWidth(float newStrokeWidth) {
-        mPaintOptions.strokeWidth = newStrokeWidth;
+        mPaintOptions.setStrokeWidth(newStrokeWidth);
         if (mIsStrokeWidthBarEnabled) {
             invalidate();
         }
@@ -125,20 +125,20 @@ public class MyCanvas extends View {
         mPaint.setStyle(Paint.Style.FILL);
 
         float y = getHeight() - res.getDimension(R.dimen.preview_dot_offset_y);
-        canvas.drawCircle(getWidth() / 2, y, mPaintOptions.strokeWidth / 2, mPaint);
+        canvas.drawCircle(getWidth() / 2, y, mPaintOptions.getStrokeWidth() / 2, mPaint);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.color) ? Color.WHITE : Color.BLACK);
+        mPaint.setColor(Utils.shouldUseWhite(mPaintOptions.getColor()) ? Color.WHITE : Color.BLACK);
         mPaint.setStrokeWidth(res.getDimension(R.dimen.preview_dot_stroke_size));
 
         y = getHeight() - res.getDimension(R.dimen.preview_dot_offset_y);
-        float radius = (mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2;
+        float radius = (mPaintOptions.getStrokeWidth() + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2;
         canvas.drawCircle(getWidth() / 2, y, radius, mPaint);
         changePaint(mPaintOptions);
     }
 
     private void changePaint(PaintOptions paintOptions) {
-        mPaint.setColor(paintOptions.color);
-        mPaint.setStrokeWidth(paintOptions.strokeWidth);
+        mPaint.setColor(paintOptions.getColor());
+        mPaint.setStrokeWidth(paintOptions.getStrokeWidth());
     }
 
     public void clearCanvas() {
@@ -174,7 +174,7 @@ public class MyCanvas extends View {
         mPaths.put(mPath, mPaintOptions);
         pathsUpdated();
         mPath = new MyPath();
-        mPaintOptions = new PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth);
+        mPaintOptions = new PaintOptions(mPaintOptions.getColor(), mPaintOptions.getStrokeWidth());
     }
 
     private void pathsUpdated() {
@@ -248,8 +248,8 @@ public class MyCanvas extends View {
             for (Map.Entry<MyPath, PaintOptions> entry : mPaths.entrySet()) {
                 out.writeSerializable(entry.getKey());
                 PaintOptions paintOptions = entry.getValue();
-                out.writeInt(paintOptions.color);
-                out.writeFloat(paintOptions.strokeWidth);
+                out.writeInt(paintOptions.getColor());
+                out.writeFloat(paintOptions.getStrokeWidth());
             }
         }
 

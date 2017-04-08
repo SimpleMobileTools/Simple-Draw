@@ -243,7 +243,7 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
             }
             case ".svg": {
                 try {
-                    Svg.saveSvg(file, mMyCanvas);
+                    Svg.INSTANCE.saveSvg(file, mMyCanvas);
                 } catch (Exception e) {
                     Log.e(TAG, "MainActivity SaveFile (.svg) " + e.getMessage());
                     return false;
