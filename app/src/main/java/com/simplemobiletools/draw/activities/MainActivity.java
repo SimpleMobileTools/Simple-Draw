@@ -23,6 +23,7 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.simplemobiletools.commons.activities.AboutActivity;
 import com.simplemobiletools.draw.Config;
 import com.simplemobiletools.draw.MyCanvas;
 import com.simplemobiletools.draw.R;
@@ -46,10 +47,14 @@ public class MainActivity extends SimpleActivity implements MyCanvas.PathsChange
     private static final String SAVE_FOLDER_NAME = "Simple Draw";
     private static final int STORAGE_PERMISSION = 1;
 
-    @BindView(R.id.my_canvas) MyCanvas mMyCanvas;
-    @BindView(R.id.undo) View mUndoBtn;
-    @BindView(R.id.color_picker) View mColorPicker;
-    @BindView(R.id.stroke_width_bar) SeekBar mStrokeWidthBar;
+    @BindView(R.id.my_canvas)
+    MyCanvas mMyCanvas;
+    @BindView(R.id.undo)
+    View mUndoBtn;
+    @BindView(R.id.color_picker)
+    View mColorPicker;
+    @BindView(R.id.stroke_width_bar)
+    SeekBar mStrokeWidthBar;
 
     private String curFileName;
     private int curExtensionId;

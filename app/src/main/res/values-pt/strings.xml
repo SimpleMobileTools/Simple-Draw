@@ -14,29 +14,10 @@
     <string name="cancel">Cancelar</string>
 
     <!-- Settings -->
-    <string name="settings">Definições</string>
     <string name="dark_theme">Tema escuro</string>
     <string name="brush_size">Mostrar ferramenta Tamanho do pincel</string>
     <string name="clear">Limpar</string>
     <string name="change_background">Alterar fundo</string>
-
-    <!-- About -->
-    <string name="about">Acerca</string>
-    <string name="website">Mais aplicações simples e código de fonte em:\nhttp://simplemobiletools.com</string>
-    <string name="email_label">Envie os seus comentários ou sugestões para:</string>
-    <string name="third_party_licences_underlined"><u>Licenças de terceiros</u></string>
-    <string name="invite_friends_underlined"><u>Convidar amigos</u></string>
-    <string name="share_text">Olá, experimenta %1$s em %2$s</string>
-    <string name="invite_via">Convidar via</string>
-    <string name="rate_us_underlined"><u>Avalie-nos na Play Store</u></string>
-    <string name="follow_us">Siga-nos:</string>
-    <string name="copyright">V %1$s\nCopyright © Simple Mobile Tools %2$d</string>
-
-    <!-- License -->
-    <string name="notice">Esta aplicação usa as seguintes bibliotecas de terceiros para facilitar a minha vida. Obrigado.</string>
-    <string name="third_party_licences">Licenças de terceiros</string>
-    <string name="butterknife_title"><u>Butter Knife (injetor de vistas)</u></string>
-    <string name="ambilwarna_title"><u>AmbilWarna (seletor de cores)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">Uma tela para desenhar o que quiser e com diversas cores.</string>

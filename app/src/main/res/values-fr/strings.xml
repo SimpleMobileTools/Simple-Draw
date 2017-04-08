@@ -14,29 +14,10 @@
     <string name="cancel">Annuler</string>
 
     <!-- Settings -->
-    <string name="settings">Paramètres</string>
     <string name="dark_theme">Thème sombre</string>
     <string name="brush_size">Show brush size tool</string>
     <string name="clear">Tout effacer</string>
     <string name="change_background">Changer le fond</string>
-
-    <!-- About -->
-    <string name="about">À propos</string>
-    <string name="website">Plus d\'applications simples et codes sources sur:\nhttp://simplemobiletools.com</string>
-    <string name="email_label">Envoyez votre avis ou suggestions à :</string>
-    <string name="third_party_licences_underlined"><u>Licences tierces</u></string>
-    <string name="invite_friends_underlined"><u>Invitez des amis</u></string>
-    <string name="share_text">Hé, venez voir %1$s à %2$s</string>
-    <string name="invite_via">Inviter via</string>
-    <string name="rate_us_underlined"><u>Notez-nous sur le Play Store</u></string>
-    <string name="follow_us">Suivez-nous :</string>
-    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
-
-    <!-- License -->
-    <string name="notice">Cette application utilise ces bibliothèques tierces pour rendre ma vie plus simple. Merci.</string>
-    <string name="third_party_licences">Licences tierces</string>
-    <string name="butterknife_title">&lt;u &gt;Butter Knife (injecteur de vue)&lt;/u&gt;</string>
-    <string name="ambilwarna_title">&lt;u &gt;AmbilWarna (sélecteur de couleur)&lt;/u&gt;</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">Un canevas sur lequel vous pouvez dessiner avec différentes couleurs.</string>
