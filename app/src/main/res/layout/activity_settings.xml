@@ -15,7 +15,7 @@
             android:id="@+id/settings_dark_theme_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_padding"
+            android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
             android:padding="@dimen/activity_margin">
 
@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/settings_padding"
+                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/dark_theme"/>
 
             <android.support.v7.widget.SwitchCompat
@@ -41,7 +41,7 @@
             android:id="@+id/settings_brush_size_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_padding"
+            android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
             android:padding="@dimen/activity_margin">
 
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/settings_padding"
+                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/brush_size"/>
 
             <android.support.v7.widget.SwitchCompat

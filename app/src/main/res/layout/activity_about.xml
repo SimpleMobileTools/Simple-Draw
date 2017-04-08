@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    android:id="@+id/about_scrollview"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/about_scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -9,10 +9,7 @@
     <RelativeLayout
         android:id="@+id/about_holder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_margin"
-        android:paddingLeft="@dimen/activity_margin"
-        android:paddingTop="@dimen/activity_margin">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/about_website"
@@ -26,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_website"
-            android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/email_label"/>
 
         <TextView
@@ -34,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_email_label"
-            android:paddingBottom="@dimen/activity_margin"
+            android:paddingBottom="1dp"
             android:text="@string/email"/>
 
         <TextView
@@ -42,53 +38,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_email"
-            android:paddingBottom="@dimen/activity_margin"
-            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
             android:text="@string/invite_friends_underlined"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="#ff0000"/>
 
         <TextView
             android:id="@+id/about_rate_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_invite"
-            android:paddingBottom="@dimen/activity_margin"
-            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
             android:text="@string/rate_us_underlined"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="#ff0000"/>
 
         <TextView
             android:id="@+id/about_license"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_rate_us"
-            android:paddingBottom="@dimen/activity_margin"
-            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
             android:text="@string/third_party_licences_underlined"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="#ff0000"/>
 
         <TextView
             android:id="@+id/about_follow_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_license"
-            android:paddingBottom="@dimen/social_padding"
-            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
             android:text="@string/follow_us"/>
 
         <ImageView
             android:id="@+id/about_facebook"
-            android:layout_width="@dimen/social_logo"
-            android:layout_height="@dimen/social_logo"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/about_follow_us"
             android:src="@mipmap/facebook"/>
 
         <ImageView
             android:id="@+id/about_gplus"
-            android:layout_width="@dimen/social_logo"
-            android:layout_height="@dimen/social_logo"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/about_follow_us"
-            android:layout_marginLeft="@dimen/social_padding"
+            android:layout_marginLeft="8dp"
             android:layout_toRightOf="@+id/about_facebook"
             android:src="@mipmap/gplus"/>
 
@@ -99,7 +95,7 @@
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/about_gplus"
             android:gravity="center_horizontal|bottom"
-            android:paddingTop="@dimen/activity_margin"
+            android:paddingTop="16dp"
             android:text="v1.0\nCopyright © Simple Mobile Tools 2016"/>
     </RelativeLayout>
 </ScrollView>

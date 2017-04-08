@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_margin"
             android:text="@string/butterknife_title"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/color_primary"/>
 
         <TextView
             android:id="@+id/license_butterknife_text"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_margin"
             android:text="@string/ambilwarna_title"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/color_primary"/>
 
         <TextView
             android:id="@+id/license_ambilwarna_text"
