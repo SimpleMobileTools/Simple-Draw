@@ -35,18 +35,16 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
+    private val FOLDER_NAME = "images"
+    private val FILE_NAME = "simple-draw.png"
+    private val SAVE_FOLDER_NAME = "Simple Draw"
+    private val STORAGE_PERMISSION = 1
+
     private var curFileName: String? = null
     private var curExtensionId = 0
 
     private var color = 0
     private var strokeWidth = 0f
-
-    companion object {
-        private val FOLDER_NAME = "images"
-        private val FILE_NAME = "simple-draw.png"
-        private val SAVE_FOLDER_NAME = "Simple Draw"
-        private val STORAGE_PERMISSION = 1
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,7 +83,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_save -> saveImage()
+            R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
             R.id.clear -> my_canvas.clearCanvas()
             R.id.change_background -> changeBackgroundClicked()
@@ -124,13 +122,16 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         }
     }
 
-    private fun saveImage() {
+    private fun trySaveImage() {
         if (!hasWriteStoragePermission()) {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), STORAGE_PERMISSION)
-            return
+            saveImage()
+        } else {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_PERMISSION)
         }
+    }
 
-        val saveFileView = layoutInflater.inflate(R.layout.save_file, null)
+    private fun saveImage() {
+        val saveFileView = layoutInflater.inflate(R.layout.dialog_save_file, null)
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(resources.getString(R.string.save_file))

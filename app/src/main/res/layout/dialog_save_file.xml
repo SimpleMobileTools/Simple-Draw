@@ -6,19 +6,20 @@
     android:orientation="vertical"
     android:padding="@dimen/activity_margin">
 
-    <TextView
+    <com.simplemobiletools.commons.views.MyTextView
         android:id="@+id/file_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/file_name"/>
 
-    <EditText
+    <com.simplemobiletools.commons.views.MyEditText
         android:id="@+id/file_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/file_name_label"
         android:layout_marginBottom="@dimen/activity_margin"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:textCursorDrawable="@null"/>
 
     <RadioGroup
         android:id="@+id/extension_radio_group"
@@ -27,16 +28,17 @@
         android:layout_below="@+id/file_name"
         android:checkedButton="@+id/extension_radio_png">
 
-        <RadioButton
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/extension_radio_png"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=".png"/>
 
-        <RadioButton
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/extension_radio_svg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=".svg"/>
+
     </RadioGroup>
 </RelativeLayout>
