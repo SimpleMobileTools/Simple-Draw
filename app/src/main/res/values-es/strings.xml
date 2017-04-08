@@ -1,29 +1,16 @@
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Draw</string>
-    <string name="save">Guardar</string>
-    <string name="share">Compartir</string>
-    <string name="share_via">Compartir via</string>
-    <string name="saving_error">No se pudo guardar el archivo</string>
-    <string name="saving_ok">La imagen se ha guardado correctamente</string>
-    <string name="file_name">Nombre del archivo</string>
-    <string name="save_file">Guardar archivo</string>
-    <string name="enter_file_name">Por favor introduce el nombre del archivo</string>
-    <string name="no_permissions">No se puede guardar el archivo sin acceder al almacenamiento externo</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
-    <string name="dark_theme">Tema oscuro</string>
     <string name="show_brush_size">Show brush size tool</string>
     <string name="clear">Limpiar</string>
-    <string name="change_background">Cambiar fondo</string>
+    <string name="change_background_color">Cambiar fondo</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">Un lienzo en el cual puede dibujar con diferentes colores.</string>
     <string name="app_long_description">
         ¿Quiere dibujar algo pero no tiene papel? Esta aplicación es ideal para solucionarlo. Tan solo elija un color y dibuje. Puede tanto guargar el dibujo como compartirlo directamente mediante e-mail o redes sociales.
-
 
         No contiene anuncios ni permisos innecesarios. Es completamente OpenSource y además provee un tema oscuro.
 

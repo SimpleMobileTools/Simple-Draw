@@ -1,29 +1,16 @@
 <resources>
     <string name="app_name">Schlichter Zeichenblock</string>
     <string name="app_launcher_name">Zeichenblock</string>
-    <string name="save">Speichern</string>
-    <string name="share">Teilen</string>
-    <string name="share_via">Teile via</string>
-    <string name="saving_error">Konnte die Datei nicht speichern</string>
-    <string name="saving_ok">Bild wurde erfolgreich gespeichert</string>
-    <string name="file_name">Dateiname</string>
-    <string name="save_file">Speichere Datei</string>
-    <string name="enter_file_name">Bitte gib einen Dateinamen ein</string>
-    <string name="no_permissions">Konnte die Datei ohne Zugriff auf den externen Speicher nicht speichern</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Abbrechen</string>
 
     <!-- Settings -->
-    <string name="dark_theme">Dunkles Design</string>
     <string name="show_brush_size">Show brush size tool</string>
     <string name="clear">Leeren</string>
-    <string name="change_background">Change background</string>
+    <string name="change_background_color">Change background color</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">A canvas you can draw on with different colors.</string>
     <string name="app_long_description">
         Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
-
 
         Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
 

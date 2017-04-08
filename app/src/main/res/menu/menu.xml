@@ -18,7 +18,7 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/change_background"
-        android:title="@string/change_background"
+        android:title="@string/change_background_color"
         app:showAsAction="never"/>
     <item
         android:id="@+id/settings"

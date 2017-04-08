@@ -1,29 +1,16 @@
 <resources>
     <string name="app_name">Dessin simple</string>
     <string name="app_launcher_name">Dessiner</string>
-    <string name="save">Sauver</string>
-    <string name="share">Partager</string>
-    <string name="share_via">Partager via</string>
-    <string name="saving_error">Ne peut pas sauver le fichier</string>
-    <string name="saving_ok">L\'image a été sauvée avec succès</string>
-    <string name="file_name">Nom de fichier</string>
-    <string name="save_file">Sauver le fichier</string>
-    <string name="enter_file_name">Entrez un nom de fichier</string>
-    <string name="no_permissions">Ne peut sauver le fichier sans accéder au stockage externe</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Annuler</string>
 
     <!-- Settings -->
-    <string name="dark_theme">Thème sombre</string>
     <string name="show_brush_size">Show brush size tool</string>
     <string name="clear">Tout effacer</string>
-    <string name="change_background">Changer le fond</string>
+    <string name="change_background_color">Changer le fond</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">Un canevas sur lequel vous pouvez dessiner avec différentes couleurs.</string>
     <string name="app_long_description">
         Envie de dessiner quelque chose mais pas de papier ? Cette application est faite pour vous. Sélectionnez simplement une couleur et dessinez. Vous pouvez soit sauver le dessin soit le partager par email ou les réseaux sociaux.
-
 
         Pas de pubs ni de permissions inutiles. C\'est totalement open-source et possède un thème sombre.
 

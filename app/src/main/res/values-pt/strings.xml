@@ -1,29 +1,16 @@
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Desenho</string>
-    <string name="save">Guardar</string>
-    <string name="share">Partilhar</string>
-    <string name="share_via">Partilhar via</string>
-    <string name="saving_error">Não foi possível guardar o ficheiro</string>
-    <string name="saving_ok">A imagem foi guardada com sucesso</string>
-    <string name="file_name">Nome do ficheiro</string>
-    <string name="save_file">Guardar ficheiro</string>
-    <string name="enter_file_name">Por favor digite um nome para o ficheiro</string>
-    <string name="no_permissions">Para guardar o ficheiro, é necessário o acesso ao armazenamento externo</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancelar</string>
 
     <!-- Settings -->
-    <string name="dark_theme">Tema escuro</string>
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
     <string name="clear">Limpar</string>
-    <string name="change_background">Alterar fundo</string>
+    <string name="change_background_color">Alterar fundo</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">Uma tela para desenhar o que quiser e com diversas cores.</string>
     <string name="app_long_description">
         Gostaria de desenhar algo mas não tem papel? Então, esta aplicação é para si. Basta escolher uma cor e desenhar. Após criar o desenho, pode guardar ou partilhar o ficheiro através de e-mail ou das redes sociais.
-
 
         Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente \'open source\'.
 

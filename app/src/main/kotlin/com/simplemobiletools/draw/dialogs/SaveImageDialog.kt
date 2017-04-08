@@ -57,11 +57,11 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
                 }
 
                 if (saveFile(newFile)) {
-                    activity.toast(R.string.saving_ok)
+                    activity.toast(R.string.file_saved)
                     callback(newFile.absolutePath)
                     dismiss()
                 } else {
-                    activity.toast(R.string.saving_error)
+                    activity.toast(R.string.unknown_error_occurred)
                 }
             })
         }

@@ -91,7 +91,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 saveImage()
             } else {
-                toast(R.string.no_permissions)
+                toast(R.string.no_storage_permissions)
             }
         }
     }

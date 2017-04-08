@@ -1,29 +1,16 @@
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Draw</string>
-    <string name="save">Save</string>
-    <string name="share">Share</string>
-    <string name="share_via">Share via</string>
-    <string name="saving_error">Could not save the file</string>
-    <string name="saving_ok">Image has been saved successfully</string>
-    <string name="file_name">File name</string>
-    <string name="save_file">Save file</string>
-    <string name="enter_file_name">Please enter a file name</string>
-    <string name="no_permissions">Could not save the file without accessing the external storage</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
-    <string name="dark_theme">Dark theme</string>
     <string name="show_brush_size">Show brush size tool</string>
     <string name="clear">Clear</string>
-    <string name="change_background">Change background</string>
+    <string name="change_background_color">Change background color</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">A canvas you can draw on with different colors.</string>
     <string name="app_long_description">
         Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
-
 
         Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
 

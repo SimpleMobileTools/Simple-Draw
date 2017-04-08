@@ -1,29 +1,16 @@
 ﻿<resources>
     <string name="app_name">シンプル ドロー</string>
     <string name="app_launcher_name">ドロー</string>
-    <string name="save">保存</string>
-    <string name="share">共有</string>
-    <string name="share_via">共有...</string>
-    <string name="saving_error">ファイルを保存できませんでした</string>
-    <string name="saving_ok">画像を正常に保存しました</string>
-    <string name="file_name">ファイル名</string>
-    <string name="save_file">ファイルを保存</string>
-    <string name="enter_file_name">ファイル名を入力してください</string>
-    <string name="no_permissions">外部ストレージにアクセスできないためファイルを保存できませんでした</string>
-    <string name="ok">OK</string>
-    <string name="cancel">キャンセル</string>
 
     <!-- Settings -->
-    <string name="dark_theme">ダークテーマ</string>
     <string name="show_brush_size">Show brush size tool</string>
     <string name="clear">クリア</string>
-    <string name="change_background">Change background</string>
+    <string name="change_background_color">Change background color</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <string name="app_short_description">さまざまな色で描くことができるキャンバス。</string>
     <string name="app_long_description">
         何かを描きたいけど、紙を持っていない？ このアプリが完全に合っています。 色を選んで描くだけです。 画像を保存したり、メールやソーシャルネットワークで直接共有することができます。
-
 
         広告や不要なアクセス許可は含まれていません。 完全にオープンソースで、ダークテーマも提供しています。
 
