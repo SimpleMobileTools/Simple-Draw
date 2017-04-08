@@ -22,7 +22,10 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.simplemobiletools.commons.activities.AboutActivity
-import com.simplemobiletools.draw.*
+import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.draw.MyCanvas
+import com.simplemobiletools.draw.R
+import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.helpers.Config
 import yuku.ambilwarna.AmbilWarnaDialog
 import java.io.ByteArrayOutputStream
@@ -180,13 +183,13 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                     curFileName = fileName
                     curExtensionId = fileExtensionRG.checkedRadioButtonId
 
-                    Utils.showToast(applicationContext, R.string.saving_ok)
+                    toast(R.string.saving_ok)
                     alertDialog.dismiss()
                 } else {
-                    Utils.showToast(applicationContext, R.string.saving_error)
+                    toast(R.string.saving_error)
                 }
             } else {
-                Utils.showToast(applicationContext, R.string.enter_file_name)
+                toast(R.string.enter_file_name)
             }
         }
     }

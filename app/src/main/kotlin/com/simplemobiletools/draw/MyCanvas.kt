@@ -10,6 +10,7 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.simplemobiletools.commons.extensions.getContrastColor
 import java.util.*
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
@@ -122,7 +123,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         var y = height - res.getDimension(R.dimen.preview_dot_offset_y)
         canvas.drawCircle((width / 2).toFloat(), y, mPaintOptions!!.strokeWidth / 2, mPaint)
         mPaint.style = Paint.Style.STROKE
-        mPaint.color = if (Utils.shouldUseWhite(mPaintOptions!!.color)) Color.WHITE else Color.BLACK
+        mPaint.color = mPaintOptions!!.color.getContrastColor()
         mPaint.strokeWidth = res.getDimension(R.dimen.preview_dot_stroke_size)
 
         y = height - res.getDimension(R.dimen.preview_dot_offset_y)
