@@ -2,7 +2,7 @@ package com.simplemobiletools.draw.activities
 
 import android.os.Bundle
 import com.simplemobiletools.commons.extensions.updateTextColors
-import com.simplemobiletools.draw.Config
+import com.simplemobiletools.draw.helpers.Config
 import com.simplemobiletools.draw.R
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -27,10 +27,10 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupBrushSize() {
-        settings_show_brush_size.isChecked = Config.newInstance(this).showBrushSizeEnabled
+        settings_show_brush_size.isChecked = Config.newInstance(this).showBrushSize
         settings_show_brush_size_holder.setOnClickListener {
             settings_show_brush_size.toggle()
-            Config.newInstance(this).showBrushSizeEnabled = settings_show_brush_size.isChecked
+            Config.newInstance(this).showBrushSize = settings_show_brush_size.isChecked
         }
     }
 }

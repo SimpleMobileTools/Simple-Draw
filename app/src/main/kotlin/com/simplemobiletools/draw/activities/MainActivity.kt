@@ -23,6 +23,7 @@ import butterknife.ButterKnife
 import butterknife.OnClick
 import com.simplemobiletools.commons.activities.AboutActivity
 import com.simplemobiletools.draw.*
+import com.simplemobiletools.draw.helpers.Config
 import yuku.ambilwarna.AmbilWarnaDialog
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -57,17 +58,17 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         mMyCanvas!!.setListener(this)
         mStrokeWidthBar!!.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
-        setBackgroundColor(Config.newInstance(this).backgroundColor)
+        setBackgroundColor(Config.newInstance(this).canvasBackgroundColor)
         setColor(Config.newInstance(this).brushColor)
 
-        strokeWidth = Config.newInstance(this).strokeWidth
+        strokeWidth = Config.newInstance(this).brushSize
         mMyCanvas!!.setStrokeWidth(strokeWidth)
         mStrokeWidthBar!!.progress = strokeWidth.toInt()
     }
 
     override fun onResume() {
         super.onResume()
-        val isStrokeWidthBarEnabled = Config.newInstance(this).showBrushSizeEnabled
+        val isStrokeWidthBarEnabled = Config.newInstance(this).showBrushSize
         mStrokeWidthBar!!.visibility = if (isStrokeWidthBarEnabled) View.VISIBLE else View.GONE
         mMyCanvas!!.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
     }
@@ -75,7 +76,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     override fun onPause() {
         super.onPause()
         Config.newInstance(this).brushColor = color
-        Config.newInstance(this).strokeWidth = strokeWidth
+        Config.newInstance(this).brushSize = strokeWidth
     }
 
     override fun onDestroy() {
@@ -114,7 +115,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
                             override fun onOk(dialog: AmbilWarnaDialog, pickedColor: Int) {
                                 setBackgroundColor(pickedColor)
-                                Config.newInstance(applicationContext).backgroundColor = pickedColor
+                                Config.newInstance(applicationContext).canvasBackgroundColor = pickedColor
                             }
                         })
 
