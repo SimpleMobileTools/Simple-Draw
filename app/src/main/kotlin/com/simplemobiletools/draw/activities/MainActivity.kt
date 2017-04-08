@@ -16,30 +16,25 @@ import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.*
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
+import android.widget.EditText
+import android.widget.RadioGroup
+import android.widget.SeekBar
+import android.widget.Toast
 import com.simplemobiletools.commons.activities.AboutActivity
+import com.simplemobiletools.commons.dialogs.ColorPickerDialog
+import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.helpers.Config
-import yuku.ambilwarna.AmbilWarnaDialog
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
-
-    @BindView(R.id.my_canvas) internal var mMyCanvas: MyCanvas? = null
-    @BindView(R.id.undo) internal var mUndoBtn: View? = null
-    @BindView(R.id.color_picker) internal var mColorPicker: View? = null
-    @BindView(R.id.stroke_width_bar) internal var mStrokeWidthBar: SeekBar? = null
-
     private var curFileName: String? = null
     private var curExtensionId = 0
 
@@ -57,23 +52,25 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this)
-        mMyCanvas!!.setListener(this)
-        mStrokeWidthBar!!.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
+        my_canvas.setListener(this)
+        stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
         setBackgroundColor(Config.newInstance(this).canvasBackgroundColor)
         setColor(Config.newInstance(this).brushColor)
 
         strokeWidth = Config.newInstance(this).brushSize
-        mMyCanvas!!.setStrokeWidth(strokeWidth)
-        mStrokeWidthBar!!.progress = strokeWidth.toInt()
+        my_canvas.setStrokeWidth(strokeWidth)
+        stroke_width_bar.progress = strokeWidth.toInt()
+
+        color_picker.setOnClickListener { pickColor() }
+        undo.setOnClickListener { undo() }
     }
 
     override fun onResume() {
         super.onResume()
         val isStrokeWidthBarEnabled = Config.newInstance(this).showBrushSize
-        mStrokeWidthBar!!.visibility = if (isStrokeWidthBarEnabled) View.VISIBLE else View.GONE
-        mMyCanvas!!.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
+        stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
+        my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
     }
 
     override fun onPause() {
@@ -107,22 +104,15 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 return true
             }
             R.id.clear -> {
-                mMyCanvas!!.clearCanvas()
+                my_canvas.clearCanvas()
                 return true
             }
             R.id.change_background -> {
-                val oldColor = (mMyCanvas!!.background as ColorDrawable).color
-                val dialog = AmbilWarnaDialog(this, oldColor,
-                        object : AmbilWarnaDialog.OnAmbilWarnaListener {
-                            override fun onCancel(dialog: AmbilWarnaDialog) {}
-
-                            override fun onOk(dialog: AmbilWarnaDialog, pickedColor: Int) {
-                                setBackgroundColor(pickedColor)
-                                Config.newInstance(applicationContext).canvasBackgroundColor = pickedColor
-                            }
-                        })
-
-                dialog.show()
+                val oldColor = (my_canvas.background as ColorDrawable).color
+                ColorPickerDialog(this, oldColor) {
+                    setBackgroundColor(it)
+                    Config.newInstance(applicationContext).canvasBackgroundColor = it
+                }
                 return true
             }
             R.id.about -> {
@@ -206,7 +196,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         val file = File(directory, fileName + extension)
         when (extension) {
             ".png" -> {
-                val bitmap = mMyCanvas!!.bitmap
+                val bitmap = my_canvas.bitmap
                 var out: FileOutputStream? = null
                 try {
                     out = FileOutputStream(file)
@@ -217,9 +207,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                     return false
                 } finally {
                     try {
-                        if (out != null) {
-                            out.close()
-                        }
+                        out?.close()
                     } catch (e: IOException) {
                         Log.e(TAG, "MainActivity SaveFile (.png) 2 " + e.message)
                     }
@@ -228,7 +216,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             }
             ".svg" -> {
                 try {
-                    Svg.saveSvg(file, mMyCanvas!!)
+                    Svg.saveSvg(file, my_canvas)
                 } catch (e: Exception) {
                     Log.e(TAG, "MainActivity SaveFile (.svg) " + e.message)
                     return false
@@ -243,7 +231,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun shareImage() {
         val shareTitle = resources.getString(R.string.share_via)
-        val bitmap = mMyCanvas!!.bitmap
+        val bitmap = my_canvas.bitmap
         val sendIntent = Intent()
         val uri = getImageUri(bitmap) ?: return
 
@@ -274,8 +262,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             Log.e(TAG, "getImageUri 1 " + e.message)
         } finally {
             try {
-                if (fileOutputStream != null)
-                    fileOutputStream.close()
+                fileOutputStream?.close()
             } catch (e: IOException) {
                 Log.e(TAG, "getImageUri 2 " + e.message)
             }
@@ -285,42 +272,34 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         return FileProvider.getUriForFile(this, "com.simplemobiletools.draw.fileprovider", file)
     }
 
-    @OnClick(R.id.undo)
     fun undo() {
-        mMyCanvas!!.undo()
+        my_canvas.undo()
     }
 
-    @OnClick(R.id.color_picker)
     fun pickColor() {
-        val dialog = AmbilWarnaDialog(this, color, object : AmbilWarnaDialog.OnAmbilWarnaListener {
-            override fun onCancel(dialog: AmbilWarnaDialog) {}
-
-            override fun onOk(dialog: AmbilWarnaDialog, pickedColor: Int) {
-                setColor(pickedColor)
-            }
-        })
-
-        dialog.show()
+        ColorPickerDialog(this, color) {
+            setColor(it)
+        }
     }
 
     private fun setBackgroundColor(pickedColor: Int) {
-        (mUndoBtn as ImageView).setImageResource(R.drawable.ic_undo)
-        mMyCanvas!!.setBackgroundColor(pickedColor)
+        undo.setImageResource(R.drawable.ic_undo)
+        my_canvas.setBackgroundColor(pickedColor)
     }
 
     private fun setColor(pickedColor: Int) {
         color = pickedColor
-        mColorPicker!!.setBackgroundColor(color)
-        mMyCanvas!!.setColor(color)
+        color_picker.setBackgroundColor(color)
+        my_canvas.setColor(color)
     }
 
     override fun pathsChanged(cnt: Int) {
-        mUndoBtn!!.visibility = if (cnt > 0) View.VISIBLE else View.GONE
+        undo.beVisibleIf(cnt > 0)
     }
 
     internal var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
         override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-            mMyCanvas!!.setStrokeWidth(progress.toFloat())
+            my_canvas.setStrokeWidth(progress.toFloat())
             strokeWidth = progress.toFloat()
         }
 

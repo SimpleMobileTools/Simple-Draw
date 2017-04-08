@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -34,10 +33,6 @@ android {
 
 dependencies {
     compile 'com.simplemobiletools:commons:2.16.1'
-    compile 'com.jakewharton:butterknife:8.0.1'
-    compile 'com.github.yukuku:ambilwarna:2.0.1'
-
-    apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
