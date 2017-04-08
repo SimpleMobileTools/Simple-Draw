@@ -12,7 +12,7 @@ import java.security.InvalidParameterException
 import java.util.*
 
 // https://stackoverflow.com/a/8127953
-internal class MyPath : Path(), Serializable {
+class MyPath : Path(), Serializable {
 
     private val actions = LinkedList<Action>()
 

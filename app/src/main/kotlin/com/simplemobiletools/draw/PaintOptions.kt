@@ -2,7 +2,7 @@ package com.simplemobiletools.draw
 
 import android.graphics.Color
 
-internal class PaintOptions {
+class PaintOptions {
     var color = Color.BLACK
     var strokeWidth = 5f
 
