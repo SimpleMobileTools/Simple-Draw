@@ -109,13 +109,17 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun openFile() {
         FilePickerDialog(this, curPath) {
-            if (it.endsWith(".svg")) {
-                Svg.loadSvg(this, File(it), my_canvas)
-            } else if (File(it).isImageSlow()) {
+            tryOpenFile(it)
+        }
+    }
 
-            } else {
-                toast(R.string.invalid_file_format)
-            }
+    private fun tryOpenFile(path: String) {
+        if (path.endsWith(".svg")) {
+            Svg.loadSvg(this, File(path), my_canvas)
+        } else if (File(path).isImageSlow()) {
+
+        } else {
+            toast(R.string.invalid_file_format)
         }
     }
 
@@ -187,7 +191,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         }
     }
 
-    private fun setBackgroundColor(pickedColor: Int) {
+    fun setBackgroundColor(pickedColor: Int) {
         undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
         my_canvas.setBackgroundColor(pickedColor)
     }

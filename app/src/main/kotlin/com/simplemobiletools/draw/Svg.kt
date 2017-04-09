@@ -1,10 +1,10 @@
 package com.simplemobiletools.draw
 
-import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.sax.RootElement
 import android.util.Xml
+import com.simplemobiletools.draw.activities.MainActivity
 import java.io.*
 import java.util.*
 
@@ -46,11 +46,11 @@ object Svg {
         }
     }
 
-    fun loadSvg(activity: Activity, file: File, canvas: MyCanvas) {
+    fun loadSvg(activity: MainActivity, file: File, canvas: MyCanvas) {
         val svg = parseSvg(file)
 
         canvas.clearCanvas()
-        canvas.setBackgroundColor(svg.background!!.color)
+        activity.setBackgroundColor(svg.background!!.color)
 
         svg.paths.forEach {
             val path = MyPath()
