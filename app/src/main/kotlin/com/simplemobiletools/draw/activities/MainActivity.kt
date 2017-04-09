@@ -115,6 +115,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun tryOpenFile(path: String) {
         if (path.endsWith(".svg")) {
+            my_canvas.mBackgroundBitmap = null
             Svg.loadSvg(this, File(path), my_canvas)
         } else if (File(path).isImageSlow()) {
             my_canvas.drawBitmap(path)
@@ -194,6 +195,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     fun setBackgroundColor(pickedColor: Int) {
         undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
         my_canvas.setBackgroundColor(pickedColor)
+        my_canvas.mBackgroundBitmap = null
     }
 
     private fun setColor(pickedColor: Int) {

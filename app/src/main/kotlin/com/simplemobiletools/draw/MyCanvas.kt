@@ -12,6 +12,7 @@ import java.util.*
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     var mPaths: MutableMap<MyPath, PaintOptions>
+    var mBackgroundBitmap: Bitmap? = null
     private var mPaint: Paint
     private var mPath: MyPath
     private var mPaintOptions: PaintOptions
@@ -23,7 +24,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mStartY = 0f
     private var mIsSaving = false
     private var mIsStrokeWidthBarEnabled = false
-    private var mDrawBitmapAsBackground: Bitmap? = null
 
     init {
         mPath = MyPath()
@@ -87,7 +87,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun drawBitmap(path: String) {
-        mDrawBitmapAsBackground = BitmapFactory.decodeFile(path)
+        mBackgroundBitmap = BitmapFactory.decodeFile(path)
         invalidate()
     }
 
@@ -99,8 +99,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        if (mDrawBitmapAsBackground != null) {
-            canvas.drawBitmap(mDrawBitmapAsBackground, 0f, 0f, null)
+        if (mBackgroundBitmap != null) {
+            canvas.drawBitmap(mBackgroundBitmap, 0f, 0f, null)
         }
 
         for ((key, value) in mPaths) {
@@ -138,6 +138,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun clearCanvas() {
+        mBackgroundBitmap = null
         mPath.reset()
         mPaths.clear()
         pathsUpdated()
