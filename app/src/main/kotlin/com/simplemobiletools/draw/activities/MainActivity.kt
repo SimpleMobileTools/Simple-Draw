@@ -36,11 +36,13 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private val FILE_NAME = "simple-draw.png"
     private val SAVE_IMAGE = 1
     private val OPEN_FILE = 2
+    private val OPEN_FILE_INTENT = 3
 
     private var curPath = ""
     private var color = 0
     private var strokeWidth = 0f
     private var suggestedFileExtension = PNG
+    private var openFileIntentPath = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +60,16 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
         storeStoragePaths()
+
+        if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
+            val path = intent.data!!.path
+            if (hasWriteStoragePermission()) {
+                openPath(path)
+            } else {
+                openFileIntentPath = path
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), OPEN_FILE_INTENT)
+            }
+        }
     }
 
     override fun onResume() {
@@ -100,6 +112,8 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 saveImage()
             } else if (requestCode == OPEN_FILE) {
                 openFile()
+            } else if (requestCode == OPEN_FILE_INTENT) {
+                openPath(openFileIntentPath)
             }
         } else {
             toast(R.string.no_storage_permissions)
