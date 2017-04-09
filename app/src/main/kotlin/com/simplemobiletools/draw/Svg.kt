@@ -1,5 +1,6 @@
 package com.simplemobiletools.draw
 
+import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.sax.RootElement
@@ -45,7 +46,7 @@ object Svg {
         }
     }
 
-    fun loadSvg(file: File, canvas: MyCanvas) {
+    fun loadSvg(activity: Activity, file: File, canvas: MyCanvas) {
         val svg = parseSvg(file)
 
         canvas.clearCanvas()
@@ -53,7 +54,7 @@ object Svg {
 
         svg.paths.forEach {
             val path = MyPath()
-            path.readObject(it.data)
+            path.readObject(it.data, activity)
             val options = PaintOptions(it.color, it.strokeWidth)
 
             canvas.addPath(path, options)

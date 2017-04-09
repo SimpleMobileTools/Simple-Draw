@@ -1,6 +1,8 @@
 package com.simplemobiletools.draw
 
+import android.app.Activity
 import android.graphics.Path
+import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.draw.actions.Action
 import com.simplemobiletools.draw.actions.Line
 import com.simplemobiletools.draw.actions.Move
@@ -23,25 +25,29 @@ class MyPath : Path(), Serializable {
         }
     }
 
-    fun readObject(pathData: String) {
+    fun readObject(pathData: String, activity: Activity) {
         val tokens = pathData.split("\\s+".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
         var i = 0
-        while (i < tokens.size) {
-            when (tokens[i][0]) {
-                'M' -> addAction(Move(tokens[i]))
-                'L' -> addAction(Line(tokens[i]))
-                'Q' -> {
-                    // Quad actions are of the following form:
-                    // "Qx1,y1 x2,y2"
-                    // Since we split the tokens by whitespace, we need to join them again
-                    if (i + 1 >= tokens.size)
-                        throw InvalidParameterException("Error parsing the data for a Quad.")
+        try {
+            while (i < tokens.size) {
+                when (tokens[i][0]) {
+                    'M' -> addAction(Move(tokens[i]))
+                    'L' -> addAction(Line(tokens[i]))
+                    'Q' -> {
+                        // Quad actions are of the following form:
+                        // "Qx1,y1 x2,y2"
+                        // Since we split the tokens by whitespace, we need to join them again
+                        if (i + 1 >= tokens.size)
+                            throw InvalidParameterException("Error parsing the data for a Quad.")
 
-                    addAction(Quad(tokens[i] + " " + tokens[i + 1]))
-                    ++i
+                        addAction(Quad(tokens[i] + " " + tokens[i + 1]))
+                        ++i
+                    }
                 }
+                ++i
             }
-            ++i
+        } catch (e: Exception) {
+            activity.toast(R.string.unknown_error_occurred)
         }
     }
 

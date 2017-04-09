@@ -110,7 +110,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private fun openFile() {
         FilePickerDialog(this, curPath) {
             if (it.endsWith(".svg")) {
-                Svg.loadSvg(File(it), my_canvas)
+                Svg.loadSvg(this, File(it), my_canvas)
             } else if (File(it).isImageSlow()) {
 
             } else {
