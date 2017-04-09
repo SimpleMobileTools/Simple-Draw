@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
+import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.draw.BuildConfig
@@ -76,6 +77,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
             R.id.clear -> my_canvas.clearCanvas()
+            R.id.open_file -> openFile()
             R.id.change_background -> changeBackgroundClicked()
             R.id.settings -> launchSettings()
             R.id.about -> launchAbout()
@@ -102,6 +104,12 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun launchAbout() {
         startAboutActivity(R.string.app_name, LICENSE_KOTLIN, BuildConfig.VERSION_NAME)
+    }
+
+    private fun openFile() {
+        FilePickerDialog(this, curPath) {
+
+        }
     }
 
     private fun changeBackgroundClicked() {

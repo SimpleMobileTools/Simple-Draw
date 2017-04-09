@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Dessin simple</string>
     <string name="app_launcher_name">Dessiner</string>
+    <string name="open_file">Open file</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Show brush size tool</string>

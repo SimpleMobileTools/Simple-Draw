@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Desenho</string>
+    <string name="open_file">Open file</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>

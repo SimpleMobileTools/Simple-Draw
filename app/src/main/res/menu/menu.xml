@@ -17,6 +17,10 @@
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/open_file"
+        android:title="@string/open_file"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/change_background"
         android:title="@string/change_background_color"
         app:showAsAction="never"/>
