@@ -23,6 +23,9 @@ import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.dialogs.SaveImageDialog
 import com.simplemobiletools.draw.extensions.config
+import com.simplemobiletools.draw.helpers.JPG
+import com.simplemobiletools.draw.helpers.PNG
+import com.simplemobiletools.draw.helpers.SVG
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -37,6 +40,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private var curPath = ""
     private var color = 0
     private var strokeWidth = 0f
+    private var suggestedFileExtension = PNG
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +82,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         when (item.itemId) {
             R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
-            R.id.clear -> my_canvas.clearCanvas()
+            R.id.clear -> clearCanvas()
             R.id.open_file -> tryOpenFile()
             R.id.change_background -> changeBackgroundClicked()
             R.id.settings -> launchSettings()
@@ -128,8 +132,10 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         if (path.endsWith(".svg")) {
             my_canvas.mBackgroundBitmap = null
             Svg.loadSvg(this, File(path), my_canvas)
+            suggestedFileExtension = SVG
         } else if (File(path).isImageSlow()) {
             my_canvas.drawBitmap(this, path)
+            suggestedFileExtension = JPG
         } else {
             toast(R.string.invalid_file_format)
         }
@@ -152,7 +158,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun saveImage() {
-        SaveImageDialog(this, curPath, my_canvas) {
+        SaveImageDialog(this, suggestedFileExtension, curPath, my_canvas) {
             curPath = it
         }
     }
@@ -197,6 +203,11 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         return FileProvider.getUriForFile(this, "com.simplemobiletools.draw.fileprovider", file)
     }
 
+    private fun clearCanvas() {
+        my_canvas.clearCanvas()
+        suggestedFileExtension = PNG
+    }
+
     fun pickColor() {
         ColorPickerDialog(this, color) {
             setColor(it)
@@ -207,6 +218,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
         my_canvas.setBackgroundColor(pickedColor)
         my_canvas.mBackgroundBitmap = null
+        suggestedFileExtension = PNG
     }
 
     private fun setColor(pickedColor: Int) {

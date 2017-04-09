@@ -8,14 +8,14 @@ import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.activities.SimpleActivity
+import com.simplemobiletools.draw.helpers.JPG
+import com.simplemobiletools.draw.helpers.PNG
+import com.simplemobiletools.draw.helpers.SVG
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 import java.io.OutputStream
 
-class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val canvas: MyCanvas, callback: (path: String) -> Unit) {
-    private val PNG = "png"
-    private val SVG = "svg"
-    private val JPG = "jpg"
+class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: String, val curPath: String, val canvas: MyCanvas, callback: (path: String) -> Unit) {
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
@@ -23,7 +23,11 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
         var realPath = if (curPath.isEmpty()) "${activity.internalStoragePath}/$SIMPLE_DRAW" else File(curPath).parent.trimEnd('/')
         val view = activity.layoutInflater.inflate(R.layout.dialog_save_image, null).apply {
             save_image_filename.setText(initialFilename)
-            save_image_radio_group.check(if (curPath.endsWith(SVG)) R.id.save_image_radio_svg else R.id.save_image_radio_png)
+            save_image_radio_group.check(when (suggestedExtension) {
+                JPG -> R.id.save_image_radio_jpg
+                SVG -> R.id.save_image_radio_svg
+                else -> R.id.save_image_radio_png
+            })
 
             save_image_path.text = activity.humanizePath(realPath)
             save_image_path.setOnClickListener {
