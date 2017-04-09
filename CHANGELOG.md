@@ -1,6 +1,15 @@
 Changelog
 ==========
 
+Version 2.0.0 *(2017-04-09)*
+----------------------------
+
+ * Added app color theme customization
+ * Allow using images as backgrounds
+ * Added an option to save into jpgs
+ * Allow customizing file save path
+ * Massive rewrite under the hood
+
 Version 1.17 *(2017-03-14)*
 ----------------------------
 
