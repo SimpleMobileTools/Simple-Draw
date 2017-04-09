@@ -18,16 +18,15 @@ class Quad : Action {
         try {
             val parts = data.split("\\s+".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
             val xy1 = parts[0].substring(1).split(",".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
-            val xy2 = parts[1].split(",".toRegex()).dropLastWhile(String::isEmpty).toTypedArray() // No need to skip the 'Q' here
+            val xy2 = parts[1].split(",".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
 
-            x1 = java.lang.Float.parseFloat(xy1[0].trim { it <= ' ' })
-            y1 = java.lang.Float.parseFloat(xy1[1].trim { it <= ' ' })
-            x2 = java.lang.Float.parseFloat(xy2[0].trim { it <= ' ' })
-            y2 = java.lang.Float.parseFloat(xy2[1].trim { it <= ' ' })
+            x1 = xy1[0].trim().toFloat()
+            y1 = xy1[1].trim().toFloat()
+            x2 = xy2[0].trim().toFloat()
+            y2 = xy2[1].trim().toFloat()
         } catch (ignored: Exception) {
             throw InvalidParameterException("Error parsing the given Quad data.")
         }
-
     }
 
     constructor(x1: Float, y1: Float, x2: Float, y2: Float) {
@@ -42,13 +41,15 @@ class Quad : Action {
     }
 
     override fun perform(writer: Writer) {
-        writer.write("Q")
-        writer.write(x1.toString())
-        writer.write(",")
-        writer.write(y1.toString())
-        writer.write(" ")
-        writer.write(x2.toString())
-        writer.write(",")
-        writer.write(y2.toString())
+        writer.apply {
+            write("Q")
+            write(x1.toString())
+            write(",")
+            write(y1.toString())
+            write(" ")
+            write(x2.toString())
+            write(",")
+            write(y2.toString())
+        }
     }
 }

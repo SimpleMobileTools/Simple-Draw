@@ -18,39 +18,43 @@ object Svg {
     }
 
     private fun writeSvg(writer: Writer, backgroundColor: Int, paths: Map<MyPath, PaintOptions>, width: Int, height: Int) {
-        writer.write("<svg width=\"")
-        writer.write(width.toString())
-        writer.write("\" height=\"")
-        writer.write(height.toString())
-        writer.write("\" xmlns=\"http://www.w3.org/2000/svg\">")
+        writer.apply {
+            write("<svg width=\"")
+            write(width.toString())
+            write("\" height=\"")
+            write(height.toString())
+            write("\" xmlns=\"http://www.w3.org/2000/svg\">")
 
-        // background rect
-        writer.write("<rect width=\"")
-        writer.write(width.toString())
-        writer.write("\" height=\"")
-        writer.write(height.toString())
-        writer.write("\" fill=\"#")
-        writer.write(Integer.toHexString(backgroundColor).substring(2))
-        writer.write("\"/>")
+            // background rect
+            write("<rect width=\"")
+            write(width.toString())
+            write("\" height=\"")
+            write(height.toString())
+            write("\" fill=\"#")
+            write(Integer.toHexString(backgroundColor).substring(2))
+            write("\"/>")
 
-        for ((key, value) in paths) {
-            writePath(writer, key, value)
+            for ((key, value) in paths) {
+                writePath(this, key, value)
+            }
+            write("</svg>")
         }
-        writer.write("</svg>")
     }
 
     private fun writePath(writer: Writer, path: MyPath, options: PaintOptions) {
-        writer.write("<path d=\"")
-        for (action in path.getActions()) {
-            action.perform(writer)
-            writer.write(" ")
-        }
+        writer.apply {
+            write("<path d=\"")
+            for (action in path.getActions()) {
+                action.perform(this)
+                write(" ")
+            }
 
-        writer.write("\" fill=\"none\" stroke=\"#")
-        writer.write(Integer.toHexString(options.color).substring(2))
-        writer.write("\" stroke-width=\"")
-        writer.write(options.strokeWidth.toString())
-        writer.write("\" stroke-linecap=\"round\"/>")
+            write("\" fill=\"none\" stroke=\"#")
+            write(Integer.toHexString(options.color).substring(2))
+            write("\" stroke-width=\"")
+            write(options.strokeWidth.toString())
+            write("\" stroke-linecap=\"round\"/>")
+        }
     }
 
     fun loadSvg(file: File, canvas: MyCanvas) {

@@ -15,12 +15,11 @@ class Line : Action {
 
         try {
             val xy = data.substring(1).split(",".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
-            x = java.lang.Float.parseFloat(xy[0].trim { it <= ' ' })
-            y = java.lang.Float.parseFloat(xy[1].trim { it <= ' ' })
+            x = xy[0].trim().toFloat()
+            y = xy[1].trim().toFloat()
         } catch (ignored: Exception) {
             throw InvalidParameterException("Error parsing the given Line data.")
         }
-
     }
 
     constructor(x: Float, y: Float) {
@@ -33,9 +32,11 @@ class Line : Action {
     }
 
     override fun perform(writer: Writer) {
-        writer.write("L")
-        writer.write(x.toString())
-        writer.write(",")
-        writer.write(y.toString())
+        writer.apply {
+            write("L")
+            write(x.toString())
+            write(",")
+            write(y.toString())
+        }
     }
 }
