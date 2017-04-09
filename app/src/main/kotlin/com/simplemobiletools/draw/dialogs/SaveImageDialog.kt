@@ -1,6 +1,5 @@
 package com.simplemobiletools.draw.dialogs
 
-import android.graphics.Bitmap
 import android.support.v7.app.AlertDialog
 import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
@@ -9,9 +8,11 @@ import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.activities.SimpleActivity
+import com.simplemobiletools.draw.extensions.config
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 import java.io.FileOutputStream
+import java.io.OutputStream
 
 class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val canvas: MyCanvas, callback: (path: String) -> Unit) {
     private val PNG = "png"
@@ -79,22 +80,32 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
         }
 
         when (file.extension) {
-            PNG -> {
-                var out: FileOutputStream? = null
-                try {
-                    out = FileOutputStream(file)
-                    canvas.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, out)
-                } finally {
-                    out?.close()
-                }
-            }
-            JPG -> {
-
-            }
             SVG -> Svg.saveSvg(file, canvas)
+            else -> saveImageFile(file)
         }
         activity.scanFile(file) {}
         return true
+    }
+
+    private fun saveImageFile(file: File) {
+        if (activity.needsStupidWritePermissions(file.absolutePath)) {
+            activity.handleSAFDialog(file) {
+                var document = activity.getFileDocument(file.absolutePath, activity.config.treeUri) ?: return@handleSAFDialog
+                if (!file.exists()) {
+                    document = document.createFile("", file.name)
+                }
+                val out = activity.contentResolver.openOutputStream(document.uri)
+                writeToOutputStream(file, out)
+            }
+        } else {
+            writeToOutputStream(file, FileOutputStream(file))
+        }
+    }
+
+    private fun writeToOutputStream(file: File, out: OutputStream) {
+        out.use { out ->
+            canvas.getBitmap().compress(file.getCompressionFormat(), 70, out)
+        }
     }
 
     private fun getInitialFilename(): String {

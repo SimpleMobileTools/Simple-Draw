@@ -9,10 +9,10 @@ import java.io.*
 import java.util.*
 
 object Svg {
-    fun saveSvg(output: File, canvas: MyCanvas) {
+    fun saveSvg(file: File, canvas: MyCanvas) {
         val backgroundColor = (canvas.background as ColorDrawable).color
 
-        val out = FileOutputStream(output)
+        val out = FileOutputStream(file)
         val writer = BufferedWriter(OutputStreamWriter(out))
         writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
         writer.close()
