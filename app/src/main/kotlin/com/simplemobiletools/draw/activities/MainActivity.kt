@@ -79,6 +79,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         val isStrokeWidthBarEnabled = config.showBrushSize
         stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
         my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
+        updateTextColors(main_holder)
     }
 
     override fun onPause() {
