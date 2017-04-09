@@ -117,7 +117,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         if (path.endsWith(".svg")) {
             Svg.loadSvg(this, File(path), my_canvas)
         } else if (File(path).isImageSlow()) {
-
+            my_canvas.drawBitmap(path)
         } else {
             toast(R.string.invalid_file_format)
         }

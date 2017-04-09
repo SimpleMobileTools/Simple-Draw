@@ -1,10 +1,7 @@
 package com.simplemobiletools.draw
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.*
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
@@ -26,6 +23,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mStartY = 0f
     private var mIsSaving = false
     private var mIsStrokeWidthBarEnabled = false
+    private var mDrawBitmapAsBackground: Bitmap? = null
 
     init {
         mPath = MyPath()
@@ -88,6 +86,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         return bitmap
     }
 
+    fun drawBitmap(path: String) {
+        mDrawBitmapAsBackground = BitmapFactory.decodeFile(path)
+        invalidate()
+    }
+
     fun addPath(path: MyPath, options: PaintOptions) {
         mPaths.put(path, options)
         pathsUpdated()
@@ -95,6 +98,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+
+        if (mDrawBitmapAsBackground != null) {
+            canvas.drawBitmap(mDrawBitmapAsBackground, 0f, 0f, null)
+        }
 
         for ((key, value) in mPaths) {
             changePaint(value)
@@ -182,8 +189,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
             MotionEvent.ACTION_MOVE -> actionMove(x, y)
             MotionEvent.ACTION_UP -> actionUp()
-            else -> {
-            }
         }
 
         invalidate()
