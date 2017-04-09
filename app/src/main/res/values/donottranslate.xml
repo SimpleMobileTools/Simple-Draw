@@ -5,6 +5,7 @@
     <string name="release_18">
         Added app color theme customization\n
         Allow using images as backgrounds\n
+        Allow customizing file save path\n
         Added an option to save into jpgs
     </string>
 
