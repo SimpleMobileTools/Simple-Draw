@@ -17,6 +17,7 @@ import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
+import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
@@ -70,6 +71,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), OPEN_FILE_INTENT)
             }
         }
+        checkWhatsNewDialog()
     }
 
     override fun onResume() {
@@ -254,5 +256,12 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         override fun onStartTrackingTouch(seekBar: SeekBar) {}
 
         override fun onStopTrackingTouch(seekBar: SeekBar) {}
+    }
+
+    private fun checkWhatsNewDialog() {
+        arrayListOf<Release>().apply {
+            add(Release(18, R.string.release_18))
+            checkWhatsNew(this, BuildConfig.VERSION_CODE)
+        }
     }
 }

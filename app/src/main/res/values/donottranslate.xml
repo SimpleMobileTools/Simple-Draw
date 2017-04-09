@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Release notes -->
+    <string name="release_18">
+        Added app color theme customization\n
+        Allow using images as backgrounds\n
+        Added an option to save into jpgs
+    </string>
+
+</resources>
