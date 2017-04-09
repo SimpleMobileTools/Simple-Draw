@@ -50,18 +50,24 @@
             android:id="@+id/save_image_radio_png"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/medium_margin"
+            android:paddingTop="@dimen/medium_margin"
             android:text=".png"/>
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/save_image_radio_svg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/medium_margin"
+            android:paddingTop="@dimen/medium_margin"
             android:text=".svg"/>
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/save_image_radio_jpg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/medium_margin"
+            android:paddingTop="@dimen/medium_margin"
             android:text=".jpg"/>
 
     </RadioGroup>

@@ -4,18 +4,23 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.sax.RootElement
 import android.util.Xml
+import com.simplemobiletools.commons.extensions.getFileOutputStream
+import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.draw.activities.MainActivity
+import com.simplemobiletools.draw.activities.SimpleActivity
 import java.io.*
 import java.util.*
 
 object Svg {
-    fun saveSvg(file: File, canvas: MyCanvas) {
+    fun saveSvg(activity: SimpleActivity, file: File, canvas: MyCanvas) {
         val backgroundColor = (canvas.background as ColorDrawable).color
 
-        val out = FileOutputStream(file)
-        val writer = BufferedWriter(OutputStreamWriter(out))
-        writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
-        writer.close()
+        activity.getFileOutputStream(file) {
+            val writer = BufferedWriter(OutputStreamWriter(it))
+            writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
+            writer.close()
+            activity.toast(R.string.file_saved)
+        }
     }
 
     private fun writeSvg(writer: Writer, backgroundColor: Int, paths: Map<MyPath, PaintOptions>, width: Int, height: Int) {

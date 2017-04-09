@@ -8,10 +8,8 @@ import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.activities.SimpleActivity
-import com.simplemobiletools.draw.extensions.config
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
-import java.io.FileOutputStream
 import java.io.OutputStream
 
 class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val canvas: MyCanvas, callback: (path: String) -> Unit) {
@@ -62,7 +60,6 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
                 }
 
                 if (saveFile(newFile)) {
-                    activity.toast(R.string.file_saved)
                     callback(newFile.absolutePath)
                     dismiss()
                 } else {
@@ -80,7 +77,7 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
         }
 
         when (file.extension) {
-            SVG -> Svg.saveSvg(file, canvas)
+            SVG -> Svg.saveSvg(activity, file, canvas)
             else -> saveImageFile(file)
         }
         activity.scanFile(file) {}
@@ -88,17 +85,9 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
     }
 
     private fun saveImageFile(file: File) {
-        if (activity.needsStupidWritePermissions(file.absolutePath)) {
-            activity.handleSAFDialog(file) {
-                var document = activity.getFileDocument(file.absolutePath, activity.config.treeUri) ?: return@handleSAFDialog
-                if (!file.exists()) {
-                    document = document.createFile("", file.name)
-                }
-                val out = activity.contentResolver.openOutputStream(document.uri)
-                writeToOutputStream(file, out)
-            }
-        } else {
-            writeToOutputStream(file, FileOutputStream(file))
+        activity.getFileOutputStream(file) {
+            writeToOutputStream(file, it)
+            activity.toast(R.string.file_saved)
         }
     }
 
