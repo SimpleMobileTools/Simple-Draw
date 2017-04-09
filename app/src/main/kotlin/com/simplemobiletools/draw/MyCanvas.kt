@@ -1,12 +1,18 @@
 package com.simplemobiletools.draw
 
+import android.app.Activity
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DecodeFormat
 import com.simplemobiletools.commons.extensions.getContrastColor
 import java.util.*
 
@@ -86,9 +92,19 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         return bitmap
     }
 
-    fun drawBitmap(path: String) {
-        mBackgroundBitmap = BitmapFactory.decodeFile(path)
-        invalidate()
+    fun drawBitmap(activity: Activity, path: String) {
+        Thread({
+            mBackgroundBitmap = Glide.with(context)
+                    .load(path)
+                    .asBitmap()
+                    .format(DecodeFormat.PREFER_ARGB_8888)
+                    .fitCenter()
+                    .into(width, height)
+                    .get()
+            activity.runOnUiThread {
+                invalidate()
+            }
+        }).start()
     }
 
     fun addPath(path: MyPath, options: PaintOptions) {
