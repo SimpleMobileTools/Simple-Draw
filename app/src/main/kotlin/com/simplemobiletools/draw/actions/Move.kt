@@ -1,8 +1,6 @@
 package com.simplemobiletools.draw.actions
 
 import android.graphics.Path
-
-import java.io.IOException
 import java.io.Writer
 import java.security.InvalidParameterException
 
@@ -11,9 +9,8 @@ class Move : Action {
     val x: Float
     val y: Float
 
-    @Throws(InvalidParameterException::class)
     constructor(data: String) {
-        if (data.startsWith("M"))
+        if (!data.startsWith("M"))
             throw InvalidParameterException("The Move data should start with 'M'.")
 
         try {
@@ -35,7 +32,6 @@ class Move : Action {
         path.moveTo(x, y)
     }
 
-    @Throws(IOException::class)
     override fun perform(writer: Writer) {
         writer.write("M")
         writer.write(x.toString())

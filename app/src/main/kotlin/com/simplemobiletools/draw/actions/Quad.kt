@@ -1,8 +1,6 @@
 package com.simplemobiletools.draw.actions
 
 import android.graphics.Path
-
-import java.io.IOException
 import java.io.Writer
 import java.security.InvalidParameterException
 
@@ -14,7 +12,7 @@ class Quad : Action {
     val y2: Float
 
     constructor(data: String) {
-        if (data.startsWith("Q"))
+        if (!data.startsWith("Q"))
             throw InvalidParameterException("The Quad data should start with 'Q'.")
 
         try {
@@ -43,7 +41,6 @@ class Quad : Action {
         path.quadTo(x1, y1, x2, y2)
     }
 
-    @Throws(IOException::class)
     override fun perform(writer: Writer) {
         writer.write("Q")
         writer.write(x1.toString())

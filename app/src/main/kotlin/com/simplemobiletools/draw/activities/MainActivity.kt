@@ -20,6 +20,7 @@ import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
+import com.simplemobiletools.draw.Svg
 import com.simplemobiletools.draw.dialogs.SaveImageDialog
 import com.simplemobiletools.draw.extensions.config
 import kotlinx.android.synthetic.main.activity_main.*
@@ -109,7 +110,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private fun openFile() {
         FilePickerDialog(this, curPath) {
             if (it.endsWith(".svg")) {
-
+                Svg.loadSvg(File(it), my_canvas)
             } else if (File(it).isImageSlow()) {
 
             } else {

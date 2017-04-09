@@ -5,7 +5,6 @@ import com.simplemobiletools.draw.actions.Action
 import com.simplemobiletools.draw.actions.Line
 import com.simplemobiletools.draw.actions.Move
 import com.simplemobiletools.draw.actions.Quad
-import java.io.IOException
 import java.io.ObjectInputStream
 import java.io.Serializable
 import java.security.InvalidParameterException
@@ -16,7 +15,6 @@ class MyPath : Path(), Serializable {
 
     private val actions = LinkedList<Action>()
 
-    @Throws(IOException::class, ClassNotFoundException::class)
     private fun readObject(inputStream: ObjectInputStream) {
         inputStream.defaultReadObject()
 
@@ -25,7 +23,6 @@ class MyPath : Path(), Serializable {
         }
     }
 
-    @Throws(InvalidParameterException::class)
     fun readObject(pathData: String) {
         val tokens = pathData.split("\\s+".toRegex()).dropLastWhile(String::isEmpty).toTypedArray()
         var i = 0

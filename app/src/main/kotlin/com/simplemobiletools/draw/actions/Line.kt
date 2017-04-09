@@ -1,8 +1,6 @@
 package com.simplemobiletools.draw.actions
 
 import android.graphics.Path
-
-import java.io.IOException
 import java.io.Writer
 import java.security.InvalidParameterException
 
@@ -11,9 +9,8 @@ class Line : Action {
     val x: Float
     val y: Float
 
-    @Throws(InvalidParameterException::class)
     constructor(data: String) {
-        if (data.startsWith("L"))
+        if (!data.startsWith("L"))
             throw InvalidParameterException("The Line data should start with 'L'.")
 
         try {
@@ -35,7 +32,6 @@ class Line : Action {
         path.lineTo(x, y)
     }
 
-    @Throws(IOException::class)
     override fun perform(writer: Writer) {
         writer.write("L")
         writer.write(x.toString())
