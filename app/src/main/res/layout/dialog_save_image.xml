@@ -56,5 +56,11 @@
             android:layout_height="wrap_content"
             android:text=".svg"/>
 
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
+            android:id="@+id/save_image_radio_jpg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=".jpg"/>
+
     </RadioGroup>
 </LinearLayout>

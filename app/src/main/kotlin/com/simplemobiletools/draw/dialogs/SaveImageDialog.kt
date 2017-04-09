@@ -16,12 +16,11 @@ import java.io.FileOutputStream
 class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val canvas: MyCanvas, callback: (path: String) -> Unit) {
     private val PNG = "png"
     private val SVG = "svg"
+    private val JPG = "jpg"
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
-        val defaultFilename = "image_${System.currentTimeMillis() / 1000}"
-        val initialFilename = if (curPath.isEmpty()) defaultFilename else curPath.getFilenameFromPath().substring(0, curPath.getFilenameFromPath().lastIndexOf("."))
-
+        val initialFilename = getInitialFilename()
         var realPath = if (curPath.isEmpty()) "${activity.internalStoragePath}/$SIMPLE_DRAW" else File(curPath).parent.trimEnd('/')
         val view = activity.layoutInflater.inflate(R.layout.dialog_save_image, null).apply {
             save_image_filename.setText(initialFilename)
@@ -49,7 +48,12 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
                     return@setOnClickListener
                 }
 
-                val extension = if (view.save_image_radio_group.checkedRadioButtonId == R.id.save_image_radio_svg) SVG else PNG
+                val extension = when (view.save_image_radio_group.checkedRadioButtonId) {
+                    R.id.save_image_radio_png -> PNG
+                    R.id.save_image_radio_svg -> SVG
+                    else -> JPG
+                }
+
                 val newFile = File(realPath, "$filename.$extension")
                 if (!newFile.name.isAValidFilename()) {
                     activity.toast(R.string.filename_invalid_characters)
@@ -80,15 +84,21 @@ class SaveImageDialog(val activity: SimpleActivity, val curPath: String, val can
                 try {
                     out = FileOutputStream(file)
                     canvas.getBitmap().compress(Bitmap.CompressFormat.PNG, 100, out)
-                } catch (e: Exception) {
-                    return false
                 } finally {
                     out?.close()
                 }
+            }
+            JPG -> {
+
             }
             SVG -> Svg.saveSvg(file, canvas)
         }
         activity.scanFile(file) {}
         return true
+    }
+
+    private fun getInitialFilename(): String {
+        val defaultFilename = "image_${System.currentTimeMillis() / 1000}"
+        return if (curPath.isEmpty()) defaultFilename else curPath.getFilenameFromPath().substring(0, curPath.getFilenameFromPath().lastIndexOf("."))
     }
 }
