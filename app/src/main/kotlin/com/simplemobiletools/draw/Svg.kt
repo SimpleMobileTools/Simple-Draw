@@ -19,20 +19,8 @@ object Svg {
 
     private fun writeSvg(writer: Writer, backgroundColor: Int, paths: Map<MyPath, PaintOptions>, width: Int, height: Int) {
         writer.apply {
-            write("<svg width=\"")
-            write(width.toString())
-            write("\" height=\"")
-            write(height.toString())
-            write("\" xmlns=\"http://www.w3.org/2000/svg\">")
-
-            // background rect
-            write("<rect width=\"")
-            write(width.toString())
-            write("\" height=\"")
-            write(height.toString())
-            write("\" fill=\"#")
-            write(Integer.toHexString(backgroundColor).substring(2))
-            write("\"/>")
+            write("<svg width=\"$width\" height=\"$height\" xmlns=\"http://www.w3.org/2000/svg\">")
+            write("<rect width=\"$width\" height=\"$height\" fill=\"#${Integer.toHexString(backgroundColor).substring(2)}\"/>")
 
             for ((key, value) in paths) {
                 writePath(this, key, value)

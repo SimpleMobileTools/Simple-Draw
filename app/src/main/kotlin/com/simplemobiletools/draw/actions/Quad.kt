@@ -41,15 +41,6 @@ class Quad : Action {
     }
 
     override fun perform(writer: Writer) {
-        writer.apply {
-            write("Q")
-            write(x1.toString())
-            write(",")
-            write(y1.toString())
-            write(" ")
-            write(x2.toString())
-            write(",")
-            write(y2.toString())
-        }
+        writer.write("Q$x1,$y1 $x2,$y2")
     }
 }

@@ -32,11 +32,6 @@ class Line : Action {
     }
 
     override fun perform(writer: Writer) {
-        writer.apply {
-            write("L")
-            write(x.toString())
-            write(",")
-            write(y.toString())
-        }
+        writer.write("L$x,$y")
     }
 }
