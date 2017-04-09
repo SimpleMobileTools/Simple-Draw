@@ -116,7 +116,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         super.onDraw(canvas)
 
         if (mBackgroundBitmap != null) {
-            canvas.drawBitmap(mBackgroundBitmap, 0f, 0f, null)
+            val left = (width - mBackgroundBitmap!!.width) / 2
+            val top = (height - mBackgroundBitmap!!.height) / 2
+            canvas.drawBitmap(mBackgroundBitmap, left.toFloat(), top.toFloat(), null)
         }
 
         for ((key, value) in mPaths) {
