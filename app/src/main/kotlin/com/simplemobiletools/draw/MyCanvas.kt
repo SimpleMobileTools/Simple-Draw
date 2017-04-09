@@ -2,10 +2,7 @@ package com.simplemobiletools.draw
 
 import android.app.Activity
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.*
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
@@ -94,12 +91,14 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     fun drawBitmap(activity: Activity, path: String) {
         Thread({
+            val size = Point()
+            activity.windowManager.defaultDisplay.getSize(size)
             mBackgroundBitmap = Glide.with(context)
                     .load(path)
                     .asBitmap()
                     .format(DecodeFormat.PREFER_ARGB_8888)
                     .fitCenter()
-                    .into(width, height)
+                    .into(size.x, size.y)
                     .get()
             activity.runOnUiThread {
                 invalidate()
