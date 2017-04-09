@@ -108,7 +108,13 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun openFile() {
         FilePickerDialog(this, curPath) {
+            if (it.endsWith(".svg")) {
 
+            } else if (File(it).isImageSlow()) {
+
+            } else {
+                toast(R.string.invalid_file_format)
+            }
         }
     }
 
