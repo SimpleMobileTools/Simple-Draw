@@ -31,7 +31,8 @@ import java.io.FileOutputStream
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
-    private val STORAGE_PERMISSION = 1
+    private val SAVE_IMAGE = 1
+    private val OPEN_FILE = 2
 
     private var curPath = ""
     private var color = 0
@@ -78,7 +79,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
             R.id.clear -> my_canvas.clearCanvas()
-            R.id.open_file -> openFile()
+            R.id.open_file -> tryOpenFile()
             R.id.change_background -> changeBackgroundClicked()
             R.id.settings -> launchSettings()
             R.id.about -> launchAbout()
@@ -90,12 +91,14 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        if (requestCode == STORAGE_PERMISSION) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (requestCode == SAVE_IMAGE) {
                 saveImage()
-            } else {
-                toast(R.string.no_storage_permissions)
+            } else if (requestCode == OPEN_FILE) {
+                openFile()
             }
+        } else {
+            toast(R.string.no_storage_permissions)
         }
     }
 
@@ -107,13 +110,21 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         startAboutActivity(R.string.app_name, LICENSE_KOTLIN, BuildConfig.VERSION_NAME)
     }
 
-    private fun openFile() {
-        FilePickerDialog(this, curPath) {
-            tryOpenFile(it)
+    private fun tryOpenFile() {
+        if (hasWriteStoragePermission()) {
+            openFile()
+        } else {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), OPEN_FILE)
         }
     }
 
-    private fun tryOpenFile(path: String) {
+    private fun openFile() {
+        FilePickerDialog(this, curPath) {
+            openPath(it)
+        }
+    }
+
+    private fun openPath(path: String) {
         if (path.endsWith(".svg")) {
             my_canvas.mBackgroundBitmap = null
             Svg.loadSvg(this, File(path), my_canvas)
@@ -133,10 +144,10 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun trySaveImage() {
-        if (!hasWriteStoragePermission()) {
+        if (hasWriteStoragePermission()) {
             saveImage()
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_PERMISSION)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), SAVE_IMAGE)
         }
     }
 
