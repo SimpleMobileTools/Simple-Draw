@@ -44,8 +44,8 @@ object Svg {
     private fun writePath(writer: Writer, path: MyPath, options: PaintOptions) {
         writer.apply {
             write("<path d=\"")
-            for (action in path.getActions()) {
-                action.perform(this)
+            path.getActions().forEach {
+                it.perform(this)
                 write(" ")
             }
 
@@ -63,10 +63,10 @@ object Svg {
         canvas.clearCanvas()
         canvas.setBackgroundColor(svg.background!!.color)
 
-        for (sp in svg.paths) {
+        svg.paths.forEach {
             val path = MyPath()
-            path.readObject(sp.data)
-            val options = PaintOptions(sp.color, sp.strokeWidth)
+            path.readObject(it.data)
+            val options = PaintOptions(it.color, it.strokeWidth)
 
             canvas.addPath(path, options)
         }
@@ -85,14 +85,14 @@ object Svg {
             val pathElement = root.getChild(ns, "path")
 
             root.setStartElementListener { attributes ->
-                val width = Integer.parseInt(attributes.getValue("width"))
-                val height = Integer.parseInt(attributes.getValue("height"))
+                val width = attributes.getValue("width").toInt()
+                val height = attributes.getValue("height").toInt()
                 svg.setSize(width, height)
             }
 
             rectElement.setStartElementListener { attributes ->
-                val width = Integer.parseInt(attributes.getValue("width"))
-                val height = Integer.parseInt(attributes.getValue("height"))
+                val width = attributes.getValue("width").toInt()
+                val height = attributes.getValue("height").toInt()
                 val color = Color.parseColor(attributes.getValue("fill"))
                 if (svg.background != null)
                     throw UnsupportedOperationException("Unsupported SVG, should only have one <rect>.")
@@ -103,7 +103,7 @@ object Svg {
             pathElement.setStartElementListener { attributes ->
                 val d = attributes.getValue("d")
                 val color = Color.parseColor(attributes.getValue("stroke"))
-                val width = java.lang.Float.parseFloat(attributes.getValue("stroke-width"))
+                val width = attributes.getValue("stroke-width").toFloat()
                 svg.paths.add(SPath(d, color, width))
             }
 
