@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Рисунки</string>
+    <string name="open_file">Открыть файл</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Позволить изменять размер кисти</string>
+    <string name="clear">Очистить</string>
+    <string name="change_background_color">Изменить цвет фона</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <string name="app_short_description">Холст, на котором можно рисовать разными цветами.</string>
+    <string name="app_long_description">
+        Хотите что-то нарисовать, но нет бумаги? Это приложение идеально вам подойдет. Просто выбирайте цвет и рисуйте. Вы можете сохранить 
+рисунок, либо сразу отправить его по электронной почте или в социальные сети.
+
+        Без рекламы и излишних прав доступа. Полностью открытое ПО, а также есть тёмная тема интерфейса.
+
+        Это только одно приложение из множества других в серии. Вы можете найти остальные на http://www.simplemobiletools.com
+    </string>
+</resources>
