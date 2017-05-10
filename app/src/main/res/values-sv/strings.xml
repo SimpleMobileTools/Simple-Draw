@@ -2,6 +2,7 @@
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Draw</string>
     <string name="open_file">Open file</string>
+    <string name="eraser">Eraser</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Show brush size tool</string>

@@ -2,6 +2,7 @@
     <string name="app_name">シンプル ドロー</string>
     <string name="app_launcher_name">ドロー</string>
     <string name="open_file">Open file</string>
+    <string name="eraser">Eraser</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Show brush size tool</string>

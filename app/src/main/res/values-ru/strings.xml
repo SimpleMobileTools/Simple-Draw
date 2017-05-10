@@ -2,6 +2,7 @@
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Рисунки</string>
     <string name="open_file">Открыть файл</string>
+    <string name="eraser">Eraser</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Позволить изменять размер кисти</string>
