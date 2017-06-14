@@ -32,12 +32,12 @@ android {
 }
 
 dependencies {
-    compile 'com.simplemobiletools:commons:2.16.3'
+    compile 'com.simplemobiletools:commons:2.20.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
 buildscript {
-    ext.kotlin_version = '1.1.1'
+    ext.kotlin_version = '1.1.2-5'
     repositories {
         mavenCentral()
     }
