@@ -216,13 +216,13 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     public override fun onSaveInstanceState(): Parcelable {
         val superState = super.onSaveInstanceState()
-        val savedState = SavedState(superState)
+        val savedState = MyParcelable(superState)
         savedState.paths = mPaths
         return savedState
     }
 
     public override fun onRestoreInstanceState(state: Parcelable) {
-        if (state !is SavedState) {
+        if (state !is MyParcelable) {
             super.onRestoreInstanceState(state)
             return
         }
@@ -232,18 +232,19 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         pathsUpdated()
     }
 
-    internal class SavedState : View.BaseSavedState {
+    internal class MyParcelable : View.BaseSavedState {
         var paths = LinkedHashMap<MyPath, PaintOptions>()
 
-        companion object {
-            val CREATOR: Parcelable.Creator<SavedState> = object : Parcelable.Creator<SavedState> {
-                override fun newArray(size: Int) = arrayOf<SavedState>()
+        constructor(superState: Parcelable) : super(superState)
 
-                override fun createFromParcel(source: Parcel) = SavedState(source)
+        constructor(parcel: Parcel) : super(parcel) {
+            val size = parcel.readInt()
+            for (i in 0..size - 1) {
+                val key = parcel.readSerializable() as MyPath
+                val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat())
+                paths.put(key, paintOptions)
             }
         }
-
-        constructor(superState: Parcelable) : super(superState)
 
         override fun writeToParcel(out: Parcel, flags: Int) {
             super.writeToParcel(out, flags)
@@ -255,12 +256,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
         }
 
-        private constructor(parcel: Parcel) : super(parcel) {
-            val size = parcel.readInt()
-            for (i in 0..size - 1) {
-                val key = parcel.readSerializable() as MyPath
-                val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat())
-                paths.put(key, paintOptions)
+        companion object {
+            val CREATOR: Parcelable.Creator<MyParcelable> = object : Parcelable.Creator<MyParcelable> {
+                override fun createFromParcel(source: Parcel) = MyParcelable(source)
+
+                override fun newArray(size: Int) = arrayOf<MyParcelable>()
             }
         }
     }
