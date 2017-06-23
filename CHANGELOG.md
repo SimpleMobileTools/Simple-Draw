@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 2.0.1 *(2017-06-23)*
+----------------------------
+
+ * Added rounded launcher icon for Android Nougat
+
 Version 2.0.0 *(2017-04-09)*
 ----------------------------
 
