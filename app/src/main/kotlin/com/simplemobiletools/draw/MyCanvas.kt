@@ -14,11 +14,12 @@ import com.simplemobiletools.commons.extensions.getContrastColor
 import java.util.*
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
-    var mPaths: MutableMap<MyPath, PaintOptions>
+    var mPaths = LinkedHashMap<MyPath, PaintOptions>()
     var mBackgroundBitmap: Bitmap? = null
-    private var mPaint: Paint
-    private var mPath: MyPath
-    private var mPaintOptions: PaintOptions
+    private var mPaint = Paint()
+    private var mPath = MyPath()
+    private var mPaintOptions = PaintOptions()
+    private var mIsNothingDrawn = true
 
     private var mListener: PathsChangedListener? = null
     private var mCurX = 0f
@@ -29,9 +30,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mIsStrokeWidthBarEnabled = false
 
     init {
-        mPath = MyPath()
-        mPaintOptions = PaintOptions()
-        mPaint = Paint().apply {
+        mPaint.apply {
             color = mPaintOptions.color
             style = Paint.Style.STROKE
             strokeJoin = Paint.Join.ROUND
@@ -40,8 +39,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             isAntiAlias = true
         }
 
-        mPaths = LinkedHashMap<MyPath, PaintOptions>()
-        mPaths.put(mPath, mPaintOptions)
         pathsUpdated()
     }
 
@@ -53,7 +50,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (mPaths.isEmpty())
             return
 
-        val lastKey: MyPath? = mPaths.keys.lastOrNull()
+        val lastKey = mPaths.keys.lastOrNull()
 
         mPaths.remove(lastKey)
         pathsUpdated()
@@ -220,7 +217,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     public override fun onSaveInstanceState(): Parcelable {
         val superState = super.onSaveInstanceState()
         val savedState = SavedState(superState)
-
         savedState.paths = mPaths
         return savedState
     }
@@ -230,19 +226,18 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             super.onRestoreInstanceState(state)
             return
         }
-        val savedState = state
-        super.onRestoreInstanceState(savedState.superState)
 
-        mPaths = savedState.paths
+        super.onRestoreInstanceState(state.superState)
+        mPaths = state.paths
         pathsUpdated()
     }
 
     internal class SavedState : View.BaseSavedState {
-        var paths: MutableMap<MyPath, PaintOptions> = HashMap()
+        var paths = LinkedHashMap<MyPath, PaintOptions>()
 
         companion object {
             val CREATOR: Parcelable.Creator<SavedState> = object : Parcelable.Creator<SavedState> {
-                override fun newArray(size: Int): Array<SavedState> = arrayOf()
+                override fun newArray(size: Int) = arrayOf<SavedState>()
 
                 override fun createFromParcel(source: Parcel) = SavedState(source)
             }
@@ -253,8 +248,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         override fun writeToParcel(out: Parcel, flags: Int) {
             super.writeToParcel(out, flags)
             out.writeInt(paths.size)
-            for ((key, paintOptions) in paths) {
-                out.writeSerializable(key)
+            for ((path, paintOptions) in paths) {
+                out.writeSerializable(path)
                 out.writeInt(paintOptions.color)
                 out.writeFloat(paintOptions.strokeWidth)
             }
