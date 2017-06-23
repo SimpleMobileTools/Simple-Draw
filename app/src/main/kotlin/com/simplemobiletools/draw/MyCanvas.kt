@@ -19,7 +19,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mPaint = Paint()
     private var mPath = MyPath()
     private var mPaintOptions = PaintOptions()
-    private var mIsNothingDrawn = true
 
     private var mListener: PathsChangedListener? = null
     private var mCurX = 0f
