@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
+    <string name="app_launcher_name">Rita</string>
+    <string name="open_file">Öppna fil</string>
+    <string name="eraser">Radergummi</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="clear">Clear</string>
-    <string name="change_background_color">Change background color</string>
+    <string name="show_brush_size">Visa penselstorleksverktyg</string>
+    <string name="clear">Rensa</string>
+    <string name="change_background_color">Ändra bakgrundsfärg</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <string name="app_short_description">A canvas you can draw on with different colors.</string>
+    <string name="app_short_description">En målarduk som du kan rita på med olika färger.</string>
     <string name="app_long_description">
-        Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
+        Vill du rita något men har inget papper? Denna app passar dig perfekt. Välj bara en färg och rita. Du kan antingen spara ritningen eller dela den direkt via e-post eller sociala nätverk.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och har även ett Mörkt tema.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        Denna app är bara en del av en större serie appar. Du hittar resten av dem på http://www.simplemobiletools.com
     </string>
 </resources>
