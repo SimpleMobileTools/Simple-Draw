@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
+import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.getContrastColor
 import java.util.*
 
@@ -89,13 +90,17 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         Thread({
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
-            mBackgroundBitmap = Glide.with(context)
-                    .load(path)
-                    .asBitmap()
+            val options = RequestOptions()
                     .format(DecodeFormat.PREFER_ARGB_8888)
                     .fitCenter()
+
+            val builder = Glide.with(context)
+                    .asBitmap()
+                    .load(path)
+                    .apply(options)
                     .into(size.x, size.y)
-                    .get()
+
+            mBackgroundBitmap = builder.get()
             activity.runOnUiThread {
                 invalidate()
             }
