@@ -43,7 +43,7 @@ object Svg {
                 write(" ")
             }
 
-            write("\" fill=\"none\" stroke=\"#")
+            write("\" fill=\"none\" stroke=\"")
             write(options.getColorToExport())
             write("\" stroke-width=\"")
             write(options.strokeWidth.toString())
