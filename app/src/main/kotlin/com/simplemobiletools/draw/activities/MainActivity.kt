@@ -273,6 +273,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private fun checkWhatsNewDialog() {
         arrayListOf<Release>().apply {
             add(Release(18, R.string.release_18))
+            add(Release(20, R.string.release_20))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }

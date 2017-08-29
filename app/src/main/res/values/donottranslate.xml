@@ -2,6 +2,7 @@
 <resources>
 
     <!-- Release notes -->
+    <string name="release_20">Added an Eraser</string>
     <string name="release_18">
         Added app color theme customization\n
         Allow using images as backgrounds\n
