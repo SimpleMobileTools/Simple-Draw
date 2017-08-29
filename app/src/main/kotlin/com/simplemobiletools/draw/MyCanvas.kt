@@ -59,6 +59,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         invalidate()
     }
 
+    fun toggleEraser() {
+
+    }
+
     fun setColor(newColor: Int) {
         mPaintOptions.color = newColor
         if (mIsStrokeWidthBarEnabled) {

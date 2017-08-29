@@ -12,6 +12,14 @@
         android:background="@android:color/white"/>
 
     <ImageView
+        android:id="@+id/eraser"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_toLeftOf="@+id/color_picker"
+        android:padding="@dimen/normal_margin"
+        android:src="@drawable/ic_eraser"/>
+
+    <ImageView
         android:id="@+id/color_picker"
         android:layout_width="@dimen/normal_icon_size"
         android:layout_height="@dimen/normal_icon_size"

@@ -60,6 +60,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
+        eraser.setOnClickListener { my_canvas.toggleEraser() }
         storeStoragePaths()
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
@@ -230,6 +231,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     fun setBackgroundColor(pickedColor: Int) {
         undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
+        eraser.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
         my_canvas.setBackgroundColor(pickedColor)
         my_canvas.mBackgroundBitmap = null
         suggestedFileExtension = PNG
