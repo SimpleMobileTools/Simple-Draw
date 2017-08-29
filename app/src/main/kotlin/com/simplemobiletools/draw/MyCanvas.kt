@@ -17,6 +17,8 @@ import java.util.*
 import java.util.concurrent.ExecutionException
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
+    private val MIN_ERASER_WIDTH = 20f
+
     var mPaths = LinkedHashMap<MyPath, PaintOptions>()
     var mBackgroundBitmap: Bitmap? = null
     private var mPaint = Paint()
@@ -178,6 +180,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mPaint.color = paintOptions.color
 
         mPaint.strokeWidth = paintOptions.strokeWidth
+        if (paintOptions.isEraser && mPaint.strokeWidth < MIN_ERASER_WIDTH) {
+            mPaint.strokeWidth = MIN_ERASER_WIDTH
+        }
     }
 
     fun clearCanvas() {
