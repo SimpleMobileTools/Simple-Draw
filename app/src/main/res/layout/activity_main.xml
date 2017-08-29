@@ -17,7 +17,7 @@
         android:layout_height="@dimen/normal_icon_size"
         android:layout_toLeftOf="@+id/color_picker"
         android:padding="@dimen/normal_margin"
-        android:src="@drawable/ic_eraser"/>
+        android:src="@drawable/ic_eraser_off"/>
 
     <ImageView
         android:id="@+id/color_picker"

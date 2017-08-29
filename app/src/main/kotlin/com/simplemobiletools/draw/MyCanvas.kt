@@ -30,6 +30,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mStartY = 0f
     private var mIsSaving = false
     private var mIsStrokeWidthBarEnabled = false
+    private var mIsEraserOn = false
+    private var mBackgroundColor = 0
 
     init {
         mPaint.apply {
@@ -59,8 +61,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         invalidate()
     }
 
-    fun toggleEraser() {
-
+    fun toggleEraser(isEraserOn: Boolean) {
+        mIsEraserOn = isEraserOn
+        mPaintOptions.isEraser = isEraserOn
+        invalidate()
     }
 
     fun setColor(newColor: Int) {
@@ -68,6 +72,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (mIsStrokeWidthBarEnabled) {
             invalidate()
         }
+    }
+
+    fun updateBackgroundColor(newColor: Int) {
+        mBackgroundColor = newColor
+        setBackgroundColor(newColor)
+        mBackgroundBitmap = null
     }
 
     fun setStrokeWidth(newStrokeWidth: Float) {
@@ -152,7 +162,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         var y = height - res.getDimension(R.dimen.preview_dot_offset_y)
         canvas.drawCircle((width / 2).toFloat(), y, mPaintOptions.strokeWidth / 2, mPaint)
         mPaint.style = Paint.Style.STROKE
-        mPaint.color = mPaintOptions.color.getContrastColor()
+        mPaint.color = if (mPaintOptions.isEraser) mBackgroundColor.getContrastColor() else mPaintOptions.color.getContrastColor()
         mPaint.strokeWidth = res.getDimension(R.dimen.preview_dot_stroke_size)
 
         y = height - res.getDimension(R.dimen.preview_dot_offset_y)
@@ -162,7 +172,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun changePaint(paintOptions: PaintOptions) {
-        mPaint.color = paintOptions.color
+        if (paintOptions.isEraser)
+            mPaint.color = mBackgroundColor
+        else
+            mPaint.color = paintOptions.color
+
         mPaint.strokeWidth = paintOptions.strokeWidth
     }
 

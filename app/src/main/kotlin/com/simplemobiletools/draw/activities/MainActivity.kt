@@ -44,6 +44,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private var strokeWidth = 0f
     private var suggestedFileExtension = PNG
     private var openFileIntentPath = ""
+    private var isEraserOn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +61,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
-        eraser.setOnClickListener { my_canvas.toggleEraser() }
+        eraser.setOnClickListener { eraserClicked() }
         storeStoragePaths()
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
@@ -159,6 +160,16 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         }
     }
 
+    private fun eraserClicked() {
+        isEraserOn = !isEraserOn
+        updateEraserState()
+    }
+
+    private fun updateEraserState() {
+        eraser.setImageDrawable(resources.getDrawable(if (isEraserOn) R.drawable.ic_eraser_on else R.drawable.ic_eraser_off))
+        my_canvas.toggleEraser(isEraserOn)
+    }
+
     private fun changeBackgroundClicked() {
         val oldColor = (my_canvas.background as ColorDrawable).color
         ColorPickerDialog(this, oldColor) {
@@ -232,8 +243,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     fun setBackgroundColor(pickedColor: Int) {
         undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
         eraser.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
-        my_canvas.setBackgroundColor(pickedColor)
-        my_canvas.mBackgroundBitmap = null
+        my_canvas.updateBackgroundColor(pickedColor)
         suggestedFileExtension = PNG
     }
 
@@ -241,6 +251,8 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         color = pickedColor
         color_picker.setBackgroundColor(color)
         my_canvas.setColor(color)
+        isEraserOn = false
+        updateEraserState()
     }
 
     override fun pathsChanged(cnt: Int) {
