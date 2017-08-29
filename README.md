@@ -1,11 +1,11 @@
 # Simple Draw
-<img alt="Logo" src="app/src/main/res/mipmap-xxxhdpi/launcher.png" width="80">
+<img alt="Logo" src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="80">
 
 A canvas you can draw on with different colors.
 
 Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
 
-Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
 
 This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
 
@@ -17,7 +17,7 @@ This app is just one piece of a bigger series of apps. You can find the rest of 
 
 License
 -------
-    Copyright 2016 SimpleMobileTools
+    Copyright 2017 SimpleMobileTools
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
