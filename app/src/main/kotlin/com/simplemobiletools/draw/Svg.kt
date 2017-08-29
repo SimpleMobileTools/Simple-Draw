@@ -44,7 +44,7 @@ object Svg {
             }
 
             write("\" fill=\"none\" stroke=\"#")
-            write(Integer.toHexString(options.color).substring(2))
+            write(options.getColorToExport())
             write("\" stroke-width=\"")
             write(options.strokeWidth.toString())
             write("\" stroke-linecap=\"round\"/>")
@@ -60,7 +60,7 @@ object Svg {
         svg.paths.forEach {
             val path = MyPath()
             path.readObject(it.data, activity)
-            val options = PaintOptions(it.color, it.strokeWidth)
+            val options = PaintOptions(it.color, it.strokeWidth, it.isEraser)
 
             canvas.addPath(path, options)
         }
@@ -96,9 +96,11 @@ object Svg {
 
             pathElement.setStartElementListener { attributes ->
                 val d = attributes.getValue("d")
-                val color = Color.parseColor(attributes.getValue("stroke"))
                 val width = attributes.getValue("stroke-width").toFloat()
-                svg.paths.add(SPath(d, color, width))
+                val stroke = attributes.getValue("stroke")
+                val isEraser = stroke == "none"
+                val color = if (isEraser) 0 else Color.parseColor(stroke)
+                svg.paths.add(SPath(d, color, width, isEraser))
             }
 
             Xml.parse(inputStream, Xml.Encoding.UTF_8, root.contentHandler)
@@ -122,5 +124,5 @@ object Svg {
 
     private class SRect(val width: Int, val height: Int, val color: Int) : Serializable
 
-    private class SPath(var data: String, var color: Int, var strokeWidth: Float) : Serializable
+    private class SPath(var data: String, var color: Int, var strokeWidth: Float, var isEraser: Boolean) : Serializable
 }

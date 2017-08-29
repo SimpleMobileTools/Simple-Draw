@@ -200,7 +200,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mPaths.put(mPath, mPaintOptions)
         pathsUpdated()
         mPath = MyPath()
-        mPaintOptions = PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth)
+        mPaintOptions = PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth, mPaintOptions.isEraser)
     }
 
     private fun pathsUpdated() {
@@ -256,7 +256,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             val size = parcel.readInt()
             for (i in 0 until size) {
                 val key = parcel.readSerializable() as MyPath
-                val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat())
+                val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat(), parcel.readInt() == 1)
                 paths.put(key, paintOptions)
             }
         }
@@ -268,6 +268,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 out.writeSerializable(path)
                 out.writeInt(paintOptions.color)
                 out.writeFloat(paintOptions.strokeWidth)
+                out.writeInt(if (paintOptions.isEraser) 1 else 0)
             }
         }
 
