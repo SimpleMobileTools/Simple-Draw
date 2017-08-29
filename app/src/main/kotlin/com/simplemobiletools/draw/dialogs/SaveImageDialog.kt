@@ -96,7 +96,7 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
     }
 
     private fun writeToOutputStream(file: File, out: OutputStream) {
-        out.use { out ->
+        out.use {
             canvas.getBitmap().compress(file.getCompressionFormat(), 70, out)
         }
     }

@@ -250,7 +250,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         constructor(parcel: Parcel) : super(parcel) {
             val size = parcel.readInt()
-            for (i in 0..size - 1) {
+            for (i in 0 until size) {
                 val key = parcel.readSerializable() as MyPath
                 val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat())
                 paths.put(key, paintOptions)

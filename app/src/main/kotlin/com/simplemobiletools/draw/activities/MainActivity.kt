@@ -111,12 +111,10 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            if (requestCode == SAVE_IMAGE) {
-                saveImage()
-            } else if (requestCode == OPEN_FILE) {
-                openFile()
-            } else if (requestCode == OPEN_FILE_INTENT) {
-                openPath(openFileIntentPath)
+            when (requestCode) {
+                SAVE_IMAGE -> saveImage()
+                OPEN_FILE -> openFile()
+                OPEN_FILE_INTENT -> openPath(openFileIntentPath)
             }
         } else {
             toast(R.string.no_storage_permissions)
@@ -146,15 +144,17 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun openPath(path: String) {
-        if (path.endsWith(".svg")) {
-            my_canvas.mBackgroundBitmap = null
-            Svg.loadSvg(this, File(path), my_canvas)
-            suggestedFileExtension = SVG
-        } else if (File(path).isImageSlow()) {
-            my_canvas.drawBitmap(this, path)
-            suggestedFileExtension = JPG
-        } else {
-            toast(R.string.invalid_file_format)
+        when {
+            path.endsWith(".svg") -> {
+                my_canvas.mBackgroundBitmap = null
+                Svg.loadSvg(this, File(path), my_canvas)
+                suggestedFileExtension = SVG
+            }
+            File(path).isImageSlow() -> {
+                my_canvas.drawBitmap(this, path)
+                suggestedFileExtension = JPG
+            }
+            else -> toast(R.string.invalid_file_format)
         }
     }
 
@@ -211,10 +211,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             fileOutputStream.write(bytes.toByteArray())
         } catch (e: Exception) {
         } finally {
-            try {
-                fileOutputStream?.close()
-            } catch (e: Exception) {
-            }
+            fileOutputStream?.close()
         }
 
         return FileProvider.getUriForFile(this, "com.simplemobiletools.draw.fileprovider", file)
@@ -225,7 +222,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         suggestedFileExtension = PNG
     }
 
-    fun pickColor() {
+    private fun pickColor() {
         ColorPickerDialog(this, color) {
             setColor(it)
         }
@@ -248,7 +245,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         undo.beVisibleIf(cnt > 0)
     }
 
-    internal var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
+    private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
         override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
             my_canvas.setStrokeWidth(progress.toFloat())
             strokeWidth = progress.toFloat()
