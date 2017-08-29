@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
+    <string name="app_name">Jednoduché kreslenie</string>
+    <string name="app_launcher_name">Kreslenie</string>
     <string name="open_file">Otvoriť súbor</string>
     <string name="eraser">Guma</string>
     <string name="failed_to_load_image">Nepodarilo sa načítať súbor %s</string>
