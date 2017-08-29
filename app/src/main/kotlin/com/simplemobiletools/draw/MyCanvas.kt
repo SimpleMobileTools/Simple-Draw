@@ -12,7 +12,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.getContrastColor
+import com.simplemobiletools.commons.extensions.toast
 import java.util.*
+import java.util.concurrent.ExecutionException
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     var mPaths = LinkedHashMap<MyPath, PaintOptions>()
@@ -94,15 +96,20 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     .format(DecodeFormat.PREFER_ARGB_8888)
                     .fitCenter()
 
-            val builder = Glide.with(context)
-                    .asBitmap()
-                    .load(path)
-                    .apply(options)
-                    .into(size.x, size.y)
+            try {
+                val builder = Glide.with(context)
+                        .asBitmap()
+                        .load(path)
+                        .apply(options)
+                        .into(size.x, size.y)
 
-            mBackgroundBitmap = builder.get()
-            activity.runOnUiThread {
-                invalidate()
+                mBackgroundBitmap = builder.get()
+                activity.runOnUiThread {
+                    invalidate()
+                }
+            } catch (e: ExecutionException) {
+                val errorMsg = String.format(activity.getString(R.string.failed_to_load_image), path)
+                activity.toast(errorMsg)
             }
         }).start()
     }
