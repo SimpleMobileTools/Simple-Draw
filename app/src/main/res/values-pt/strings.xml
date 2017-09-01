@@ -3,7 +3,7 @@
     <string name="app_launcher_name">Desenho</string>
     <string name="open_file">Abrir ficheiro</string>
     <string name="eraser">Borracha</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="failed_to_load_image">Falha ao carregar a imagem %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
