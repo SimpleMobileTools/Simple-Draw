@@ -3,7 +3,7 @@
     <string name="app_launcher_name">Rita</string>
     <string name="open_file">Öppna fil</string>
     <string name="eraser">Radergummi</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="failed_to_load_image">Det gick inte att läsa in bilden %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Visa penselstorleksverktyg</string>
@@ -15,7 +15,7 @@
     <string name="app_long_description">
         Vill du rita något men har inget papper? Denna app passar dig perfekt. Välj bara en färg och rita. Du kan antingen spara ritningen eller dela den direkt via e-post eller sociala nätverk.
 
-        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och har även ett Mörkt tema.
+        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
 
         Denna app är bara en del av en större serie appar. Du hittar resten av dem på http://www.simplemobiletools.com
     </string>
