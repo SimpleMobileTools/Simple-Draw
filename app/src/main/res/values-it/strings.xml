@@ -3,7 +3,7 @@
     <string name="app_launcher_name">Disegna</string>
     <string name="open_file">Apri file</string>
     <string name="eraser">Gomma</string>
-    <string name="failed_to_load_image">Impossibile caricare l'immagine %s</string>
+    <string name="failed_to_load_image">Impossibile caricare l\'immagine %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Dimensione gomma</string>
