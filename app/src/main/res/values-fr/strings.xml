@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Dessin simple</string>
     <string name="app_launcher_name">Dessiner</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="open_file">Ouvrir un fichier</string>
+    <string name="eraser">Gomme</string>
+    <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Show brush size tool</string>
+    <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
     <string name="clear">Tout effacer</string>
     <string name="change_background_color">Changer le fond</string>
 
@@ -15,7 +15,7 @@
     <string name="app_long_description">
         Envie de dessiner quelque chose mais pas de papier ? Cette application est faite pour vous. Sélectionnez simplement une couleur et dessinez. Vous pouvez soit sauver le dessin soit le partager par email ou les réseaux sociaux.
 
-        Pas de pubs ni de permissions inutiles. C\'est totalement open-source et possède un thème sombre.
+        Pas de pubs ni de permissions inutiles. Totalement open-source et propose des couleurs personnalisables.
 
         Cette application fait partie d\'un ensemble d\'applications. Vous pouvez trouver les autres sur http://www.simplemobiletools.com
     </string>
