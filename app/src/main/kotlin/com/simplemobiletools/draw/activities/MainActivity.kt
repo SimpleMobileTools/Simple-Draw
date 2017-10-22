@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.support.v4.content.FileProvider
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.MimeTypeMap
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
@@ -30,6 +31,7 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 
+
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
@@ -43,6 +45,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        storeStoragePaths()
         my_canvas.setListener(this)
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
@@ -56,18 +59,8 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
         eraser.setOnClickListener { eraserClicked() }
-        storeStoragePaths()
 
-        if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
-            val path = intent.data!!.path
-            handlePermission(PERMISSION_WRITE_STORAGE) {
-                if (it) {
-                    openPath(path)
-                } else {
-                    toast(R.string.no_storage_permissions)
-                }
-            }
-        }
+        checkIntents()
         checkWhatsNewDialog()
     }
 
@@ -128,6 +121,34 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         }
     }
 
+    private fun checkIntents() {
+        if (intent?.action == Intent.ACTION_SEND && intent.type.startsWith("image/")) {
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+                    if (uri.scheme == "file") {
+                        openPath(uri.path)
+                    } else if (uri.scheme == "content") {
+                        openUri(uri)
+                    }
+                } else {
+                    toast(R.string.no_storage_permissions)
+                }
+            }
+        }
+
+        if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
+            val path = intent.data!!.path
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    openPath(path)
+                } else {
+                    toast(R.string.no_storage_permissions)
+                }
+            }
+        }
+    }
+
     private fun openPath(path: String) {
         when {
             path.endsWith(".svg") -> {
@@ -137,6 +158,18 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             }
             File(path).isImageSlow() -> {
                 my_canvas.drawBitmap(this, path)
+                suggestedFileExtension = JPG
+            }
+            else -> toast(R.string.invalid_file_format)
+        }
+    }
+
+    private fun openUri(uri: Uri) {
+        val mime = MimeTypeMap.getSingleton()
+        val type = mime.getExtensionFromMimeType(contentResolver.getType(uri))
+        when (type) {
+            "jpg", "jpeg", "png" -> {
+                my_canvas.drawBitmap(this, uri)
                 suggestedFileExtension = JPG
             }
             else -> toast(R.string.invalid_file_format)

@@ -104,7 +104,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         return bitmap
     }
 
-    fun drawBitmap(activity: Activity, path: String) {
+    fun drawBitmap(activity: Activity, path: Any) {
         Thread({
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
