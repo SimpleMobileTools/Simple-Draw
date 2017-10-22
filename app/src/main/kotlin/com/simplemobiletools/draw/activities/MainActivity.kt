@@ -218,6 +218,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private fun clearCanvas() {
         my_canvas.clearCanvas()
         suggestedFileExtension = PNG
+        curPath = ""
     }
 
     private fun pickColor() {
