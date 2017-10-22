@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 2.2.0 *(2017-10-22)*
+----------------------------
+
+ * Reset the save filename after Clear
+ * React on some Share image intents
+ * React on Image_capture intent
+
 Version 2.1.0 *(2017-08-29)*
 ----------------------------
 
