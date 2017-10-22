@@ -90,7 +90,7 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
 
     private fun saveImageFile(file: File) {
         activity.getFileOutputStream(file) {
-            writeToOutputStream(file, it)
+            writeToOutputStream(file, it!!)
             activity.toast(R.string.file_saved)
         }
     }

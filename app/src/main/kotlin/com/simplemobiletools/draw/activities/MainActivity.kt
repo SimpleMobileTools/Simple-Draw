@@ -1,14 +1,11 @@
 package com.simplemobiletools.draw.activities
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
 import android.support.v4.content.FileProvider
 import android.view.Menu
 import android.view.MenuItem
@@ -17,6 +14,7 @@ import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
+import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
@@ -35,15 +33,11 @@ import java.io.FileOutputStream
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
-    private val SAVE_IMAGE = 1
-    private val OPEN_FILE = 2
-    private val OPEN_FILE_INTENT = 3
 
     private var curPath = ""
     private var color = 0
     private var strokeWidth = 0f
     private var suggestedFileExtension = PNG
-    private var openFileIntentPath = ""
     private var isEraserOn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,11 +60,12 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
             val path = intent.data!!.path
-            if (hasWriteStoragePermission()) {
-                openPath(path)
-            } else {
-                openFileIntentPath = path
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), OPEN_FILE_INTENT)
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    openPath(path)
+                } else {
+                    toast(R.string.no_storage_permissions)
+                }
             }
         }
         checkWhatsNewDialog()
@@ -109,20 +104,6 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         return true
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
-        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            when (requestCode) {
-                SAVE_IMAGE -> saveImage()
-                OPEN_FILE -> openFile()
-                OPEN_FILE_INTENT -> openPath(openFileIntentPath)
-            }
-        } else {
-            toast(R.string.no_storage_permissions)
-        }
-    }
-
     private fun launchSettings() {
         startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
@@ -132,10 +113,12 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun tryOpenFile() {
-        if (hasWriteStoragePermission()) {
-            openFile()
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), OPEN_FILE)
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                openFile()
+            } else {
+                toast(R.string.no_storage_permissions)
+            }
         }
     }
 
@@ -179,10 +162,12 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun trySaveImage() {
-        if (hasWriteStoragePermission()) {
-            saveImage()
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), SAVE_IMAGE)
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                saveImage()
+            } else {
+                toast(R.string.no_storage_permissions)
+            }
         }
     }
 
@@ -212,8 +197,9 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
         val folder = File(cacheDir, FOLDER_NAME)
         if (!folder.exists()) {
-            if (!folder.mkdir())
+            if (!folder.mkdir()) {
                 return null
+            }
         }
 
         val file = File(folder, FILE_NAME)
