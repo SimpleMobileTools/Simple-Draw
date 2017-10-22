@@ -9,7 +9,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.content.FileProvider
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.MimeTypeMap
@@ -154,7 +153,6 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             val output = intent.extras?.get(MediaStore.EXTRA_OUTPUT)
             if (output != null && output is Uri) {
                 isImageCaptureIntent = true
-                Log.e("DEBUG", "output $output, path ${output.path}")
                 curPath = output.path
                 invalidateOptionsMenu()
             }
