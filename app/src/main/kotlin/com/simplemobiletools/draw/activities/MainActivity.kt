@@ -1,12 +1,15 @@
 package com.simplemobiletools.draw.activities
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v4.content.FileProvider
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.MimeTypeMap
@@ -40,6 +43,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private var strokeWidth = 0f
     private var suggestedFileExtension = PNG
     private var isEraserOn = false
+    private var isImageCaptureIntent = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,11 +83,18 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
+        menu.apply {
+            findItem(R.id.menu_confirm).isVisible = isImageCaptureIntent
+            findItem(R.id.menu_save).isVisible = !isImageCaptureIntent
+            findItem(R.id.menu_share).isVisible = !isImageCaptureIntent
+        }
+
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.menu_confirm -> confirmImage()
             R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
             R.id.clear -> clearCanvas()
@@ -105,17 +116,14 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun tryOpenFile() {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                openFile()
-            } else {
-                toast(R.string.no_storage_permissions)
-            }
+        getStoragePermission {
+            openFile()
         }
     }
 
     private fun openFile() {
-        FilePickerDialog(this, curPath) {
+        val path = if (isImageCaptureIntent) "" else curPath
+        FilePickerDialog(this, path) {
             openPath(it)
         }
     }
@@ -139,6 +147,16 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             getStoragePermission {
                 val path = intent.data.path
                 openPath(path)
+            }
+        }
+
+        if (intent?.action == MediaStore.ACTION_IMAGE_CAPTURE) {
+            val output = intent.extras?.get(MediaStore.EXTRA_OUTPUT)
+            if (output != null && output is Uri) {
+                isImageCaptureIntent = true
+                Log.e("DEBUG", "output $output, path ${output.path}")
+                curPath = output.path
+                invalidateOptionsMenu()
             }
         }
     }
@@ -217,13 +235,20 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         }
     }
 
-    private fun trySaveImage() {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                saveImage()
-            } else {
-                toast(R.string.no_storage_permissions)
+    private fun confirmImage() {
+        val file = File(curPath)
+        getFileOutputStream(file) {
+            it.use {
+                my_canvas.getBitmap().compress(file.getCompressionFormat(), 70, it)
             }
+            setResult(Activity.RESULT_OK)
+            finish()
+        }
+    }
+
+    private fun trySaveImage() {
+        getStoragePermission {
+            saveImage()
         }
     }
 
