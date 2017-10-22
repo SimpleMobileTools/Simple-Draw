@@ -2,6 +2,7 @@ package com.simplemobiletools.draw
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.sax.RootElement
 import android.util.Xml
 import com.simplemobiletools.commons.extensions.getFileOutputStream
@@ -51,8 +52,8 @@ object Svg {
         }
     }
 
-    fun loadSvg(activity: MainActivity, file: File, canvas: MyCanvas) {
-        val svg = parseSvg(file)
+    fun loadSvg(activity: MainActivity, fileOrUri: Any, canvas: MyCanvas) {
+        val svg = parseSvg(activity, fileOrUri)
 
         canvas.clearCanvas()
         activity.setBackgroundColor(svg.background!!.color)
@@ -66,11 +67,15 @@ object Svg {
         }
     }
 
-    private fun parseSvg(file: File): SSvg {
+    private fun parseSvg(activity: MainActivity, fileOrUri: Any): SSvg {
         var inputStream: InputStream? = null
         val svg = SSvg()
         try {
-            inputStream = FileInputStream(file)
+            inputStream = when (fileOrUri) {
+                is File -> FileInputStream(fileOrUri)
+                is Uri -> activity.contentResolver.openInputStream(fileOrUri)
+                else -> null
+            }
 
             // Actual parsing (http://stackoverflow.com/a/4828765)
             val ns = "http://www.w3.org/2000/svg"

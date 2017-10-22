@@ -31,7 +31,6 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 
-
 class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
@@ -126,10 +125,21 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             handlePermission(PERMISSION_WRITE_STORAGE) {
                 if (it) {
                     val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-                    if (uri.scheme == "file") {
-                        openPath(uri.path)
-                    } else if (uri.scheme == "content") {
-                        openUri(uri)
+                    tryOpenUri(uri)
+                } else {
+                    toast(R.string.no_storage_permissions)
+                }
+            }
+        }
+
+        if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type.startsWith("image/")) {
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
+                    for (uri in imageUris) {
+                        if (tryOpenUri(uri)) {
+                            break
+                        }
                     }
                 } else {
                     toast(R.string.no_storage_permissions)
@@ -149,30 +159,49 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         }
     }
 
-    private fun openPath(path: String) {
-        when {
-            path.endsWith(".svg") -> {
-                my_canvas.mBackgroundBitmap = null
-                Svg.loadSvg(this, File(path), my_canvas)
-                suggestedFileExtension = SVG
-            }
-            File(path).isImageSlow() -> {
-                my_canvas.drawBitmap(this, path)
-                suggestedFileExtension = JPG
-            }
-            else -> toast(R.string.invalid_file_format)
+    private fun tryOpenUri(uri: Uri) = when {
+        uri.scheme == "file" -> openPath(uri.path)
+        uri.scheme == "content" -> openUri(uri, intent)
+        else -> false
+    }
+
+    private fun openPath(path: String) = when {
+        path.endsWith(".svg") -> {
+            my_canvas.mBackgroundBitmap = null
+            Svg.loadSvg(this, File(path), my_canvas)
+            suggestedFileExtension = SVG
+            true
+        }
+        File(path).isImageSlow() -> {
+            my_canvas.drawBitmap(this, path)
+            suggestedFileExtension = JPG
+            true
+        }
+        else -> {
+            toast(R.string.invalid_file_format)
+            false
         }
     }
 
-    private fun openUri(uri: Uri) {
+    private fun openUri(uri: Uri, intent: Intent): Boolean {
         val mime = MimeTypeMap.getSingleton()
-        val type = mime.getExtensionFromMimeType(contentResolver.getType(uri))
-        when (type) {
+        val type = mime.getExtensionFromMimeType(contentResolver.getType(uri)) ?: intent.type
+        return when (type) {
+            "svg", "image/svg+xml" -> {
+                my_canvas.mBackgroundBitmap = null
+                Svg.loadSvg(this, uri, my_canvas)
+                suggestedFileExtension = SVG
+                true
+            }
             "jpg", "jpeg", "png" -> {
                 my_canvas.drawBitmap(this, uri)
                 suggestedFileExtension = JPG
+                true
             }
-            else -> toast(R.string.invalid_file_format)
+            else -> {
+                toast(R.string.invalid_file_format)
+                false
+            }
         }
     }
 
