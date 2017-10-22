@@ -1,2 +1,3 @@
--renamesourcefileattribute SourceFile
--keepattributes SourceFile, LineNumberTable
+-keepclassmembers class * implements android.os.Parcelable {
+    static ** CREATOR;
+}
