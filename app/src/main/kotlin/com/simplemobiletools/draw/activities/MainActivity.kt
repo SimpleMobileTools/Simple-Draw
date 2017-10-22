@@ -122,39 +122,33 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
     private fun checkIntents() {
         if (intent?.action == Intent.ACTION_SEND && intent.type.startsWith("image/")) {
-            handlePermission(PERMISSION_WRITE_STORAGE) {
-                if (it) {
-                    val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-                    tryOpenUri(uri)
-                } else {
-                    toast(R.string.no_storage_permissions)
-                }
+            getStoragePermission {
+                val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+                tryOpenUri(uri)
             }
         }
 
         if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type.startsWith("image/")) {
-            handlePermission(PERMISSION_WRITE_STORAGE) {
-                if (it) {
-                    val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
-                    for (uri in imageUris) {
-                        if (tryOpenUri(uri)) {
-                            break
-                        }
-                    }
-                } else {
-                    toast(R.string.no_storage_permissions)
-                }
+            getStoragePermission {
+                val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
+                imageUris.any { tryOpenUri(it) }
             }
         }
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
-            val path = intent.data!!.path
-            handlePermission(PERMISSION_WRITE_STORAGE) {
-                if (it) {
-                    openPath(path)
-                } else {
-                    toast(R.string.no_storage_permissions)
-                }
+            getStoragePermission {
+                val path = intent.data.path
+                openPath(path)
+            }
+        }
+    }
+
+    private fun getStoragePermission(callback: () -> Unit) {
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                callback()
+            } else {
+                toast(R.string.no_storage_permissions)
             }
         }
     }
