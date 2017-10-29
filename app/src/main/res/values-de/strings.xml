@@ -1,22 +1,22 @@
 <resources>
     <string name="app_name">Schlichter Zeichenblock</string>
     <string name="app_launcher_name">Zeichenblock</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="open_file">Datei öffnen</string>
+    <string name="eraser">Radierer</string>
+    <string name="failed_to_load_image">Fehler beim Laden des Bildes %s</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="clear">Leeren</string>
-    <string name="change_background_color">Change background color</string>
+    <string name="show_brush_size">Zeige Pinselgröße</string>
+    <string name="clear">Löschen</string>
+    <string name="change_background_color">Ändere Hintergrundfarbe</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <string name="app_short_description">A canvas you can draw on with different colors.</string>
+    <string name="app_short_description">Eine Leinwand auf der du mit verschiedenen Farben zeichnen kannst.</string>
     <string name="app_long_description">
-        Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
+        Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen. Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnung speichern oder direkt per Email oder auf sozialen Netzwerken teilen.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+        Beinhaltet keine Werbung und benötigt keine unnötigen Berechtigungen. Die App ist komplett Open Source und bietet nach Wunsch anpassbare Farben.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        Diese App ist nur eine von vielen unserer Apps. Du kannst alle anderen hier finden: http://www.simplemobiletools.com
     </string>
 </resources>
