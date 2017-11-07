@@ -256,16 +256,11 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     private fun shareImage() {
-        val shareTitle = resources.getString(R.string.share_via)
-        val uri = getImageUri(my_canvas.getBitmap()) ?: return
-
-        Intent().apply {
-            action = Intent.ACTION_SEND
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            setDataAndType(uri, contentResolver.getType(uri))
-            putExtra(Intent.EXTRA_STREAM, uri)
-            type = "image/*"
-            startActivity(Intent.createChooser(this, shareTitle))
+        val uri = getImageUri(my_canvas.getBitmap())
+        if (uri != null) {
+            shareUri(uri, BuildConfig.APPLICATION_ID)
+        } else {
+            toast(R.string.unknown_error_occurred)
         }
     }
 
