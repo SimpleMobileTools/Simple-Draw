@@ -31,6 +31,7 @@ internal class MyParcelable : View.BaseSavedState {
     }
 
     companion object {
+        @JvmField
         val CREATOR: Parcelable.Creator<MyParcelable> = object : Parcelable.Creator<MyParcelable> {
             override fun createFromParcel(source: Parcel) = MyParcelable(source)
 
