@@ -21,11 +21,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     var mPaths = LinkedHashMap<MyPath, PaintOptions>()
     var mBackgroundBitmap: Bitmap? = null
+    var mListener: PathsChangedListener? = null
+
     private var mPaint = Paint()
     private var mPath = MyPath()
     private var mPaintOptions = PaintOptions()
 
-    private var mListener: PathsChangedListener? = null
     private var mCurX = 0f
     private var mCurY = 0f
     private var mStartX = 0f
@@ -46,10 +47,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
 
         pathsUpdated()
-    }
-
-    fun setListener(listener: PathsChangedListener) {
-        this.mListener = listener
     }
 
     fun undo() {
@@ -174,11 +171,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun changePaint(paintOptions: PaintOptions) {
-        if (paintOptions.isEraser)
-            mPaint.color = mBackgroundColor
-        else
-            mPaint.color = paintOptions.color
-
+        mPaint.color = if (paintOptions.isEraser) mBackgroundColor else paintOptions.color
         mPaint.strokeWidth = paintOptions.strokeWidth
         if (paintOptions.isEraser && mPaint.strokeWidth < MIN_ERASER_WIDTH) {
             mPaint.strokeWidth = MIN_ERASER_WIDTH

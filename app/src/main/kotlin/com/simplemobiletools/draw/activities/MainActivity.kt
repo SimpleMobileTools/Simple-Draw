@@ -47,7 +47,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         storeStoragePaths()
-        my_canvas.setListener(this)
+        my_canvas.mListener = this
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
         setBackgroundColor(config.canvasBackgroundColor)
