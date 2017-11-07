@@ -15,14 +15,14 @@ import java.util.*
 
 // https://stackoverflow.com/a/8127953
 class MyPath : Path(), Serializable {
-
     val actions = LinkedList<Action>()
 
     private fun readObject(inputStream: ObjectInputStream) {
         inputStream.defaultReadObject()
 
-        for (action in actions) {
-            action.perform(this)
+        val copiedActions = actions.map { it }
+        copiedActions.forEach {
+            it.perform(this)
         }
     }
 
