@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw
+package com.simplemobiletools.draw.models
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -7,6 +7,8 @@ import android.sax.RootElement
 import android.util.Xml
 import com.simplemobiletools.commons.extensions.getFileOutputStream
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.draw.MyCanvas
+import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.activities.MainActivity
 import com.simplemobiletools.draw.activities.SimpleActivity
 import java.io.*

@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw
+package com.simplemobiletools.draw.models
 
 import android.graphics.Color
 

@@ -13,6 +13,8 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.getContrastColor
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.draw.models.MyPath
+import com.simplemobiletools.draw.models.PaintOptions
 import java.util.*
 import java.util.concurrent.ExecutionException
 

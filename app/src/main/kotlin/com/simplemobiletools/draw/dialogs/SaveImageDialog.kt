@@ -6,7 +6,7 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.Svg
+import com.simplemobiletools.draw.models.Svg
 import com.simplemobiletools.draw.activities.SimpleActivity
 import com.simplemobiletools.draw.helpers.JPG
 import com.simplemobiletools.draw.helpers.PNG

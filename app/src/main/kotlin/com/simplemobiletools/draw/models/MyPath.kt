@@ -1,8 +1,9 @@
-package com.simplemobiletools.draw
+package com.simplemobiletools.draw.models
 
 import android.app.Activity
 import android.graphics.Path
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.actions.Action
 import com.simplemobiletools.draw.actions.Line
 import com.simplemobiletools.draw.actions.Move
