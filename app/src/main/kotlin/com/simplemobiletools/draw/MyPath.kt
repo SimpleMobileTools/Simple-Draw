@@ -15,7 +15,7 @@ import java.util.*
 // https://stackoverflow.com/a/8127953
 class MyPath : Path(), Serializable {
 
-    private val actions = LinkedList<Action>()
+    val actions = LinkedList<Action>()
 
     private fun readObject(inputStream: ObjectInputStream) {
         inputStream.defaultReadObject()
@@ -57,13 +57,10 @@ class MyPath : Path(), Serializable {
     }
 
     private fun addAction(action: Action) {
-        if (action is Move) {
-            moveTo(action.x, action.y)
-        } else if (action is Line) {
-            lineTo(action.x, action.y)
-        } else if (action is Quad) {
-            val q = action
-            quadTo(q.x1, q.y1, q.x2, q.y2)
+        when (action) {
+            is Move -> moveTo(action.x, action.y)
+            is Line -> lineTo(action.x, action.y)
+            is Quad -> quadTo(action.x1, action.y1, action.x2, action.y2)
         }
     }
 
@@ -81,6 +78,4 @@ class MyPath : Path(), Serializable {
         actions.add(Quad(x1, y1, x2, y2))
         super.quadTo(x1, y1, x2, y2)
     }
-
-    fun getActions() = actions
 }

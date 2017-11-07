@@ -39,7 +39,7 @@ object Svg {
     private fun writePath(writer: Writer, path: MyPath, options: PaintOptions) {
         writer.apply {
             write("<path d=\"")
-            path.getActions().forEach {
+            path.actions.forEach {
                 it.perform(this)
                 write(" ")
             }
