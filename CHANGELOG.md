@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 2.3.0 *(2017-11-07)*
+----------------------------
+
+ * Remove the wrongly added Fingerprint permission
+ * Some stability improvements
+
 Version 2.2.0 *(2017-10-22)*
 ----------------------------
 
