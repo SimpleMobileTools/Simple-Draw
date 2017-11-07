@@ -8,7 +8,6 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v4.content.FileProvider
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.MimeTypeMap
@@ -291,7 +290,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             fileOutputStream?.close()
         }
 
-        return FileProvider.getUriForFile(this, "com.simplemobiletools.draw.fileprovider", file)
+        return getFilePublicUri(file, BuildConfig.APPLICATION_ID)
     }
 
     private fun clearCanvas() {
