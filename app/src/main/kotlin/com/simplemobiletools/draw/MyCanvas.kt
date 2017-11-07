@@ -3,7 +3,6 @@ package com.simplemobiletools.draw
 import android.app.Activity
 import android.content.Context
 import android.graphics.*
-import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
@@ -13,6 +12,7 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.getContrastColor
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.draw.models.MyParcelable
 import com.simplemobiletools.draw.models.MyPath
 import com.simplemobiletools.draw.models.PaintOptions
 import java.util.*
@@ -259,39 +259,5 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         super.onRestoreInstanceState(state.superState)
         mPaths = state.paths
         pathsUpdated()
-    }
-
-    internal class MyParcelable : View.BaseSavedState {
-        var paths = LinkedHashMap<MyPath, PaintOptions>()
-
-        constructor(superState: Parcelable) : super(superState)
-
-        constructor(parcel: Parcel) : super(parcel) {
-            val size = parcel.readInt()
-            for (i in 0 until size) {
-                val key = parcel.readSerializable() as MyPath
-                val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat(), parcel.readInt() == 1)
-                paths.put(key, paintOptions)
-            }
-        }
-
-        override fun writeToParcel(out: Parcel, flags: Int) {
-            super.writeToParcel(out, flags)
-            out.writeInt(paths.size)
-            for ((path, paintOptions) in paths) {
-                out.writeSerializable(path)
-                out.writeInt(paintOptions.color)
-                out.writeFloat(paintOptions.strokeWidth)
-                out.writeInt(if (paintOptions.isEraser) 1 else 0)
-            }
-        }
-
-        companion object {
-            val CREATOR: Parcelable.Creator<MyParcelable> = object : Parcelable.Creator<MyParcelable> {
-                override fun createFromParcel(source: Parcel) = MyParcelable(source)
-
-                override fun newArray(size: Int) = arrayOf<MyParcelable>()
-            }
-        }
     }
 }

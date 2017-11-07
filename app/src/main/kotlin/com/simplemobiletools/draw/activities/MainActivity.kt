@@ -21,12 +21,12 @@ import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.MyCanvas
 import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.models.Svg
 import com.simplemobiletools.draw.dialogs.SaveImageDialog
 import com.simplemobiletools.draw.extensions.config
 import com.simplemobiletools.draw.helpers.JPG
 import com.simplemobiletools.draw.helpers.PNG
 import com.simplemobiletools.draw.helpers.SVG
+import com.simplemobiletools.draw.models.Svg
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
