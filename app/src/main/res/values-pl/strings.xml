@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Simple Draw</string>
+    <string name="app_name">Prosty Szkicorys</string>
+    <string name="app_launcher_name">Szkicorys</string>
     <string name="open_file">Otwórz plik</string>
     <string name="eraser">Gumka</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="failed_to_load_image">Nie udało się wczytać obrazu %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Pokaż narzędzie rozmiaru pędzla</string>
