@@ -11,6 +11,7 @@
     <string name="change_background_color">Zmień kolor tła</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Płótno w różnych kolorach, po którym możesz rysować.</string>
     <string name="app_long_description">
         Chcesz coś szybko narysować, a akurat nie masz przy sobie papieru? Zatem jest to aplikacja, której szukasz. Po prostu wybierz kolor i rysuj. Swoje dzieło możesz potem zapisać, jak i udostępnić przez e-maila lub sieci społecznościowe.
@@ -19,4 +20,9 @@
 
        Niniejsza aplikacja jest tylko częścią naszej kolekcji prostych narzędzi. Ta, jak i pozostałe, dostępne są na stronie http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>

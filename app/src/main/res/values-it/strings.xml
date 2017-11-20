@@ -11,10 +11,17 @@
     <string name="change_background_color">Cambia colore di sfondo</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Una tela su cui puoi disegnare con diversi colori.</string>
     <string name="app_long_description">Vuoi disegnare qualcosa ma non hai carta? Quest\'app fa per te. Devi solo selezionare un colore e disegnare. Puoi salvare i disegni o condividerli direttamente via email o sui social network.
         
         Non contiene pubblicità né richiede permessi non necessari. È completamente open source e permette di cambiare i colori.
         
-        Quest\'app è solo un pezzo di una serie più grande di app. Puoi vedere le rimanenti su http://www.simplemobiletools.com</string>
+        Quest\'app è solo un pezzo di una serie più grande di app. Puoi vedere le rimanenti su http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>

@@ -11,6 +11,7 @@
     <string name="change_background_color">Change background color</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">さまざまな色で描くことができるキャンバス。</string>
     <string name="app_long_description">
         何かを描きたいけど、紙を持っていない？ このアプリが完全に合っています。 色を選んで描くだけです。 画像を保存したり、メールやソーシャルネットワークで直接共有することができます。
@@ -19,4 +20,9 @@
 
         このアプリは、大きな一連のアプリの一つです。 他のアプリは http://www.simplemobiletools.com で見つけることができます
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>

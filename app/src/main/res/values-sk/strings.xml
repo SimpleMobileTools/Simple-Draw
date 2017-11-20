@@ -11,6 +11,7 @@
     <string name="change_background_color">Zmeniť farbu pozadia</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Jednoduché plátno, na ktoré môžete kresliť rôznymi farbami.</string>
     <string name="app_long_description">
         Chcete nakresliť niečo jednoduché, ale nemáte papier? Táto apka vám príde vhod. Zvoľte si farbu a kreslite. Kresby viete buď uložiť, alebo priamo zdieľať cez email, resp. sociálne siete.
@@ -19,4 +20,9 @@
 
         Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>

@@ -11,6 +11,7 @@
     <string name="change_background_color">Changer le fond</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Un canevas sur lequel vous pouvez dessiner avec différentes couleurs.</string>
     <string name="app_long_description">
         Envie de dessiner quelque chose mais pas de papier ? Cette application est faite pour vous. Sélectionnez simplement une couleur et dessinez. Vous pouvez soit sauver le dessin soit le partager par email ou les réseaux sociaux.
@@ -19,4 +20,9 @@
 
         Cette application fait partie d\'un ensemble d\'applications. Vous pouvez trouver les autres sur http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>

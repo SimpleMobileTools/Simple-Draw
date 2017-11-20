@@ -11,6 +11,7 @@
     <string name="change_background_color">Изменить цвет фона</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Холст, на котором можно рисовать разными цветами.</string>
     <string name="app_long_description">
         Хотите что-то нарисовать, но нет бумаги? Это приложение идеально вам подойдет. Просто выбирайте цвет и рисуйте. Вы можете сохранить рисунок, либо сразу отправить его по электронной почте или в социальные сети.
@@ -19,4 +20,9 @@
 
         Это только одно приложение из множества других в серии. Вы можете найти остальные на http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>

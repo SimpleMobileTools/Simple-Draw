@@ -11,6 +11,7 @@
     <string name="change_background_color">Ändere Hintergrundfarbe</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Eine Leinwand auf der du mit verschiedenen Farben zeichnen kannst.</string>
     <string name="app_long_description">
         Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen. Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnung speichern oder direkt per Email oder auf sozialen Netzwerken teilen.
@@ -19,4 +20,9 @@
 
         Diese App ist nur eine von vielen unserer Apps. Du kannst alle anderen hier finden: http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>
