@@ -1,74 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/save_image_holder"
+    android:id="@+id/save_image_wrapper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_margin"
-    android:paddingRight="@dimen/activity_margin"
-    android:paddingTop="@dimen/activity_margin">
+    android:layout_height="match_parent">
 
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/save_image_path_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/path"
-        android:textSize="@dimen/smaller_text_size"/>
-
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/save_image_path"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/save_image_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_margin"
-        android:layout_marginLeft="@dimen/activity_margin"
-        android:paddingRight="@dimen/small_margin"
-        android:paddingTop="@dimen/small_margin"/>
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:paddingTop="@dimen/activity_margin">
 
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/save_image_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/filename"
-        android:textSize="@dimen/smaller_text_size"/>
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/save_image_path_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/path"
+            android:textSize="@dimen/smaller_text_size"/>
 
-    <com.simplemobiletools.commons.views.MyEditText
-        android:id="@+id/save_image_filename"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_margin"
-        android:singleLine="true"
-        android:textCursorDrawable="@null"/>
-
-    <RadioGroup
-        android:id="@+id/save_image_radio_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:checkedButton="@+id/save_image_radio_png">
-
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/save_image_radio_png"
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/save_image_path"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
-            android:text=".png"/>
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:layout_marginLeft="@dimen/activity_margin"
+            android:paddingRight="@dimen/small_margin"
+            android:paddingTop="@dimen/small_margin"/>
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/save_image_radio_svg"
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/save_image_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filename"
+            android:textSize="@dimen/smaller_text_size"/>
+
+        <com.simplemobiletools.commons.views.MyEditText
+            android:id="@+id/save_image_filename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
-            android:text=".svg"/>
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"/>
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/save_image_radio_jpg"
+        <RadioGroup
+            android:id="@+id/save_image_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/medium_margin"
-            android:paddingTop="@dimen/medium_margin"
-            android:text=".jpg"/>
+            android:checkedButton="@+id/save_image_radio_png">
 
-    </RadioGroup>
-</LinearLayout>
+            <com.simplemobiletools.commons.views.MyCompatRadioButton
+                android:id="@+id/save_image_radio_png"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/medium_margin"
+                android:paddingTop="@dimen/medium_margin"
+                android:text=".png"/>
+
+            <com.simplemobiletools.commons.views.MyCompatRadioButton
+                android:id="@+id/save_image_radio_svg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/medium_margin"
+                android:paddingTop="@dimen/medium_margin"
+                android:text=".svg"/>
+
+            <com.simplemobiletools.commons.views.MyCompatRadioButton
+                android:id="@+id/save_image_radio_jpg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/medium_margin"
+                android:paddingTop="@dimen/medium_margin"
+                android:text=".jpg"/>
+
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>
