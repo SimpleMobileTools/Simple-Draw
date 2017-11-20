@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw
+package com.simplemobiletools.draw.views
 
 import android.app.Activity
 import android.content.Context
@@ -12,6 +12,7 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.getContrastColor
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.models.MyParcelable
 import com.simplemobiletools.draw.models.MyPath
 import com.simplemobiletools.draw.models.PaintOptions

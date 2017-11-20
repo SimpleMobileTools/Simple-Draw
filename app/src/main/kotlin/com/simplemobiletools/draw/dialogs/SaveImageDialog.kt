@@ -4,7 +4,7 @@ import android.support.v7.app.AlertDialog
 import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.draw.MyCanvas
+import com.simplemobiletools.draw.views.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.models.Svg
 import com.simplemobiletools.draw.activities.SimpleActivity
