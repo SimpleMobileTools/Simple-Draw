@@ -3,7 +3,6 @@ package com.simplemobiletools.draw.activities
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -315,8 +314,9 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     }
 
     fun setBackgroundColor(pickedColor: Int) {
-        undo.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
-        eraser.setColorFilter(pickedColor.getContrastColor(), PorterDuff.Mode.SRC_IN)
+        val contrastColor = pickedColor.getContrastColor()
+        undo.applyColorFilter(contrastColor)
+        eraser.applyColorFilter(contrastColor)
         my_canvas.updateBackgroundColor(pickedColor)
         suggestedFileExtension = PNG
     }
