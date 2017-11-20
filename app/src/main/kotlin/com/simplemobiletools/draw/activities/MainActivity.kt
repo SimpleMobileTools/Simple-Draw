@@ -44,6 +44,8 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
     private var isEraserOn = false
     private var isImageCaptureIntent = false
 
+    private var storedUseEnglish = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -64,10 +66,16 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
 
         checkIntents()
         checkWhatsNewDialog()
+        storeStateVariables()
     }
 
     override fun onResume() {
         super.onResume()
+        if (storedUseEnglish != config.useEnglish) {
+            restartActivity()
+            return
+        }
+
         val isStrokeWidthBarEnabled = config.showBrushSize
         stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
         my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
@@ -78,6 +86,7 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         super.onPause()
         config.brushColor = color
         config.brushSize = strokeWidth
+        storeStateVariables()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -104,6 +113,10 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
             else -> return super.onOptionsItemSelected(item)
         }
         return true
+    }
+
+    private fun storeStateVariables() {
+        storedUseEnglish = config.useEnglish
     }
 
     private fun launchSettings() {
