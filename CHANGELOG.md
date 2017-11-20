@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 2.4.0 *(2017-11-20)*
+----------------------------
+
+ * Allow undoing Clear
+ * Adding adaptive icons
+ * Adding a toggle for forcing english language
+
 Version 2.3.0 *(2017-11-07)*
 ----------------------------
 
