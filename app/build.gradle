@@ -12,6 +12,7 @@ android {
         targetSdkVersion 27
         versionCode 23
         versionName "2.3.0"
+        setProperty("archivesBaseName", "draw")
     }
 
     signingConfigs {
@@ -37,23 +38,10 @@ android {
 }
 
 dependencies {
-    compile 'com.simplemobiletools:commons:2.37.2'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.simplemobiletools:commons:2.41.5'
 }
 
-buildscript {
-    ext.kotlin_version = '1.1.51'
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
-    }
-}
-
-def Properties props = new Properties()
+Properties props = new Properties()
 def propFile = new File('signing.properties')
 if (propFile.canRead()) {
     props.load(new FileInputStream(propFile))
