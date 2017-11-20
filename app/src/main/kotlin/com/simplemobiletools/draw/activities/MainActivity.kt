@@ -25,14 +25,14 @@ import com.simplemobiletools.draw.extensions.config
 import com.simplemobiletools.draw.helpers.JPG
 import com.simplemobiletools.draw.helpers.PNG
 import com.simplemobiletools.draw.helpers.SVG
+import com.simplemobiletools.draw.interfaces.CanvasListener
 import com.simplemobiletools.draw.models.Svg
-import com.simplemobiletools.draw.views.MyCanvas
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 
-class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
+class MainActivity : SimpleActivity(), CanvasListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
 
@@ -329,8 +329,8 @@ class MainActivity : SimpleActivity(), MyCanvas.PathsChangedListener {
         updateEraserState()
     }
 
-    override fun pathsChanged(cnt: Int) {
-        undo.beVisibleIf(cnt > 0)
+    override fun toggleUndoVisibility(visible: Boolean) {
+        undo.beVisibleIf(visible)
     }
 
     private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {

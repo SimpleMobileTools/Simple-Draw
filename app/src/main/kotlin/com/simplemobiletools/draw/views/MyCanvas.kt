@@ -13,6 +13,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.getContrastColor
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.draw.R
+import com.simplemobiletools.draw.interfaces.CanvasListener
 import com.simplemobiletools.draw.models.MyParcelable
 import com.simplemobiletools.draw.models.MyPath
 import com.simplemobiletools.draw.models.PaintOptions
@@ -24,7 +25,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     var mPaths = LinkedHashMap<MyPath, PaintOptions>()
     var mBackgroundBitmap: Bitmap? = null
-    var mListener: PathsChangedListener? = null
+    var mListener: CanvasListener? = null
+
+    // allow undoing Clear
+    var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
+    var mLastBackgroundBitmap: Bitmap? = null
 
     private var mPaint = Paint()
     private var mPath = MyPath()
@@ -53,6 +58,15 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun undo() {
+        if (mPaths.isEmpty() && mLastPaths.isNotEmpty()) {
+            mPaths = mLastPaths.clone() as LinkedHashMap<MyPath, PaintOptions>
+            mBackgroundBitmap = mLastBackgroundBitmap
+            mLastPaths.clear()
+            pathsUpdated()
+            invalidate()
+            return
+        }
+
         if (mPaths.isEmpty())
             return
 
@@ -182,6 +196,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun clearCanvas() {
+        mLastPaths = mPaths.clone() as LinkedHashMap<MyPath, PaintOptions>
+        mLastBackgroundBitmap = mBackgroundBitmap
         mBackgroundBitmap = null
         mPath.reset()
         mPaths.clear()
@@ -219,7 +235,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun pathsUpdated() {
-        mListener?.pathsChanged(mPaths.size)
+        mListener?.toggleUndoVisibility(mPaths.isNotEmpty() || mLastPaths.isNotEmpty())
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -238,10 +254,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         invalidate()
         return true
-    }
-
-    interface PathsChangedListener {
-        fun pathsChanged(cnt: Int)
     }
 
     public override fun onSaveInstanceState(): Parcelable {
