@@ -48,7 +48,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        storeStoragePaths()
+        appLaunched()
         my_canvas.mListener = this
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
