@@ -4,13 +4,13 @@ import android.support.v7.app.AlertDialog
 import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.draw.views.MyCanvas
 import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.models.Svg
 import com.simplemobiletools.draw.activities.SimpleActivity
 import com.simplemobiletools.draw.helpers.JPG
 import com.simplemobiletools.draw.helpers.PNG
 import com.simplemobiletools.draw.helpers.SVG
+import com.simplemobiletools.draw.models.Svg
+import com.simplemobiletools.draw.views.MyCanvas
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 import java.io.OutputStream
@@ -43,33 +43,34 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
             window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            activity.setupDialogStuff(view, this, R.string.save_as)
-            getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
-                val filename = view.save_image_filename.value
-                if (filename.isEmpty()) {
-                    activity.toast(R.string.filename_cannot_be_empty)
-                    return@setOnClickListener
-                }
+            activity.setupDialogStuff(view, this, R.string.save_as) {
+                getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                    val filename = view.save_image_filename.value
+                    if (filename.isEmpty()) {
+                        activity.toast(R.string.filename_cannot_be_empty)
+                        return@setOnClickListener
+                    }
 
-                val extension = when (view.save_image_radio_group.checkedRadioButtonId) {
-                    R.id.save_image_radio_png -> PNG
-                    R.id.save_image_radio_svg -> SVG
-                    else -> JPG
-                }
+                    val extension = when (view.save_image_radio_group.checkedRadioButtonId) {
+                        R.id.save_image_radio_png -> PNG
+                        R.id.save_image_radio_svg -> SVG
+                        else -> JPG
+                    }
 
-                val newFile = File(realPath, "$filename.$extension")
-                if (!newFile.name.isAValidFilename()) {
-                    activity.toast(R.string.filename_invalid_characters)
-                    return@setOnClickListener
-                }
+                    val newFile = File(realPath, "$filename.$extension")
+                    if (!newFile.name.isAValidFilename()) {
+                        activity.toast(R.string.filename_invalid_characters)
+                        return@setOnClickListener
+                    }
 
-                if (saveFile(newFile)) {
-                    callback(newFile.absolutePath)
-                    dismiss()
-                } else {
-                    activity.toast(R.string.unknown_error_occurred)
+                    if (saveFile(newFile)) {
+                        callback(newFile.absolutePath)
+                        dismiss()
+                    } else {
+                        activity.toast(R.string.unknown_error_occurred)
+                    }
                 }
-            })
+            }
         }
     }
 

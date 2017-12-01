@@ -119,7 +119,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun drawBitmap(activity: Activity, path: Any) {
-        Thread({
+        Thread {
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
             val options = RequestOptions()
@@ -141,7 +141,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 val errorMsg = String.format(activity.getString(R.string.failed_to_load_image), path)
                 activity.toast(errorMsg)
             }
-        }).start()
+        }.start()
     }
 
     fun addPath(path: MyPath, options: PaintOptions) {
