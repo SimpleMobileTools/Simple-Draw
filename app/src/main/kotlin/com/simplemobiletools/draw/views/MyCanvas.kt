@@ -123,7 +123,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
             val options = RequestOptions()
-                    .format(DecodeFormat.PREFER_ARGB_8888_DISALLOW_HARDWARE)
+                    .format(DecodeFormat.PREFER_ARGB_8888)
+                    .disallowHardwareConfig()
                     .fitCenter()
 
             try {
