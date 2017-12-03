@@ -88,6 +88,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
         storeStateVariables()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        my_canvas.mListener = null
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         menu.apply {
