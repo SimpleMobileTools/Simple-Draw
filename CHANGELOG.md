@@ -1,6 +1,17 @@
 Changelog
 ==========
 
+Version 3.0.1 *(2017-12-06)*
+----------------------------
+
+ * Fixed missing launcher icons on some devices
+
+Version 3.0.0 *(2017-12-04)*
+----------------------------
+
+ * Improved primary color customization
+ * Fixed file saving on Android 8
+
 Version 2.4.0 *(2017-11-20)*
 ----------------------------
 
