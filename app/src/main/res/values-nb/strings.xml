@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Tegneblokk</string>
+    <string name="open_file">Åpne fil</string>
+    <string name="eraser">Viskelær</string>
+    <string name="failed_to_load_image">Kunne ikke laste inn bilde %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
+    <string name="clear">Slett</string>
+    <string name="change_background_color">Endre bakgrunnsfarge</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">A canvas you can draw on with different colors.</string>
+    <string name="app_long_description">
+        Want to draw something but you have no paper? This app will suit you perfectly. Just pick a color and draw. You can either save the drawing or share it directly through email or social networks.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
