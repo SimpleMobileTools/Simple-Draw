@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Draw</string>
+    <string name="open_file">파일 열기</string>
+    <string name="eraser">지우개</string>
+    <string name="failed_to_load_image">%s 이미지 파일 로딩 실패</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">브러쉬 크기조절 도구 활성화</string>
+    <string name="clear">지우기</string>
+    <string name="change_background_color">배경색 변경</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">다양한 색으로 그릴 수 있는 캔버스입니다.</string>
+    <string name="app_long_description">
+        무언가를 그려보고 싶지만 종이가 없나요? 그렇다면 이 애플리케이션은 당신에게 아주 유용합니다. 그냥 색상을 선택하고 그려보세요. 당신이 그린 그림을 저장하거나 이메일 또는 소셜 네트워크를 통해 직접 공유 할 수 있습니다.
+
+        광고가 포함되어 있거나, 불필요한 권한을 요청하지 않습니다. 이 앱의 모든 소스는 오픈소스이며, 사용자가 직접 애플리케이션의 컬러를 설정 할 수 있습니다.
+
+        이 앱은 다양한 시리즈의 모바일앱 중 하나입니다. 나머지는 http://www.simplemobiletools.com 에서 찾아 보실 수 있습니다.
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
