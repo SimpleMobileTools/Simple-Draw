@@ -14,11 +14,11 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Eine Leinwand auf der du mit verschiedenen Farben zeichnen kannst.</string>
     <string name="app_long_description">
-        Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen. Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnung speichern oder direkt per Email oder auf sozialen Netzwerken teilen.
+        Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen! Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnungen speichern oder direkt per Email oder auf sozialen Netzwerken teilen.
 
-        Beinhaltet keine Werbung und benötigt keine unnötigen Berechtigungen. Die App ist komplett Open Source und bietet nach Wunsch anpassbare Farben.
+        Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
 
-        Diese App ist nur eine von vielen unserer Apps. Du kannst alle anderen hier finden: http://www.simplemobiletools.com
+        Diese App ist nur eine aus einer größeren Serie von schlichten Apps. Der Rest davon findet sich auf http://www.simplemobiletools.com
     </string>
 
     <!--
