@@ -31,12 +31,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
+import java.io.OutputStream
 
 class MainActivity : SimpleActivity(), CanvasListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
 
     private var curPath = ""
+    private var intentUri: Uri? = null
     private var color = 0
     private var strokeWidth = 0f
     private var suggestedFileExtension = PNG
@@ -170,6 +172,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             val output = intent.extras?.get(MediaStore.EXTRA_OUTPUT)
             if (output != null && output is Uri) {
                 isImageCaptureIntent = true
+                intentUri = output
                 curPath = output.path
                 invalidateOptionsMenu()
             }
@@ -252,13 +255,27 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun confirmImage() {
         val file = File(curPath)
-        getFileOutputStream(file) {
-            it.use {
-                my_canvas.getBitmap().compress(file.getCompressionFormat(), 70, it)
+        if (intentUri?.scheme == "content") {
+            val outputStream = contentResolver.openOutputStream(intentUri)
+            saveToOutputStream(outputStream, file.getCompressionFormat())
+        } else {
+            getFileOutputStream(file) {
+                saveToOutputStream(it, file.getCompressionFormat())
             }
-            setResult(Activity.RESULT_OK)
-            finish()
         }
+    }
+
+    private fun saveToOutputStream(outputStream: OutputStream?, format: Bitmap.CompressFormat) {
+        if (outputStream == null) {
+            toast(R.string.unknown_error_occurred)
+            return
+        }
+
+        outputStream.use {
+            my_canvas.getBitmap().compress(format, 70, it)
+        }
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
     private fun trySaveImage() {
