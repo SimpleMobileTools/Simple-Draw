@@ -285,8 +285,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun saveImage() {
-        SaveImageDialog(this, suggestedFileExtension, curPath, my_canvas) {
-            curPath = it
+        SaveImageDialog(this, suggestedFileExtension, curPath, my_canvas) { path, extension ->
+            curPath = path
+            suggestedFileExtension = extension
         }
     }
 

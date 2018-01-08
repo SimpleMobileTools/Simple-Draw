@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 import java.io.OutputStream
 
-class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: String, val curPath: String, val canvas: MyCanvas, callback: (path: String) -> Unit) {
+class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: String, val curPath: String, val canvas: MyCanvas,
+                      callback: (path: String, extension: String) -> Unit) {
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
@@ -64,7 +65,7 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
                     }
 
                     if (saveFile(newFile)) {
-                        callback(newFile.absolutePath)
+                        callback(newFile.absolutePath, extension)
                         dismiss()
                     } else {
                         activity.toast(R.string.unknown_error_occurred)
