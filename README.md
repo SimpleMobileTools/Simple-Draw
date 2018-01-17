@@ -12,12 +12,15 @@ This app is just one piece of a bigger series of apps. You can find the rest of 
 <a href='https://play.google.com/store/apps/details?id=com.simplemobiletools.draw'><img src='http://simplemobiletools.github.io/assets/public/google-play.png' alt='Get it on Google Play' height=45/></a>
 <a href='https://f-droid.org/app/com.simplemobiletools.draw'><img src='http://simplemobiletools.github.io/assets/public/f-droid.png' alt='Get it on F-Droid' height=45 ></a>
 
-<img alt="App image" src="screenshots/app.png" width="250">
-<img alt="App image" src="screenshots/app_2.png" width="250">
+<div style="display:flex;">
+<img alt="App image" src="screenshots/app.png" width="30%">
+<img alt="App image" src="screenshots/app_2.png" width="30%">
+<img alt="App image" src="screenshots/app_3.png" width="30%">
+</div>
 
 License
 -------
-    Copyright 2017 SimpleMobileTools
+    Copyright 2016-present SimpleMobileTools
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
