@@ -1,0 +1,1 @@
+A canvas you can draw on with different colors.
