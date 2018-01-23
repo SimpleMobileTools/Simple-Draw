@@ -259,8 +259,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
             val outputStream = contentResolver.openOutputStream(intentUri)
             saveToOutputStream(outputStream, file.getCompressionFormat())
         } else {
-            getFileOutputStream(file) {
-                saveToOutputStream(it, file.getCompressionFormat())
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                getFileOutputStream(file) {
+                    saveToOutputStream(it, file.getCompressionFormat())
+                }
             }
         }
     }
