@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 3.1.1 *(2018-01-24)*
+----------------------------
+
+ * Add Redo
+ * Some stability improvements
+
 Version 3.1.0 *(2018-01-08)*
 ----------------------------
 
