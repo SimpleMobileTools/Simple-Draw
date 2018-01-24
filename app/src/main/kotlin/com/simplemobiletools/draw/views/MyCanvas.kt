@@ -27,9 +27,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     var mBackgroundBitmap: Bitmap? = null
     var mListener: CanvasListener? = null
 
-    // allow undoing Clear
     var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
     var mLastBackgroundBitmap: Bitmap? = null
+    var mUndonePaths = LinkedHashMap<MyPath, PaintOptions>()
 
     private var mPaint = Paint()
     private var mPath = MyPath()
@@ -67,13 +67,29 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             return
         }
 
-        if (mPaths.isEmpty())
+        if (mPaths.isEmpty()) {
             return
+        }
 
+        val lastPath = mPaths.values.lastOrNull()
         val lastKey = mPaths.keys.lastOrNull()
 
         mPaths.remove(lastKey)
+        if (lastPath != null && lastKey != null) {
+            mUndonePaths[lastKey] = lastPath
+            mListener?.toggleRedoVisibility(true)
+        }
         pathsUpdated()
+        invalidate()
+    }
+
+    fun redo() {
+        val lastKey = mUndonePaths.keys.last()
+        addPath(lastKey, mUndonePaths.values.last())
+        mUndonePaths.remove(lastKey)
+        if (mUndonePaths.isEmpty()) {
+            mListener?.toggleRedoVisibility(false)
+        }
         invalidate()
     }
 
@@ -146,7 +162,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun addPath(path: MyPath, options: PaintOptions) {
-        mPaths.put(path, options)
+        mPaths[path] = options
         pathsUpdated()
     }
 
@@ -248,6 +264,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mStartX = x
                 mStartY = y
                 actionDown(x, y)
+                mUndonePaths.clear()
+                mListener?.toggleRedoVisibility(false)
             }
             MotionEvent.ACTION_MOVE -> actionMove(x, y)
             MotionEvent.ACTION_UP -> actionUp()

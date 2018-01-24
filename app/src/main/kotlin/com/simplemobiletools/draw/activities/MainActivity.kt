@@ -64,6 +64,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
         eraser.setOnClickListener { eraserClicked() }
+        redo.setOnClickListener { my_canvas.redo() }
 
         checkIntents()
         checkWhatsNewDialog()
@@ -342,6 +343,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val contrastColor = pickedColor.getContrastColor()
         undo.applyColorFilter(contrastColor)
         eraser.applyColorFilter(contrastColor)
+        redo.applyColorFilter(contrastColor)
         my_canvas.updateBackgroundColor(pickedColor)
         suggestedFileExtension = PNG
     }
@@ -356,6 +358,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun toggleUndoVisibility(visible: Boolean) {
         undo.beVisibleIf(visible)
+    }
+
+    override fun toggleRedoVisibility(visible: Boolean) {
+        redo.beVisibleIf(visible)
     }
 
     private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
