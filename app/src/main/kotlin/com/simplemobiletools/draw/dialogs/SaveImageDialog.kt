@@ -107,9 +107,9 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
     }
 
     private fun getInitialFilename(): String {
-        // Display date and time in human readable format:
-        val sdf = SimpleDateFormat("yyyy-MM-dd_HH-mm")
-        val defaultFilename = "image_${sdf.format(Date(System.currentTimeMillis()))}"
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm")
+        val formatted = simpleDateFormat.format(Date(System.currentTimeMillis()))
+        val defaultFilename = "image_${formatted}"
 
         return if (curPath.isEmpty()) defaultFilename else curPath.getFilenameFromPath().substring(0, curPath.getFilenameFromPath().lastIndexOf("."))
     }
