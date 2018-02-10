@@ -14,9 +14,6 @@ import com.simplemobiletools.draw.views.MyCanvas
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 import java.io.OutputStream
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.util.Date
 
 class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: String, val curPath: String, val canvas: MyCanvas,
                       callback: (path: String, extension: String) -> Unit) {
@@ -107,10 +104,7 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
     }
 
     private fun getInitialFilename(): String {
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm")
-        val formatted = simpleDateFormat.format(Date(System.currentTimeMillis()))
-        val defaultFilename = "image_$formatted"
-
+        val defaultFilename = "image_${activity.getCurrentFormattedDateTime()}"
         return if (curPath.isEmpty()) defaultFilename else curPath.getFilenameFromPath().substring(0, curPath.getFilenameFromPath().lastIndexOf("."))
     }
 }
