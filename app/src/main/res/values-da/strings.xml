@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Simpel tegneapp</string>
+    <string name="app_launcher_name">Tegneapp</string>
+    <string name="open_file">Åbn fil</string>
+    <string name="eraser">Viskelæder</string>
+    <string name="failed_to_load_image">Det mislykkedes at indlæse billedet %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Vis regulering af stregtykkelse</string>
+    <string name="clear">Ryd</string>
+    <string name="change_background_color">Skift baggrundsfarve</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Et lærred til at tegne på med forskellige farver.</string>
+    <string name="app_long_description">
+        Vil du tegne en skitse men har ikke noget papir? Så er det denne app du skal bruge. Vælg en farve og tegn. Du kan gemme tegningen eller dele den direkte via mail elle socile medier.
+
+        Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
+
+        Denne app er en enkelt del af en større serie apps. Du finder dem alle på siden http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
