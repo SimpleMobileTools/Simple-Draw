@@ -84,6 +84,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun redo() {
+        if (mUndonePaths.keys.isEmpty()) {
+            mListener?.toggleRedoVisibility(false)
+            return
+        }
+
         val lastKey = mUndonePaths.keys.last()
         addPath(lastKey, mUndonePaths.values.last())
         mUndonePaths.remove(lastKey)
