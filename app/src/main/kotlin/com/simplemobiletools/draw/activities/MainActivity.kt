@@ -71,7 +71,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
         redo.setOnClickListener { my_canvas.redo() }
 
         checkIntents()
-        checkWhatsNewDialog()
+        if (!isImageCaptureIntent) {
+            checkWhatsNewDialog()
+        }
         storeStateVariables()
     }
 
