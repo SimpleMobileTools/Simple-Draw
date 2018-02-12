@@ -21,6 +21,7 @@ class SettingsActivity : SimpleActivity() {
         setupCustomizeColors()
         setupUseEnglish()
         setupAvoidWhatsNew()
+        setupPreventPhoneFromSleeping()
         setupBrushSize()
         updateTextColors(settings_holder)
     }
@@ -46,6 +47,14 @@ class SettingsActivity : SimpleActivity() {
         settings_avoid_whats_new_holder.setOnClickListener {
             settings_avoid_whats_new.toggle()
             config.avoidWhatsNew = settings_avoid_whats_new.isChecked
+        }
+    }
+
+    private fun setupPreventPhoneFromSleeping() {
+        settings_prevent_phone_from_sleeping.isChecked = config.preventPhoneFromSleeping
+        settings_prevent_phone_from_sleeping_holder.setOnClickListener {
+            settings_prevent_phone_from_sleeping.toggle()
+            config.preventPhoneFromSleeping = settings_prevent_phone_from_sleeping.isChecked
         }
     }
 

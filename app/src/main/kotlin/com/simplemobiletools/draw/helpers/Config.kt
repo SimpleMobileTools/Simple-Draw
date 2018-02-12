@@ -28,4 +28,8 @@ class Config(context: Context) : BaseConfig(context) {
     var lastSaveFolder: String
         get() = prefs.getString(LAST_SAVE_FOLDER, "")
         set(lastSaveFolder) = prefs.edit().putString(LAST_SAVE_FOLDER, lastSaveFolder).apply()
+
+    var preventPhoneFromSleeping: Boolean
+        get() = prefs.getBoolean(PREVENT_PHONE_FROM_SLEEPING, true)
+        set(preventPhoneFromSleeping) = prefs.edit().putBoolean(PREVENT_PHONE_FROM_SLEEPING, preventPhoneFromSleeping).apply()
 }

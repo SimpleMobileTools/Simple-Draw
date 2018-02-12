@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
@@ -85,6 +86,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
         stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
         my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
         updateTextColors(main_holder)
+        if (config.preventPhoneFromSleeping) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
     }
 
     override fun onPause() {
@@ -92,6 +96,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
         config.brushColor = color
         config.brushSize = strokeWidth
         storeStateVariables()
+        if (config.preventPhoneFromSleeping) {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
     }
 
     override fun onDestroy() {
