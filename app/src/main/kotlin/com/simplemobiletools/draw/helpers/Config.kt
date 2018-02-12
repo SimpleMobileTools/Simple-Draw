@@ -24,4 +24,8 @@ class Config(context: Context) : BaseConfig(context) {
     var canvasBackgroundColor: Int
         get() = prefs.getInt(CANVAS_BACKGROUND_COLOR, Color.WHITE)
         set(canvasBackgroundColor) = prefs.edit().putInt(CANVAS_BACKGROUND_COLOR, canvasBackgroundColor).apply()
+
+    var lastSaveFolder: String
+        get() = prefs.getString(LAST_SAVE_FOLDER, "")
+        set(lastSaveFolder) = prefs.edit().putString(LAST_SAVE_FOLDER, lastSaveFolder).apply()
 }

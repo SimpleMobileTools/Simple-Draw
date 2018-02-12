@@ -1,10 +1,11 @@
 package com.simplemobiletools.draw.helpers
 
-val BRUSH_COLOR = "brush_color"
-val CANVAS_BACKGROUND_COLOR = "canvas_background_color"
-val SHOW_BRUSH_SIZE = "show_brush_size"
-val BRUSH_SIZE = "brush_size"
+const val BRUSH_COLOR = "brush_color"
+const val CANVAS_BACKGROUND_COLOR = "canvas_background_color"
+const val SHOW_BRUSH_SIZE = "show_brush_size"
+const val BRUSH_SIZE = "brush_size"
+const val LAST_SAVE_FOLDER = "last_save_folder"
 
-val PNG = "png"
-val SVG = "svg"
-val JPG = "jpg"
+const val PNG = "png"
+const val SVG = "svg"
+const val JPG = "jpg"

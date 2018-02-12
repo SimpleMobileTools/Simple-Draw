@@ -15,26 +15,26 @@ import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 import java.io.OutputStream
 
-class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: String, val curPath: String, val canvas: MyCanvas,
-                      callback: (path: String, extension: String) -> Unit) {
+class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String, val defaultPath: String, val defaultFilename: String,
+                      val canvas: MyCanvas, callback: (path: String, extension: String) -> Unit) {
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
         val initialFilename = getInitialFilename()
-        var realPath = if (curPath.isEmpty()) "${activity.internalStoragePath}/$SIMPLE_DRAW" else File(curPath).parent.trimEnd('/')
+        var folder = if (defaultPath.isEmpty()) "${activity.internalStoragePath}/$SIMPLE_DRAW" else defaultPath
         val view = activity.layoutInflater.inflate(R.layout.dialog_save_image, null).apply {
             save_image_filename.setText(initialFilename)
-            save_image_radio_group.check(when (suggestedExtension) {
+            save_image_radio_group.check(when (defaultExtension) {
                 JPG -> R.id.save_image_radio_jpg
                 SVG -> R.id.save_image_radio_svg
                 else -> R.id.save_image_radio_png
             })
 
-            save_image_path.text = activity.humanizePath(realPath)
+            save_image_path.text = activity.humanizePath(folder)
             save_image_path.setOnClickListener {
-                FilePickerDialog(activity, realPath, false, showFAB = true) {
+                FilePickerDialog(activity, folder, false, showFAB = true) {
                     save_image_path.text = activity.humanizePath(it)
-                    realPath = it
+                    folder = it
                 }
             }
         }
@@ -58,7 +58,7 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
                         else -> JPG
                     }
 
-                    val newFile = File(realPath, "$filename.$extension")
+                    val newFile = File(folder, "$filename.$extension")
                     if (!newFile.name.isAValidFilename()) {
                         activity.toast(R.string.filename_invalid_characters)
                         return@setOnClickListener
@@ -104,7 +104,7 @@ class SaveImageDialog(val activity: SimpleActivity, val suggestedExtension: Stri
     }
 
     private fun getInitialFilename(): String {
-        val defaultFilename = "image_${activity.getCurrentFormattedDateTime()}"
-        return if (curPath.isEmpty()) defaultFilename else curPath.getFilenameFromPath().substring(0, curPath.getFilenameFromPath().lastIndexOf("."))
+        val newFilename = "image_${activity.getCurrentFormattedDateTime()}"
+        return if (defaultFilename.isEmpty()) newFilename else defaultFilename
     }
 }

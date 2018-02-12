@@ -37,11 +37,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
 
-    private var curPath = ""
+    private var defaultPath = ""
+    private var defaultFilename = ""
+    private var defaultExtension = PNG
+
     private var intentUri: Uri? = null
     private var color = 0
     private var strokeWidth = 0f
-    private var suggestedFileExtension = PNG
     private var isEraserOn = false
     private var isImageCaptureIntent = false
 
@@ -56,6 +58,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
         setBackgroundColor(config.canvasBackgroundColor)
         setColor(config.brushColor)
+        defaultPath = config.lastSaveFolder
 
         strokeWidth = config.brushSize
         my_canvas.setStrokeWidth(strokeWidth)
@@ -141,7 +144,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun openFile() {
-        val path = if (isImageCaptureIntent) "" else curPath
+        val path = if (isImageCaptureIntent) "" else defaultPath
         FilePickerDialog(this, path) {
             openPath(it)
         }
@@ -174,7 +177,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             if (output != null && output is Uri) {
                 isImageCaptureIntent = true
                 intentUri = output
-                curPath = output.path
+                defaultPath = output.path
                 invalidateOptionsMenu()
             }
         }
@@ -200,12 +203,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
         path.endsWith(".svg") -> {
             my_canvas.mBackgroundBitmap = null
             Svg.loadSvg(this, File(path), my_canvas)
-            suggestedFileExtension = SVG
+            defaultExtension = SVG
             true
         }
         File(path).isImageSlow() -> {
             my_canvas.drawBitmap(this, path)
-            suggestedFileExtension = JPG
+            defaultExtension = JPG
             true
         }
         else -> {
@@ -221,12 +224,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
             "svg", "image/svg+xml" -> {
                 my_canvas.mBackgroundBitmap = null
                 Svg.loadSvg(this, uri, my_canvas)
-                suggestedFileExtension = SVG
+                defaultExtension = SVG
                 true
             }
             "jpg", "jpeg", "png" -> {
                 my_canvas.drawBitmap(this, uri)
-                suggestedFileExtension = JPG
+                defaultExtension = JPG
                 true
             }
             else -> {
@@ -255,7 +258,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun confirmImage() {
-        val file = File(curPath)
+        val file = File(defaultPath)
         if (intentUri?.scheme == "content") {
             val outputStream = contentResolver.openOutputStream(intentUri)
             saveToOutputStream(outputStream, file.getCompressionFormat())
@@ -288,9 +291,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun saveImage() {
-        SaveImageDialog(this, suggestedFileExtension, curPath, my_canvas) { path, extension ->
-            curPath = path
-            suggestedFileExtension = extension
+        SaveImageDialog(this, defaultExtension, defaultPath, defaultFilename, my_canvas) { path, extension ->
+            defaultPath = File(path).parent
+            defaultFilename = path.getFilenameFromPath()
+            defaultFilename = defaultFilename.substring(0, defaultFilename.lastIndexOf("."))
+            defaultExtension = extension
+            config.lastSaveFolder = defaultPath
         }
     }
 
@@ -329,8 +335,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun clearCanvas() {
         my_canvas.clearCanvas()
-        suggestedFileExtension = PNG
-        curPath = ""
+        defaultExtension = PNG
+        defaultPath = ""
     }
 
     private fun pickColor() {
@@ -345,7 +351,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         eraser.applyColorFilter(contrastColor)
         redo.applyColorFilter(contrastColor)
         my_canvas.updateBackgroundColor(pickedColor)
-        suggestedFileExtension = PNG
+        defaultExtension = PNG
     }
 
     private fun setColor(pickedColor: Int) {
