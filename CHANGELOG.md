@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 3.1.2 *(2018-02-12)*
+----------------------------
+
+ * Add a toggle for preventing the device from falling asleep, enabled by default
+ * Remember file save folder persistently
+ * Use more human readable filenames by default
+
 Version 3.1.1 *(2018-01-24)*
 ----------------------------
 
