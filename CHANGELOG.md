@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 3.1.3 *(2018-02-26)*
+----------------------------
+
+ * Show a confirmation dialog when overwriting an existing file
+ * Couple smaller improvements
+
 Version 3.1.2 *(2018-02-12)*
 ----------------------------
 
