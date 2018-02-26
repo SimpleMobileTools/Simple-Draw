@@ -305,12 +305,35 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun saveImage() {
-        SaveImageDialog(this, defaultExtension, defaultPath, defaultFilename, my_canvas) { path, extension ->
-            defaultPath = File(path).parent
-            defaultFilename = path.getFilenameFromPath()
+        SaveImageDialog(this, defaultExtension, defaultPath, defaultFilename) {
+            saveFile(it)
+            defaultPath = it.getParentPath()
+            defaultFilename = it.getFilenameFromPath()
             defaultFilename = defaultFilename.substring(0, defaultFilename.lastIndexOf("."))
-            defaultExtension = extension
+            defaultExtension = it.getFilenameExtension()
             config.lastSaveFolder = defaultPath
+        }
+    }
+
+    private fun saveFile(path: String) {
+        when (path.getFilenameExtension()) {
+            SVG -> Svg.saveSvg(this, path, my_canvas)
+            else -> saveImageFile(path)
+        }
+        scanPath(path) {}
+    }
+
+    private fun saveImageFile(path: String) {
+        val fileDirItem = FileDirItem(path, path.getFilenameFromPath())
+        getFileOutputStream(fileDirItem, true) {
+            writeToOutputStream(path, it!!)
+            toast(R.string.file_saved)
+        }
+    }
+
+    private fun writeToOutputStream(path: String, out: OutputStream) {
+        out.use {
+            my_canvas.getBitmap().compress(path.getCompressionFormat(), 70, out)
         }
     }
 

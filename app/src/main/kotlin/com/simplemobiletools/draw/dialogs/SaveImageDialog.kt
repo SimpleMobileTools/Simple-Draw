@@ -2,22 +2,18 @@ package com.simplemobiletools.draw.dialogs
 
 import android.support.v7.app.AlertDialog
 import android.view.WindowManager
+import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.activities.SimpleActivity
 import com.simplemobiletools.draw.helpers.JPG
 import com.simplemobiletools.draw.helpers.PNG
 import com.simplemobiletools.draw.helpers.SVG
-import com.simplemobiletools.draw.models.Svg
-import com.simplemobiletools.draw.views.MyCanvas
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
-import java.io.File
-import java.io.OutputStream
 
 class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String, val defaultPath: String, val defaultFilename: String,
-                      val canvas: MyCanvas, callback: (path: String, extension: String) -> Unit) {
+                      callback: (savePath: String) -> Unit) {
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
@@ -65,43 +61,18 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                         return@setOnClickListener
                     }
 
-                    if (saveFile(newPath)) {
-                        callback(newPath, extension)
-                        dismiss()
+                    if (activity.getDoesFilePathExist(newPath)) {
+                        val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
+                        ConfirmationDialog(activity, title) {
+                            callback(newPath)
+                            dismiss()
+                        }
                     } else {
-                        activity.toast(R.string.unknown_error_occurred)
+                        callback(newPath)
+                        dismiss()
                     }
                 }
             }
-        }
-    }
-
-    private fun saveFile(path: String): Boolean {
-        if (!activity.getDoesFilePathExist(path.getParentPath())) {
-            if (!File(path).parentFile.mkdir()) {
-                return false
-            }
-        }
-
-        when (path.getFilenameExtension()) {
-            SVG -> Svg.saveSvg(activity, path, canvas)
-            else -> saveImageFile(path)
-        }
-        activity.scanPath(path) {}
-        return true
-    }
-
-    private fun saveImageFile(path: String) {
-        val fileDirItem = FileDirItem(path, path.getFilenameFromPath())
-        activity.getFileOutputStream(fileDirItem, true) {
-            writeToOutputStream(path, it!!)
-            activity.toast(R.string.file_saved)
-        }
-    }
-
-    private fun writeToOutputStream(path: String, out: OutputStream) {
-        out.use {
-            canvas.getBitmap().compress(path.getCompressionFormat(), 70, out)
         }
     }
 
