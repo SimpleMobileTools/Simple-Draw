@@ -4,6 +4,7 @@ import android.support.v7.app.AlertDialog
 import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.activities.SimpleActivity
 import com.simplemobiletools.draw.helpers.JPG
@@ -84,22 +85,23 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
 
         when (file.extension) {
             SVG -> Svg.saveSvg(activity, file, canvas)
-            else -> saveImageFile(file)
+            else -> saveImageFile(file.absolutePath)
         }
         activity.scanFile(file) {}
         return true
     }
 
-    private fun saveImageFile(file: File) {
-        activity.getFileOutputStream(file) {
-            writeToOutputStream(file, it!!)
+    private fun saveImageFile(path: String) {
+        val fileDirItem = FileDirItem(path, path.getFilenameFromPath())
+        activity.getFileOutputStream(fileDirItem, true) {
+            writeToOutputStream(path, it!!)
             activity.toast(R.string.file_saved)
         }
     }
 
-    private fun writeToOutputStream(file: File, out: OutputStream) {
+    private fun writeToOutputStream(path: String, out: OutputStream) {
         out.use {
-            canvas.getBitmap().compress(file.getCompressionFormat(), 70, out)
+            canvas.getBitmap().compress(path.getCompressionFormat(), 70, out)
         }
     }
 

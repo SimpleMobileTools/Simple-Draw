@@ -18,6 +18,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_LEAK_CANARY
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
+import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.draw.BuildConfig
 import com.simplemobiletools.draw.R
@@ -31,7 +32,6 @@ import com.simplemobiletools.draw.models.Svg
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
-import java.io.FileOutputStream
 import java.io.OutputStream
 
 class MainActivity : SimpleActivity(), CanvasListener {
@@ -176,7 +176,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
             getStoragePermission {
-                val path = intent.data.path
+                val path = getRealPathFromURI(intent.data) ?: intent.dataString
                 openPath(path)
             }
         }
@@ -267,14 +267,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun confirmImage() {
-        val file = File(defaultPath)
         if (intentUri?.scheme == "content") {
             val outputStream = contentResolver.openOutputStream(intentUri)
-            saveToOutputStream(outputStream, file.getCompressionFormat())
+            saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
         } else {
             handlePermission(PERMISSION_WRITE_STORAGE) {
-                getFileOutputStream(file) {
-                    saveToOutputStream(it, file.getCompressionFormat())
+                val fileDirItem = FileDirItem(defaultPath, defaultPath.getFilenameFromPath())
+                getFileOutputStream(fileDirItem, true) {
+                    saveToOutputStream(it, defaultPath.getCompressionFormat())
                 }
             }
         }
@@ -310,36 +310,39 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun shareImage() {
-        val uri = getImageUri(my_canvas.getBitmap())
-        if (uri != null) {
-            shareUri(uri, BuildConfig.APPLICATION_ID)
-        } else {
-            toast(R.string.unknown_error_occurred)
+        getImagePath(my_canvas.getBitmap()) {
+            if (it != null) {
+                sharePathIntent(it, BuildConfig.APPLICATION_ID)
+            } else {
+                toast(R.string.unknown_error_occurred)
+            }
         }
     }
 
-    private fun getImageUri(bitmap: Bitmap): Uri? {
+    private fun getImagePath(bitmap: Bitmap, callback: (path: String?) -> Unit) {
         val bytes = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 0, bytes)
 
         val folder = File(cacheDir, FOLDER_NAME)
         if (!folder.exists()) {
             if (!folder.mkdir()) {
-                return null
+                callback(null)
+                return
             }
         }
 
-        val file = File(folder, FILE_NAME)
-        var fileOutputStream: FileOutputStream? = null
-        try {
-            fileOutputStream = FileOutputStream(file)
-            fileOutputStream.write(bytes.toByteArray())
-        } catch (e: Exception) {
-        } finally {
-            fileOutputStream?.close()
+        val newPath = "$folder/$FILE_NAME"
+        val fileDirItem = FileDirItem(newPath, FILE_NAME)
+        getFileOutputStream(fileDirItem, true) {
+            try {
+                it?.write(bytes.toByteArray())
+                callback(newPath)
+            } catch (e: Exception) {
+            } finally {
+                it?.close()
+            }
         }
-
-        return getFilePublicUri(file, BuildConfig.APPLICATION_ID)
+        callback("")
     }
 
     private fun clearCanvas() {

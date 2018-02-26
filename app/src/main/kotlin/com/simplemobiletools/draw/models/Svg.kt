@@ -6,11 +6,12 @@ import android.net.Uri
 import android.sax.RootElement
 import android.util.Xml
 import com.simplemobiletools.commons.extensions.getFileOutputStream
+import com.simplemobiletools.commons.extensions.toFileDirItem
 import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.draw.views.MyCanvas
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.activities.MainActivity
 import com.simplemobiletools.draw.activities.SimpleActivity
+import com.simplemobiletools.draw.views.MyCanvas
 import java.io.*
 import java.util.*
 
@@ -18,7 +19,7 @@ object Svg {
     fun saveSvg(activity: SimpleActivity, file: File, canvas: MyCanvas) {
         val backgroundColor = (canvas.background as ColorDrawable).color
 
-        activity.getFileOutputStream(file) {
+        activity.getFileOutputStream(file.toFileDirItem(activity), true) {
             val writer = BufferedWriter(OutputStreamWriter(it))
             writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
             writer.close()
