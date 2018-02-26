@@ -59,14 +59,14 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                         else -> JPG
                     }
 
-                    val newFile = File(folder, "$filename.$extension")
-                    if (!newFile.name.isAValidFilename()) {
+                    val newPath = "$folder/$filename.$extension"
+                    if (!newPath.getFilenameFromPath().isAValidFilename()) {
                         activity.toast(R.string.filename_invalid_characters)
                         return@setOnClickListener
                     }
 
-                    if (saveFile(newFile)) {
-                        callback(newFile.absolutePath, extension)
+                    if (saveFile(newPath)) {
+                        callback(newPath, extension)
                         dismiss()
                     } else {
                         activity.toast(R.string.unknown_error_occurred)
@@ -76,18 +76,18 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
         }
     }
 
-    private fun saveFile(file: File): Boolean {
-        if (!file.parentFile.exists()) {
-            if (!file.parentFile.mkdir()) {
+    private fun saveFile(path: String): Boolean {
+        if (!activity.getDoesFilePathExist(path.getParentPath())) {
+            if (!File(path).parentFile.mkdir()) {
                 return false
             }
         }
 
-        when (file.extension) {
-            SVG -> Svg.saveSvg(activity, file, canvas)
-            else -> saveImageFile(file.absolutePath)
+        when (path.getFilenameExtension()) {
+            SVG -> Svg.saveSvg(activity, path, canvas)
+            else -> saveImageFile(path)
         }
-        activity.scanFile(file) {}
+        activity.scanPath(path) {}
         return true
     }
 
