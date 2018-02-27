@@ -55,7 +55,7 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                         else -> JPG
                     }
 
-                    val newPath = "$folder/$filename.$extension"
+                    val newPath = "${folder.trimEnd('/')}/$filename.$extension"
                     if (!newPath.getFilenameFromPath().isAValidFilename()) {
                         activity.toast(R.string.filename_invalid_characters)
                         return@setOnClickListener
