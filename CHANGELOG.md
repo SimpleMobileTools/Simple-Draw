@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 3.1.4 *(2018-02-27)*
+----------------------------
+
+ * Fixed some crashes related to saving images
+
 Version 3.1.3 *(2018-02-26)*
 ----------------------------
 
