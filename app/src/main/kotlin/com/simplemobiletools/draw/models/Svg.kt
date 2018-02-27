@@ -21,10 +21,14 @@ object Svg {
         val backgroundColor = (canvas.background as ColorDrawable).color
 
         activity.getFileOutputStream(FileDirItem(path, path.getFilenameFromPath()), true) {
-            val writer = BufferedWriter(OutputStreamWriter(it))
-            writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
-            writer.close()
-            activity.toast(R.string.file_saved)
+            if (it != null) {
+                val writer = BufferedWriter(OutputStreamWriter(it))
+                writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
+                writer.close()
+                activity.toast(R.string.file_saved)
+            } else {
+                activity.toast(R.string.unknown_error_occurred)
+            }
         }
     }
 

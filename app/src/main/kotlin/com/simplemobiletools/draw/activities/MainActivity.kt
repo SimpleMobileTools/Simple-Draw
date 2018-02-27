@@ -326,8 +326,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun saveImageFile(path: String) {
         val fileDirItem = FileDirItem(path, path.getFilenameFromPath())
         getFileOutputStream(fileDirItem, true) {
-            writeToOutputStream(path, it!!)
-            toast(R.string.file_saved)
+            if (it != null) {
+                writeToOutputStream(path, it)
+                toast(R.string.file_saved)
+            } else {
+                toast(R.string.unknown_error_occurred)
+            }
         }
     }
 
