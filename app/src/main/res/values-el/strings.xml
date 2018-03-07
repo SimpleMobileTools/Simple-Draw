@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Απλό Σχέδιο</string>
+    <string name="app_launcher_name">Σχέδιο</string>
+    <string name="open_file">Άνοιγμα αρχείου</string>
+    <string name="eraser">Σβήστρα</string>
+    <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Εμφάνιση του εργαλείου των διαστάσεων του πινέλου</string>
+    <string name="clear">Καθαρισμός</string>
+    <string name="change_background_color">Αλλαγή του χρώματος παρασκηνίου</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Ένας καμβάς, όπου μπορείς να σχεδιάσεις με διαφορετικά χρώματα.</string>
+    <string name="app_long_description">
+        Θέλεις να σχεδιάσεις κάτι, αλλά δεν έχεις χαρτί; Αυτή η εφαρμογή θα σου ταιριάξει τέλεια. Απλά επέλεξε ένα χρώμα και σχεδίασε! Μπορείς να αποθηκεύσεις το σχέδιο, ή να το μοιραστείς, απευθείας, μέσω ηλεκτρονικού ταχυδρομείου, ή κοινωνικών δικτύων.
+
+        Δεν περιέχει διαφημίσεις ούτε ζητά περιττά δικαιώματα. Είναι εντελώς ανοιχτού κώδικα. Επιτρέπει προσαρμοσμένα χρώματα.
+
+        Αυτή η εφαρμογή είναι ένα κομμάτι από μία μεγαλύτερη σειρά εφαρμογών. Μπορείς να βρεις τις υπόλοιπες στο  http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
