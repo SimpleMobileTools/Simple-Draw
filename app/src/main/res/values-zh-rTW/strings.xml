@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">簡易繪圖</string>
+    <string name="app_launcher_name">簡易繪圖</string>
+    <string name="open_file">打開檔案</string>
+    <string name="eraser">橡皮擦</string>
+    <string name="failed_to_load_image">無法載入圖片 %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">顯示畫筆尺寸工具</string>
+    <string name="clear">清除</string>
+    <string name="change_background_color">改變背景顏色</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">一個你能用不同顏色繪畫的桌布。</string>
+    <string name="app_long_description">
+        想要畫些什麼卻沒有紙?這程式絕對適合你。只要挑一個顏色，就開始畫了。你能將繪圖存檔起來，或是透過信箱或社群網站直接分享出去。
+
+        不包含廣告及非必要的權限，而且完全開放原始碼，並提供自訂顏色。
+		
+        這程式只是一系列眾多應用程式的其中一項，你可以在這發現更多 http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
