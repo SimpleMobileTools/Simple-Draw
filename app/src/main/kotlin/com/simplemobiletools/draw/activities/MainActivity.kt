@@ -15,7 +15,6 @@ import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_LEAK_CANARY
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.FAQItem
@@ -148,7 +147,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons)
         )
 
-        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME, faqItems)
+        startAboutActivity(R.string.app_name, LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME, faqItems)
     }
 
     private fun tryOpenFile() {
