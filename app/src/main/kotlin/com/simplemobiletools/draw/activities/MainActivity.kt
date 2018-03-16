@@ -365,15 +365,18 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val newPath = "$folder/$FILE_NAME"
         val fileDirItem = FileDirItem(newPath, FILE_NAME)
         getFileOutputStream(fileDirItem, true) {
-            try {
-                it?.write(bytes.toByteArray())
-                callback(newPath)
-            } catch (e: Exception) {
-            } finally {
-                it?.close()
+            if (it != null) {
+                try {
+                    it.write(bytes.toByteArray())
+                    callback(newPath)
+                } catch (e: Exception) {
+                } finally {
+                    it.close()
+                }
+            } else {
+                callback("")
             }
         }
-        callback("")
     }
 
     private fun clearCanvas() {
