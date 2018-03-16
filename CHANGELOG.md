@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 3.1.5 *(2018-03-16)*
+----------------------------
+
+ * Fixed a couple issues related to file saving and sharing
+
 Version 3.1.4 *(2018-02-27)*
 ----------------------------
 
