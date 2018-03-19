@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Paprastas piešimas</string>
+    <string name="app_launcher_name">Piešimas</string>
+    <string name="open_file">Atverti bylą</string>
+    <string name="eraser">Trintukas</string>
+    <string name="failed_to_load_image">Nepavyko įkelti paveikslėlio %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Rodyti teptuko dydžio įrankį</string>
+    <string name="clear">Išvalyti</string>
+    <string name="change_background_color">Pakeisti fono spalvą</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Drobė ant kurios, galima piešti skirtingomis spalvomis.</string>
+    <string name="app_long_description">
+        Norite ką nors nupiešti bet neturite popieriaus? Ši programėlė tiks puikiausiai. Tiesiog pasirinkite spalvą ir pieškite. Jūs taip pat galite išsaugoti piešinį arba pasidalinti juo per elektroninį paštą arba socialinius tinklus.
+
+        Neturi reklamų ar nereikalingų leidimų. Programėlė visiškai atviro kodo, yra galimybė keisti spalvas.
+
+        Ši programėle yra vienintelė iš keletos mūsų programėlių. Likusias Jūs galite rasti čia http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
