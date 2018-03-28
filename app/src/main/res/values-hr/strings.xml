@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Jednostavno crtanje</string>
+    <string name="app_launcher_name">Crtanje</string>
+    <string name="open_file">Otvori datoteku</string>
+    <string name="eraser">Gumica za brisanje</string>
+    <string name="failed_to_load_image">Neuspjelo učitavanje slike %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Prikaži alat za odabir veličine četkica</string>
+    <string name="clear">Očisti</string>
+    <string name="change_background_color">Promjeni boju pozadine</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Platno na kojem možete nacrtati različite boje.</string>
+    <string name="app_long_description">
+        Želite li nacrtati nešto, ali bez papira? Ova aplikacija je stvorena za Vas. Samo odaberite boju i nacrtajte. Možete spremiti crtež ili ga podijeliti putem e-pošte ili društvenih mreža.
+
+        Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
+
+        Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
