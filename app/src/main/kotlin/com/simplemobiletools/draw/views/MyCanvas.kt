@@ -27,9 +27,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     var mBackgroundBitmap: Bitmap? = null
     var mListener: CanvasListener? = null
 
-    var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
-    var mLastBackgroundBitmap: Bitmap? = null
-    var mUndonePaths = LinkedHashMap<MyPath, PaintOptions>()
+    private var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
+    private var mLastBackgroundBitmap: Bitmap? = null
+    private var mUndonePaths = LinkedHashMap<MyPath, PaintOptions>()
 
     private var mPaint = Paint()
     private var mPath = MyPath()

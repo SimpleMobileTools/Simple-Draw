@@ -15,7 +15,7 @@ internal class MyParcelable : View.BaseSavedState {
         for (i in 0 until size) {
             val key = parcel.readSerializable() as MyPath
             val paintOptions = PaintOptions(parcel.readInt(), parcel.readFloat(), parcel.readInt() == 1)
-            paths.put(key, paintOptions)
+            paths[key] = paintOptions
         }
     }
 

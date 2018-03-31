@@ -37,6 +37,7 @@ import java.io.OutputStream
 class MainActivity : SimpleActivity(), CanvasListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
+    private val BITMAP_PATH = "bitmap_path"
 
     private var defaultPath = ""
     private var defaultFilename = ""
@@ -47,6 +48,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var strokeWidth = 0f
     private var isEraserOn = false
     private var isImageCaptureIntent = false
+    private var lastBitmapPath = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -208,6 +210,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             true
         }
         File(path).isImageSlow() -> {
+            lastBitmapPath = path
             my_canvas.drawBitmap(this, path)
             defaultExtension = JPG
             true
@@ -371,6 +374,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         my_canvas.clearCanvas()
         defaultExtension = PNG
         defaultPath = ""
+        lastBitmapPath = ""
     }
 
     private fun pickColor() {
@@ -402,6 +406,19 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun toggleRedoVisibility(visible: Boolean) {
         redo.beVisibleIf(visible)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(BITMAP_PATH, lastBitmapPath)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        lastBitmapPath = savedInstanceState.getString(BITMAP_PATH)
+        if (lastBitmapPath.isNotEmpty()) {
+            openPath(lastBitmapPath)
+        }
     }
 
     private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
