@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 3.1.6 *(2018-03-31)*
+----------------------------
+
+ * Redraw background bitmap at device rotation
+ * Couple more smaller improvements
+
 Version 3.1.5 *(2018-03-16)*
 ----------------------------
 
