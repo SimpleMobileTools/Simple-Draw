@@ -25,8 +25,8 @@
             android:id="@+id/save_image_path"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_margin"
-            android:layout_marginLeft="@dimen/medium_margin"
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/medium_margin"
             android:paddingRight="@dimen/small_margin"
             android:paddingTop="@dimen/small_margin"/>
 
