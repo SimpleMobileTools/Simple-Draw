@@ -1,7 +1,6 @@
 package com.simplemobiletools.draw.dialogs
 
 import android.support.v7.app.AlertDialog
-import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
@@ -40,40 +39,40 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            activity.setupDialogStuff(view, this, R.string.save_as) {
-                getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                    val filename = view.save_image_filename.value
-                    if (filename.isEmpty()) {
-                        activity.toast(R.string.filename_cannot_be_empty)
-                        return@setOnClickListener
-                    }
+                    activity.setupDialogStuff(view, this, R.string.save_as) {
+                        showKeyboard(view.save_image_filename)
+                        getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                            val filename = view.save_image_filename.value
+                            if (filename.isEmpty()) {
+                                activity.toast(R.string.filename_cannot_be_empty)
+                                return@setOnClickListener
+                            }
 
-                    val extension = when (view.save_image_radio_group.checkedRadioButtonId) {
-                        R.id.save_image_radio_png -> PNG
-                        R.id.save_image_radio_svg -> SVG
-                        else -> JPG
-                    }
+                            val extension = when (view.save_image_radio_group.checkedRadioButtonId) {
+                                R.id.save_image_radio_png -> PNG
+                                R.id.save_image_radio_svg -> SVG
+                                else -> JPG
+                            }
 
-                    val newPath = "${folder.trimEnd('/')}/$filename.$extension"
-                    if (!newPath.getFilenameFromPath().isAValidFilename()) {
-                        activity.toast(R.string.filename_invalid_characters)
-                        return@setOnClickListener
-                    }
+                            val newPath = "${folder.trimEnd('/')}/$filename.$extension"
+                            if (!newPath.getFilenameFromPath().isAValidFilename()) {
+                                activity.toast(R.string.filename_invalid_characters)
+                                return@setOnClickListener
+                            }
 
-                    if (activity.getDoesFilePathExist(newPath)) {
-                        val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
-                        ConfirmationDialog(activity, title) {
-                            callback(newPath)
-                            dismiss()
+                            if (activity.getDoesFilePathExist(newPath)) {
+                                val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
+                                ConfirmationDialog(activity, title) {
+                                    callback(newPath)
+                                    dismiss()
+                                }
+                            } else {
+                                callback(newPath)
+                                dismiss()
+                            }
                         }
-                    } else {
-                        callback(newPath)
-                        dismiss()
                     }
                 }
-            }
-        }
     }
 
     private fun getInitialFilename(): String {
