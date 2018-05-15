@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 4.0.0 *(2018-05-15)*
+----------------------------
+
+ * Allow customizing the app launcher icon color
+ * Show Brush size tool by default
+
 Version 3.1.6 *(2018-03-31)*
 ----------------------------
 
