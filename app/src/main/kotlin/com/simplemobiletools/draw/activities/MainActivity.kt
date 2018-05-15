@@ -53,7 +53,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        appLaunched()
+        appLaunched(BuildConfig.APPLICATION_ID)
         my_canvas.mListener = this
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
@@ -255,9 +255,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun changeBackgroundClicked() {
         val oldColor = (my_canvas.background as ColorDrawable).color
-        ColorPickerDialog(this, oldColor) {
-            setBackgroundColor(it)
-            config.canvasBackgroundColor = it
+        ColorPickerDialog(this, oldColor) { wasPositivePressed, color ->
+            if (wasPositivePressed) {
+                setBackgroundColor(color)
+                config.canvasBackgroundColor = color
+            }
         }
     }
 
@@ -378,8 +380,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun pickColor() {
-        ColorPickerDialog(this, color) {
-            setColor(it)
+        ColorPickerDialog(this, color) { wasPositivePressed, color ->
+            if (wasPositivePressed) {
+                setColor(color)
+            }
         }
     }
 
