@@ -10,7 +10,7 @@ class Config(context: Context) : BaseConfig(context) {
     }
 
     var showBrushSize: Boolean
-        get() = prefs.getBoolean(SHOW_BRUSH_SIZE, false)
+        get() = prefs.getBoolean(SHOW_BRUSH_SIZE, true)
         set(showBrushSize) = prefs.edit().putBoolean(SHOW_BRUSH_SIZE, showBrushSize).apply()
 
     var brushColor: Int
