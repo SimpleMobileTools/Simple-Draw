@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 4.1.0 *(2018-07-12)*
+----------------------------
+
+ * Added a couple stability and translation improvements
+
 Version 4.0.0 *(2018-05-15)*
 ----------------------------
 
