@@ -312,7 +312,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             SVG -> Svg.saveSvg(this, path, my_canvas)
             else -> saveImageFile(path)
         }
-        scanPath(path) {}
+        rescanPaths(arrayListOf(path)) {}
     }
 
     private fun saveImageFile(path: String) {
