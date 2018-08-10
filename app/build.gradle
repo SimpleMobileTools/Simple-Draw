@@ -45,7 +45,7 @@ ext {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:4.4.13'
+    implementation 'com.simplemobiletools:commons:4.6.5'
 
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"

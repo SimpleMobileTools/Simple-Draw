@@ -133,11 +133,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun launchAbout() {
+        val licenses = LICENSE_LEAK_CANARY
+
         val faqItems = arrayListOf(
                 FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons)
         )
 
-        startAboutActivity(R.string.app_name, LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME, faqItems)
+        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, false)
     }
 
     private fun tryOpenFile() {
