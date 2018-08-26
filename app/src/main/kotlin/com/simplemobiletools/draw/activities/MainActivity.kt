@@ -448,8 +448,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun updateBrushSize() {
         my_canvas.setBrushSize(brushSize)
-        stroke_width_preview.scaleX = brushSize / 100f
-        stroke_width_preview.scaleY = brushSize / 100f
+        val scale = Math.max(0.03f, brushSize / 100f)
+        stroke_width_preview.scaleX = scale
+        stroke_width_preview.scaleY = scale
     }
 
     private fun checkWhatsNewDialog() {

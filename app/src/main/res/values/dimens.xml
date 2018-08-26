@@ -1,5 +1,5 @@
 <resources>
     <dimen name="stroke_bar_size">150dp</dimen>
     <dimen name="preview_dot_stroke_size">1dp</dimen>
-    <dimen name="full_brush_size">30dp</dimen>
+    <dimen name="full_brush_size">40dp</dimen>
 </resources>

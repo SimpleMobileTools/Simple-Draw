@@ -3,6 +3,7 @@ package com.simplemobiletools.draw.helpers
 import android.content.Context
 import android.graphics.Color
 import com.simplemobiletools.commons.helpers.BaseConfig
+import com.simplemobiletools.draw.R
 
 class Config(context: Context) : BaseConfig(context) {
     companion object {
@@ -14,11 +15,11 @@ class Config(context: Context) : BaseConfig(context) {
         set(showBrushSize) = prefs.edit().putBoolean(SHOW_BRUSH_SIZE, showBrushSize).apply()
 
     var brushColor: Int
-        get() = prefs.getInt(BRUSH_COLOR, Color.BLACK)
+        get() = prefs.getInt(BRUSH_COLOR, context.resources.getColor(R.color.color_primary))
         set(color) = prefs.edit().putInt(BRUSH_COLOR, color).apply()
 
     var brushSize: Float
-        get() = prefs.getFloat(BRUSH_SIZE, 5.0f)
+        get() = prefs.getFloat(BRUSH_SIZE, 50f)
         set(brushSize) = prefs.edit().putFloat(BRUSH_SIZE, brushSize).apply()
 
     var canvasBackgroundColor: Int
