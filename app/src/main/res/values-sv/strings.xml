@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Visa penselstorleksverktyg</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Rensa</string>
     <string name="change_background_color">Ändra bakgrundsfärg</string>
 
@@ -18,7 +19,7 @@
 
         Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
 
-        Denna app är bara en del av en större serie appar. Du hittar resten av dem på http://www.simplemobiletools.com
+        Denna app är bara en del av en större serie appar. Du hittar resten av dem på https://www.simplemobiletools.com
     </string>
 
     <!--

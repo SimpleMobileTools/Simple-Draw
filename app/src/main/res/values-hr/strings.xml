@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Prikaži alat za odabir veličine četkica</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Očisti</string>
     <string name="change_background_color">Promjeni boju pozadine</string>
 
@@ -18,7 +19,7 @@
 
         Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
 
-        Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na http://www.simplemobiletools.com
+        Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na https://www.simplemobiletools.com
     </string>
 
     <!--

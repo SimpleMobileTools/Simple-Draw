@@ -42,13 +42,13 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mStartY = 0f
     private var mIsSaving = false
     private var mIsStrokeWidthBarEnabled = false
+    private var mAllowZooming = true
     private var mIsEraserOn = false
     private var mBackgroundColor = 0
     private var mCenter: PointF? = null
 
     private var mScaleDetector: ScaleGestureDetector? = null
     private var mScaleFactor = 1f
-
 
     init {
         mPaint.apply {
@@ -134,6 +134,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     fun setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled: Boolean) {
         mIsStrokeWidthBarEnabled = isStrokeWidthBarEnabled
         invalidate()
+    }
+
+    fun setAllowZooming(allowZooming: Boolean) {
+        mAllowZooming = allowZooming
     }
 
     fun getBitmap(): Bitmap {
@@ -277,7 +281,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        mScaleDetector!!.onTouchEvent(event)
+        if (mAllowZooming) {
+            mScaleDetector!!.onTouchEvent(event)
+        }
+
         val x = event.x
         val y = event.y
 
@@ -291,7 +298,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
 
             MotionEvent.ACTION_MOVE -> {
-                if (!mScaleDetector!!.isInProgress && event.pointerCount == 1) {
+                if (!mAllowZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1)) {
                     actionMove(x, y)
                 }
             }

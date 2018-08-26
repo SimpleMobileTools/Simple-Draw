@@ -25,6 +25,7 @@ class SettingsActivity : SimpleActivity() {
         setupAvoidWhatsNew()
         setupPreventPhoneFromSleeping()
         setupBrushSize()
+        setupAllowZoomingCanvas()
         updateTextColors(settings_holder)
     }
 
@@ -72,6 +73,14 @@ class SettingsActivity : SimpleActivity() {
         settings_show_brush_size_holder.setOnClickListener {
             settings_show_brush_size.toggle()
             config.showBrushSize = settings_show_brush_size.isChecked
+        }
+    }
+
+    private fun setupAllowZoomingCanvas() {
+        settings_allow_zooming_canvas.isChecked = config.allowZoomingCanvas
+        settings_allow_zooming_canvas_holder.setOnClickListener {
+            settings_allow_zooming_canvas.toggle()
+            config.allowZoomingCanvas = settings_allow_zooming_canvas.isChecked
         }
     }
 }

@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Vis regulering af stregtykkelse</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Ryd</string>
     <string name="change_background_color">Skift baggrundsfarve</string>
 
@@ -18,7 +19,7 @@
 
         Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
 
-        Denne app er en enkelt del af en større serie apps. Du finder dem alle på siden http://www.simplemobiletools.com
+        Denne app er en enkelt del af en større serie apps. Du finder dem alle på siden https://www.simplemobiletools.com
     </string>
 
     <!--

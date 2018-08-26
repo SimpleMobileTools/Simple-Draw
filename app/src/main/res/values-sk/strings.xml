@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Zobraziť menič veľkosti štetca</string>
+    <string name="allow_zooming_canvas">Povoliť približovanie plátna</string>
     <string name="clear">Vymazať</string>
     <string name="change_background_color">Zmeniť farbu pozadia</string>
 
@@ -18,7 +19,7 @@
 
         Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
 
-        Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na http://www.simplemobiletools.com
+        Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na https://www.simplemobiletools.com
     </string>
 
     <!--

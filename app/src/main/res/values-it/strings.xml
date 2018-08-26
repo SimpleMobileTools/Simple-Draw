@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Dimensione gomma</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Pulisci</string>
     <string name="change_background_color">Cambia colore di sfondo</string>
 
@@ -17,7 +18,7 @@
         
         Non contiene pubblicità né richiede permessi non necessari. È completamente open source e permette di cambiare i colori.
         
-        Quest\'app è solo un pezzo di una serie più grande di app. Puoi vedere le rimanenti su http://www.simplemobiletools.com
+        Quest\'app è solo un pezzo di una serie più grande di app. Puoi vedere le rimanenti su https://www.simplemobiletools.com
     </string>
 
     <!--

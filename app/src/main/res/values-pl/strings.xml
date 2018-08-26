@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Pokaż narzędzie rozmiaru pędzla</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Wyczyść</string>
     <string name="change_background_color">Zmień kolor tła</string>
 
@@ -18,7 +19,7 @@
 
         Aplikacja nie zawiera żadnych żadnych reklam i nie potrzebuje masy uprawnień. Jest w pełni otwartoźródłowa. Posiada ciemny motyw dla osób z wrażliwymi oczami.
 
-       Niniejsza aplikacja jest tylko częścią naszej kolekcji prostych narzędzi. Ta, jak i pozostałe, dostępne są na stronie http://www.simplemobiletools.com
+       Niniejsza aplikacja jest tylko częścią naszej kolekcji prostych narzędzi. Ta, jak i pozostałe, dostępne są na stronie https://www.simplemobiletools.com
     </string>
 
     <!--

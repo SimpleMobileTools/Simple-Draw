@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Εμφάνιση του εργαλείου των διαστάσεων του πινέλου</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Καθαρισμός</string>
     <string name="change_background_color">Αλλαγή του χρώματος παρασκηνίου</string>
 
@@ -18,7 +19,7 @@
 
         Δεν περιέχει διαφημίσεις ούτε ζητά περιττά δικαιώματα. Είναι εντελώς ανοιχτού κώδικα. Επιτρέπει προσαρμοσμένα χρώματα.
 
-        Αυτή η εφαρμογή είναι ένα κομμάτι από μία μεγαλύτερη σειρά εφαρμογών. Μπορείς να βρεις τις υπόλοιπες στο  http://www.simplemobiletools.com
+        Αυτή η εφαρμογή είναι ένα κομμάτι από μία μεγαλύτερη σειρά εφαρμογών. Μπορείς να βρεις τις υπόλοιπες στο  https://www.simplemobiletools.com
     </string>
 
     <!--

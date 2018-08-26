@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Show brush size tool</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">クリア</string>
     <string name="change_background_color">Change background color</string>
 
@@ -18,7 +19,7 @@
 
         広告や不要なアクセス許可は含まれていません。 完全にオープンソースで、ダークテーマも提供しています。
 
-        このアプリは、大きな一連のアプリの一つです。 他のアプリは http://www.simplemobiletools.com で見つけることができます
+        このアプリは、大きな一連のアプリの一つです。 他のアプリは https://www.simplemobiletools.com で見つけることができます
     </string>
 
     <!--

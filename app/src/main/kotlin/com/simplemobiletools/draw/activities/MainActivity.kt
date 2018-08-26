@@ -82,6 +82,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val isStrokeWidthBarEnabled = config.showBrushSize
         stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
         my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
+        my_canvas.setAllowZooming(config.allowZoomingCanvas)
         updateTextColors(main_holder)
         if (config.preventPhoneFromSleeping) {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)

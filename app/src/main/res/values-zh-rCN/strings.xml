@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">显示笔刷尺寸工具</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">清除</string>
     <string name="change_background_color">改变背景颜色</string>
 
@@ -18,7 +19,7 @@
         
         不包含广告及非必要权限，完全开源，并提供自定义颜色。
         
-        此应用只是一系列应用中的一项，你可以在这里找到其他应用 http://www.simplemobiletools.com
+        此应用只是一系列应用中的一项，你可以在这里找到其他应用 https://www.simplemobiletools.com
     </string>
 
     <!--

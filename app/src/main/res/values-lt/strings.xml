@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Rodyti teptuko dydžio įrankį</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Išvalyti</string>
     <string name="change_background_color">Pakeisti fono spalvą</string>
 
@@ -18,7 +19,7 @@
 
         Neturi reklamų ar nereikalingų leidimų. Programėlė visiškai atviro kodo, yra galimybė keisti spalvas.
 
-        Ši programėle yra vienintelė iš keletos mūsų programėlių. Likusias Jūs galite rasti čia http://www.simplemobiletools.com
+        Ši programėle yra vienintelė iš keletos mūsų programėlių. Likusias Jūs galite rasti čia https://www.simplemobiletools.com
     </string>
 
     <!--

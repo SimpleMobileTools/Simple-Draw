@@ -7,6 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
     <string name="clear">Slett</string>
     <string name="change_background_color">Endre bakgrunnsfarge</string>
 
@@ -18,7 +19,7 @@
 
         Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        This app is just one piece of a bigger series of apps. You can find the rest of them at https://www.simplemobiletools.com
     </string>
 
     <!--
