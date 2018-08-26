@@ -121,7 +121,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun setBrushSize(newBrushSize: Float) {
-        mPaintOptions.strokeWidth = resources.getDimension(R.dimen.full_brush_size) * (newBrushSize / 100f)
+        mPaintOptions.strokeWidth = resources.getDimension(R.dimen.full_brush_size) * (newBrushSize / mScaleFactor / 100f)
     }
 
     fun setAllowZooming(allowZooming: Boolean) {
