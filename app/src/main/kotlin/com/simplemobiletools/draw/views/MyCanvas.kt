@@ -6,6 +6,7 @@ import android.graphics.*
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
@@ -43,6 +44,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mIsStrokeWidthBarEnabled = false
     private var mIsEraserOn = false
     private var mBackgroundColor = 0
+    private var mCenter: PointF? = null
+
+    private var mScaleDetector: ScaleGestureDetector? = null
+    private var mScaleFactor = 1f
+
 
     init {
         mPaint.apply {
@@ -54,6 +60,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             isAntiAlias = true
         }
 
+        mScaleDetector = ScaleGestureDetector(context, ScaleListener())
         pathsUpdated()
     }
 
@@ -173,6 +180,13 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        canvas.save()
+
+        if (mCenter == null) {
+            mCenter = PointF(width / 2f, height / 2f)
+        }
+
+        canvas.scale(mScaleFactor, mScaleFactor, mCenter!!.x, mCenter!!.y)
 
         if (mBackgroundBitmap != null) {
             val left = (width - mBackgroundBitmap!!.width) / 2
@@ -191,6 +205,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (mIsStrokeWidthBarEnabled && !mIsSaving) {
             drawPreviewCircle(canvas)
         }
+
+        canvas.restore()
     }
 
     private fun drawPreviewCircle(canvas: Canvas) {
@@ -250,7 +266,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mPath.lineTo(mCurX + 1, mCurY)
         }
 
-        mPaths.put(mPath, mPaintOptions)
+        mPaths[mPath] = mPaintOptions
         pathsUpdated()
         mPath = MyPath()
         mPaintOptions = PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth, mPaintOptions.isEraser)
@@ -261,6 +277,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
+        mScaleDetector!!.onTouchEvent(event)
         val x = event.x
         val y = event.y
 
@@ -272,8 +289,13 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mUndonePaths.clear()
                 mListener?.toggleRedoVisibility(false)
             }
-            MotionEvent.ACTION_MOVE -> actionMove(x, y)
-            MotionEvent.ACTION_UP -> actionUp()
+
+            MotionEvent.ACTION_MOVE -> {
+                if (!mScaleDetector!!.isInProgress && event.pointerCount == 1) {
+                    actionMove(x, y)
+                }
+            }
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> actionUp()
         }
 
         invalidate()
@@ -296,5 +318,14 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         super.onRestoreInstanceState(state.superState)
         mPaths = state.paths
         pathsUpdated()
+    }
+
+    private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+        override fun onScale(detector: ScaleGestureDetector): Boolean {
+            mScaleFactor *= detector.scaleFactor
+            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f))
+            invalidate()
+            return true
+        }
     }
 }
