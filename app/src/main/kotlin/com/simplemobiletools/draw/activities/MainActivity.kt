@@ -15,7 +15,6 @@ import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.LICENSE_LEAK_CANARY
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
@@ -134,7 +133,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun launchAbout() {
-        val licenses = LICENSE_LEAK_CANARY
+        val licenses = 0
 
         val faqItems = arrayListOf(
                 FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons)
