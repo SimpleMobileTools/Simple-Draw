@@ -31,6 +31,6 @@ class Config(context: Context) : BaseConfig(context) {
         set(lastSaveFolder) = prefs.edit().putString(LAST_SAVE_FOLDER, lastSaveFolder).apply()
 
     var allowZoomingCanvas: Boolean
-        get() = prefs.getBoolean(ALLOW_ZOOMING_CANVAS, true)
+        get() = prefs.getBoolean(ALLOW_ZOOMING_CANVAS, false)
         set(allowZoomingCanvas) = prefs.edit().putBoolean(ALLOW_ZOOMING_CANVAS, allowZoomingCanvas).apply()
 }
