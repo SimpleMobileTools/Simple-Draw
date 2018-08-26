@@ -44,6 +44,15 @@
         android:src="@drawable/ic_undo_big"
         android:visibility="gone"/>
 
+    <ImageView
+        android:id="@+id/stroke_width_preview"
+        android:layout_width="@dimen/full_brush_size"
+        android:layout_height="@dimen/full_brush_size"
+        android:layout_above="@+id/stroke_width_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:background="@drawable/circle_background"/>
+
     <com.simplemobiletools.commons.views.MySeekBar
         android:id="@+id/stroke_width_bar"
         android:layout_width="@dimen/stroke_bar_size"
@@ -51,9 +60,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
-        android:max="75"
+        android:max="100"
         android:padding="@dimen/medium_margin"
-        android:progress="5"
-        android:visibility="gone"/>
+        android:progress="50"/>
 
 </RelativeLayout>

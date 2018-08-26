@@ -11,7 +11,6 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
-import com.simplemobiletools.commons.extensions.getContrastColor
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.draw.R
 import com.simplemobiletools.draw.interfaces.CanvasListener
@@ -41,7 +40,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mStartX = 0f
     private var mStartY = 0f
     private var mIsSaving = false
-    private var mIsStrokeWidthBarEnabled = false
     private var mAllowZooming = true
     private var mIsEraserOn = false
     private var mWasMultitouch = false
@@ -114,9 +112,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     fun setColor(newColor: Int) {
         mPaintOptions.color = newColor
-        if (mIsStrokeWidthBarEnabled) {
-            invalidate()
-        }
     }
 
     fun updateBackgroundColor(newColor: Int) {
@@ -125,16 +120,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mBackgroundBitmap = null
     }
 
-    fun setStrokeWidth(newStrokeWidth: Float) {
-        mPaintOptions.strokeWidth = newStrokeWidth
-        if (mIsStrokeWidthBarEnabled) {
-            invalidate()
-        }
-    }
-
-    fun setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled: Boolean) {
-        mIsStrokeWidthBarEnabled = isStrokeWidthBarEnabled
-        invalidate()
+    fun setBrushSize(newBrushSize: Float) {
+        mPaintOptions.strokeWidth = resources.getDimension(R.dimen.full_brush_size) * (newBrushSize / 100f)
     }
 
     fun setAllowZooming(allowZooming: Boolean) {
@@ -206,28 +193,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         changePaint(mPaintOptions)
         canvas.drawPath(mPath, mPaint)
-
-        if (mIsStrokeWidthBarEnabled && !mIsSaving) {
-            drawPreviewCircle(canvas)
-        }
-
         canvas.restore()
-    }
-
-    private fun drawPreviewCircle(canvas: Canvas) {
-        val res = resources
-        mPaint.style = Paint.Style.FILL
-
-        var y = height - res.getDimension(R.dimen.preview_dot_offset_y)
-        canvas.drawCircle((width / 2).toFloat(), y, mPaintOptions.strokeWidth / 2, mPaint)
-        mPaint.style = Paint.Style.STROKE
-        mPaint.color = if (mPaintOptions.isEraser) mBackgroundColor.getContrastColor() else mPaintOptions.color.getContrastColor()
-        mPaint.strokeWidth = res.getDimension(R.dimen.preview_dot_stroke_size)
-
-        y = height - res.getDimension(R.dimen.preview_dot_offset_y)
-        val radius = (mPaintOptions.strokeWidth + res.getDimension(R.dimen.preview_dot_stroke_size)) / 2
-        canvas.drawCircle((width / 2).toFloat(), y, radius, mPaint)
-        changePaint(mPaintOptions)
     }
 
     private fun changePaint(paintOptions: PaintOptions) {
@@ -299,9 +265,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 actionDown(x, y)
                 mUndonePaths.clear()
                 mListener?.toggleRedoVisibility(false)
-
             }
-
             MotionEvent.ACTION_MOVE -> {
                 if (!mAllowZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
                     actionMove(x, y)

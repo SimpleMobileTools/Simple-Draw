@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -44,7 +45,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private var intentUri: Uri? = null
     private var color = 0
-    private var strokeWidth = 0f
+    private var brushSize = 0f
     private var isEraserOn = false
     private var isImageCaptureIntent = false
     private var lastBitmapPath = ""
@@ -60,9 +61,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
         setColor(config.brushColor)
         defaultPath = config.lastSaveFolder
 
-        strokeWidth = config.brushSize
-        my_canvas.setStrokeWidth(strokeWidth)
-        stroke_width_bar.progress = strokeWidth.toInt()
+        brushSize = config.brushSize
+        updateBrushSize()
+        stroke_width_bar.progress = brushSize.toInt()
 
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
@@ -78,9 +79,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onResume() {
         super.onResume()
 
-        val isStrokeWidthBarEnabled = config.showBrushSize
-        stroke_width_bar.beVisibleIf(isStrokeWidthBarEnabled)
-        my_canvas.setIsStrokeWidthBarEnabled(isStrokeWidthBarEnabled)
+        val isShowBrushSizeEnabled = config.showBrushSize
+        stroke_width_bar.beVisibleIf(isShowBrushSizeEnabled)
+        stroke_width_preview.beVisibleIf(isShowBrushSizeEnabled)
         my_canvas.setAllowZooming(config.allowZoomingCanvas)
         updateTextColors(main_holder)
         if (config.preventPhoneFromSleeping) {
@@ -91,7 +92,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onPause() {
         super.onPause()
         config.brushColor = color
-        config.brushSize = strokeWidth
+        config.brushSize = brushSize
         if (config.preventPhoneFromSleeping) {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
@@ -259,8 +260,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val oldColor = (my_canvas.background as ColorDrawable).color
         ColorPickerDialog(this, oldColor) { wasPositivePressed, color ->
             if (wasPositivePressed) {
-                setBackgroundColor(color)
                 config.canvasBackgroundColor = color
+                setBackgroundColor(color)
             }
         }
     }
@@ -396,6 +397,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         redo.applyColorFilter(contrastColor)
         my_canvas.updateBackgroundColor(pickedColor)
         defaultExtension = PNG
+        getBrushPreviewView().setStroke(getBrushStrokeSize(), contrastColor)
     }
 
     private fun setColor(pickedColor: Int) {
@@ -404,7 +406,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
         my_canvas.setColor(color)
         isEraserOn = false
         updateEraserState()
+        getBrushPreviewView().setColor(color)
     }
+
+    private fun getBrushPreviewView() = stroke_width_preview.background as GradientDrawable
+
+    private fun getBrushStrokeSize() = resources.getDimension(R.dimen.preview_dot_stroke_size).toInt()
 
     override fun toggleUndoVisibility(visible: Boolean) {
         undo.beVisibleIf(visible)
@@ -429,13 +436,19 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
         override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-            my_canvas.setStrokeWidth(progress.toFloat())
-            strokeWidth = progress.toFloat()
+            brushSize = progress.toFloat()
+            updateBrushSize()
         }
 
         override fun onStartTrackingTouch(seekBar: SeekBar) {}
 
         override fun onStopTrackingTouch(seekBar: SeekBar) {}
+    }
+
+    private fun updateBrushSize() {
+        my_canvas.setBrushSize(brushSize)
+        stroke_width_preview.scaleX = brushSize / 100f
+        stroke_width_preview.scaleY = brushSize / 100f
     }
 
     private fun checkWhatsNewDialog() {
