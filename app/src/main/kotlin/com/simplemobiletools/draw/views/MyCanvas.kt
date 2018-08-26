@@ -44,6 +44,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mIsStrokeWidthBarEnabled = false
     private var mAllowZooming = true
     private var mIsEraserOn = false
+    private var mWasMultitouch = false
     private var mBackgroundColor = 0
     private var mCenter: PointF? = null
 
@@ -261,13 +262,15 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun actionUp() {
-        mPath.lineTo(mCurX, mCurY)
+        if (!mWasMultitouch) {
+            mPath.lineTo(mCurX, mCurY)
 
-        // draw a dot on click
-        if (mStartX == mCurX && mStartY == mCurY) {
-            mPath.lineTo(mCurX, mCurY + 2)
-            mPath.lineTo(mCurX + 1, mCurY + 2)
-            mPath.lineTo(mCurX + 1, mCurY)
+            // draw a dot on click
+            if (mStartX == mCurX && mStartY == mCurY) {
+                mPath.lineTo(mCurX, mCurY + 2)
+                mPath.lineTo(mCurX + 1, mCurY + 2)
+                mPath.lineTo(mCurX + 1, mCurY)
+            }
         }
 
         mPaths[mPath] = mPaintOptions
@@ -288,21 +291,24 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val x = event.x
         val y = event.y
 
-        when (event.action) {
+        when (event.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> {
+                mWasMultitouch = false
                 mStartX = x
                 mStartY = y
                 actionDown(x, y)
                 mUndonePaths.clear()
                 mListener?.toggleRedoVisibility(false)
+
             }
 
             MotionEvent.ACTION_MOVE -> {
-                if (!mAllowZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1)) {
+                if (!mAllowZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
                     actionMove(x, y)
                 }
             }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> actionUp()
+            MotionEvent.ACTION_POINTER_DOWN -> mWasMultitouch = true
         }
 
         invalidate()
