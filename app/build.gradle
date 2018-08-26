@@ -40,15 +40,8 @@ android {
     }
 }
 
-ext {
-    leakCanaryVersion = '1.6.1'
-}
-
 dependencies {
     implementation 'com.simplemobiletools:commons:4.7.0'
-
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
-    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
 }
 
 Properties props = new Properties()
