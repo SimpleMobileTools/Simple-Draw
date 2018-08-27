@@ -7,7 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Alterar fundo</string>
 

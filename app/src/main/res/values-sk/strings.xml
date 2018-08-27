@@ -7,7 +7,7 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Zobraziť menič veľkosti štetca</string>
-    <string name="allow_zooming_canvas">Povoliť približovanie plátna</string>
+    <string name="allow_zooming_canvas">Povoliť približovanie plátna gestami</string>
     <string name="clear">Vymazať</string>
     <string name="change_background_color">Zmeniť farbu pozadia</string>
 
