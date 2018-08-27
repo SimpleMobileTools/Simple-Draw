@@ -39,6 +39,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mCurY = 0f
     private var mStartX = 0f
     private var mStartY = 0f
+    private var mCurrBrushSize = 0f
     private var mIsSaving = false
     private var mAllowZooming = true
     private var mIsEraserOn = false
@@ -121,6 +122,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun setBrushSize(newBrushSize: Float) {
+        mCurrBrushSize = newBrushSize
         mPaintOptions.strokeWidth = resources.getDimension(R.dimen.full_brush_size) * (newBrushSize / mScaleFactor / 100f)
     }
 
@@ -254,8 +256,20 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mScaleDetector!!.onTouchEvent(event)
         }
 
-        val x = event.x
-        val y = event.y
+        var x = event.x
+        var y = event.y
+
+        if (mScaleFactor != 1f) {
+            val fullWidth = width / mScaleFactor
+            var curTouchX = fullWidth * x / width
+            curTouchX -= (fullWidth / 2) * (1 - mScaleFactor)
+            x = curTouchX
+
+            val fullHeight = height / mScaleFactor
+            var curTouchY = fullHeight * y / height
+            curTouchY -= (fullHeight / 2) * (1 - mScaleFactor)
+            y = curTouchY
+        }
 
         when (event.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> {
@@ -301,6 +315,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
             mScaleFactor *= detector.scaleFactor
             mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f))
+            setBrushSize(mCurrBrushSize)
             invalidate()
             return true
         }
