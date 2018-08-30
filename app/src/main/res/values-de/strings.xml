@@ -7,15 +7,15 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Zeige Pinselgröße</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
+    <string name="allow_zooming_canvas">Zoomen in der Zeichenfläche mit Gesten ermöglichen</string>
     <string name="clear">Löschen</string>
     <string name="change_background_color">Ändere Hintergrundfarbe</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Eine Leinwand auf der du mit verschiedenen Farben zeichnen kannst.</string>
+    <string name="app_short_description">Eine Leinwand, auf der du mit verschiedenen Farben zeichnen kannst.</string>
     <string name="app_long_description">
-        Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen! Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnungen speichern oder direkt per Email oder auf sozialen Netzwerken teilen.
+        Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen! Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnungen speichern oder direkt per E-Mail oder auf sozialen Netzwerken teilen.
 
         Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
 
