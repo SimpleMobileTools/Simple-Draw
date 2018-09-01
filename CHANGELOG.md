@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 4.3.0 *(2018-09-01)*
+----------------------------
+
+ * Added an initial Zoom implementation, disabled by default
+
 Version 4.2.0 *(2018-08-10)*
 ----------------------------
 
