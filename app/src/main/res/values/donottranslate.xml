@@ -2,6 +2,7 @@
 <resources>
 
     <!-- Release notes -->
+    <string name="release_38">Added optional zooming, has to be enabled in the app settings</string>
     <string name="release_20">Added an Eraser</string>
     <string name="release_18">
         Added app color theme customization\n

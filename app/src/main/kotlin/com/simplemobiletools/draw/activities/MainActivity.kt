@@ -457,6 +457,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         arrayListOf<Release>().apply {
             add(Release(18, R.string.release_18))
             add(Release(20, R.string.release_20))
+            add(Release(38, R.string.release_38))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
