@@ -6,8 +6,8 @@
     <string name="failed_to_load_image">Не удалось загрузить изображение %s</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Позволить изменять размер кисти</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
+    <string name="show_brush_size">Показать размер кисти</string>
+    <string name="allow_zooming_canvas">Разрешить масштабирование холста жестами</string>
     <string name="clear">Очистить</string>
     <string name="change_background_color">Изменить цвет фона</string>
 
