@@ -403,7 +403,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun setColor(pickedColor: Int) {
         color = pickedColor
-        color_picker.setBackgroundColor(color)
+        color_picker.setFillWithStroke(color, config.canvasBackgroundColor.getContrastColor())
         my_canvas.setColor(color)
         isEraserOn = false
         updateEraserState()
