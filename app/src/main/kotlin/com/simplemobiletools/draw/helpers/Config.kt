@@ -33,4 +33,8 @@ class Config(context: Context) : BaseConfig(context) {
     var allowZoomingCanvas: Boolean
         get() = prefs.getBoolean(ALLOW_ZOOMING_CANVAS, false)
         set(allowZoomingCanvas) = prefs.edit().putBoolean(ALLOW_ZOOMING_CANVAS, allowZoomingCanvas).apply()
+
+    var forcePortraitMode: Boolean
+        get() = prefs.getBoolean(FORCE_PORTRAIT_MODE, false)
+        set(forcePortraitMode) = prefs.edit().putBoolean(FORCE_PORTRAIT_MODE, forcePortraitMode).apply()
 }
