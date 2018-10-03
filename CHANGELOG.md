@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 4.3.1 *(2018-10-03)*
+----------------------------
+
+ * Added a new toggle for forcing portrait mode
+ * Added stroke around the color picker for easier visibility
+
 Version 4.3.0 *(2018-09-01)*
 ----------------------------
 
