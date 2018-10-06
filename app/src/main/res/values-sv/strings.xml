@@ -7,13 +7,13 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Visa penselstorleksverktyg</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
+    <string name="allow_zooming_canvas">Tillåt zoomning av arbetsytan med gester</string>
     <string name="clear">Rensa</string>
     <string name="change_background_color">Ändra bakgrundsfärg</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">En målarduk som du kan rita på med olika färger.</string>
+    <string name="app_short_description">En arbetsyta som du kan rita på med olika färger.</string>
     <string name="app_long_description">
         Vill du rita något men har inget papper? Denna app passar dig perfekt. Välj bara en färg och rita. Du kan antingen spara ritningen eller dela den direkt via e-post eller sociala nätverk.
 
