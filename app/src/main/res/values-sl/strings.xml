@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Enostavno risanje</string>
+    <string name="app_launcher_name">Risanje</string>
+    <string name="open_file">Odpri datoteko</string>
+    <string name="eraser">Radirka</string>
+    <string name="failed_to_load_image">Nalaganje slike %s ni uspelo</string>
+    <string name="show_brush_size">Omogoči spreminjanje velikosti čopiča</string>
+    <string name="allow_zooming_canvas">Omogoči povečevanje</string>
+    <string name="clear">Počisti</string>
+    <string name="change_background_color">Spremeni barvo ozadja</string>
+    <string name="app_short_description">Platno, na katerega lahko rišete z različnimi barvami</string>
+    <string name="app_long_description">
+        Želite narisate nekaj, a nimate papirja? Ta aplikacija je perfektna za vas. Samo izberite barvo in rišite. Risbe lahko shranite, ali pa jih delite po e-pošti ali socialnih omrežjih.
+
+        Aplikacija ne vsebuje oglasov in ne zahteva nepotrebnih dovoljenj. Je popolnoma odprtokodna in zelo prilagodljiva.
+
+        Aplikacija je le ena v večji seriji aplikacij. Ostale lahko najdete na spletni strani https://www.simplemobiletools.com
+    </string>
+</resources>
