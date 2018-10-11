@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.simplemobiletools.draw"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 39
         versionName "4.3.1"
@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:4.8.8'
+    implementation 'com.simplemobiletools:commons:5.0.3'
 }
 
 Properties props = new Properties()
