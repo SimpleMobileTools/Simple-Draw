@@ -10,8 +10,8 @@ android {
         applicationId "com.simplemobiletools.draw"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 39
-        versionName "4.3.1"
+        versionCode 40
+        versionName "5.0.0"
         setProperty("archivesBaseName", "draw")
     }
 
