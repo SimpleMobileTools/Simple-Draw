@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 5.0.1 *(2018-11-04)*
+----------------------------
+
+ * Removed the "Avoid showing Whats New on startup" option
+ * This version of the app is no longer maintained. Please upgrade to the Pro version. It is free till Nov 25 2018. You can find the Upgrade button at the top of the app Settings.
+
 Version 5.0.0 *(2018-10-11)*
 ----------------------------
 
