@@ -16,6 +16,7 @@ import android.webkit.MimeTypeMap
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
+import com.simplemobiletools.commons.dialogs.UpgradeToProDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
@@ -75,6 +76,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
         checkIntents()
         if (!isImageCaptureIntent) {
             checkWhatsNewDialog()
+        }
+
+        if (!config.wasInitialUpgradeToProShown) {
+            UpgradeToProDialog(this)
+            config.wasInitialUpgradeToProShown = true
         }
     }
 
