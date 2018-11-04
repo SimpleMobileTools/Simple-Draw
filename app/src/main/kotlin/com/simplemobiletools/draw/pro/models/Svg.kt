@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.models
+package com.simplemobiletools.draw.pro.models
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -9,10 +9,10 @@ import com.simplemobiletools.commons.extensions.getFileOutputStream
 import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.models.FileDirItem
-import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.activities.MainActivity
-import com.simplemobiletools.draw.activities.SimpleActivity
-import com.simplemobiletools.draw.views.MyCanvas
+import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.activities.MainActivity
+import com.simplemobiletools.draw.pro.activities.SimpleActivity
+import com.simplemobiletools.draw.pro.views.MyCanvas
 import java.io.*
 import java.util.*
 

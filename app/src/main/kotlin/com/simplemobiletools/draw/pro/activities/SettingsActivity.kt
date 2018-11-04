@@ -1,9 +1,10 @@
-package com.simplemobiletools.draw.activities
+package com.simplemobiletools.draw.pro.activities
 
 import android.os.Bundle
-import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.extensions.config
+import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.extensions.config
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
 
@@ -16,7 +17,6 @@ class SettingsActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
 
-        setupUpgradeToPro()
         setupCustomizeColors()
         setupUseEnglish()
         setupPreventPhoneFromSleeping()
@@ -24,13 +24,6 @@ class SettingsActivity : SimpleActivity() {
         setupAllowZoomingCanvas()
         setupForcePortraitMode()
         updateTextColors(settings_holder)
-    }
-
-    private fun setupUpgradeToPro() {
-        settings_upgrade_to_pro_holder.beGoneIf(isAProApp())
-        settings_upgrade_to_pro_holder.setOnClickListener {
-            launchUpgradeToProIntent()
-        }
     }
 
     private fun setupCustomizeColors() {

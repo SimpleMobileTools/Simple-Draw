@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.activities
+package com.simplemobiletools.draw.pro.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -16,22 +16,21 @@ import android.webkit.MimeTypeMap
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
-import com.simplemobiletools.commons.dialogs.UpgradeToProDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
-import com.simplemobiletools.draw.BuildConfig
-import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.dialogs.SaveImageDialog
-import com.simplemobiletools.draw.extensions.config
-import com.simplemobiletools.draw.helpers.JPG
-import com.simplemobiletools.draw.helpers.PNG
-import com.simplemobiletools.draw.helpers.SVG
-import com.simplemobiletools.draw.interfaces.CanvasListener
-import com.simplemobiletools.draw.models.Svg
+import com.simplemobiletools.draw.pro.BuildConfig
+import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.dialogs.SaveImageDialog
+import com.simplemobiletools.draw.pro.extensions.config
+import com.simplemobiletools.draw.pro.helpers.JPG
+import com.simplemobiletools.draw.pro.helpers.PNG
+import com.simplemobiletools.draw.pro.helpers.SVG
+import com.simplemobiletools.draw.pro.interfaces.CanvasListener
+import com.simplemobiletools.draw.pro.models.Svg
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -76,11 +75,6 @@ class MainActivity : SimpleActivity(), CanvasListener {
         checkIntents()
         if (!isImageCaptureIntent) {
             checkWhatsNewDialog()
-        }
-
-        if (!config.wasInitialUpgradeToProShown) {
-            UpgradeToProDialog(this)
-            config.wasInitialUpgradeToProShown = true
         }
     }
 

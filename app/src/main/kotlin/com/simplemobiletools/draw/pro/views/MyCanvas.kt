@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.views
+package com.simplemobiletools.draw.pro.views
 
 import android.app.Activity
 import android.content.Context
@@ -12,11 +12,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.interfaces.CanvasListener
-import com.simplemobiletools.draw.models.MyParcelable
-import com.simplemobiletools.draw.models.MyPath
-import com.simplemobiletools.draw.models.PaintOptions
+import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.interfaces.CanvasListener
+import com.simplemobiletools.draw.pro.models.MyParcelable
+import com.simplemobiletools.draw.pro.models.MyPath
+import com.simplemobiletools.draw.pro.models.PaintOptions
 import java.util.*
 import java.util.concurrent.ExecutionException
 

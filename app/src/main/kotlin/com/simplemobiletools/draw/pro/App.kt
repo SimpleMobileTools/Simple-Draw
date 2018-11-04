@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw
+package com.simplemobiletools.draw.pro
 
 import android.app.Application
 import com.simplemobiletools.commons.extensions.checkUseEnglish

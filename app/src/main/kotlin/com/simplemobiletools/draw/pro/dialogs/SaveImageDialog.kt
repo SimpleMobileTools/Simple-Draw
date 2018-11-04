@@ -1,14 +1,14 @@
-package com.simplemobiletools.draw.dialogs
+package com.simplemobiletools.draw.pro.dialogs
 
 import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.draw.R
-import com.simplemobiletools.draw.activities.SimpleActivity
-import com.simplemobiletools.draw.helpers.JPG
-import com.simplemobiletools.draw.helpers.PNG
-import com.simplemobiletools.draw.helpers.SVG
+import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.activities.SimpleActivity
+import com.simplemobiletools.draw.pro.helpers.JPG
+import com.simplemobiletools.draw.pro.helpers.PNG
+import com.simplemobiletools.draw.pro.helpers.SVG
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 
 class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String, val defaultPath: String, val defaultFilename: String,

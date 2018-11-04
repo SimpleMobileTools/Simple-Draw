@@ -1,7 +1,7 @@
-package com.simplemobiletools.draw.activities
+package com.simplemobiletools.draw.pro.activities
 
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
-import com.simplemobiletools.draw.R
+import com.simplemobiletools.draw.pro.R
 
 open class SimpleActivity : BaseSimpleActivity() {
     override fun getAppIconIDs() = arrayListOf(
