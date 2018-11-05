@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Basit Çiz</string>
+    <string name="app_launcher_name">Çiz</string>
+    <string name="open_file">Dosya aç</string>
+    <string name="eraser">Silici</string>
+    <string name="failed_to_load_image">%s resmi yüklenemedi</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Fırça boyutu aracını göster</string>
+    <string name="allow_zooming_canvas">Tuvali hareketlerle yakınlaştırmaya izin ver</string>
+    <string name="clear">Temizle</string>
+    <string name="change_background_color">Arka plan rengini değiştir</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Farklı renklerle çizebileceğiniz bir tuval.</string>
+    <string name="app_long_description">
+        Bir şey çizmek istiyorsunuz ama kağıdınız mı yok? Bu uygulama size tam olarak uyacaktır. Sadece bir renk seçin ve çizin. Çizimi kaydedebilir veya doğrudan e-posta veya sosyal ağlarla paylaşabilirsiniz.
+
+        Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sağlar.
+
+        Bu uygulama, daha büyük bir uygulama serisinden sadece bir parça. Geri kalanı http://www.simplemobiletools.com adresinde bulabilirsiniz
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
