@@ -1,25 +1,25 @@
 <resources>
-    <string name="app_name">Dessin simple</string>
-    <string name="app_launcher_name">Dessiner</string>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Dessin</string>
     <string name="open_file">Ouvrir un fichier</string>
-    <string name="eraser">Gomme</string>
+    <string name="eraser">Gommer</string>
     <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
+    <string name="allow_zooming_canvas">Permettre de zoomer sur l\'image avec des gestes</string>
     <string name="clear">Tout effacer</string>
-    <string name="change_background_color">Changer le fond</string>
+    <string name="change_background_color">Changer l\'arrière-plan</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un canevas sur lequel vous pouvez dessiner avec différentes couleurs.</string>
+    <string name="app_short_description">Une toile sur laquelle vous pouvez dessiner avec différentes couleurs.</string>
     <string name="app_long_description">
-        Envie de dessiner quelque chose mais pas de papier ? Cette application est faite pour vous. Sélectionnez simplement une couleur et dessinez. Vous pouvez soit sauver le dessin soit le partager par email ou les réseaux sociaux.
+        Envie de dessiner quelque chose mais vous ne disposez pas de papier ? Cette application vous conviendra. Choisissez simplement une couleur et dessinez. Vous pouvez enregistrer votre dessin ou directement le partager par courriel ou sur les réseaux sociaux.
 
-        Pas de pubs ni de permissions inutiles. Totalement open-source et propose des couleurs personnalisables.
-
-        Cette application fait partie d\'un ensemble d\'applications. Vous pouvez trouver les autres sur https://www.simplemobiletools.com
+        L\'application ne contient ni publicité, ni autorisation inutile. Elle est totalement opensource et est également fournie avec des couleurs personnalisables.
+          
+        Cette application fait partie d\'une plus grande suite. Vous pouvez trouver les autres applications sur https://www.simplemobiletools.com
     </string>
 
     <!--
