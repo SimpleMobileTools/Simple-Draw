@@ -6,11 +6,16 @@ Version 6.0.0 *(2018-11-04)*
 
  * Initial Pro version
 
+Version 5.0.2 *(2018-11-28)*
+----------------------------
+
+ * Make sure the "Upgrade to Pro" popup isnt shown at first launch
+ * This version of the app is no longer maintained, please upgrade to the Pro version. You can find the Upgrade button at the top of the app Settings.
+
 Version 5.0.1 *(2018-11-04)*
 ----------------------------
 
  * Removed the "Avoid showing Whats New on startup" option
- * This version of the app is no longer maintained. Please upgrade to the Pro version. It is free till Nov 12 2018. You can find the Upgrade button at the top of the app Settings.
 
 Version 5.0.0 *(2018-10-11)*
 ----------------------------
