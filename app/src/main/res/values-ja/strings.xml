@@ -1,15 +1,15 @@
 ﻿<resources>
     <string name="app_name">シンプル ドロー</string>
     <string name="app_launcher_name">ドロー</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="open_file">ファイルを開く</string>
+    <string name="eraser">消しゴム</string>
+    <string name="failed_to_load_image">画像 %s を読み込めませんでした</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
-    <string name="clear">クリア</string>
-    <string name="change_background_color">Change background color</string>
+    <string name="show_brush_size">ブラシサイズツールを表示する</string>
+    <string name="allow_zooming_canvas">ジェスチャーでキャンバスを拡大することを許可する</string>
+    <string name="clear">消去</string>
+    <string name="change_background_color">背景色を変更する</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
