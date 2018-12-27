@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.0.2 *(2018-12-27)*
+----------------------------
+
+ * Added some warnings related to some launchers not handling icon customization properly
+
 Version 6.0.1 *(2018-11-30)*
 ----------------------------
 
