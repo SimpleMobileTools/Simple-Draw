@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Draw</string>
+    <string name="app_name">Semplice Disegnare</string>
     <string name="app_launcher_name">Disegna</string>
     <string name="open_file">Apri file</string>
     <string name="eraser">Gomma</string>
@@ -13,13 +13,13 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Una tela su cui puoi disegnare con diversi colori.</string>
+    <string name="app_short_description">Una tela su cui si può disegnare con diversi colori.</string>
     <string name="app_long_description">
-        Vuoi disegnare qualcosa ma non hai carta? Quest\'app fa per te. Devi solo selezionare un colore e disegnare. Puoi salvare i disegni o condividerli direttamente via email o sui social network.
+        Si vuole disegnare qualcosa ma non non c\'è carta? Allora quest\'app è perfetta; si deve solamente selezionare un colore e disegnare. Si possono salvare i disegni o condividerli direttamente via email o sui social network.
         
-        Non contiene pubblicità né richiede permessi non necessari. È completamente open source e permette di cambiare i colori.
-        
-        Quest\'app fa parte di una serie più grande. Puoi trovare le altre su https://www.simplemobiletools.com
+        L\'applicazione non contiene pubblicità o permessi non necessari; è completamente opensource e la si può personalizzare con i propri colori preferiti.
+
+        Questa è solamente una delle tante applicazioni della serie Simple Mobile Tools. Si possono trovare le altre su https://www.simplemobiletools.com
     </string>
 
     <!--
