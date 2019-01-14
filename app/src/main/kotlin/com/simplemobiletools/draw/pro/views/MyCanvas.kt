@@ -40,7 +40,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mStartX = 0f
     private var mStartY = 0f
     private var mCurrBrushSize = 0f
-    private var mIsSaving = false
     private var mAllowZooming = true
     private var mIsEraserOn = false
     private var mWasMultitouch = false
@@ -134,9 +133,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         canvas.drawColor(Color.WHITE)
-        mIsSaving = true
         draw(canvas)
-        mIsSaving = false
         return bitmap
     }
 
