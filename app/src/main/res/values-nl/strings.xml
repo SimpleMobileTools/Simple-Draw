@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Eenvoudig Tekenen</string>
+    <string name="app_launcher_name">Tekenen</string>
+    <string name="open_file">Bestand openen</string>
+    <string name="eraser">Gum</string>
+    <string name="failed_to_load_image">Kan bestand %s niet laden</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Knop penceelgrootte tonen</string>
+    <string name="allow_zooming_canvas">Met gebaren inzoomen/uitzoomen</string>
+    <string name="clear">Wissen</string>
+    <string name="change_background_color">Achtergrondkleur</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Een canvas waarop met verschillende kleuren kan worden getekend.</string>
+    <string name="app_long_description">
+        Snel iets tekenen, maar geen papier bij de hand? Deze app zal dan van pas komen. Kies een kleur en begin met tekenen. Sla de tekening op, of deel meteen via e-mail of sociale netwerken.
+
+        Bevat geen advertenties of onnodige machtigingen. Volledig open-source. Kleuren van de app kunnen worden aangepast.
+
+        Deze app is onderdeel van een grotere verzameling. Vind de andere apps op https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
