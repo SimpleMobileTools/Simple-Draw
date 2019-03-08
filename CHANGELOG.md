@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.0.3 *(2019-03-08)*
+----------------------------
+
+ * Allow handling Edit intents
+ * Properly restore background images on device rotation or background color change
+ * Use the system window for picking images at using Open File
+
 Version 6.0.2 *(2018-12-27)*
 ----------------------------
 
