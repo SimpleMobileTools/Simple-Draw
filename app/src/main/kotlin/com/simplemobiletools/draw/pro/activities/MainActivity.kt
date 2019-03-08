@@ -41,12 +41,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
     private val BITMAP_PATH = "bitmap_path"
+    private val URI_TO_LOAD = "uri_to_load"
 
     private var defaultPath = ""
     private var defaultFilename = ""
     private var defaultExtension = PNG
 
     private var intentUri: Uri? = null
+    private var uriToLoad: Uri? = null
     private var color = 0
     private var brushSize = 0f
     private var isEraserOn = false
@@ -220,8 +222,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun tryOpenUri(uri: Uri, intent: Intent) = when {
-        uri.scheme == "file" -> openPath(uri.path)
-        uri.scheme == "content" -> openUri(uri, intent)
+        uri.scheme == "file" -> {
+            uriToLoad = uri
+            openPath(uri.path)
+        }
+        uri.scheme == "content" -> {
+            uriToLoad = uri
+            openUri(uri, intent)
+        }
         else -> false
     }
 
@@ -282,6 +290,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
             if (wasPositivePressed) {
                 config.canvasBackgroundColor = color
                 setBackgroundColor(color)
+
+                if (uriToLoad != null) {
+                    tryOpenUri(uriToLoad!!, intent)
+                }
             }
         }
     }
@@ -399,6 +411,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun clearCanvas() {
+        uriToLoad = null
         my_canvas.clearCanvas()
         defaultExtension = PNG
         defaultPath = ""
@@ -447,6 +460,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(BITMAP_PATH, lastBitmapPath)
+
+        if (uriToLoad != null) {
+            outState.putString(URI_TO_LOAD, uriToLoad.toString())
+        }
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -454,6 +471,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
         lastBitmapPath = savedInstanceState.getString(BITMAP_PATH)
         if (lastBitmapPath.isNotEmpty()) {
             openPath(lastBitmapPath)
+        } else if (savedInstanceState.containsKey(URI_TO_LOAD)) {
+            uriToLoad = Uri.parse(savedInstanceState.getString(URI_TO_LOAD))
+            tryOpenUri(uriToLoad!!, intent)
         }
     }
 
