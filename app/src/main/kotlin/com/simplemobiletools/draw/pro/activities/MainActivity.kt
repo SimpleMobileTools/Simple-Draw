@@ -15,7 +15,6 @@ import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
-import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
@@ -36,7 +35,10 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.OutputStream
 
+
 class MainActivity : SimpleActivity(), CanvasListener {
+    private val PICK_IMAGE_INTENT = 1
+
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
     private val BITMAP_PATH = "bitmap_path"
@@ -148,16 +150,18 @@ class MainActivity : SimpleActivity(), CanvasListener {
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, false)
     }
 
-    private fun tryOpenFile() {
-        getStoragePermission {
-            openFile()
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        if (requestCode == PICK_IMAGE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            tryOpenUri(resultData.data!!, resultData)
         }
     }
 
-    private fun openFile() {
-        val path = if (isImageCaptureIntent) "" else defaultPath
-        FilePickerDialog(this, path) {
-            openPath(it)
+    private fun tryOpenFile() {
+        Intent(Intent.ACTION_GET_CONTENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "image/*"
+            startActivityForResult(this, PICK_IMAGE_INTENT)
         }
     }
 
@@ -165,14 +169,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
         if (intent?.action == Intent.ACTION_SEND && intent.type.startsWith("image/")) {
             getStoragePermission {
                 val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-                tryOpenUri(uri)
+                tryOpenUri(uri, intent)
             }
         }
 
         if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type.startsWith("image/")) {
             getStoragePermission {
                 val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
-                imageUris.any { tryOpenUri(it) }
+                imageUris.any { tryOpenUri(it, intent) }
             }
         }
 
@@ -204,7 +208,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
     }
 
-    private fun tryOpenUri(uri: Uri) = when {
+    private fun tryOpenUri(uri: Uri, intent: Intent) = when {
         uri.scheme == "file" -> openPath(uri.path)
         uri.scheme == "content" -> openUri(uri, intent)
         else -> false
