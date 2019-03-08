@@ -10,6 +10,7 @@ import com.simplemobiletools.draw.pro.helpers.JPG
 import com.simplemobiletools.draw.pro.helpers.PNG
 import com.simplemobiletools.draw.pro.helpers.SVG
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
+import java.io.File
 
 class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String, val defaultPath: String, val defaultFilename: String,
                       callback: (savePath: String) -> Unit) {
@@ -60,7 +61,7 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                                 return@setOnClickListener
                             }
 
-                            if (activity.getDoesFilePathExist(newPath)) {
+                            if (File(newPath).exists()) {
                                 val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
                                 ConfirmationDialog(activity, title) {
                                     callback(newPath)
