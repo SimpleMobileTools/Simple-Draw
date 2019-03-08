@@ -35,7 +35,6 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.OutputStream
 
-
 class MainActivity : SimpleActivity(), CanvasListener {
     private val PICK_IMAGE_INTENT = 1
 
@@ -52,6 +51,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var brushSize = 0f
     private var isEraserOn = false
     private var isImageCaptureIntent = false
+    private var isEditIntent = false
     private var lastBitmapPath = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -112,9 +112,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         menu.apply {
-            findItem(R.id.menu_confirm).isVisible = isImageCaptureIntent
-            findItem(R.id.menu_save).isVisible = !isImageCaptureIntent
-            findItem(R.id.menu_share).isVisible = !isImageCaptureIntent
+            findItem(R.id.menu_confirm).isVisible = isImageCaptureIntent || isEditIntent
+            findItem(R.id.menu_save).isVisible = !isImageCaptureIntent && !isEditIntent
+            findItem(R.id.menu_share).isVisible = !isImageCaptureIntent && !isEditIntent
+            findItem(R.id.open_file).isVisible = !isEditIntent
         }
 
         return true
@@ -194,6 +195,16 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 intentUri = output
                 defaultPath = output.path
                 invalidateOptionsMenu()
+            }
+        }
+
+        if (intent?.action == Intent.ACTION_EDIT) {
+            val data = intent.data
+            val output = intent.extras?.get(MediaStore.EXTRA_OUTPUT)
+            if (data != null && output != null && output is Uri) {
+                tryOpenUri(data, intent)
+                isEditIntent = true
+                intentUri = output
             }
         }
     }
@@ -276,7 +287,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun confirmImage() {
-        if (intentUri?.scheme == "content") {
+        if (isEditIntent) {
+            val outputStream = contentResolver.openOutputStream(intentUri)
+            saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
+        } else if (intentUri?.scheme == "content") {
             val outputStream = contentResolver.openOutputStream(intentUri)
             saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
         } else {
