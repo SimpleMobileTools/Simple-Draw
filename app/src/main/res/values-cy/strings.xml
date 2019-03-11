@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Llunio</string>
+    <string name="open_file">Agor ffeil</string>
+    <string name="eraser">Rwbiwr</string>
+    <string name="failed_to_load_image">Methwyd â llwytho\'r ddelwedd %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Dangos teclyn maint brws</string>
+    <string name="allow_zooming_canvas">Caniatáu chwyddo\'r cynfas gydag ystumiau</string>
+    <string name="clear">Clirio</string>
+    <string name="change_background_color">Newid lliw cefndir</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Cynfas gellir llunio a darlunio arno gyda gwahanol lliwio.</string>
+    <string name="app_long_description">
+        Eisiau llunio rhywbeth ond heb bapur? Dyma ap perffaith ar dy gyfer. Jyst dewisa liw a llunia. Gellir gadw\'r darlun neu ei rannu\'n syth trwy ebost neu gyfryngau cymdeithasol.
+
+        Gyda dim hysbysebion a dim eisiau unrhyw ganiatâd di-angen. Mae\'n gyfan gwbl god agored a gellir addasu lliwiau\'r ap.
+
+        Mae\'r ap hwn yn un mewn casgliad o apiau. Gweler y gweddill ar https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
