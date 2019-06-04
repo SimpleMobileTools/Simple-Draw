@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Просто Малювання</string>
+    <string name="app_launcher_name">Малювання</string>
+    <string name="open_file">Відкрити файл</string>
+    <string name="eraser">Гумка</string>
+    <string name="failed_to_load_image">Не вдалося завантажити зображення %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Показати інструмент зміни пензля</string>
+    <string name="allow_zooming_canvas">Дозволити масштабування тла жестами</string>
+    <string name="clear">Очистити</string>
+    <string name="change_background_color">Змінити колір фону</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Тло, на якому можна малювати різними кольорами.</string>
+    <string name="app_long_description">
+        Бажаєте щось намалювати, але у вас немає паперу? Цей додаток вам допоможе. Просто оберіть колір і малюйте. Ви можете або зберегти малюнок, або поширити його з допомогою електронної пошти чи соціальних мереж.
+
+        Цей додаток не буде показувати рекламу; потрібні лише найнеобхідніші дозволи. Додаток має повністю відкритий програмний код, кольори оформлення можна легко налаштувати.
+
+        Просто Малювання - це один із ряду додатків від Simple Mobile Tools. Інші додатки можна знайти тут: https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
