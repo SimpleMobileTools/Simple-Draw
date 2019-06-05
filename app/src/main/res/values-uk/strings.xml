@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Тло, на якому можна малювати різними кольорами.</string>
+    <string name="app_short_description">Просто тло, на якому можна малювати різними кольорами.</string>
     <string name="app_long_description">
         Бажаєте щось намалювати, але у вас немає паперу? Цей додаток вам допоможе. Просто оберіть колір і малюйте. Ви можете або зберегти малюнок, або поширити його з допомогою електронної пошти чи соціальних мереж.
 
