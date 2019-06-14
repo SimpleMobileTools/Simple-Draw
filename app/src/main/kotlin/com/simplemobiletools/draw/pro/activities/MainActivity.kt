@@ -299,14 +299,20 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun confirmImage() {
-        if (isEditIntent) {
-            val outputStream = contentResolver.openOutputStream(intentUri)
-            saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
-        } else if (intentUri?.scheme == "content") {
-            val outputStream = contentResolver.openOutputStream(intentUri)
-            saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
-        } else {
-            handlePermission(PERMISSION_WRITE_STORAGE) {
+        when {
+            isEditIntent -> {
+                try {
+                    val outputStream = contentResolver.openOutputStream(intentUri)
+                    saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
+                } catch (e: Exception) {
+                    showErrorToast(e)
+                }
+            }
+            intentUri?.scheme == "content" -> {
+                val outputStream = contentResolver.openOutputStream(intentUri)
+                saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
+            }
+            else -> handlePermission(PERMISSION_WRITE_STORAGE) {
                 val fileDirItem = FileDirItem(defaultPath, defaultPath.getFilenameFromPath())
                 getFileOutputStream(fileDirItem, true) {
                     saveToOutputStream(it, defaultPath.getCompressionFormat())
