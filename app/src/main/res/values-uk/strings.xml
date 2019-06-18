@@ -6,10 +6,10 @@
     <string name="failed_to_load_image">Не вдалося завантажити зображення %s</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Показати інструмент зміни пензля</string>
-    <string name="allow_zooming_canvas">Дозволити масштабування тла жестами</string>
+    <string name="show_brush_size">Показувати інструмент зміни пензля</string>
+    <string name="allow_zooming_canvas">Дозволяти масштабування тла жестами</string>
     <string name="clear">Очистити</string>
-    <string name="change_background_color">Змінити колір фону</string>
+    <string name="change_background_color">Змінити колір тла</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
