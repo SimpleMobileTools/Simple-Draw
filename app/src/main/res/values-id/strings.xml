@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Kanvas</string>
+    <string name="open_file">Buka berkas</string>
+    <string name="eraser">Penghapus</string>
+    <string name="failed_to_load_image">Gagal memuat gambar %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Tampilkan tombol ukuran kuas</string>
+    <string name="allow_zooming_canvas">Izinkan zum kanvas dengan gestur</string>
+    <string name="clear">Hapus</string>
+    <string name="change_background_color">Ubah warna latar</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Aplikasi menggambar sederhana dengan pilihan warna yang tidak terbatas.</string>
+    <string name="app_long_description">
+        Ingin menggambar sesuatu tetapi tidak ada kertas? Aplikasi ini sangat cocok untuk anda. Cukup pilih warna dan mulai menggambar. Anda bisa menyimpan gambar anda atau bagikan langsung melalui email atau jejaring sosial.
+
+        Sama sekali tidak berisi iklan dan tidak membutuhkan perizinan yang tidak perlu. Sepenuhnya bersumber terbuka, dengan warna yang bisa disesuaikan.
+
+        Aplikasi ini hanya salah satu bagian dari rangkaian aplikasi yang lebih besar. Anda bisa menemukan yang lainnya di https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
