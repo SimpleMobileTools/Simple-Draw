@@ -11,6 +11,7 @@ import com.simplemobiletools.draw.pro.helpers.PNG
 import com.simplemobiletools.draw.pro.helpers.SVG
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
+import java.util.*
 
 class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String, val defaultPath: String, val defaultFilename: String,
                       callback: (savePath: String) -> Unit) {
@@ -77,7 +78,15 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
     }
 
     private fun getInitialFilename(): String {
-        val newFilename = "image_${activity.getCurrentFormattedDateTime()}"
+        val numberOfSeconds = Calendar.getInstance().get(Calendar.SECOND)
+        var secondsInString : String = "0"
+        if(numberOfSeconds < 10)
+            secondsInString+= numberOfSeconds.toString()
+        else
+            secondsInString = numberOfSeconds.toString()
+
+        // The '-' symbol is hardcoded, which is bad, since it assume the data format.
+        val newFilename = "image_${activity.getCurrentFormattedDateTime() + "-" + secondsInString}"
         return if (defaultFilename.isEmpty()) newFilename else defaultFilename
     }
 }
