@@ -501,7 +501,6 @@ class MainActivity : SimpleActivity(), CanvasListener {
             uriToLoad = Uri.parse(savedInstanceState.getString(URI_TO_LOAD))
             tryOpenUri(uriToLoad!!, intent)
         }
-        savedPathsHash = my_canvas.getDrawingHashCode()
     }
 
     private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
