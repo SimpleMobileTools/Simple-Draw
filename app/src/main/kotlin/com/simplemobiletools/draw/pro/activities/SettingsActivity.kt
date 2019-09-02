@@ -1,6 +1,7 @@
 package com.simplemobiletools.draw.pro.activities
 
 import android.os.Bundle
+import android.view.Menu
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.draw.pro.R
@@ -24,6 +25,12 @@ class SettingsActivity : SimpleActivity() {
         setupAllowZoomingCanvas()
         setupForcePortraitMode()
         updateTextColors(settings_holder)
+        invalidateOptionsMenu()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        updateMenuItemColors(menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setupCustomizeColors() {

@@ -95,6 +95,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         requestedOrientation = if (config.forcePortraitMode) ActivityInfo.SCREEN_ORIENTATION_PORTRAIT else ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        invalidateOptionsMenu()
     }
 
     override fun onPause() {
@@ -120,6 +121,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             findItem(R.id.open_file).isVisible = !isEditIntent
         }
 
+        updateMenuItemColors(menu)
         return true
     }
 
