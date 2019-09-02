@@ -51,6 +51,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var uriToLoad: Uri? = null
     private var color = 0
     private var brushSize = 0f
+    private var savedPathsHash = 0L
     private var isEraserOn = false
     private var isImageCaptureIntent = false
     private var isEditIntent = false
@@ -138,6 +139,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
             else -> return super.onOptionsItemSelected(item)
         }
         return true
+    }
+
+    override fun onBackPressed() {
+        val hasUnsavedChanges = savedPathsHash != my_canvas.getDrawingHashCode()
+        super.onBackPressed()
     }
 
     private fun launchSettings() {
@@ -344,6 +350,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun saveImage() {
         SaveImageDialog(this, defaultExtension, defaultPath, defaultFilename) {
+            savedPathsHash = my_canvas.getDrawingHashCode()
             saveFile(it)
             defaultPath = it.getParentPath()
             defaultFilename = it.getFilenameFromPath()

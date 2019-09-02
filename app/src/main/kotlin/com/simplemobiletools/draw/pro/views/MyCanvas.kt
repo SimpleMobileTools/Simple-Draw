@@ -248,6 +248,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mListener?.toggleUndoVisibility(mPaths.isNotEmpty() || mLastPaths.isNotEmpty())
     }
 
+    fun getDrawingHashCode() = mPaths.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (mAllowZooming) {
             mScaleDetector!!.onTouchEvent(event)
