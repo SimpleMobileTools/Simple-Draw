@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_confirm"
-        android:icon="@drawable/ic_check"
+        android:icon="@drawable/ic_check_vector"
         android:title="@string/save"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_save"
-        android:icon="@drawable/ic_save"
+        android:icon="@drawable/ic_save_vector"
         android:title="@string/save"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/clear"
         android:icon="@drawable/ic_clear"
         android:title="@string/clear"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_share"
-        android:icon="@drawable/ic_share"
+        android:icon="@drawable/ic_share_vector"
         android:title="@string/share"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/open_file"
         android:title="@string/open_file"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/change_background"
         android:title="@string/change_background_color"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/settings"
         android:title="@string/settings"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/about"
         android:title="@string/about"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 </menu>
