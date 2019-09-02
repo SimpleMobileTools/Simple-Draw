@@ -19,6 +19,7 @@ import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
+import com.simplemobiletools.commons.helpers.SAVE_DISCARD_PROMPT_INTERVAL
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
@@ -53,6 +54,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var color = 0
     private var brushSize = 0f
     private var savedPathsHash = 0L
+    private var lastSavePromptTS = 0L
     private var isEraserOn = false
     private var isImageCaptureIntent = false
     private var isEditIntent = false
@@ -144,7 +146,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onBackPressed() {
         val hasUnsavedChanges = savedPathsHash != my_canvas.getDrawingHashCode()
-        if (hasUnsavedChanges) {
+        if (hasUnsavedChanges && System.currentTimeMillis() - lastSavePromptTS > SAVE_DISCARD_PROMPT_INTERVAL) {
+            lastSavePromptTS = System.currentTimeMillis()
             ConfirmationAdvancedDialog(this, "", R.string.save_before_closing, R.string.save, R.string.discard) {
                 if (it) {
                     trySaveImage()
