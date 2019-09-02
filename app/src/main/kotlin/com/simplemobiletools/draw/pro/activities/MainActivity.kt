@@ -15,6 +15,7 @@ import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
+import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
@@ -143,7 +144,17 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onBackPressed() {
         val hasUnsavedChanges = savedPathsHash != my_canvas.getDrawingHashCode()
-        super.onBackPressed()
+        if (hasUnsavedChanges) {
+            ConfirmationAdvancedDialog(this, "", R.string.save_before_closing, R.string.save, R.string.discard) {
+                if (it) {
+                    trySaveImage()
+                } else {
+                    super.onBackPressed()
+                }
+            }
+        } else {
+            super.onBackPressed()
+        }
     }
 
     private fun launchSettings() {
