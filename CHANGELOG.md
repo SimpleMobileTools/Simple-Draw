@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.0.5 *(2019-09-02)*
+----------------------------
+
+ * Added seconds to the default filename
+ * Show a save/discard prompt at exiting the app with unsaved changes
+
 Version 6.0.4 *(2019-06-14)*
 ----------------------------
 
