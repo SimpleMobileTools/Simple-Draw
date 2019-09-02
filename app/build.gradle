@@ -14,8 +14,8 @@ android {
         applicationId "com.simplemobiletools.draw.pro"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 46
-        versionName "6.0.4"
+        versionCode 47
+        versionName "6.0.5"
         setProperty("archivesBaseName", "draw")
         vectorDrawables.useSupportLibrary = true
     }
