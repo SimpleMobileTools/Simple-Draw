@@ -1,0 +1,5 @@
+Vil du tegne en skitse men har ikke noget papir? Så er det denne app du skal bruge. Vælg en farve og tegn. Du kan gemme tegningen eller dele den direkte via mail elle socile medier.
+
+Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
+
+Denne app er en enkelt del af en større serie apps. Du finder dem alle på siden https://www.simplemobiletools.com

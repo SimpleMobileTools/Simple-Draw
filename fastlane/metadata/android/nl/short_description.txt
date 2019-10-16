@@ -1,0 +1,1 @@
+Een canvas waarop met verschillende kleuren kan worden getekend.

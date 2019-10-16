@@ -1,0 +1,5 @@
+¿Quiere dibujar algo pero no tiene papel? Esta aplicación es ideal para solucionarlo. Tan solo elija un color y dibuje. Puede tanto guargar el dibujo como compartirlo directamente mediante e-mail o redes sociales.
+
+No contiene anuncios ni permisos innecesarios. Es completamente OpenSource y además provee un tema oscuro.
+
+Esta aplicación es tan solo una pequeña parte de una serie de aplicaciones. Puede encontrar el resto en https://www.simplemobiletools.com

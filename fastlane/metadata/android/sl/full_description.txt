@@ -1,0 +1,5 @@
+Želite narisate nekaj, a nimate papirja? Ta aplikacija je perfektna za vas. Samo izberite barvo in rišite. Risbe lahko shranite, ali pa jih delite po e-pošti ali socialnih omrežjih.
+
+Aplikacija ne vsebuje oglasov in ne zahteva nepotrebnih dovoljenj. Je popolnoma odprtokodna in zelo prilagodljiva.
+
+Aplikacija je le ena v večji seriji aplikacij. Ostale lahko najdete na spletni strani https://www.simplemobiletools.com

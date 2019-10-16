@@ -1,0 +1,1 @@
+Una tela su cui si può disegnare con diversi colori.

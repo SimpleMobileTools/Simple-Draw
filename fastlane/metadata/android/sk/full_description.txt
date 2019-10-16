@@ -1,0 +1,5 @@
+Chcete nakresliť niečo jednoduché, ale nemáte papier? Táto apka vám príde vhod. Zvoľte si farbu a kreslite. Kresby viete buď uložiť, alebo priamo zdieľať cez email, resp. sociálne siete.
+
+Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
+
+Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na https://www.simplemobiletools.com

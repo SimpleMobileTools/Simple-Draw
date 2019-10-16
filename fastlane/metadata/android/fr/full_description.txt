@@ -1,0 +1,5 @@
+Envie de dessiner quelque chose mais vous ne disposez pas de papier ? Cette application vous conviendra. Choisissez simplement une couleur et dessinez. Vous pouvez enregistrer votre dessin ou directement le partager par courriel ou sur les réseaux sociaux.
+
+L'application ne contient ni publicité, ni autorisation inutile. Elle est totalement opensource et est également fournie avec des couleurs personnalisables.
+  
+Cette application fait partie d'une plus grande suite. Vous pouvez trouver les autres applications sur https://www.simplemobiletools.com

@@ -1,0 +1,5 @@
+Gostaria de desenhar algo mas não tem papel? Então, esta aplicação é para si. Basta escolher uma cor e desenhar. Após criar o desenho, pode guardar ou partilhar o ficheiro através de e-mail ou das redes sociais.
+
+Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente 'open source'.
+
+Esta aplicação é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em https://www.simplemobiletools.com

@@ -1,0 +1,5 @@
+Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen! Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnungen speichern oder direkt per E-Mail oder auf sozialen Netzwerken teilen.
+
+Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
+
+Diese App ist nur eine aus einer größeren Serie von schlichten Apps. Der Rest davon findet sich auf https://www.simplemobiletools.com

@@ -1,0 +1,5 @@
+Želite li nacrtati nešto, ali bez papira? Ova aplikacija je stvorena za Vas. Samo odaberite boju i nacrtajte. Možete spremiti crtež ili ga podijeliti putem e-pošte ili društvenih mreža.
+
+Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
+
+Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na https://www.simplemobiletools.com
