@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Cynfas gellir llunio a darlunio arno gyda gwahanol lliwio.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Eisiau llunio rhywbeth ond heb bapur? Dyma ap perffaith ar dy gyfer. Jyst dewisa liw a llunia. Gellir gadw\'r darlun neu ei rannu\'n syth trwy ebost neu gyfryngau cymdeithasol.
 

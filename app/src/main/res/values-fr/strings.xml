@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Une toile sur laquelle vous pouvez dessiner avec différentes couleurs.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Envie de dessiner quelque chose mais vous ne disposez pas de papier ? Cette application vous conviendra. Choisissez simplement une couleur et dessinez. Vous pouvez enregistrer votre dessin ou directement le partager par courriel ou sur les réseaux sociaux.
 

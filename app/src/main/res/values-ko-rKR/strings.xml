@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">다양한 색으로 그릴 수 있는 캔버스입니다.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         무언가를 그려보고 싶지만 종이가 없나요? 그렇다면 이 애플리케이션은 당신에게 아주 유용합니다. 그냥 색상을 선택하고 그려보세요. 당신이 그린 그림을 저장하거나 이메일 또는 소셜 네트워크를 통해 직접 공유 할 수 있습니다.
 

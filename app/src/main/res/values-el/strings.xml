@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Ένας καμβάς, όπου μπορείτε να σχεδιάσετε με διαφορετικά χρώματα.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Θέλετε να σχεδιάσετε κάτι, αλλά δεν έχετε χαρτί; Αυτή η εφαρμογή θα σας ταιριάξει τέλεια. Απλά επιλέξτε ένα χρώμα και σχεδιάστε! Μπορείτε να αποθηκεύσετε το σχέδιο, ή να το μοιραστείτε, απευθείας, μέσω ηλεκτρονικού ταχυδρομείου, ή κοινωνικών δικτύων.
 

@@ -13,7 +13,7 @@
     
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Platno, na katerega lahko rišete z različnimi barvami</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Želite narisate nekaj, a nimate papirja? Ta aplikacija je perfektna za vas. Samo izberite barvo in rišite. Risbe lahko shranite, ali pa jih delite po e-pošti ali socialnih omrežjih.
 

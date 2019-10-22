@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un lienzo en el cual puede dibujar con diferentes colores.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         ¿Quiere dibujar algo pero no tiene papel? Esta aplicación es ideal para solucionarlo. Tan solo elija un color y dibuje. Puede tanto guargar el dibujo como compartirlo directamente mediante e-mail o redes sociales.
 

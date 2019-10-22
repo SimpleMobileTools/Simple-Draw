@@ -1,1 +1,1 @@
-A canvas you can draw on with different colors.
+Pen and paper for your quick sketches.

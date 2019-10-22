@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Een canvas waarop met verschillende kleuren kan worden getekend.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Snel iets tekenen, maar geen papier bij de hand? Deze app zal dan van pas komen. Kies een kleur en begin met tekenen. Sla de tekening op, of deel meteen via e-mail of sociale netwerken.
 

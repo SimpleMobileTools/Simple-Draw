@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Et lærred til at tegne på med forskellige farver.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Vil du tegne en skitse men har ikke noget papir? Så er det denne app du skal bruge. Vælg en farve og tegn. Du kan gemme tegningen eller dele den direkte via mail elle socile medier.
 

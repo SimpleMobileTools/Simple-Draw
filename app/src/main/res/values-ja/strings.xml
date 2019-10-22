@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">さまざまな色で描くことができるキャンバス。</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         何かを描きたいけど、紙を持っていない？ このアプリが完全に合っています。 色を選んで描くだけです。 画像を保存したり、メールやソーシャルネットワークで直接共有することができます。
 

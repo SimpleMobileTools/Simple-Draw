@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Uma tela para desenhar o que quiser e com diversas cores.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Gostaria de desenhar algo mas não tem papel? Então, esta aplicação é para si. Basta escolher uma cor e desenhar. Após criar o desenho, pode guardar ou partilhar o ficheiro através de e-mail ou das redes sociais.
 

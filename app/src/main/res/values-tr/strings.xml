@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Farklı renklerle çizebileceğiniz bir tuval.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Bir şey çizmek istiyorsunuz ama kağıdınız mı yok? Bu uygulama size tam olarak uyacaktır. Sadece bir renk seçin ve çizin. Çizimi kaydedebilir veya doğrudan e-posta veya sosyal ağlarla paylaşabilirsiniz.
 

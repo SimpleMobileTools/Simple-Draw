@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">可以使用不同颜色绘图的画布。</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         想要画些什么却没有纸？这个应用正好适合你。选一个颜色开始作画吧。你可以保存绘画，也可以通过邮件或社交网站分享。
         

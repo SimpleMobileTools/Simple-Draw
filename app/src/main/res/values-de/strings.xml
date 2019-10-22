@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Eine Leinwand, auf der du mit verschiedenen Farben zeichnen kannst.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Willst du etwas zeichnen, hast aber gerade kein Papier dafür? Diese App wird perfekt zu dir passen! Wähle eine Farbe aus und zeichne. Du kannst deine Zeichnungen speichern oder direkt per E-Mail oder auf sozialen Netzwerken teilen.
 

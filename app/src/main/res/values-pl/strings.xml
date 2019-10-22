@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Płótno w różnych kolorach, po którym możesz rysować.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Chcesz coś szybko narysować, a akurat nie masz przy sobie papieru? Zatem jest to aplikacja, której szukasz. Po prostu wybierz kolor i rysuj. Swoje dzieło możesz potem zapisać, jak i udostępnić przez e-maila lub sieci społecznościowe.
 

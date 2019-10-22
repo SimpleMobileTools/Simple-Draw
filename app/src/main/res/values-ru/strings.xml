@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Холст, на котором можно рисовать разными цветами.</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Хотите что-то нарисовать, но нет бумаги? Это приложение идеально вам подойдет. Просто выбирайте цвет и рисуйте. Вы можете сохранить рисунок, либо сразу отправить его по электронной почте или в социальные сети.
 

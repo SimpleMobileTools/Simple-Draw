@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Jednoduché plátno, na ktoré môžete kresliť rôznymi farbami.</string>
+    <string name="app_short_description">Pero a papier pre vaše jednoduché nákresy.</string>
     <string name="app_long_description">
         Chcete nakresliť niečo jednoduché, ale nemáte papier? Táto apka vám príde vhod. Zvoľte si farbu a kreslite. Kresby viete buď uložiť, alebo priamo zdieľať cez email, resp. sociálne siete.
 
