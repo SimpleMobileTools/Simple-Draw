@@ -6,14 +6,14 @@
     <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Εμφάνιση του εργαλείου των διαστάσεων του πινέλου</string>
+    <string name="show_brush_size">Εμφάνιση εργαλείου για διαστάσεις του πινέλου</string>
     <string name="allow_zooming_canvas">Αποδοχή μεγέθυνσης καμβά με χειρονομίες</string>
     <string name="clear">Καθαρισμός</string>
     <string name="change_background_color">Αλλαγή χρώματος παρασκηνίου</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
+    <string name="app_short_description">Στυλό και Χαρτί για γρήγορα σχέδια σας.</string>
     <string name="app_long_description">
         Θέλετε να σχεδιάσετε κάτι, αλλά δεν έχετε χαρτί; Αυτή η εφαρμογή θα σας ταιριάξει τέλεια. Απλά επιλέξτε ένα χρώμα και σχεδιάστε! Μπορείτε να αποθηκεύσετε το σχέδιο, ή να το μοιραστείτε, απευθείας, μέσω ηλεκτρονικού ταχυδρομείου, ή κοινωνικών δικτύων.
 
