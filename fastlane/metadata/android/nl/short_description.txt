@@ -1,1 +1,1 @@
-Een canvas waarop met verschillende kleuren kan worden getekend.
+Pen en papier voor snelle schetsen.
