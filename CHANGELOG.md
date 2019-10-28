@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.0.6 *(2019-10-28)*
+----------------------------
+
+ * Added some translation improvements
+
 Version 6.0.5 *(2019-09-02)*
 ----------------------------
 
