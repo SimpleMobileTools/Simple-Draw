@@ -12,6 +12,8 @@
     <string name="change_background_color">Zmeniť farbu pozadia</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Jednoduché kreslenie Pro - Apka pre rýchle náčrty</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Pero a papier pre vaše jednoduché nákresy.</string>
     <string name="app_long_description">

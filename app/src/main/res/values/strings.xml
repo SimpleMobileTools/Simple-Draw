@@ -12,6 +12,8 @@
     <string name="change_background_color">Change background color</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Draw Pro - The app for your quick sketches</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
