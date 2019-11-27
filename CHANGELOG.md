@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.1.0 *(2019-11-27)*
+----------------------------
+
+ * Added Print
+ * Fixed some B&W theme glitches
+
 Version 6.0.6 *(2019-10-28)*
 ----------------------------
 

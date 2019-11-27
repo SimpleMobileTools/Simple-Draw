@@ -1,0 +1,2 @@
+ * Added Print
+ * Fixed some B&W theme glitches
