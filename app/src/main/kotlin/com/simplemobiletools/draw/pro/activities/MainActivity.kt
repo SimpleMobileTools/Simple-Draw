@@ -460,6 +460,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         undo.applyColorFilter(contrastColor)
         eraser.applyColorFilter(contrastColor)
         redo.applyColorFilter(contrastColor)
+        if (isBlackAndWhiteTheme()) {
+            stroke_width_bar.setColors(0, contrastColor, 0)
+        }
+
         my_canvas.updateBackgroundColor(pickedColor)
         defaultExtension = PNG
         getBrushPreviewView().setStroke(getBrushStrokeSize(), contrastColor)
