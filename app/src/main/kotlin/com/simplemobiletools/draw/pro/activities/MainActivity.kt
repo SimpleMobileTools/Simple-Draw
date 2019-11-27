@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
+import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.extensions.*
@@ -141,6 +142,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             R.id.clear -> clearCanvas()
             R.id.open_file -> tryOpenFile()
             R.id.change_background -> changeBackgroundClicked()
+            R.id.menu_print -> printImage()
             R.id.settings -> launchSettings()
             R.id.about -> launchAbout()
             else -> return super.onOptionsItemSelected(item)
@@ -530,6 +532,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val scale = Math.max(0.03f, brushSize / 100f)
         stroke_width_preview.scaleX = scale
         stroke_width_preview.scaleY = scale
+    }
+
+    private fun printImage() {
+        val printHelper = PrintHelper(this)
+        printHelper.scaleMode = PrintHelper.SCALE_MODE_FIT
+        printHelper.printBitmap(getString(R.string.app_name), my_canvas.getBitmap())
     }
 
     private fun checkWhatsNewDialog() {

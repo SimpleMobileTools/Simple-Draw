@@ -30,6 +30,10 @@
         android:title="@string/change_background_color"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_print"
+        android:title="@string/print"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/settings"
         android:title="@string/settings"
         app:showAsAction="never" />
