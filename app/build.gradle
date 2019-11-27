@@ -7,13 +7,13 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "com.simplemobiletools.draw.pro"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 48
         versionName "6.0.6"
         setProperty("archivesBaseName", "draw")
@@ -51,5 +51,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:5.19.2'
+    implementation 'com.simplemobiletools:commons:5.20.0'
 }

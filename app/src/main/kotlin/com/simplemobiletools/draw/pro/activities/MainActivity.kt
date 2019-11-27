@@ -191,14 +191,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun checkIntents() {
-        if (intent?.action == Intent.ACTION_SEND && intent.type.startsWith("image/")) {
+        if (intent?.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) {
             getStoragePermission {
                 val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
                 tryOpenUri(uri, intent)
             }
         }
 
-        if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type.startsWith("image/")) {
+        if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type?.startsWith("image/") == true) {
             getStoragePermission {
                 val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
                 imageUris.any { tryOpenUri(it, intent) }
@@ -207,8 +207,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
             getStoragePermission {
-                val path = getRealPathFromURI(intent.data) ?: intent.dataString
-                openPath(path)
+                val path = getRealPathFromURI(intent.data!!) ?: intent.dataString
+                openPath(path!!)
             }
         }
 
@@ -217,7 +217,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             if (output != null && output is Uri) {
                 isImageCaptureIntent = true
                 intentUri = output
-                defaultPath = output.path
+                defaultPath = output.path!!
                 invalidateOptionsMenu()
             }
         }
@@ -246,7 +246,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun tryOpenUri(uri: Uri, intent: Intent) = when {
         uri.scheme == "file" -> {
             uriToLoad = uri
-            openPath(uri.path)
+            openPath(uri.path!!)
         }
         uri.scheme == "content" -> {
             uriToLoad = uri
@@ -324,14 +324,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
         when {
             isEditIntent -> {
                 try {
-                    val outputStream = contentResolver.openOutputStream(intentUri)
+                    val outputStream = contentResolver.openOutputStream(intentUri!!)
                     saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
                 } catch (e: Exception) {
                     showErrorToast(e)
                 }
             }
             intentUri?.scheme == "content" -> {
-                val outputStream = contentResolver.openOutputStream(intentUri)
+                val outputStream = contentResolver.openOutputStream(intentUri!!)
                 saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
             }
             else -> handlePermission(PERMISSION_WRITE_STORAGE) {
@@ -497,7 +497,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        lastBitmapPath = savedInstanceState.getString(BITMAP_PATH)
+        lastBitmapPath = savedInstanceState.getString(BITMAP_PATH)!!
         if (lastBitmapPath.isNotEmpty()) {
             openPath(lastBitmapPath)
         } else if (savedInstanceState.containsKey(URI_TO_LOAD)) {

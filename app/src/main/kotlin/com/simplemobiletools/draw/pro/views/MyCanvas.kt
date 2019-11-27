@@ -182,7 +182,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (mBackgroundBitmap != null) {
             val left = (width - mBackgroundBitmap!!.width) / 2
             val top = (height - mBackgroundBitmap!!.height) / 2
-            canvas.drawBitmap(mBackgroundBitmap, left.toFloat(), top.toFloat(), null)
+            canvas.drawBitmap(mBackgroundBitmap!!, left.toFloat(), top.toFloat(), null)
         }
 
         for ((key, value) in mPaths) {
@@ -294,7 +294,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     public override fun onSaveInstanceState(): Parcelable {
         val superState = super.onSaveInstanceState()
-        val savedState = MyParcelable(superState)
+        val savedState = MyParcelable(superState!!)
         savedState.paths = mPaths
         return savedState
     }
