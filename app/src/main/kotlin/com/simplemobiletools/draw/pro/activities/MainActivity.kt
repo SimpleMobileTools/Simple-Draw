@@ -94,6 +94,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         stroke_width_preview.beVisibleIf(isShowBrushSizeEnabled)
         my_canvas.setAllowZooming(config.allowZoomingCanvas)
         updateTextColors(main_holder)
+        if (isBlackAndWhiteTheme()) {
+            stroke_width_bar.setColors(0, config.canvasBackgroundColor.getContrastColor(), 0)
+        }
+
         if (config.preventPhoneFromSleeping) {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
