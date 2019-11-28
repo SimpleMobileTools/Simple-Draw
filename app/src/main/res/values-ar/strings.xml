@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">الرسام البسيط</string>
+    <string name="app_launcher_name">الرسام</string>
+    <string name="open_file">فتح ملف</string>
+    <string name="eraser">الممحاة</string>
+    <string name="failed_to_load_image">فشل تحميل الصورة %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">إظهار أداة حجم الفرشاة</string>
+    <string name="allow_zooming_canvas">السماح بتكبير لوحة الرسم باستخدام الإيماءات</string>
+    <string name="clear">مسح</string>
+    <string name="change_background_color">تغيير لون الخلفية</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">تطبيق الرسام البسيط الـ (Pro) - لرسوماتك السريعة</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">القلم والورق لرسوماتك السريعة.</string>
+    <string name="app_long_description">
+        تريد أن ترسم شيئاً ما لكن ليس لديك ورقة؟ هذا التطبيق سوف يناسبك تماماً. ما عليك سوى إختيار لوناً وأرسم. يمكنك إما حفظ الرسم أو مشاركته مباشرة عبر البريد الإلكتروني أو شبكات التواصل الإجتماعي.
+
+        لا يحتوي على إعلانات أو أذونات غير ضرورية. فهو مفتوح المصدر بالكامل ، ويوفر ألواناً قابلة للتخصيص.
+
+        يعد هذا التطبيق جزءاً واحداً من سلسلة أكبر من التطبيقات يمكنك العثور علي باقي التطبيقات علي الموقع  https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
