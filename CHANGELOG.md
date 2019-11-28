@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.1.1 *(2019-11-28)*
+----------------------------
+
+ * Reverting back to target SDK 28 until scoped storage gets implemented
+
 Version 6.1.0 *(2019-11-27)*
 ----------------------------
 

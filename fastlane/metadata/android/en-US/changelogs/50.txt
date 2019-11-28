@@ -1,0 +1,1 @@
+ * Reverting back to target SDK 28 until scoped storage gets implemented
