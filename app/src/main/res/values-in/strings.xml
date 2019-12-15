@@ -13,9 +13,9 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - The app for your quick sketches</string>
+    <string name="app_title">Simple Draw Pro - Aplikasi untuk sketsa anda</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
+    <string name="app_short_description">Pena dan kertas untuk sketsa-sketsa anda.</string>
     <string name="app_long_description">
         Ingin menggambar sesuatu tetapi tidak ada kertas? Aplikasi ini sangat cocok untuk anda. Cukup pilih warna dan mulai menggambar. Anda bisa menyimpan gambar anda atau bagikan langsung melalui email atau jejaring sosial.
 
