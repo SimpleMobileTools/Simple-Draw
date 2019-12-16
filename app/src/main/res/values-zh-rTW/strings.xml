@@ -13,7 +13,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - The app for your quick sketches</string>
+    <string name="app_title">簡易繪圖 Pro - 用於快速塗鴉的應用程式</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">讓你能快速塗鴉的紙筆。</string>
     <string name="app_long_description">
