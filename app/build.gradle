@@ -22,8 +22,8 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
-    if (keystorePropertiesFile.exists()) {
-        signingConfigs {
+    signingConfigs {
+	if (keystorePropertiesFile.exists()) {
             release {
                 keyAlias keystoreProperties['keyAlias']
                 keyPassword keystoreProperties['keyPassword']
@@ -40,9 +40,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            if (keystorePropertiesFile.exists()) {
-                signingConfig signingConfigs.release
-            }
+            signingConfig signingConfigs.release
         }
     }
 
