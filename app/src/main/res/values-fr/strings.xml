@@ -9,6 +9,7 @@
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
     <string name="allow_zooming_canvas">Permettre de zoomer sur l\'image avec des gestes</string>
     <string name="clear">Tout effacer</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Changer l\'arrière-plan</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

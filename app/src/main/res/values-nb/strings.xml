@@ -9,6 +9,7 @@
     <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
     <string name="allow_zooming_canvas">Tillat å zoome tegneflaten med fingerbevegelser</string>
     <string name="clear">Slett</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Endre bakgrunnsfarge</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

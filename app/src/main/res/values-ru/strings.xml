@@ -9,6 +9,7 @@
     <string name="show_brush_size">Показать размер кисти</string>
     <string name="allow_zooming_canvas">Разрешить масштабирование холста жестами</string>
     <string name="clear">Очистить</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Изменить цвет фона</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

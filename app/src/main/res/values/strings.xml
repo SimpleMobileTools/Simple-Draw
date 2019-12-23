@@ -9,6 +9,7 @@
     <string name="show_brush_size">Show brush size tool</string>
     <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
     <string name="clear">Clear</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Change background color</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

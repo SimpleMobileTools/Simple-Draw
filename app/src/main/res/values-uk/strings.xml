@@ -9,6 +9,7 @@
     <string name="show_brush_size">Показувати інструмент зміни пензля</string>
     <string name="allow_zooming_canvas">Дозволяти масштабування тла жестами</string>
     <string name="clear">Очистити</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Змінити колір тла</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

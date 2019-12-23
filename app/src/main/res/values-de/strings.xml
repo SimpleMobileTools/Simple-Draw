@@ -9,6 +9,7 @@
     <string name="show_brush_size">Zeige Pinselgröße</string>
     <string name="allow_zooming_canvas">Zoomen in der Zeichenfläche mit Gesten ermöglichen</string>
     <string name="clear">Löschen</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Ändere Hintergrundfarbe</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

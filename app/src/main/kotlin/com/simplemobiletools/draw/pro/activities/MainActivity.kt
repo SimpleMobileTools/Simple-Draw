@@ -73,6 +73,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         setBackgroundColor(config.canvasBackgroundColor)
         setColor(config.brushColor)
         defaultPath = config.lastSaveFolder
+        defaultExtension = config.lastSaveExtension
 
         brushSize = config.brushSize
         updateBrushSize()
@@ -142,6 +143,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
             R.id.clear -> clearCanvas()
+            R.id.reset -> resetCanvasSettings()
             R.id.open_file -> tryOpenFile()
             R.id.change_background -> changeBackgroundClicked()
             R.id.menu_print -> printImage()
@@ -395,6 +397,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             defaultFilename = filename
             defaultExtension = extension
             config.lastSaveFolder = defaultPath
+            config.lastSaveExtension = defaultExtension
         }
     }
 
@@ -464,6 +467,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun clearCanvas() {
+        my_canvas.clearCanvas()
+        defaultFilename = ""
+    }
+
+    private fun resetCanvasSettings() {
         uriToLoad = null
         my_canvas.clearCanvas()
         defaultExtension = PNG

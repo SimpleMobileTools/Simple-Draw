@@ -9,6 +9,7 @@
     <string name="show_brush_size">ブラシサイズツールを表示する</string>
     <string name="allow_zooming_canvas">ジェスチャーでキャンバスを拡大することを許可する</string>
     <string name="clear">消去</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">背景色を変更する</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

@@ -9,6 +9,7 @@
     <string name="show_brush_size">Fırça ölçüsü alətini göstər</string>
     <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
     <string name="clear">Təmizlə</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Arxaplan rəngini dəyiş</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

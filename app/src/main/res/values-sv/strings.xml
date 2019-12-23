@@ -9,6 +9,7 @@
     <string name="show_brush_size">Visa penselstorleksverktyg</string>
     <string name="allow_zooming_canvas">Tillåt zoomning av arbetsytan med gester</string>
     <string name="clear">Rensa</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Ändra bakgrundsfärg</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

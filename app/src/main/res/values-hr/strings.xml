@@ -9,6 +9,7 @@
     <string name="show_brush_size">Prikaži alat za odabir veličine četkica</string>
     <string name="allow_zooming_canvas">Dopusti zumiranje platna pokretima</string>
     <string name="clear">Očisti</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Promjeni boju pozadine</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->

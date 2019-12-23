@@ -17,6 +17,11 @@
         android:title="@string/clear"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/reset"
+        android:icon="@drawable/ic_reset"
+        android:title="@string/reset"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_share_vector"
         android:title="@string/share"

@@ -9,6 +9,7 @@
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
     <string name="allow_zooming_canvas">Permitir ampliar a tela com gestos</string>
     <string name="clear">Limpar</string>
+    <string name="reset">Reset</string>
     <string name="change_background_color">Alterar fundo</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
