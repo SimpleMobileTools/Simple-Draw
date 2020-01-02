@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="app_launcher_name">Dibujo</string>
+    <string name="open_file">Abrir archivo</string>
+    <string name="eraser">Borrador</string>
+    <string name="failed_to_load_image">Falló al cargar la imagen %s</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
+    <string name="show_brush_size">Mostrar tamaño de la herramienta pincel</string>
+    <string name="allow_zooming_canvas">Permite hacer zoom en el lienzo con gestos</string>
     <string name="clear">Limpiar</string>
-    <string name="change_background_color">Cambiar fondo</string>
+    <string name="change_background_color">Cambiar color de fondo</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - The app for your quick sketches</string>
+    <string name="app_title">Simple Draw Pro - La aplicación para tus bocetos</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
+    <string name="app_short_description">Lápiz y papel para tus bocetos rápidos.</string>
     <string name="app_long_description">
         ¿Quiere dibujar algo pero no tiene papel? Esta aplicación es ideal para solucionarlo. Tan solo elija un color y dibuje. Puede tanto guargar el dibujo como compartirlo directamente mediante e-mail o redes sociales.
 
