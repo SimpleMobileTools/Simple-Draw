@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Jednoduché kreslení</string>
+    <string name="app_launcher_name">Kreslení</string>
+    <string name="open_file">Otevřít soubor</string>
+    <string name="eraser">Guma</string>
+    <string name="failed_to_load_image">Nepodařilo se načíst obrázek %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Zobrazit nástroj velikosti štětce</string>
+    <string name="allow_zooming_canvas">Povolit přiblížení plátna gesty</string>
+    <string name="clear">Vymazat</string>
+    <string name="change_background_color">Změnit barvu pozadí</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Jednoduché kreslení Pro - Aplikace pro rychlé náčrty</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Pero a papír pro vaše rychlé nákresy.</string>
+    <string name="app_long_description">
+        Chcete něco rychle nakreslit, ale nemáte po ruce papír? Tato aplikace vám s tím pomůže. Stačí si zvolit barvu a kreslit. Kresbu poté můžete buď uložit, nebo ji přímo sdílet přes e-mail či sociální sítě.
+
+        Neobsahuje žádné reklamy ani nepotřebná oprávnění. Má otevřený zdrojový kód a možnost změny barev.
+
+        Tato aplikace je jen jednou ze sady aplikací. Ostatní si můžete prohlédnout na https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
