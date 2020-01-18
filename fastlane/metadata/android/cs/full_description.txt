@@ -1,0 +1,5 @@
+Chcete něco rychle nakreslit, ale nemáte po ruce papír? Tato aplikace vám s tím pomůže. Stačí si zvolit barvu a kreslit. Kresbu poté můžete buď uložit, nebo ji přímo sdílet přes e-mail či sociální sítě.
+
+Neobsahuje žádné reklamy ani nepotřebná oprávnění. Má otevřený zdrojový kód a možnost změny barev.
+
+Tato aplikace je jen jednou ze sady aplikací. Ostatní si můžete prohlédnout na https://www.simplemobiletools.com
