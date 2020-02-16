@@ -1,0 +1,1 @@
+ * Adding a couple UI and translation improvements
