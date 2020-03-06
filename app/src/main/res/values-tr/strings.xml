@@ -13,15 +13,15 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - The app for your quick sketches</string>
+    <string name="app_title">Basit Çiz Pro - Hızlı çizimleriniz için uygulama</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
+    <string name="app_short_description">Hızlı çizimleriniz için kalem ve kağıt.</string>
     <string name="app_long_description">
         Bir şey çizmek istiyorsunuz ama kağıdınız mı yok? Bu uygulama size tam olarak uyacaktır. Sadece bir renk seçin ve çizin. Çizimi kaydedebilir veya doğrudan e-posta veya sosyal ağlarla paylaşabilirsiniz.
 
         Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sağlar.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Basit Araçlar paketinin tamamını buradan inceleyin:</b>
         https://www.simplemobiletools.com
 
         <b>Facebook:</b>
