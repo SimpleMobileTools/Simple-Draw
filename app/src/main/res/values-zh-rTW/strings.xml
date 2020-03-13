@@ -13,11 +13,21 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">簡易繪圖 Pro - 用於快速塗鴉的應用程式</string>
+    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">讓你能快速塗鴉的紙筆。</string>
+    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
     <string name="app_long_description">
-        想要畫些什麼卻沒有紙?這程式絕對適合你。只要挑一個顏色，就開始畫了。你能將繪圖存檔起來，或是透過信箱或社群網站直接分享出去。
+        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+
+        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+
+        The app supports many different formats like PNG, JPG or SVG vectors.
+
+        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. Afterall, everyone has a piece of artist in himself.
+
+        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+
+        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
 
         不包含廣告及非必要的權限，而且完全開放原始碼，並提供自訂顏色。
 		

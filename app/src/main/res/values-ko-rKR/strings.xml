@@ -13,11 +13,21 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - The app for your quick sketches</string>
+    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
+    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
     <string name="app_long_description">
-        무언가를 그려보고 싶지만 종이가 없나요? 그렇다면 이 애플리케이션은 당신에게 아주 유용합니다. 그냥 색상을 선택하고 그려보세요. 당신이 그린 그림을 저장하거나 이메일 또는 소셜 네트워크를 통해 직접 공유 할 수 있습니다.
+        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+
+        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+
+        The app supports many different formats like PNG, JPG or SVG vectors.
+
+        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. Afterall, everyone has a piece of artist in himself.
+
+        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+
+        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
 
         광고가 포함되어 있거나, 불필요한 권한을 요청하지 않습니다. 이 앱의 모든 소스는 오픈소스이며, 사용자가 직접 애플리케이션의 컬러를 설정 할 수 있습니다.
 
