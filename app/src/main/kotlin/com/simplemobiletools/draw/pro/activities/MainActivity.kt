@@ -369,13 +369,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun saveImage() {
-        SaveImageDialog(this, defaultExtension, defaultPath, defaultFilename) {
+        SaveImageDialog(this, defaultPath, defaultFilename, defaultExtension, false) { fullPath, filename, extension ->
             savedPathsHash = my_canvas.getDrawingHashCode()
-            saveFile(it)
-            defaultPath = it.getParentPath()
-            defaultFilename = it.getFilenameFromPath()
-            defaultFilename = defaultFilename.substring(0, defaultFilename.lastIndexOf("."))
-            defaultExtension = it.getFilenameExtension()
+            saveFile(fullPath)
+            defaultPath = fullPath.getParentPath()
+            defaultFilename = filename
+            defaultExtension = extension
             config.lastSaveFolder = defaultPath
         }
     }

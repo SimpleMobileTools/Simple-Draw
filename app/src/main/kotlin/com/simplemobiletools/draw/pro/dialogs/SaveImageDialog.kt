@@ -12,8 +12,8 @@ import com.simplemobiletools.draw.pro.helpers.SVG
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 
-class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String, val defaultPath: String, val defaultFilename: String,
-                      callback: (savePath: String) -> Unit) {
+class SaveImageDialog(val activity: SimpleActivity, val defaultPath: String, val defaultFilename: String, val defaultExtension: String,
+                      val hidePath: Boolean, callback: (fullPath: String, filename: String, extension: String) -> Unit) {
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
@@ -27,11 +27,16 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                 else -> R.id.save_image_radio_png
             })
 
-            save_image_path.text = activity.humanizePath(folder)
-            save_image_path.setOnClickListener {
-                FilePickerDialog(activity, folder, false, showFAB = true) {
-                    save_image_path.text = activity.humanizePath(it)
-                    folder = it
+            if (hidePath) {
+                save_image_path_label.beGone()
+                save_image_path.beGone()
+            } else {
+                save_image_path.text = activity.humanizePath(folder)
+                save_image_path.setOnClickListener {
+                    FilePickerDialog(activity, folder, false, showFAB = true) {
+                        save_image_path.text = activity.humanizePath(it)
+                        folder = it
+                    }
                 }
             }
         }
@@ -64,11 +69,11 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultExtension: String
                             if (File(newPath).exists()) {
                                 val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
                                 ConfirmationDialog(activity, title) {
-                                    callback(newPath)
+                                    callback(newPath, filename, extension)
                                     dismiss()
                                 }
                             } else {
-                                callback(newPath)
+                                callback(newPath, filename, extension)
                                 dismiss()
                             }
                         }
