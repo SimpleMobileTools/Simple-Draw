@@ -13,21 +13,22 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Απλή Ζωγραφική Pro - Εφαρμογή για γρήγορα σκίτσα</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Στυλό &amp; Χαρτί για γρήγορα σχέδια, χωρίς διαφημίσεις &amp; πρόσβαση στο δίκτυο</string>
     <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+        
+        Θέλετε να σχεδιάσετε κάτι δημιουργικό αλλά δεν έχετε χαρτί; Αυτή η εφαρμογή θα σας ταιριάξει τέλεια. Απλά επιλέξτε ένα χρώμα και σχεδιάστε, είναι τόσο εύκολο. Μπορείτε είτε να αποθηκεύσετε το σχέδιο σε ένα αρχείο, να το εκτυπώσετε ή να το μοιραστείτε απευθείας μέσω ηλεκτρονικού ταχυδρομείου ή κοινωνικών δικτύων, έτσι ώστε οι φίλοι σας να μπορούν να διασκεδάσουν μαζί του.
 
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+        Αυτή η εξαιρετικά δημοφιλής εφαρμογή για γρήγορα σκίτσα παρέχει πολλές χρήσιμες λειτουργίες όπως η αναίρεση/επανάληψη, η αλλαγή του χρώματος φόντου ή η χρήση μιας εικόνας ως φόντου. Μπορείτε προαιρετικά να κάνετε την εφαρμογή να εμποδίζει τη συσκευή να αδρανοποιηθεί επίσης. Μπορείτε επίσης να αλλάξετε το μέγεθος του πινέλου, ή να χρησιμοποιήσετε μια γόμα, αν κάνατε κάτι λάθος. Υποστηρίζει την εισαγωγή χρωμάτων είτε με την επιλογή του απο μια τεράστια παλέτα, είτε μέσω χρωμάτων hex κώδικα.
 
-        The app supports many different formats like PNG, JPG or SVG vectors.
+        Η εφαρμογή υποστηρίζει πολλές διαφορετικές μορφές, όπως PNG, JPG ή SVG.
 
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. Afterall, everyone has a piece of artist in himself.
+        Μπορείτε είτε να σχεδιάσετε κάτι νέο από το μηδέν, είτε να ανοίξετε κάποιο αρχείο και απλά να ζωγραφίσετε σε αυτό. Είναι απόλυτα χρησιμοποιήσιμο είτε από εσάς, είτε από οικογένεια με παιδιά για να παίξετε μερικά παιχνίδια. Μετά, όλοι έχουν ένα κομμάτι καλλιτέχνη στον εαυτό τους.
 
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+        Δεν θα βρείτε τα φανταχτερά προηγμένα εργαλεία, βούρτσες, γραμματοσειρές, φίλτρα, θα τα χρησιμοποιήσετε για να διασκεδάσουν.
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Διατίθεται με σχεδίαση υλικού και σκούρο θέμα από προεπιλογή, παρέχει εξαιρετική εμπειρία χρήστη για εύκολη χρήση. Η έλλειψη πρόσβασης στο διαδίκτυο σάς παρέχει περισσότερο απόρρητο, ασφάλεια και σταθερότητα από ό,τι άλλες εφαρμογές.
 
         Δεν περιέχει διαφημίσεις ούτε απαιτούνται περιττά δικαιώματα. Είναι εντελώς ανοιχτού κώδικα. Επιτρέπει προσαρμοσμένα χρώματα.
 
