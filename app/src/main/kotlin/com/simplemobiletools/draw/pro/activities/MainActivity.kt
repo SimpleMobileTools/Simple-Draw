@@ -288,7 +288,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun openUri(uri: Uri, intent: Intent): Boolean {
         val mime = MimeTypeMap.getSingleton()
-        val type = mime.getExtensionFromMimeType(contentResolver.getType(uri)) ?: intent.type
+        val type = mime.getExtensionFromMimeType(contentResolver.getType(uri)) ?: intent.type ?: contentResolver.getType(uri)
         return when (type) {
             "svg", "image/svg+xml" -> {
                 my_canvas.mBackgroundBitmap = null
@@ -296,7 +296,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 defaultExtension = SVG
                 true
             }
-            "jpg", "jpeg", "png" -> {
+            "jpg", "jpeg", "png", "gif", "image/jpg", "image/png", "image/gif" -> {
                 my_canvas.drawBitmap(this, uri)
                 defaultExtension = JPG
                 true
