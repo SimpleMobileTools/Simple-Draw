@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.2.0 *(2020-03-13)*
+----------------------------
+
+ * Allow adding GIF files as background, the first frame will be used
+ * Implemented Scoped Storage on Android 11, do not require WRITE_EXTERNAL_STORAGE permission
+
 Version 6.1.3 *(2020-03-09)*
 ----------------------------
 

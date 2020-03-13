@@ -1,0 +1,2 @@
+ * Allow adding GIF files as background, the first frame will be used
+ * Implemented Scoped Storage on Android 11, do not require WRITE_EXTERNAL_STORAGE permission
