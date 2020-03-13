@@ -21,6 +21,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.helpers.SAVE_DISCARD_PROMPT_INTERVAL
+import com.simplemobiletools.commons.helpers.isQPlus
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
@@ -40,6 +41,7 @@ import java.io.OutputStream
 
 class MainActivity : SimpleActivity(), CanvasListener {
     private val PICK_IMAGE_INTENT = 1
+    private val SAVE_IMAGE_INTENT = 2
 
     private val FOLDER_NAME = "images"
     private val FILE_NAME = "simple-draw.png"
@@ -185,6 +187,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == PICK_IMAGE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
             tryOpenUri(resultData.data!!, resultData)
+        } else if (requestCode == SAVE_IMAGE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            val outputStream = contentResolver.openOutputStream(resultData.data!!)
+            saveToOutputStream(outputStream, defaultPath.getCompressionFormat(), false)
+            savedPathsHash = my_canvas.getDrawingHashCode()
         }
     }
 
@@ -331,25 +337,25 @@ class MainActivity : SimpleActivity(), CanvasListener {
             isEditIntent -> {
                 try {
                     val outputStream = contentResolver.openOutputStream(intentUri!!)
-                    saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
+                    saveToOutputStream(outputStream, defaultPath.getCompressionFormat(), true)
                 } catch (e: Exception) {
                     showErrorToast(e)
                 }
             }
             intentUri?.scheme == "content" -> {
                 val outputStream = contentResolver.openOutputStream(intentUri!!)
-                saveToOutputStream(outputStream, defaultPath.getCompressionFormat())
+                saveToOutputStream(outputStream, defaultPath.getCompressionFormat(), true)
             }
             else -> handlePermission(PERMISSION_WRITE_STORAGE) {
                 val fileDirItem = FileDirItem(defaultPath, defaultPath.getFilenameFromPath())
                 getFileOutputStream(fileDirItem, true) {
-                    saveToOutputStream(it, defaultPath.getCompressionFormat())
+                    saveToOutputStream(it, defaultPath.getCompressionFormat(), true)
                 }
             }
         }
     }
 
-    private fun saveToOutputStream(outputStream: OutputStream?, format: Bitmap.CompressFormat) {
+    private fun saveToOutputStream(outputStream: OutputStream?, format: Bitmap.CompressFormat, finishAfterSaving: Boolean) {
         if (outputStream == null) {
             toast(R.string.unknown_error_occurred)
             return
@@ -358,13 +364,30 @@ class MainActivity : SimpleActivity(), CanvasListener {
         outputStream.use {
             my_canvas.getBitmap().compress(format, 70, it)
         }
-        setResult(Activity.RESULT_OK)
-        finish()
+
+        if (finishAfterSaving) {
+            setResult(Activity.RESULT_OK)
+            finish()
+        }
     }
 
     private fun trySaveImage() {
-        getStoragePermission {
-            saveImage()
+        if (isQPlus()) {
+            SaveImageDialog(this, defaultPath, defaultFilename, defaultExtension, true) { fullPath, filename, extension ->
+                val mimetype = if (extension == SVG) "svg+xml" else extension
+
+                Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    type = "image/$mimetype"
+                    putExtra(Intent.EXTRA_TITLE, "$filename.$extension")
+                    addCategory(Intent.CATEGORY_OPENABLE)
+
+                    startActivityForResult(this, SAVE_IMAGE_INTENT)
+                }
+            }
+        } else {
+            getStoragePermission {
+                saveImage()
+            }
         }
     }
 
