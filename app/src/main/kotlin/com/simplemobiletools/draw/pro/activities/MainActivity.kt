@@ -204,17 +204,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun checkIntents() {
         if (intent?.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) {
-            getStoragePermission {
-                val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-                tryOpenUri(uri, intent)
-            }
+            val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+            tryOpenUri(uri, intent)
         }
 
         if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type?.startsWith("image/") == true) {
-            getStoragePermission {
-                val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
-                imageUris.any { tryOpenUri(it, intent) }
-            }
+            val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
+            imageUris.any { tryOpenUri(it, intent) }
         }
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
