@@ -73,6 +73,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         setBackgroundColor(config.canvasBackgroundColor)
         setColor(config.brushColor)
         defaultPath = config.lastSaveFolder
+        defaultExtension = config.lastSaveExtension
 
         brushSize = config.brushSize
         updateBrushSize()
@@ -395,6 +396,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             defaultFilename = filename
             defaultExtension = extension
             config.lastSaveFolder = defaultPath
+            config.lastSaveExtension = defaultExtension
         }
     }
 
