@@ -31,8 +31,8 @@ class Config(context: Context) : BaseConfig(context) {
         set(lastSaveFolder) = prefs.edit().putString(LAST_SAVE_FOLDER, lastSaveFolder).apply()
 
     var lastSaveExtension: String
-        get() = prefs.getString(LAST_SAVE_EXT, "")!!
-        set(lastSaveExtension) = prefs.edit().putString(LAST_SAVE_EXT, lastSaveExtension).apply()
+        get() = prefs.getString(LAST_SAVE_EXTENSION, "")!!
+        set(lastSaveExtension) = prefs.edit().putString(LAST_SAVE_EXTENSION, lastSaveExtension).apply()
 
     var allowZoomingCanvas: Boolean
         get() = prefs.getBoolean(ALLOW_ZOOMING_CANVAS, false)
