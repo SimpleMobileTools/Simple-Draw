@@ -373,6 +373,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
             SaveImageDialog(this, defaultPath, defaultFilename, defaultExtension, true) { fullPath, filename, extension ->
                 val mimetype = if (extension == SVG) "svg+xml" else extension
 
+                defaultFilename = filename
+                defaultExtension = extension
+                config.lastSaveExtension = extension
+
                 Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     type = "image/$mimetype"
                     putExtra(Intent.EXTRA_TITLE, "$filename.$extension")
@@ -396,7 +400,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             defaultFilename = filename
             defaultExtension = extension
             config.lastSaveFolder = defaultPath
-            config.lastSaveExtension = defaultExtension
+            config.lastSaveExtension = extension
         }
     }
 
