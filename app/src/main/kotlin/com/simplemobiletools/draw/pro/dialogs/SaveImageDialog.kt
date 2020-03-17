@@ -66,7 +66,7 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultPath: String, val
                                 return@setOnClickListener
                             }
 
-                            if (File(newPath).exists()) {
+                            if (!hidePath && File(newPath).exists()) {
                                 val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
                                 ConfirmationDialog(activity, title) {
                                     callback(newPath, filename, extension)
