@@ -215,10 +215,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         if (intent?.action == Intent.ACTION_VIEW && intent.data != null) {
-            getStoragePermission {
-                val path = getRealPathFromURI(intent.data!!) ?: intent.dataString
-                openPath(path!!)
-            }
+            tryOpenUri(intent.data!!, intent)
         }
 
         if (intent?.action == MediaStore.ACTION_IMAGE_CAPTURE) {
