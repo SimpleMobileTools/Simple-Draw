@@ -13,21 +13,21 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Eenvoudig Tekenen - Snel &amp; gemakkelijk schetsen</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Pen en papier voor snelle schetsen, zonder advertenties, zonder internettoegang</string>
     <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+        Snel iets tekenen, maar geen papier bij de hand? Deze app zal dan van pas komen. Kies een kleur en begin direct met tekenen. Sla de tekening op als bestand, of deel direct via e-mail of sociale netwerken zodat vrienden ermee aan de slag kunnen.
 
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+        Deze populaire app voor snelle schetsen heeft veel handige functies, zoals Ongedaan maken/Opnieuw, het veranderen van de achtergrondkleur of het gebruiken van een afbeelding als achtergrond. Er is een optie om te voorkomen dat het scherm uitgaat. De penceelgrootte is aan te passen en er is een gum om foutjes weg te halen. Kleuren kunnen worden gekozen via een groot palet of via een HEX-kleurcode.
 
-        The app supports many different formats like PNG, JPG or SVG vectors.
+        De app ondersteunt veel verschillende formaten, zoals PNG, JPG en SVG-vectorafbeeldingen.
 
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. Afterall, everyone has a piece of artist in himself.
+        Teken iets geheel nieuws op een blanco canvas, of open een bestaande afbeelding om mee te spelen. Het is dan ook uitstekend geschikt voor het gebruik met tekenspelletjes in de familie. Iedereen heeft wel een artiestje in zich verstopt zitten.
 
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+        Verwacht geen geavanceerde gereedschappen, zoals penceelsoorten, lettertypes of filters: deze app is bedoeld om eenvoudigweg plezier te maken.
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        De app is ontworpen volgens material design en heeft standaard een donker thema. De app heeft geen toegang tot het internet nodig en voorziet van meer privacy, veiligheid en stabiliteit dan andere apps.
 
         Bevat geen advertenties of onnodige machtigingen. Volledig open-source. Kleuren van de app kunnen worden aangepast.
 
