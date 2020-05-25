@@ -1,5 +1,24 @@
-Chcete nakresliť niečo jednoduché, ale nemáte papier? Táto apka vám príde vhod. Zvoľte si farbu a kreslite. Kresby viete buď uložiť, alebo priamo zdieľať cez email, resp. sociálne siete.
+Chcete nakresliť niečo kreatívne, ale nemáte papier? Táto apka vám príde vhod. Proste si zvoľte farbu a kreslite, je to tak jednoduché. Nákres si viete buď uložiť do súboru, vytlačiť, alebo priamo zdieľať cez email, alebo sociálnu sieť.
+
+Táto populárna apka na rýchle kresby má množstvo užitočných funkcií ako Vrátenie späť/vpred, zmenu farby pozadia, alebo použitie obrázka ako pozadie. Viete si zapnúť aj predídenie vypínania displeja počas jej používania. Taktiež viete zmeniť veľkosť štetca, alebo použiť gumu, ak vám niečo nevyšlo.
+
+Podporuje vyberanie farieb buď priamou voľbou, alebo zadávaním HEX kódu.
+
+Kreslenie podporuje veľa rôznych formátov ako PNG, JPG alebo SVG vektory.
+
+Viete buď nakresliť niečo od nuly, alebo otvoriť súbor a proste sa s ním pohrať. Dá sa jednoducho použiť buď vami, alebo vašou rodinou s deťmi. Každý má totižto v sebe kus umelca.
+
+Nenájdete tu žiadne extra pokročilé funkcie, štetce, písmo, filtre atď, ide iba o kreslenie jednoduchých vecí.
+
+Táto apka je založená na Material dizajne a má prednastavenú tmavú tému, poskytuje výbornú používateľskú skúsenosť pre ľahké používanie. Chýbajúci prístup k internetu garantuje lepšie súkromie, bezpečnosť a stabilitu ako ostatné apky.
 
 Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
 
-Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na https://www.simplemobiletools.com
+<b>Pozrite si celú sadu aplikácií na:</b>
+https://www.simplemobiletools.com
+
+<b>Facebook:</b>
+https://www.facebook.com/simplemobiletools
+
+<b>Reddit:</b>
+https://www.reddit.com/r/SimpleMobileTools
