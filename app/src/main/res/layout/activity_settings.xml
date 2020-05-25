@@ -17,9 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingLeft="@dimen/normal_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingTop="@dimen/activity_margin"
-            android:paddingRight="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MyTextView
@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/customize_colors" />
 
         </RelativeLayout>
@@ -39,9 +38,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingLeft="@dimen/normal_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingTop="@dimen/activity_margin"
-            android:paddingRight="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
@@ -51,7 +50,6 @@
                 android:background="@null"
                 android:clickable="false"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/use_english_language"
                 app:switchPadding="@dimen/medium_margin" />
 
@@ -63,9 +61,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingLeft="@dimen/normal_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingTop="@dimen/activity_margin"
-            android:paddingRight="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
@@ -75,7 +73,6 @@
                 android:background="@null"
                 android:clickable="false"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/prevent_phone_from_sleeping"
                 app:switchPadding="@dimen/medium_margin" />
 
@@ -87,9 +84,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingLeft="@dimen/normal_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingTop="@dimen/activity_margin"
-            android:paddingRight="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
@@ -99,7 +96,6 @@
                 android:background="@null"
                 android:clickable="false"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/show_brush_size"
                 app:switchPadding="@dimen/medium_margin" />
 
@@ -111,9 +107,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingLeft="@dimen/normal_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingTop="@dimen/activity_margin"
-            android:paddingRight="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
@@ -123,7 +119,6 @@
                 android:background="@null"
                 android:clickable="false"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/allow_zooming_canvas"
                 app:switchPadding="@dimen/medium_margin" />
 
@@ -135,9 +130,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingLeft="@dimen/normal_margin"
+            android:paddingStart="@dimen/normal_margin"
             android:paddingTop="@dimen/activity_margin"
-            android:paddingRight="@dimen/normal_margin"
+            android:paddingEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
@@ -147,7 +142,6 @@
                 android:background="@null"
                 android:clickable="false"
                 android:paddingStart="@dimen/medium_margin"
-                android:paddingLeft="@dimen/medium_margin"
                 android:text="@string/force_portrait_mode"
                 app:switchPadding="@dimen/medium_margin" />
 

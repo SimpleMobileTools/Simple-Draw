@@ -28,8 +28,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     var mListener: CanvasListener? = null
 
     private var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
-    private var mLastBackgroundBitmap: Bitmap? = null
     private var mUndonePaths = LinkedHashMap<MyPath, PaintOptions>()
+    private var mLastBackgroundBitmap: Bitmap? = null
 
     private var mPaint = Paint()
     private var mPath = MyPath()
@@ -142,16 +142,16 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
             val options = RequestOptions()
-                    .format(DecodeFormat.PREFER_ARGB_8888)
-                    .disallowHardwareConfig()
-                    .fitCenter()
+                .format(DecodeFormat.PREFER_ARGB_8888)
+                .disallowHardwareConfig()
+                .fitCenter()
 
             try {
                 val builder = Glide.with(context)
-                        .asBitmap()
-                        .load(path)
-                        .apply(options)
-                        .into(size.x, size.y)
+                    .asBitmap()
+                    .load(path)
+                    .apply(options)
+                    .into(size.x, size.y)
 
                 mBackgroundBitmap = builder.get()
                 activity.runOnUiThread {
