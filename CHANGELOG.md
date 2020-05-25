@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.2.1 *(2020-05-25)*
+----------------------------
+
+ * Use a nicer app icon on lower Android versions
+ * Do not require the Storage permission in some cases
+ * Added some translation improvements
+
 Version 6.2.0 *(2020-03-13)*
 ----------------------------
 

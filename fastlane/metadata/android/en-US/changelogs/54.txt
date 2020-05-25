@@ -1,0 +1,3 @@
+ * Use a nicer app icon on lower Android versions
+ * Do not require the Storage permission in some cases
+ * Added some translation improvements
