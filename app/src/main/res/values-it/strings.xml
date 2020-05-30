@@ -13,25 +13,25 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Semplice Disegnare Pro - Schizzi facili e veloci</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Carta e penna per veloci disegni creativi, senza pubblicità o accessi internet</string>
     <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+	Vuoi disegnare qualcosa di creativo ma non hai carta? Questa app è perfetta per te. Scegli un colore e disegna, tutto qui. Puoi salvare il disegno in un file, stamparlo o condividerlo direttamente via email o social network, in modo che anche i tuoi amici possano ammirarlo.
 
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+        Questa app così popolare per schizzi veloci ha diverse funzioni utili come Annulla/Ripeti, modifica del colore di sfondo, o l\'uso di immagini come sfondo. Puoi anche facoltativamente impedire al dispositivo di spegnersi dall\'app. Puoi cambiare la dimensione del pennello, o usare una gomma se hai fatto un pasticcio. Supporta l\'inserimento di colori selezionandoli da una grande tavolozza, o inserendone il codice esadecimale.
 
-        The app supports many different formats like PNG, JPG or SVG vectors.
+        L\'app supporta molti formati diversi come PNG, JPG o vettoriali SVG.
 
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
+        Puoi disegnare qualcosa di nuovo da zero, o aprire un file e sbizzarrirti. È perfettamente utilizzabile da te o da una famiglia con bambini per fare qualche gioco. Dopotutto, chiunque ha un piccolo artista dentro di sè.
 
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+        Qui non troverai strumenti, pennelli, caratteri e filtri complessi o avanzati, è pensata solo per divertirsi un po'.
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Progettato con material design, offre anche un tema scuro, per una migliore esperienza utente e un facile utilizzo. La mancanza dell\'accesso a internet ti dà maggiore privacy, sicurezza e stabilità rispetto ad altre app.
         
-        L\'applicazione non contiene pubblicità o permessi non necessari; è completamente opensource e la si può personalizzare con i propri colori preferiti.
+        L\'applicazione non contiene pubblicità o autorizzazioni non necessarie; è completamente opensource e la si può personalizzare con i propri colori preferiti.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Controlla l\'intera raccolta di Strumenti Semplici qui:</b>
         https://www.simplemobiletools.com
 
         <b>Facebook:</b>
