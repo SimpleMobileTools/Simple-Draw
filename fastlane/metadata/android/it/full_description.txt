@@ -1,5 +1,22 @@
-Si vuole disegnare qualcosa ma non non c'è carta? Allora quest'app è perfetta; si deve solamente selezionare un colore e disegnare. Si possono salvare i disegni o condividerli direttamente via email o sui social network.
+Vuoi disegnare qualcosa di creativo ma non hai carta? Questa app è perfetta per te. Scegli un colore e disegna, tutto qui. Puoi salvare il disegno in un file, stamparlo o condividerlo direttamente via email o social network, in modo che anche i tuoi amici possano ammirarlo.
 
-L'applicazione non contiene pubblicità o permessi non necessari; è completamente opensource e la si può personalizzare con i propri colori preferiti.
+Questa app così popolare per schizzi veloci ha diverse funzioni utili come Annulla/Ripeti, modifica del colore di sfondo, o l\'uso di immagini come sfondo. Puoi anche facoltativamente impedire al dispositivo di spegnersi dall\'app. Puoi cambiare la dimensione del pennello, o usare una gomma se hai fatto un pasticcio. Supporta l\'inserimento di colori selezionandoli da una grande tavolozza, o inserendone il codice esadecimale.
 
-Questa è solamente una delle tante applicazioni della serie Simple Mobile Tools. Si possono trovare le altre su https://www.simplemobiletools.com
+L\'app supporta molti formati diversi come PNG, JPG o vettoriali SVG.
+
+Puoi disegnare qualcosa di nuovo da zero, o aprire un file e sbizzarrirti. È perfettamente utilizzabile da te o da una famiglia con bambini per fare qualche gioco. Dopotutto, chiunque ha un piccolo artista dentro di sè.
+
+Qui non troverai strumenti, pennelli, caratteri e filtri complessi o avanzati, è pensata solo per divertirsi un po'.
+
+Progettato con material design, offre anche un tema scuro, per una migliore esperienza utente e un facile utilizzo. La mancanza dell\'accesso a internet ti dà maggiore privacy, sicurezza e stabilità rispetto ad altre app.
+
+L\'applicazione non contiene pubblicità o autorizzazioni non necessarie; è completamente opensource e la si può personalizzare con i propri colori preferiti.
+
+<b>Controlla l\'intera raccolta di Strumenti Semplici qui:</b>
+https://www.simplemobiletools.com
+
+<b>Facebook:</b>
+https://www.facebook.com/simplemobiletools
+
+<b>Reddit:</b>
+https://www.reddit.com/r/SimpleMobileTools
