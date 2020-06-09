@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
@@ -47,6 +48,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private val FILE_NAME = "simple-draw.png"
     private val BITMAP_PATH = "bitmap_path"
     private val URI_TO_LOAD = "uri_to_load"
+    private val FULLSCREEN = "FULLSCREEN"
 
     private var defaultPath = ""
     private var defaultFilename = ""
@@ -62,6 +64,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var isImageCaptureIntent = false
     private var isEditIntent = false
     private var lastBitmapPath = ""
+
+    private var isActionbarHidden = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -137,8 +141,17 @@ class MainActivity : SimpleActivity(), CanvasListener {
         return true
     }
 
+    private fun goToFullScreen() {
+        supportActionBar?.hide()
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        isActionbarHidden = true
+
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.fullscreen -> goToFullScreen()
             R.id.menu_confirm -> confirmImage()
             R.id.menu_save -> trySaveImage()
             R.id.menu_share -> shareImage()
@@ -154,18 +167,24 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     override fun onBackPressed() {
-        val hasUnsavedChanges = savedPathsHash != my_canvas.getDrawingHashCode()
-        if (hasUnsavedChanges && System.currentTimeMillis() - lastSavePromptTS > SAVE_DISCARD_PROMPT_INTERVAL) {
-            lastSavePromptTS = System.currentTimeMillis()
-            ConfirmationAdvancedDialog(this, "", R.string.save_before_closing, R.string.save, R.string.discard) {
-                if (it) {
-                    trySaveImage()
-                } else {
-                    super.onBackPressed()
-                }
-            }
+        if (isActionbarHidden) {
+            supportActionBar?.show()
+            isActionbarHidden = false
+            window.decorView.systemUiVisibility = (View.VISIBLE)
         } else {
-            super.onBackPressed()
+            val hasUnsavedChanges = savedPathsHash != my_canvas.getDrawingHashCode()
+            if (hasUnsavedChanges && System.currentTimeMillis() - lastSavePromptTS > SAVE_DISCARD_PROMPT_INTERVAL) {
+                lastSavePromptTS = System.currentTimeMillis()
+                ConfirmationAdvancedDialog(this, "", R.string.save_before_closing, R.string.save, R.string.discard) {
+                    if (it) {
+                        trySaveImage()
+                    } else {
+                        super.onBackPressed()
+                    }
+                }
+            } else {
+                super.onBackPressed()
+            }
         }
     }
 
@@ -520,6 +539,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(BITMAP_PATH, lastBitmapPath)
+        outState.putBoolean(FULLSCREEN, isActionbarHidden)
 
         if (uriToLoad != null) {
             outState.putString(URI_TO_LOAD, uriToLoad.toString())
@@ -534,6 +554,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         } else if (savedInstanceState.containsKey(URI_TO_LOAD)) {
             uriToLoad = Uri.parse(savedInstanceState.getString(URI_TO_LOAD))
             tryOpenUri(uriToLoad!!, intent)
+        }
+        isActionbarHidden = savedInstanceState.getBoolean(FULLSCREEN)
+        if (isActionbarHidden) {
+            goToFullScreen()
         }
     }
 
