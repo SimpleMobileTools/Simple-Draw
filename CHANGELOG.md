@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.2.2 *(2020-09-19)*
+----------------------------
+
+ * Properly save SVG files on every device
+ * Some translation and UX improvements
+
 Version 6.2.1 *(2020-05-25)*
 ----------------------------
 

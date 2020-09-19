@@ -1,0 +1,2 @@
+ * Properly save SVG files on every device
+ * Some translation and UX improvements
