@@ -18,17 +18,20 @@ import java.util.*
 
 object Svg {
     fun saveSvg(activity: SimpleActivity, path: String, canvas: MyCanvas) {
-        val backgroundColor = (canvas.background as ColorDrawable).color
-
         activity.getFileOutputStream(FileDirItem(path, path.getFilenameFromPath()), true) {
-            if (it != null) {
-                val writer = BufferedWriter(OutputStreamWriter(it))
-                writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
-                writer.close()
-                activity.toast(R.string.file_saved)
-            } else {
-                activity.toast(R.string.unknown_error_occurred)
-            }
+            saveToOutputStream(activity, it, canvas)
+        }
+    }
+
+    fun saveToOutputStream(activity: SimpleActivity, outputStream: OutputStream?, canvas: MyCanvas) {
+        if (outputStream != null) {
+            val backgroundColor = (canvas.background as ColorDrawable).color
+            val writer = BufferedWriter(OutputStreamWriter(outputStream))
+            writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
+            writer.close()
+            activity.toast(R.string.file_saved)
+        } else {
+            activity.toast(R.string.unknown_error_occurred)
         }
     }
 

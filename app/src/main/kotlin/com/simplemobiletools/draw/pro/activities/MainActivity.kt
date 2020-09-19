@@ -190,7 +190,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
             tryOpenUri(resultData.data!!, resultData)
         } else if (requestCode == SAVE_IMAGE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
             val outputStream = contentResolver.openOutputStream(resultData.data!!)
-            saveToOutputStream(outputStream, defaultPath.getCompressionFormat(), false)
+            if (defaultExtension == SVG) {
+                Svg.saveToOutputStream(this, outputStream, my_canvas)
+            } else {
+                saveToOutputStream(outputStream, defaultPath.getCompressionFormat(), false)
+            }
             savedPathsHash = my_canvas.getDrawingHashCode()
         }
     }
