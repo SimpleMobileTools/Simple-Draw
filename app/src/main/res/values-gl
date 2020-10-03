@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Debuxar</string>
+    <string name="open_file">Abrir ficheiro</string>
+    <string name="eraser">Borrador</string>
+    <string name="failed_to_load_image">Erro ao cargar a imaxe %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Mostrar ferramenta Tamaño do pincel</string>
+    <string name="allow_zooming_canvas">Permitir ampliar o lenzo con xestos</string>
+    <string name="clear">Limpar</string>
+    <string name="change_background_color">Cambiar a cor do fondo</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Draw - App for your quick & easy sketches</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Draw with this quick sketchbook replacing pen and paper, has no ads</string>
+    <string name="app_long_description">
+        Queres debuxar algo creativo pero non tes papel? Este aplicativo axústase a ti perfectamente. Só tes que escoller unha cor e debuxar, é tan sinxelo coma iso. Podes gardar o debuxo nun ficheiro, imprimilo ou compartilo directamente a través do correo electrónico ou a través das redes sociais para que os teus amigos tamén poidan divertir del.
+
+        Este aplicativo para esbozos rápidos fornece moitas funcións útiles como Desfacer / Refacer, cambiar a cor de fondo ou usar unha imaxe como fondo. Opcionalmente, podes facer que o aplicativo impida que o dispositivo tamén se adormeza. Tamén podes cambiar o tamaño do pincel ou usar unha goma de borrar se erras en algo. Admite a inserción de cores seleccionándoa nunha enorme paleta ou introducindo o código hex de cores.
+
+        Este aplicativo admite moitos formatos diferentes como vectores PNG, JPG ou SVG.
+
+        Podes debuxar algo novo desde cero ou abrir un ficheiro e xogar con el. É perfectamente utilizable por ti ou por unha familia con nenos para xogar a algúns xogos. Ao final, todos temos unha pouco de artistas dentro de nós.
+
+        Aquí non atoparás ningunha fantasía nin ningunha ferramenta avanzada como pinceis, tipos de letra e filtros; usámolo para divertirnos.
+        
+        Vén cun deseño material e un tema escuro de xeito predeterminado, fornece unha excelente experiencia de usuario cun uso sinxelo. Como non necesita acceso a Internet, tes máis privacidade, seguridade e estabilidade.
+
+        Non contén anuncios nin permisos innecesarios. Dispón dun tema escuro e é totalmente de código aberto. 
+
+        <b>Visita a páxina a través desta ligazón:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
