@@ -13,9 +13,9 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - Aplicativo para esbozos rápidos&amp; e fáciles</string>
+    <string name="app_title">Simple Draw - App for your quick & easy sketches</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Lapis &amp; papel para os teus debuxos rápidos e creativos sen anuncios o usen acceso a Internet</string>
+    <string name="app_short_description">Draw with this quick sketchbook replacing pen and paper, has no ads</string>
     <string name="app_long_description">
         Queres debuxar algo creativo pero non tes papel? Este aplicativo axústase a ti perfectamente. Só tes que escoller unha cor e debuxar, é tan sinxelo coma iso. Podes gardar o debuxo nun ficheiro, imprimilo ou compartilo directamente a través do correo electrónico ou a través das redes sociais para que os teus amigos tamén poidan divertir del.
 
