@@ -13,25 +13,25 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Dibujo Simple Pro - Sketches fáciles y rápidos</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Lápiz y papel rápido y fácile para tus dibujos sin anuncios o acceso a internet</string>
     <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+        ¿Quieres dibujar algo creativo pero no tienes papel? Esta app servirá perfectamente. Solo escoge un color y dibuja, así de fácil. También puedes guardar el dibujo en un archivo, imprimirlo o compartirlo directamente a través de correo electrónico o redes sociales, así tus amigos se divertirán con él también.
 
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+        Esta aplicación enormemente popular para sketches rápidos provee varias funciones útiles como rehacer/deshacer, cambiar el color de fondo o usar una imagen como fondo. Opcionalmente, puedes hacer que la aplicación evite que el dispositivo se bloquee. También puedes cambiar el tamaño del pincel o usar un borrado, si hiciste un desastre. Soporta seleccionar colores de una enorme paleta o ingresándo colores hexadecimales.
 
-        The app supports many different formats like PNG, JPG or SVG vectors.
+        La aplicación soporta diferentes formatos como PNG, JPG o vectores SVG.
 
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
+        También puedes dibujar algo nuevo desde cero o abrir algún ar chivo y solo juguetear con él. Es perfectamente usable para ti, o por una familia con niños que quieran jugar. Después de todo, todos tienen un artista dentro.
 
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+        No encontrarás ninguna herramienta glamurosa o avanzada, pinceles, fuentes o filtros aquí, se supone que sea usada para divertirte.
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Incluye diseño material y tema obscuro por defecto, provee una gran experiencia de usuario para uso sencillo. La falta del acceso a internet te da más privacidad, seguridad y estabilidad que otras aplicaciones.
 
-        No contiene anuncios ni permisos innecesarios. Es completamente OpenSource y además provee un tema oscuro.
+        No contiene anuncios o permisos innecesarios. Es completamente de código abierto, provee colores personalizables.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Mira la suite completa de herramientas Simples aquí:</b>
         https://www.simplemobiletools.com
 
         <b>Facebook:</b>
