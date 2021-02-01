@@ -17,21 +17,21 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
     <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+        Möchtest du etwas kreatives zeichnen, hast aber kein Papier? Dann ist diese App für dich! Wähle einfach eine Farbe aus und zeichne - so einfach ist das. Die Zeichnung kannst du entweder in einer Datei speichern, es ausdrucken oder es direkt über Email oder soziale Netzwerke teilen, sodass auch deine Freunde daran Spaß haben können.
 
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+        Diese extrem beliebte App für schnelle Zeichnungen beinhaltet viele nützliche Funktionen wie Rückgängig machen/Wiederherstellen, die Hintergrundfarbe verändern oder ein Bild als Hintergrund verwenden. Optional kann die App so konfiguriert werden, dass sie nicht in den Standby geht. Du kannst zudem die Pinselgröße ändern oder einen Radiergummi verwenden, wenn du einen Fehler gemacht hast. Die App unterstützt das Einfügen von Farben - entweder, indem man sie aus einer riesigen Farbpalette auswählt, oder indem man den HEX-Code eingibt.
 
-        The app supports many different formats like PNG, JPG or SVG vectors.
+        Es werden verschiedene Formate wie PNG, JPG und SVG Vektoren unterstützt.
 
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
+        Du kannst entweder etwas komplett neues zeichnen oder eine Datei öffnen und diese editieren. Es ist sowohl für dich perfekt geeignet, als auch für Familien, um mit Kindern Spiele zu spielen. Immerhin ist jeder ein Künstler!
 
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Du wirst hier keine ausgefallenen oder fortschrittlichen Werkzeuge, Pinsel, Fonts oder Filter vorfinden; es soll zum Zwecke des Spaßes dienen.
+        
+        Es kommt standardmäßig mit material design und Dunkelmodus, was großartige Nutzererfahrungen für leichte Nutzung ermöglicht. Da die App keine Internetverbindung benötigt, bietet sie mehr Datenschutz, Sicherheit und Stabilität als andere Apps.
 
         Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Entdecke die gesamte Serie an schlichten Apps hier:</b>
         https://www.simplemobiletools.com
 
         <b>Facebook:</b>
