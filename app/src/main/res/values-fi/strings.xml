@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Piirustus</string>
+    <string name="app_launcher_name">Piirrä</string>
     <string name="open_file">Avaa tiedosto</string>
     <string name="eraser">Pyyhin</string>
     <string name="failed_to_load_image">Kuvan %s lataaminen epäonnistui</string>
 
     <!-- Settings -->
-    <string name="show_brush_size">Näytä harjan koon työkalu</string>
+    <string name="show_brush_size">Näytä siveltimen koon työkalu</string>
     <string name="allow_zooming_canvas">Salli Salli kankaan zoomaaminen eleillä</string>
     <string name="clear">Tyhjennä</string>
     <string name="change_background_color">Vaihda taustaväriä</string>
