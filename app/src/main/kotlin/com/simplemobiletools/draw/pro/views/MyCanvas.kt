@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.draw.pro.R
 import com.simplemobiletools.draw.pro.interfaces.CanvasListener
 import com.simplemobiletools.draw.pro.models.MyParcelable
@@ -138,7 +139,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun drawBitmap(activity: Activity, path: Any) {
-        Thread {
+        ensureBackgroundThread {
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
             val options = RequestOptions()
@@ -161,7 +162,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 val errorMsg = String.format(activity.getString(R.string.failed_to_load_image), path)
                 activity.toast(errorMsg)
             }
-        }.start()
+        }
     }
 
     fun addPath(path: MyPath, options: PaintOptions) {
