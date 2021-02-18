@@ -48,7 +48,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mActivePointerId = INVALID_POINTER_ID
 
     private var mCurrBrushSize = 0f
-    private var mAllowZooming = true
+    private var mAllowMovingZooming = true
     private var mIsEraserOn = false
     private var mWasMultitouch = false
     private var mBackgroundColor = 0
@@ -134,7 +134,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun setAllowZooming(allowZooming: Boolean) {
-        mAllowZooming = allowZooming
+        mAllowMovingZooming = allowZooming
     }
 
     fun getBitmap(): Bitmap {
@@ -260,7 +260,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     fun getDrawingHashCode() = mPaths.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (mAllowZooming) {
+        if (mAllowMovingZooming) {
             mScaleDetector!!.onTouchEvent(event)
         }
 
@@ -273,15 +273,20 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val x = event.getX(pointerIndex)
         val y = event.getY(pointerIndex)
 
-        val scaledWidth = width / mScaleFactor
-        val touchPercentageX = x / width
-        val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
-        val newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
+        var newValueX = x
+        var newValueY = y
 
-        val scaledHeight = height / mScaleFactor
-        val touchPercentageY = y / height
-        val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
-        val newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
+        if (mAllowMovingZooming) {
+            val scaledWidth = width / mScaleFactor
+            val touchPercentageX = x / width
+            val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
+            newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
+
+            val scaledHeight = height / mScaleFactor
+            val touchPercentageY = y / height
+            val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
+            newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
+        }
 
         when (event.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> {
@@ -295,11 +300,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mListener?.toggleRedoVisibility(false)
             }
             MotionEvent.ACTION_MOVE -> {
-                if (!mAllowZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
+                if (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
                     actionMove(newValueX, newValueY)
                 }
 
-                if (mWasMultitouch) {
+                if (mAllowMovingZooming && mWasMultitouch) {
                     mPosX += x - mLastTouchX
                     mPosY += y - mLastTouchY
                     invalidate()
