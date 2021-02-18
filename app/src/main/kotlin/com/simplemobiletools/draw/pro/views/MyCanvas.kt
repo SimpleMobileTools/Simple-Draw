@@ -6,6 +6,7 @@ import android.graphics.*
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
+import android.view.MotionEvent.INVALID_POINTER_ID
 import android.view.ScaleGestureDetector
 import android.view.View
 import com.bumptech.glide.Glide
@@ -40,6 +41,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mCurY = 0f
     private var mStartX = 0f
     private var mStartY = 0f
+    private var mPosX = 0f
+    private var mPosY = 0f
+    private var mLastTouchX = 0f
+    private var mLastTouchY = 0f
+    private var mActivePointerId = INVALID_POINTER_ID
+
     private var mCurrBrushSize = 0f
     private var mAllowZooming = true
     private var mIsEraserOn = false
@@ -178,6 +185,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mCenter = PointF(width / 2f, height / 2f)
         }
 
+        canvas.translate(mPosX, mPosY)
         canvas.scale(mScaleFactor, mScaleFactor, mCenter!!.x, mCenter!!.y)
 
         if (mBackgroundBitmap != null) {
@@ -256,37 +264,65 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mScaleDetector!!.onTouchEvent(event)
         }
 
-        var x = event.x
-        var y = event.y
-
-        if (mScaleFactor != 1f) {
-            val fullWidth = width / mScaleFactor
-            var curTouchX = fullWidth * x / width
-            curTouchX -= (fullWidth / 2) * (1 - mScaleFactor)
-            x = curTouchX
-
-            val fullHeight = height / mScaleFactor
-            var curTouchY = fullHeight * y / height
-            curTouchY -= (fullHeight / 2) * (1 - mScaleFactor)
-            y = curTouchY
+        val action = event.action and MotionEvent.ACTION_MASK
+        if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
+            mActivePointerId = event.getPointerId(0)
         }
+
+        val pointerIndex = event.findPointerIndex(mActivePointerId)
+        val x = event.getX(pointerIndex)
+        val y = event.getY(pointerIndex)
+
+        val scaledWidth = width / mScaleFactor
+        val touchPercentageX = x / width
+        val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
+        val newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
+
+        val scaledHeight = height / mScaleFactor
+        val touchPercentageY = y / height
+        val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
+        val newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
 
         when (event.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> {
                 mWasMultitouch = false
                 mStartX = x
                 mStartY = y
-                actionDown(x, y)
+                mLastTouchX = x
+                mLastTouchY = y
+                actionDown(newValueX, newValueY)
                 mUndonePaths.clear()
                 mListener?.toggleRedoVisibility(false)
             }
             MotionEvent.ACTION_MOVE -> {
                 if (!mAllowZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
-                    actionMove(x, y)
+                    actionMove(newValueX, newValueY)
+                }
+
+                if (mWasMultitouch) {
+                    mPosX += x - mLastTouchX
+                    mPosY += y - mLastTouchY
+                    invalidate()
+                }
+
+                mLastTouchX = x
+                mLastTouchY = y
+            }
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                mActivePointerId = INVALID_POINTER_ID
+                actionUp()
+            }
+            MotionEvent.ACTION_POINTER_DOWN -> mWasMultitouch = true
+            MotionEvent.ACTION_POINTER_UP -> {
+                val upPointerIndex = (event.action and MotionEvent.ACTION_POINTER_INDEX_MASK shr MotionEvent.ACTION_POINTER_INDEX_SHIFT)
+                val pointerId = event.getPointerId(upPointerIndex)
+                if (pointerId == mActivePointerId) {
+                    val newPointerIndex = if (upPointerIndex == 0) 1 else 0
+                    mLastTouchX = event.getX(newPointerIndex)
+                    mLastTouchY = event.getY(newPointerIndex)
+                    mActivePointerId = event.getPointerId(newPointerIndex)
                 }
             }
-            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> actionUp()
-            MotionEvent.ACTION_POINTER_DOWN -> mWasMultitouch = true
         }
 
         invalidate()
