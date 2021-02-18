@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.3.0 *(2021-02-18)*
+----------------------------
+
+ * Allow moving the canvas with gestures too, not just zooming
+ * Enabled moving and zooming gestures by default
+ * Make the default brush size smaller
+
 Version 6.2.4 *(2021-01-12)*
 ----------------------------
 

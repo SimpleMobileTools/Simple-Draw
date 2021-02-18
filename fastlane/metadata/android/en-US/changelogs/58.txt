@@ -1,0 +1,3 @@
+ * Allow moving the canvas with gestures too, not just zooming
+ * Enabled moving and zooming gestures by default
+ * Make the default brush size smaller
