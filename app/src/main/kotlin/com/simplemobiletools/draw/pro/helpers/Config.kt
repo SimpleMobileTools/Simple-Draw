@@ -19,7 +19,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(color) = prefs.edit().putInt(BRUSH_COLOR, color).apply()
 
     var brushSize: Float
-        get() = prefs.getFloat(BRUSH_SIZE, 50f)
+        get() = prefs.getFloat(BRUSH_SIZE, 40f)
         set(brushSize) = prefs.edit().putFloat(BRUSH_SIZE, brushSize).apply()
 
     var canvasBackgroundColor: Int
@@ -35,7 +35,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(lastSaveExtension) = prefs.edit().putString(LAST_SAVE_EXTENSION, lastSaveExtension).apply()
 
     var allowZoomingCanvas: Boolean
-        get() = prefs.getBoolean(ALLOW_ZOOMING_CANVAS, false)
+        get() = prefs.getBoolean(ALLOW_ZOOMING_CANVAS, true)
         set(allowZoomingCanvas) = prefs.edit().putBoolean(ALLOW_ZOOMING_CANVAS, allowZoomingCanvas).apply()
 
     var forcePortraitMode: Boolean
