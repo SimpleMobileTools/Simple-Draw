@@ -119,7 +119,7 @@
                 android:background="@null"
                 android:clickable="false"
                 android:paddingStart="@dimen/medium_margin"
-                android:text="@string/allow_zooming_canvas"
+                android:text="@string/allow_zooming_moving_canvas"
                 app:switchPadding="@dimen/medium_margin" />
 
         </RelativeLayout>
