@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Zobrazit nástroj velikosti štětce</string>
     <string name="allow_zooming_canvas">Povolit přiblížení plátna gesty</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Vymazat</string>
     <string name="change_background_color">Změnit barvu pozadí</string>
 

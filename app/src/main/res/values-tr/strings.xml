@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Fırça boyutu aracını göster</string>
     <string name="allow_zooming_canvas">Tuvali hareketlerle yakınlaştırmaya izin ver</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Temizle</string>
     <string name="change_background_color">Arka plan rengini değiştir</string>
 

@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Показать размер кисти</string>
     <string name="allow_zooming_canvas">Разрешить масштабирование холста жестами</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Очистить</string>
     <string name="change_background_color">Изменить цвет фона</string>
 

@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
     <string name="allow_zooming_canvas">Permettre de zoomer sur l\'image avec des gestes</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Tout effacer</string>
     <string name="change_background_color">Changer l\'arrière-plan</string>
 

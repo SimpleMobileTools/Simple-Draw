@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Dimensione della gomma</string>
     <string name="allow_zooming_canvas">Permetti l\'ingrandimento con i gesti</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Pulisci</string>
     <string name="change_background_color">Cambia colore di sfondo</string>
 

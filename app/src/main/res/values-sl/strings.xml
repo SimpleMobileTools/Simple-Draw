@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Omogoči spreminjanje velikosti čopiča</string>
     <string name="allow_zooming_canvas">Omogoči povečevanje</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Počisti</string>
     <string name="change_background_color">Spremeni barvo ozadja</string>
     

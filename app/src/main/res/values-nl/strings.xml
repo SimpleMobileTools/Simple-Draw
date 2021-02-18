@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Knop penceelgrootte tonen</string>
     <string name="allow_zooming_canvas">Met gebaren inzoomen/uitzoomen</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Wissen</string>
     <string name="change_background_color">Achtergrondkleur</string>
 

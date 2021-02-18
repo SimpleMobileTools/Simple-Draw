@@ -8,6 +8,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
     <string name="allow_zooming_canvas">Tillat å zoome tegneflaten med fingerbevegelser</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Slett</string>
     <string name="change_background_color">Endre bakgrunnsfarge</string>
 
