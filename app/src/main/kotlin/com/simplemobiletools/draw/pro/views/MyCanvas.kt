@@ -270,8 +270,15 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
 
         val pointerIndex = event.findPointerIndex(mActivePointerId)
-        val x = event.getX(pointerIndex)
-        val y = event.getY(pointerIndex)
+        val x: Float
+        val y: Float
+
+        try {
+            x = event.getX(pointerIndex)
+            y = event.getY(pointerIndex)
+        } catch (e: Exception) {
+            return true
+        }
 
         var newValueX = x
         var newValueY = y
