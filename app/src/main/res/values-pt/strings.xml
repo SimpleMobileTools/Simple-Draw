@@ -8,15 +8,15 @@
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
     <string name="allow_zooming_canvas">Permitir ampliar a tela com gestos</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Permitir ampliar e mover a tela com gestos</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Alterar fundo</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Simple Draw Pro - Desenhos rápidos</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Papel e caneta para criar desenhos simples.</string>
     <string name="app_long_description">
         Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
@@ -32,7 +32,7 @@
 
         Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente \'open source\'.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Consulte o conjunto completo de aplicações Simple aqui:</b>
         https://www.simplemobiletools.com
 
         <b>Facebook:</b>
