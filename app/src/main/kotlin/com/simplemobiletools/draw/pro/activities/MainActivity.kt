@@ -210,11 +210,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun checkIntents() {
         if (intent?.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) {
             val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-            tryOpenUri(uri, intent)
+            tryOpenUri(uri!!, intent)
         }
 
         if (intent?.action == Intent.ACTION_SEND_MULTIPLE && intent.type?.startsWith("image/") == true) {
-            val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
+            val imageUris = intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)!!
             imageUris.any { tryOpenUri(it, intent) }
         }
 
