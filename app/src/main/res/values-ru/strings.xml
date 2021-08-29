@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Рисунки</string>
     <string name="open_file">Открыть файл</string>
     <string name="eraser">Ластик</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Не удалось загрузить изображение %s</string>
 
     <!-- Settings -->

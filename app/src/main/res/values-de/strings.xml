@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Zeichenblock</string>
     <string name="open_file">Datei öffnen</string>
     <string name="eraser">Radierer</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Fehler beim Laden des Bildes %s</string>
 
     <!-- Settings -->

@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Ζωγραφική</string>
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="eraser">Γόμμα</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
 
     <!-- Settings -->

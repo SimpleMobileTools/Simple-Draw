@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Prosty szkicownik</string>
     <string name="open_file">Otwórz plik</string>
     <string name="eraser">Gumka</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Nie udało się wczytać obrazu %s</string>
 
     <!-- Settings -->

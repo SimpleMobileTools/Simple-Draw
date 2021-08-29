@@ -3,6 +3,7 @@
     <string name="app_launcher_name">绘图</string>
     <string name="open_file">打开文件</string>
     <string name="eraser">橡皮</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">无法加载图片 %s</string>
 
     <!-- Settings -->

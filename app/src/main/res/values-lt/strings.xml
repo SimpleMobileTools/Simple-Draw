@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Piešimas</string>
     <string name="open_file">Atverti bylą</string>
     <string name="eraser">Trintukas</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Nepavyko įkelti paveikslėlio %s</string>
 
     <!-- Settings -->

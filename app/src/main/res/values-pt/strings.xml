@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Desenho</string>
     <string name="open_file">Abrir ficheiro</string>
     <string name="eraser">Borracha</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Falha ao carregar a imagem %s</string>
 
     <!-- Settings -->

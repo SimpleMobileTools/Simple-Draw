@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Tegneapp</string>
     <string name="open_file">Åbn fil</string>
     <string name="eraser">Viskelæder</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Det mislykkedes at indlæse billedet %s</string>
 
     <!-- Settings -->

@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Малювання</string>
     <string name="open_file">Відкрити файл</string>
     <string name="eraser">Гумка</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Не вдалося завантажити зображення %s</string>
 
     <!-- Settings -->

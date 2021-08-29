@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Kreslení</string>
     <string name="open_file">Otevřít soubor</string>
     <string name="eraser">Guma</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Nepodařilo se načíst obrázek %s</string>
 
     <!-- Settings -->

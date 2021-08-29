@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Dessin</string>
     <string name="open_file">Ouvrir un fichier</string>
     <string name="eraser">Gommer</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
 
     <!-- Settings -->

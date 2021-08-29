@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Draw</string>
     <string name="open_file">파일 열기</string>
     <string name="eraser">지우개</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">%s 이미지 파일 로딩 실패</string>
 
     <!-- Settings -->

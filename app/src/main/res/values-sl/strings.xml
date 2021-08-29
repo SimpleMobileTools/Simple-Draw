@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Risanje</string>
     <string name="open_file">Odpri datoteko</string>
     <string name="eraser">Radirka</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Nalaganje slike %s ni uspelo</string>
     
     <!-- Settings -->

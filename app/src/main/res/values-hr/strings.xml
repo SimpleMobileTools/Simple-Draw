@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Crtanje</string>
     <string name="open_file">Otvori datoteku</string>
     <string name="eraser">Gumica za brisanje</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Neuspjelo učitavanje slike %s</string>
 
     <!-- Settings -->

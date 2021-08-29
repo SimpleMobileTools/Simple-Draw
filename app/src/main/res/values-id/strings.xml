@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Kanvas</string>
     <string name="open_file">Buka berkas</string>
     <string name="eraser">Penghapus</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Gagal memuat gambar %s</string>
 
     <!-- Settings -->

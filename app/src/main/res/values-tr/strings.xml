@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Çiz</string>
     <string name="open_file">Dosya aç</string>
     <string name="eraser">Silici</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">%s resmi yüklenemedi</string>
 
     <!-- Settings -->

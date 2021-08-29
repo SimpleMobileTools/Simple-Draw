@@ -3,6 +3,7 @@
     <string name="app_launcher_name">Rita</string>
     <string name="open_file">Öppna fil</string>
     <string name="eraser">Radergummi</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Det gick inte att läsa in bilden %s</string>
 
     <!-- Settings -->
