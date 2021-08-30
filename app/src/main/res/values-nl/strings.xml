@@ -3,7 +3,7 @@
     <string name="app_launcher_name">Tekenen</string>
     <string name="open_file">Bestand openen</string>
     <string name="eraser">Gum</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Pipet</string>
     <string name="failed_to_load_image">Kan bestand %s niet laden</string>
 
     <!-- Settings -->
