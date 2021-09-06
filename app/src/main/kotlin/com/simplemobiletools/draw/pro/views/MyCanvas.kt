@@ -9,6 +9,7 @@ import android.view.MotionEvent
 import android.view.MotionEvent.INVALID_POINTER_ID
 import android.view.ScaleGestureDetector
 import android.view.View
+import android.view.ViewConfiguration
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
@@ -21,9 +22,13 @@ import com.simplemobiletools.draw.pro.models.MyPath
 import com.simplemobiletools.draw.pro.models.PaintOptions
 import java.util.*
 import java.util.concurrent.ExecutionException
+import kotlin.math.abs
+import kotlin.math.max
+import kotlin.math.min
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val MIN_ERASER_WIDTH = 20f
+    private val mScaledTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
 
     var mPaths = LinkedHashMap<MyPath, PaintOptions>()
     var mBackgroundBitmap: Bitmap? = null
@@ -56,6 +61,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     private var mScaleDetector: ScaleGestureDetector? = null
     private var mScaleFactor = 1f
+
+    private var mLastMotionEvent: MotionEvent? = null
+    private var mTouchSloppedBeforeMultitouch: Boolean = false
 
     init {
         mPaint.apply {
@@ -159,7 +167,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     .asBitmap()
                     .load(path)
                     .apply(options)
-                    .into(size.x, size.y)
+                    .submit(size.x, size.y)
 
                 mBackgroundBitmap = builder.get()
                 activity.runOnUiThread {
@@ -264,7 +272,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mScaleDetector!!.onTouchEvent(event)
         }
 
-        val action = event.action and MotionEvent.ACTION_MASK
+        val action = event.actionMasked
         if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
             mActivePointerId = event.getPointerId(0)
         }
@@ -295,7 +303,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
         }
 
-        when (event.action and MotionEvent.ACTION_MASK) {
+        when (action) {
             MotionEvent.ACTION_DOWN -> {
                 mWasMultitouch = false
                 mStartX = x
@@ -307,6 +315,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mListener?.toggleRedoVisibility(false)
             }
             MotionEvent.ACTION_MOVE -> {
+                if (mTouchSloppedBeforeMultitouch) {
+                    mPath.reset()
+                    mTouchSloppedBeforeMultitouch = false
+                }
+
                 if (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
                     actionMove(newValueX, newValueY)
                 }
@@ -324,9 +337,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mActivePointerId = INVALID_POINTER_ID
                 actionUp()
             }
-            MotionEvent.ACTION_POINTER_DOWN -> mWasMultitouch = true
+            MotionEvent.ACTION_POINTER_DOWN -> {
+                mWasMultitouch = true
+                mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
+            }
             MotionEvent.ACTION_POINTER_UP -> {
-                val upPointerIndex = (event.action and MotionEvent.ACTION_POINTER_INDEX_MASK shr MotionEvent.ACTION_POINTER_INDEX_SHIFT)
+                val upPointerIndex = event.actionIndex
                 val pointerId = event.getPointerId(upPointerIndex)
                 if (pointerId == mActivePointerId) {
                     val newPointerIndex = if (upPointerIndex == 0) 1 else 0
@@ -336,6 +352,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 }
             }
         }
+
+
+        mLastMotionEvent = MotionEvent.obtain(event)
 
         invalidate()
         return true
@@ -359,10 +378,25 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         pathsUpdated()
     }
 
+    private fun MotionEvent?.isTouchSlop(pointerIndex: Int, startX: Float, startY: Float): Boolean {
+        return if (this == null || actionMasked != MotionEvent.ACTION_MOVE) {
+            false
+        } else {
+            try {
+                val moveX = abs(getX(pointerIndex) - startX)
+                val moveY = abs(getY(pointerIndex) - startY)
+
+                moveX <= mScaledTouchSlop && moveY <= mScaledTouchSlop
+            } catch (e: Exception) {
+                false
+            }
+        }
+    }
+
     private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
             mScaleFactor *= detector.scaleFactor
-            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f))
+            mScaleFactor = max(0.1f, min(mScaleFactor, 10.0f))
             setBrushSize(mCurrBrushSize)
             invalidate()
             return true
