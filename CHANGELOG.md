@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.4.0 *(2021-09-24)*
+----------------------------
+
+ * Show recently used colors at the color picker
+
 Version 6.3.3 *(2021-05-21)*
 ----------------------------
 
