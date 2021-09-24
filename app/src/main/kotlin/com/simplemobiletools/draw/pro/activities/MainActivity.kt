@@ -318,7 +318,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun changeBackgroundClicked() {
         val oldColor = (my_canvas.background as ColorDrawable).color
-        ColorPickerDialog(this, oldColor, showRecentColors = true) { wasPositivePressed, color ->
+        ColorPickerDialog(this, oldColor) { wasPositivePressed, color ->
             if (wasPositivePressed) {
                 config.canvasBackgroundColor = color
                 setBackgroundColor(color)
@@ -479,7 +479,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun pickColor() {
-        ColorPickerDialog(this, color, showRecentColors = true) { wasPositivePressed, color ->
+        ColorPickerDialog(this, color) { wasPositivePressed, color ->
             if (wasPositivePressed) {
                 setColor(color)
             }
