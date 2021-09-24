@@ -288,20 +288,15 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             return true
         }
 
-        var newValueX = x
-        var newValueY = y
+        val scaledWidth = width / mScaleFactor
+        val touchPercentageX = x / width
+        val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
+        val newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
 
-        if (mAllowMovingZooming) {
-            val scaledWidth = width / mScaleFactor
-            val touchPercentageX = x / width
-            val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
-            newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
-
-            val scaledHeight = height / mScaleFactor
-            val touchPercentageY = y / height
-            val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
-            newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
-        }
+        val scaledHeight = height / mScaleFactor
+        val touchPercentageY = y / height
+        val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
+        val newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
 
         when (action) {
             MotionEvent.ACTION_DOWN -> {
