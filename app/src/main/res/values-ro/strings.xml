@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Desenează</string>
+    <string name="open_file">Deschide un fișier</string>
+    <string name="eraser">Radieră</string>
+    <string name="eyedropper">Găseşte culoarea</string>
+    <string name="failed_to_load_image">Imaginea nu a reușit să se încarce %s</string>
+
+    <!-- Settings -->
+    <string name="show_brush_size">Afișați instrumentul de mărime a pensulei</string>
+    <string name="allow_zooming_canvas">Permiteți mărirea pânzei cu ajutorul gesturilor</string>
+    <string name="allow_zooming_moving_canvas">Permiteți mărirea și deplasarea pânzei cu ajutorul gesturilor</string>
+    <string name="clear">Curăţă</string>
+    <string name="change_background_color">Schimbaţi culoarea de fundal</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Draw Pro - Schițe rapide &amp; ușoare</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Pix și hârtie pentru schițe rapide.</string>
+    <string name="app_long_description">
+        Vrei să desenezi ceva creativ, dar nu ai hârtie? Această aplicație ți se va potrivi perfect. Alege o culoare și desenează. Poți salva desenul într-un fișier, îl poți imprima sau îl poți distribui direct prin e-mail sau prin rețelele de socializare pentru ca și prietenii tăi să se poată distra cu desenul.
+
+        Această aplicație extrem de populară pentru schițe rapide oferă multe funcții utile, cum ar fi Undo/Redo, schimbarea culorii de fundal sau utilizarea unei imagini ca fundal. Opțional, puteți face ca aplicația să împiedice și inchiderea ecranului dispozitivului. Puteți, de asemenea, să schimbați dimensiunea pensulei sau să folosiți o radieră, dacă ați încurcat ceva. Aceasta suportă inserarea culorilor, fie prin selectarea lor într-o paletă uriașă, fie prin introducerea codului hexagonal al culorilor.
+
+        Aplicația acceptă multe formate diferite, cum ar fi PNG, JPG sau vectori SVG.
+
+        Puteți fie să desenați ceva nou de la zero sau să deschideți un fișier și să vă jucați cu el. Este perfect utilizabil fie de către dumneavoastră, fie de către o familie cu copii pentru a juca niște jocuri. La urma urmei, fiecare are un artist ascuns în sine.
+
+        Nu veți găsi aici instrumente sofisticate sau avansate precum pensule, fonturi sau filtre. Aplicaţia a fost creată pentru a vă distra cu ea.
+
+        Aplicaţia vine cu design material şi temă întunecată în mod implicit. Limitarea necesităţii accesului la internet vă oferă mai multă intimitate, securitate şi stabilitate decât alte aplicaţii.
+
+        Nu conţine reclame sau permisiuni inutile. Codul sursă este complet open source şi oferă culori personalizabile.
+
+        <b>Consultaţi întreaga suită de aplicaţii Simple Tools aici:</b>
+        https://www.simplemobiletools.com
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
