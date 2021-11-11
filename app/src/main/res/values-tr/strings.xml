@@ -3,33 +3,33 @@
     <string name="app_launcher_name">Çiz</string>
     <string name="open_file">Dosya aç</string>
     <string name="eraser">Silici</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Renk seçici</string>
     <string name="failed_to_load_image">%s resmi yüklenemedi</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Fırça boyutu aracını göster</string>
     <string name="allow_zooming_canvas">Tuvali hareketlerle yakınlaştırmaya izin ver</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Tuvali hareketlerle yakınlaştırmaya ve taşımaya izin ver</string>
     <string name="clear">Temizle</string>
     <string name="change_background_color">Arka plan rengini değiştir</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Basit Çiz Pro - Hızlı kolay çizimler için uygulama</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Reklam veya internet erişimi olmadan yaratıcı hızlı çizimler için kalem ve kağıt</string>
     <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
+        Yaratıcı bir şeyler çizmek istiyorsunuz ama kağıdınız yok mu? Bu uygulama tam size göre. Sadece bir renk seçin ve çizmeye başlayın, bu kadar kolay. Çizimi bir dosyaya kaydedebilir, yazdırabilir veya e-posta veya sosyal ağlar aracılığıyla doğrudan paylaşabilir, böylece arkadaşlarınızın da onunla biraz eğlenebilmesini sağlayabilirsiniz.
 
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
+        Hızlı çizimler için oldukça gözde olan bu uygulama, Geri Al/Yinele, arka plan rengini değiştirme veya arka plan olarak bir resim kullanma gibi birçok kullanışlı işlev sunar. İsteğe bağlı olarak uygulamanın aygıtın uykuya geçmesini önlemesini de sağlayabilirsiniz. Ayrıca, fırça boyutunu değiştirebilir veya bir şeyi yanlış yaptıysanız bir silgi kullanabilirsiniz. Büyük bir palet üzerinde seçerek veya renklerin onaltılık kodunu girerek renk eklemeyi destekler.
 
-        The app supports many different formats like PNG, JPG or SVG vectors.
+        Uygulama PNG, JPG veya SVG vektörleri gibi birçok farklı biçimi destekler.
 
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
+        Ya sıfırdan yeni bir şey çizebilir ya da bir dosya açıp onunla oynayabilirsiniz. İster sizin tarafınızdan, ister çocuklu bir aile tarafından oyun oynamak için mükemmel bir şekilde kullanılabilir. Ne de olsa herkesin kendi içinde bir parça sanatçı vardır.
 
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
+        Burada süslü veya gelişmiş araçlar, fırçalar, yazı tipleri, filtreler bulamayacaksınız, uygulamanın asıl amacı onunla eğlenceli zaman geçirmektir.
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Varsayılan olarak materyal tasarım ve koyu tema ile birlikte gelir, kolay kullanım için harika bir kullanıcı deneyimi sağlar. İnternet erişiminin olmaması size diğer uygulamalardan daha fazla gizlilik, güvenlik ve istikrar sağlar.
 
         Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sağlar.
 
