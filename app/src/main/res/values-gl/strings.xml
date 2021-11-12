@@ -3,11 +3,13 @@
     <string name="app_launcher_name">Debuxar</string>
     <string name="open_file">Abrir ficheiro</string>
     <string name="eraser">Borrador</string>
+    <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Erro ao cargar a imaxe %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamaño do pincel</string>
     <string name="allow_zooming_canvas">Permitir ampliar o lenzo con xestos</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Cambiar a cor do fondo</string>
 
@@ -26,10 +28,10 @@
         Podes debuxar algo novo desde cero ou abrir un ficheiro e xogar con el. É perfectamente utilizable por ti ou por unha familia con nenos para xogar a algúns xogos. Ao final, todos temos unha pouco de artistas dentro de nós.
 
         Aquí non atoparás ningunha fantasía nin ningunha ferramenta avanzada como pinceis, tipos de letra e filtros; usámolo para divertirnos.
-        
+
         Vén cun deseño material e un tema escuro de xeito predeterminado, fornece unha excelente experiencia de usuario cun uso sinxelo. Como non necesita acceso a Internet, tes máis privacidade, seguridade e estabilidade.
 
-        Non contén anuncios nin permisos innecesarios. Dispón dun tema escuro e é totalmente de código aberto. 
+        Non contén anuncios nin permisos innecesarios. Dispón dun tema escuro e é totalmente de código aberto.
 
         <b>Visita a páxina a través desta ligazón:</b>
         https://www.simplemobiletools.com
