@@ -2,8 +2,7 @@ package com.simplemobiletools.draw.pro.activities
 
 import android.os.Bundle
 import android.view.Menu
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.draw.pro.R
 import com.simplemobiletools.draw.pro.extensions.config
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -26,6 +25,14 @@ class SettingsActivity : SimpleActivity() {
         setupForcePortraitMode()
         updateTextColors(settings_holder)
         invalidateOptionsMenu()
+
+        arrayOf(settings_color_customization_label, settings_general_settings_label).forEach {
+            it.setTextColor(getAdjustedPrimaryColor())
+        }
+
+        arrayOf(settings_color_customization_holder, settings_general_settings_holder).forEach {
+            it.background.applyColorFilter(baseConfig.backgroundColor.getContrastColor())
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -42,6 +49,11 @@ class SettingsActivity : SimpleActivity() {
     private fun setupUseEnglish() {
         settings_use_english_holder.beVisibleIf(config.wasUseEnglishToggled || Locale.getDefault().language != "en")
         settings_use_english.isChecked = config.useEnglish
+
+        if (settings_use_english_holder.isGone()) {
+            settings_prevent_phone_from_sleeping_holder.background = resources.getDrawable(R.drawable.ripple_top_corners, theme)
+        }
+
         settings_use_english_holder.setOnClickListener {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
