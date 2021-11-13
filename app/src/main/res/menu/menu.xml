@@ -13,7 +13,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/clear"
-        android:icon="@drawable/ic_clear"
+        android:icon="@drawable/ic_clear_vector"
         android:title="@string/clear"
         app:showAsAction="always" />
     <item
@@ -35,10 +35,12 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_cog_vector"
         android:title="@string/settings"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/about"
+        android:icon="@drawable/ic_info_vector"
         android:title="@string/about"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 </menu>
