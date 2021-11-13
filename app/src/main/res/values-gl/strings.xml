@@ -15,7 +15,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw - App for your quick & easy sketches</string>
+    <string name="app_title">Simple Draw - App for your quick &amp; easy sketches</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Draw with this quick sketchbook replacing pen and paper, has no ads</string>
     <string name="app_long_description">
