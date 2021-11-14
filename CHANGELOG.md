@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.4.1 *(2021-11-14)*
+----------------------------
+
+ * Redesigned some screens, added Auto theme
+ * Updated a couple language translations
+
 Version 6.4.0 *(2021-09-24)*
 ----------------------------
 
