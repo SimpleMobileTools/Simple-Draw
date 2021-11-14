@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Basit Çiz</string>
     <string name="app_launcher_name">Çiz</string>
@@ -5,19 +6,17 @@
     <string name="eraser">Silici</string>
     <string name="eyedropper">Renk seçici</string>
     <string name="failed_to_load_image">%s resmi yüklenemedi</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Fırça boyutu aracını göster</string>
     <string name="allow_zooming_canvas">Tuvali hareketlerle yakınlaştırmaya izin ver</string>
     <string name="allow_zooming_moving_canvas">Tuvali hareketlerle yakınlaştırmaya ve taşımaya izin ver</string>
     <string name="clear">Temizle</string>
     <string name="change_background_color">Arka plan rengini değiştir</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Basit Çiz Pro - Hızlı kolay çizimler için uygulama</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Reklam veya internet erişimi olmadan yaratıcı hızlı çizimler için kalem ve kağıt</string>
+    <string name="app_short_description">Hızlı çizimleriniz için kalem ve kağıt.</string>
     <string name="app_long_description">
         Yaratıcı bir şeyler çizmek istiyorsunuz ama kağıdınız yok mu? Bu uygulama tam size göre. Sadece bir renk seçin ve çizmeye başlayın, bu kadar kolay. Çizimi bir dosyaya kaydedebilir, yazdırabilir veya e-posta veya sosyal ağlar aracılığıyla doğrudan paylaşabilir, böylece arkadaşlarınızın da onunla biraz eğlenebilmesini sağlayabilirsiniz.
 
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

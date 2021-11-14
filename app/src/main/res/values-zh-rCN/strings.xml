@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">简易绘图</string>
     <string name="app_launcher_name">绘图</string>
     <string name="open_file">打开文件</string>
     <string name="eraser">橡皮</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">吸管</string>
     <string name="failed_to_load_image">无法加载图片 %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">显示笔刷尺寸工具</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_canvas">允许使用手势缩放画布</string>
+    <string name="allow_zooming_moving_canvas">允许使用手势缩放和移动画布</string>
     <string name="clear">清除</string>
     <string name="change_background_color">改变背景颜色</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">简易绘图 Pro - 快速简单 &amp; 的画图应用</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">为您快速的创意绘图准备的笔 &amp; 纸，没有广告或者互联网访问</string>
+    <string name="app_short_description">为您快速的创意绘图准备的笔和纸。</string>
     <string name="app_long_description">
         想要挥洒创意却没有纸？这个应用将十分适合您。只要选择一个颜色和绘图工具，就这么简单。您可以把绘图保存至文件，打印或者直接通过邮件或者社交网络分享，这样您的朋友也可以获得一番乐趣。
 
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
