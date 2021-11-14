@@ -13,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
+import android.widget.ImageView
 import android.widget.SeekBar
 import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
@@ -502,7 +503,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun setColor(pickedColor: Int) {
         color = pickedColor
-        color_picker.setFillWithStroke(color, config.canvasBackgroundColor.getContrastColor())
+        color_picker.setFillWithStroke(color, config.canvasBackgroundColor.getContrastColor(), true)
         my_canvas.setColor(color)
         isEraserOn = false
         updateEraserState()
