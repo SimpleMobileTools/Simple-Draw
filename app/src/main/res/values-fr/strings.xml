@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Draw</string>
+    <string name="app_name">Dessin simple</string>
     <string name="app_launcher_name">Dessin</string>
     <string name="open_file">Ouvrir un fichier</string>
     <string name="eraser">Gommer</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Pipette</string>
     <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
     <string name="allow_zooming_canvas">Permettre de zoomer sur l\'image avec des gestes</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
-    <string name="clear">Tout effacer</string>
+    <string name="allow_zooming_moving_canvas">Permettre de zoomer et de déplacer le canevas avec des gestes</string>
+    <string name="clear">Effacer</string>
     <string name="change_background_color">Changer l\'arrière-plan</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Simple Draw Pro - Application pour des croquis rapides et faciles à réaliser</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Un stylo et du papier pour vos croquis rapides.</string>
     <string name="app_long_description">
         Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
