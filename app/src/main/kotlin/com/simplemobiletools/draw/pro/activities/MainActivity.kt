@@ -83,6 +83,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
         eraser.setOnClickListener { eraserClicked() }
+        eraser.setOnLongClickListener {
+            toast(R.string.eraser)
+            true
+        }
         redo.setOnClickListener { my_canvas.redo() }
 
         checkIntents()
