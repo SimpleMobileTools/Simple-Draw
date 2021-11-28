@@ -1,48 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">الرسام البسيط</string>
     <string name="app_launcher_name">الرسام</string>
     <string name="open_file">فتح ملف</string>
     <string name="eraser">الممحاة</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">القطارة</string>
     <string name="failed_to_load_image">فشل تحميل الصورة %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">إظهار أداة حجم الفرشاة</string>
     <string name="allow_zooming_canvas">السماح بتكبير لوحة الرسم باستخدام الإيماءات</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">السماح بتكبير الصورة وتحريكها باستخدام الإيماءات</string>
     <string name="clear">مسح</string>
     <string name="change_background_color">تغيير لون الخلفية</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Simple Draw Pro - تطبيق للرسومات السريعة والسهلة</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
-    <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
-
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
-
-        The app supports many different formats like PNG, JPG or SVG vectors.
-
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
-
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        لا يحتوي على إعلانات أو أذونات غير ضرورية. فهو مفتوح المصدر بالكامل ، ويوفر ألواناً قابلة للتخصيص.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_short_description">القلم والورق لرسومات سريعة.</string>
+    <string name="app_long_description"> . هل تريد رسم شيء إبداعي ولكن ليس لديك ورق؟ هذا التطبيق سوف يناسبك تماما. فقط اختر لونًا وارسم ، الأمر بهذه السهولة. يمكنك إما حفظ الرسم في ملف أو طباعته أو مشاركته مباشرة عبر البريد الإلكتروني أو الشبكات الاجتماعية حتى يتمكن أصدقاؤك من الاستمتاع به أيضًا. يوفر هذا التطبيق الشائع جدًا للرسومات السريعة العديد من الوظائف المفيدة مثل التراجع / الإعادة أو تغيير لون الخلفية أو استخدام صورة كخلفية. يمكنك اختياريًا جعل التطبيق يمنع الجهاز من النوم أيضًا. يمكنك أيضًا تغيير حجم الفرشاة ، أو استخدام ممحاة ، إذا أفسدت شيئًا ما. يدعم إدخال الألوان إما عن طريق تحديدها على لوحة ضخمة ، أو عن طريق إدخال كود الألوان السداسي. يدعم التطبيق العديد من التنسيقات المختلفة مثل PNG أو JPG أو SVG. يمكنك إما رسم شيء جديد من البداية ، أو فتح بعض الملفات واللعب به. يمكن استخدامها بشكل مثالي إما بواسطتك أو بواسطة عائلة لديها أطفال للعب بعض الألعاب. بعد كل شيء ، كل شخص لديه قطعة فنية في نفسه. لن تجد هنا أي أدوات خيالية أو متقدمة ، فرش ، خطوط ، فلاتر ، من المفترض أن تستخدم للحصول على بعض المرح. يأتي بتصميم مادي وسمة داكنة بشكل افتراضي ، مما يوفر تجربة مستخدم رائعة لسهولة الاستخدام. يمنحك نقص الوصول إلى الإنترنت مزيدًا من الخصوصية والأمان والاستقرار مقارنة بالتطبيقات الأخرى. لا يحتوي على إعلانات أو أذونات غير ضرورية. إنه مفتوح المصدر بالكامل ، ويوفر ألوانًا قابلة للتخصيص. <b> تحقق من المجموعة الكاملة من الأدوات البسيطة هنا: </b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools . </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
