@@ -1,48 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Schlichter Zeichenblock</string>
     <string name="app_launcher_name">Zeichenblock</string>
     <string name="open_file">Datei öffnen</string>
     <string name="eraser">Radierer</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Augentropfer</string>
     <string name="failed_to_load_image">Fehler beim Laden des Bildes %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Zeige Pinselgröße</string>
     <string name="allow_zooming_canvas">Zoomen in der Zeichenfläche mit Gesten ermöglichen</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Ermöglicht das Zoomen und Verschieben der Leinwand mit Gesten</string>
     <string name="clear">Löschen</string>
     <string name="change_background_color">Ändere Hintergrundfarbe</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Schlichte Zeichnung Pro – Anwendung für schnelle und einfache Skizzen</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
-    <string name="app_long_description">
-        Möchtest du etwas kreatives zeichnen, hast aber kein Papier? Dann ist diese App für dich! Wähle einfach eine Farbe aus und zeichne - so einfach ist das. Die Zeichnung kannst du entweder in einer Datei speichern, es ausdrucken oder es direkt über Email oder soziale Netzwerke teilen, sodass auch deine Freunde daran Spaß haben können.
-
-        Diese extrem beliebte App für schnelle Zeichnungen beinhaltet viele nützliche Funktionen wie Rückgängig machen/Wiederherstellen, die Hintergrundfarbe verändern oder ein Bild als Hintergrund verwenden. Optional kann die App so konfiguriert werden, dass sie nicht in den Standby geht. Du kannst zudem die Pinselgröße ändern oder einen Radiergummi verwenden, wenn du einen Fehler gemacht hast. Die App unterstützt das Einfügen von Farben - entweder, indem man sie aus einer riesigen Farbpalette auswählt, oder indem man den HEX-Code eingibt.
-
-        Es werden verschiedene Formate wie PNG, JPG und SVG Vektoren unterstützt.
-
-        Du kannst entweder etwas komplett neues zeichnen oder eine Datei öffnen und diese editieren. Es ist sowohl für dich perfekt geeignet, als auch für Familien, um mit Kindern Spiele zu spielen. Immerhin ist jeder ein Künstler!
-
-        Du wirst hier keine ausgefallenen oder fortschrittlichen Werkzeuge, Pinsel, Fonts oder Filter vorfinden; es soll zum Zwecke des Spaßes dienen.
-        
-        Es kommt standardmäßig mit material design und Dunkelmodus, was großartige Nutzererfahrungen für leichte Nutzung ermöglicht. Da die App keine Internetverbindung benötigt, bietet sie mehr Datenschutz, Sicherheit und Stabilität als andere Apps.
-
-        Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
-
-        <b>Entdecke die gesamte Serie an schlichten Apps hier:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_short_description">Stift und Papier für Ihre schnellen Skizzen.</string>
+    <string name="app_long_description"> Möchtest du etwas kreatives zeichnen, hast aber kein Papier\? Dann ist diese Anwendung für dich! Wähle einfach eine Farbe aus und zeichne - so einfach ist das. Die Zeichnung kannst du entweder in einer Datei speichern, es ausdrucken oder es direkt über E-Mail oder soziale Netzwerke teilen, sodass auch deine Freunde daran Spaß haben können. Diese extrem beliebte Anwendung für schnelle Zeichnungen beinhaltet viele nützliche Funktionen wie Rückgängig machen/Wiederherstellen, die Hintergrundfarbe verändern oder ein Bild als Hintergrund verwenden. Optional kann die Anwendung so konfiguriert werden, dass sie nicht in den Standby geht. Du kannst zudem die Pinselgröße ändern oder einen Radiergummi verwenden, wenn du einen Fehler gemacht hast. Die Anwendung unterstützt das Einfügen von Farben - entweder, indem man sie aus einer riesigen Farbpalette auswählt, oder indem man den HEX-Code eingibt. Es werden verschiedene Formate wie PNG, JPG und SVG Vektoren unterstützt. Du kannst entweder etwas komplett neues zeichnen oder eine Datei öffnen und diese editieren. Es ist sowohl für dich perfekt geeignet, als auch für Familien, um mit Kindern Spiele zu spielen. Immerhin ist jeder ein Künstler! Du wirst hier keine ausgefallenen oder fortschrittlichen Werkzeuge, Pinsel, Fonts oder Filter vorfinden; es soll zum Zwecke des Spaßes dienen. Es kommt standardmäßig mit Material-Design und Dunkelmodus, was großartige Nutzererfahrungen für leichte Nutzung ermöglicht. Da die Anwendung keine Internetverbindung benötigt, bietet sie mehr Datenschutz, Sicherheit und Stabilität als andere Anwendungen. Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett quelloffen, alle verwendeten Farben sind anpassbar. <b>Entdecke die gesamte Serie an schlichten Anwendungen hier:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
