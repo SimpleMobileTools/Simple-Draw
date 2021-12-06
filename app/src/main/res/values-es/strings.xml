@@ -3,13 +3,13 @@
     <string name="app_launcher_name">Dibujo</string>
     <string name="open_file">Abrir archivo</string>
     <string name="eraser">Borrador</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Cuentagotas</string>
     <string name="failed_to_load_image">Falló al cargar la imagen %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar tamaño de la herramienta pincel</string>
     <string name="allow_zooming_canvas">Permite hacer zoom en el lienzo con gestos</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Permitir hacer zoom y mover el lienzo con gestos</string>
     <string name="clear">Limpiar</string>
     <string name="change_background_color">Cambiar color de fondo</string>
 
