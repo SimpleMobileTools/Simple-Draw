@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Semplice Disegnare</string>
     <string name="app_launcher_name">Disegna</string>
     <string name="open_file">Apri file</string>
     <string name="eraser">Gomma</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Contagocce</string>
     <string name="failed_to_load_image">Impossibile caricare l\'immagine %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Dimensione della gomma</string>
     <string name="allow_zooming_canvas">Permetti l\'ingrandimento con i gesti</string>
     <string name="allow_zooming_moving_canvas">Permetti l\'ingrandimento e lo spostamento con i gesti</string>
     <string name="clear">Pulisci</string>
     <string name="change_background_color">Cambia colore di sfondo</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Semplice Disegnare Pro - Schizzi facili e veloci</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Carta e penna per veloci disegni creativi, senza pubblicità o accessi internet</string>
+    <string name="app_short_description">Carta e penna per i tuoi schizzi veloci.</string>
     <string name="app_long_description">
         Vuoi disegnare qualcosa di creativo ma non hai carta? Questa app è perfetta per te. Scegli un colore e disegna, tutto qui. Puoi salvare il disegno in un file, stamparlo o condividerlo direttamente via email o social network, in modo che anche i tuoi amici possano ammirarlo.
 
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
