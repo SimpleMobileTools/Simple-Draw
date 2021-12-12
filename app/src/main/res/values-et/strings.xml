@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_launcher_name">Joonistaja</string>
+    <string name="app_name">Lihtne joonistaja</string>
+    <string name="allow_zooming_canvas">Luba lõuendit liigutustega suumida</string>
+    <string name="open_file">Ava fail</string>
+    <string name="eraser">Kustutuskumm</string>
+    <string name="eyedropper">Pipett</string>
+    <string name="failed_to_load_image">%s pildi laadimine ei õnnestunud</string>
+    <string name="show_brush_size">Näita pintsli suuruse tööriista</string>
+    <string name="allow_zooming_moving_canvas">Luba lõuendit liigutustega suumida ja liigutada</string>
+    <string name="clear">Tühjenda</string>
+    <string name="change_background_color">Vaheta taustavärvi</string>
+    <string name="app_short_description">Pliiats ja paber kiireks visandamiseks.</string>
+    <string name="app_title">Lihtne joonistaja Pro - visanda kiiresti ja mugavalt</string>
+</resources>
