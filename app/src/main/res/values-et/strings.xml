@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Рисунки</string>
-    <string name="open_file">Открыть файл</string>
-    <string name="eraser">Ластик</string>
-    <string name="eyedropper">Пипетка</string>
-    <string name="failed_to_load_image">Невозможно загрузить изображение %s</string>
+    <string name="app_name">Lihtne joonistaja</string>
+    <string name="app_launcher_name">Joonistaja</string>
+    <string name="open_file">Ava fail</string>
+    <string name="eraser">Kustutuskumm</string>
+    <string name="eyedropper">Pipett</string>
+    <string name="failed_to_load_image">%s pildi laadimine ei õnnestunud</string>
     <!-- Settings -->
-    <string name="show_brush_size">Показать размер кисти</string>
-    <string name="allow_zooming_canvas">Масштабирование холста жестами</string>
-    <string name="allow_zooming_moving_canvas">Масштабирование и перемещение холста жестами</string>
-    <string name="clear">Очистить</string>
-    <string name="change_background_color">Изменить цвет фона</string>
+    <string name="show_brush_size">Näita pintsli suuruse tööriista</string>
+    <string name="allow_zooming_canvas">Luba lõuendit liigutustega suumida</string>
+    <string name="allow_zooming_moving_canvas">Luba lõuendit liigutustega suumida ja liigutada</string>
+    <string name="clear">Tühjenda</string>
+    <string name="change_background_color">Vaheta taustavärvi</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - простое создание набросков</string>
+    <string name="app_title">Lihtne joonistaja Pro - visanda kiiresti ja mugavalt</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Ручка и бумага для быстрого создания простых рисунков без рекламы и доступа в интернет.</string>
+    <string name="app_short_description">Pliiats ja paber kiireks visandamiseks.</string>
     <string name="app_long_description">
         Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
@@ -30,7 +30,7 @@
 
         It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
 
-        Без рекламы и излишних прав доступа. Полностью открытое ПО, а также есть тёмная тема интерфейса.
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
 
         <b>Check out the full suite of Simple Tools here:</b>
         https://www.simplemobiletools.com
@@ -41,6 +41,7 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
