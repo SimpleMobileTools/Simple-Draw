@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Simpla Desegnilo</string>
+    <string name="app_launcher_name">Desegnilo</string>
+    <string name="open_file">Malfermi dosieron</string>
+    <string name="eraser">Skrapgumo</string>
+</resources>
