@@ -253,9 +253,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mPath.lineTo(mCurX + 1, mCurY + 2)
                 mPath.lineTo(mCurX + 1, mCurY)
             }
+            mPaths[mPath] = mPaintOptions
         }
 
-        mPaths[mPath] = mPaintOptions
         pathsUpdated()
         mPath = MyPath()
         mPaintOptions = PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth, mPaintOptions.isEraser)
