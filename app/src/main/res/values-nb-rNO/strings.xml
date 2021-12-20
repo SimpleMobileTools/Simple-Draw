@@ -1,18 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Tegneblokk</string>
     <string name="open_file">Åpne fil</string>
     <string name="eraser">Viskelær</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Pipette</string>
     <string name="failed_to_load_image">Kunne ikke laste inn bilde %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
     <string name="allow_zooming_canvas">Tillat å zoome tegneflaten med fingerbevegelser</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Tillat å zoome og flytte tegneflaten med fingerbevegelser</string>
     <string name="clear">Slett</string>
     <string name="change_background_color">Endre bakgrunnsfarge</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
