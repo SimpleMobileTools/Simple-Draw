@@ -4,4 +4,8 @@
     <string name="app_launcher_name">Desegnilo</string>
     <string name="open_file">Malfermi dosieron</string>
     <string name="eraser">Skrapgumo</string>
+    <string name="show_brush_size">Montri ilon por ŝanĝi grandon de peniko</string>
+    <string name="failed_to_load_image">Malsukcesis ŝargi la bildon %s</string>
+    <string name="clear">Forviŝi</string>
+    <string name="change_background_color">Ŝanĝi fonan koloron</string>
 </resources>
