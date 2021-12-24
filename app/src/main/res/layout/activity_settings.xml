@@ -27,14 +27,14 @@
 
             <RelativeLayout
                 android:id="@+id/settings_customize_colors_holder"
-                style="@style/SettingsHolderTextViewStyle"
+                style="@style/SettingsHolderTextViewOneLinerStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ripple_all_corners">
 
                 <com.simplemobiletools.commons.views.MyTextView
                     android:id="@+id/settings_customize_colors_label"
-                    style="@style/SettingsLeftLabelStyle"
+                    style="@style/SettingsTextLabelStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/customize_colors" />
