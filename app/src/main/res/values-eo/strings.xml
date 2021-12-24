@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Tegneblokk</string>
-    <string name="open_file">Åpne fil</string>
-    <string name="eraser">Viskelær</string>
-    <string name="eyedropper">Pipette</string>
-    <string name="failed_to_load_image">Kunne ikke laste inn bilde %s</string>
+    <string name="app_name">Simpla Desegnilo</string>
+    <string name="app_launcher_name">Desegnilo</string>
+    <string name="open_file">Malfermi dosieron</string>
+    <string name="eraser">Skrapgumo</string>
+    <string name="eyedropper">Gutigilo</string>
+    <string name="failed_to_load_image">Malsukcesis ŝargi la bildon %s</string>
     <!-- Settings -->
-    <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
-    <string name="allow_zooming_canvas">Tillat å zoome tegneflaten med fingerbevegelser</string>
-    <string name="allow_zooming_moving_canvas">Tillat å zoome og flytte tegneflaten med fingerbevegelser</string>
-    <string name="clear">Slett</string>
-    <string name="change_background_color">Endre bakgrunnsfarge</string>
+    <string name="show_brush_size">Montri ilon por ŝanĝi grandon de peniko</string>
+    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="clear">Forviŝi</string>
+    <string name="change_background_color">Ŝanĝi fonan koloron</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Simpla Desegnilo Profesia – Facile rapide skizi</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Pen and paper for your quick sketches.</string>
     <string name="app_long_description">
         Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
@@ -41,6 +41,7 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
