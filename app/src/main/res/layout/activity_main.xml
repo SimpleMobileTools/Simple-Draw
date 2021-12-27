@@ -23,9 +23,18 @@
         android:id="@+id/eraser"
         android:layout_width="@dimen/normal_icon_size"
         android:layout_height="@dimen/normal_icon_size"
-        android:layout_toStartOf="@+id/color_picker"
+        android:layout_toStartOf="@+id/eye_dropper"
         android:padding="@dimen/normal_margin"
         android:src="@drawable/ic_eraser_off" />
+
+    <ImageView
+        android:id="@+id/eye_dropper"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_toStartOf="@+id/color_picker"
+        android:padding="@dimen/medium_margin"
+        android:src="@drawable/ic_colorize_vector"
+        android:visibility="visible" />
 
     <ImageView
         android:id="@+id/color_picker"
