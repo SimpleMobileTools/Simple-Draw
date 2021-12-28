@@ -78,7 +78,9 @@ class EyeDropper(private val view: View, private val onColorSelected: ((Int) -> 
     }
 
     private fun Bitmap.isValidCoordinate(x: Int, y: Int): Boolean {
-        return x in 1 until width && y in 1 until height
+        val isValidXCoordinate = x >= 1 && x < width
+        val isValidYCoordinate = y >= 1 && y < height
+        return isValidXCoordinate && isValidYCoordinate
     }
 
     private fun View.shouldDrawingCacheBeEnabled(): Boolean = (this !is ImageView) && !isDrawingCacheEnabled
