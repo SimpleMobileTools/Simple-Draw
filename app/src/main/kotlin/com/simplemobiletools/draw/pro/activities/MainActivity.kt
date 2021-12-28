@@ -50,10 +50,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private val BITMAP_PATH = "bitmap_path"
     private val URI_TO_LOAD = "uri_to_load"
 
+    private lateinit var eyeDropper : EyeDropper
+
     private var defaultPath = ""
     private var defaultFilename = ""
-    private var defaultExtension = PNG
 
+    private var defaultExtension = PNG
     private var intentUri: Uri? = null
     private var uriToLoad: Uri? = null
     private var color = 0
@@ -66,16 +68,15 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var isEditIntent = false
     private var lastBitmapPath = ""
 
-    private val eyeDropper by lazy {
-        EyeDropper(my_canvas) { selectedColor ->
-            setColor(selectedColor)
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
+
+        eyeDropper = EyeDropper(my_canvas) { selectedColor ->
+            setColor(selectedColor)
+        }
+
         my_canvas.mListener = this
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
@@ -97,7 +98,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
         redo.setOnClickListener { my_canvas.redo() }
         eye_dropper.setOnClickListener { eyeDropperClicked() }
-
+        eye_dropper.setOnLongClickListener {
+            toast(R.string.eyedropper)
+            true
+        }
         checkIntents()
         if (!isImageCaptureIntent) {
             checkWhatsNewDialog()
@@ -352,7 +356,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         } else {
             eyeDropper.stop()
         }
-        eye_dropper.setImageDrawable(ContextCompat.getDrawable(this, if (isEyeDropperOn) R.drawable.ic_colorise_off_vector else R.drawable.ic_colorize_vector))
+        eye_dropper.setImageDrawable(ContextCompat.getDrawable(this, if (isEyeDropperOn) R.drawable.ic_colorize_off_vector else R.drawable.ic_colorize_vector))
     }
 
     private fun confirmImage() {
