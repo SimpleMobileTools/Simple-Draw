@@ -50,7 +50,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private val BITMAP_PATH = "bitmap_path"
     private val URI_TO_LOAD = "uri_to_load"
 
-    private lateinit var eyeDropper : EyeDropper
+    private lateinit var eyeDropper: EyeDropper
 
     private var defaultPath = ""
     private var defaultFilename = ""
@@ -96,12 +96,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
             toast(R.string.eraser)
             true
         }
+
         redo.setOnClickListener { my_canvas.redo() }
         eye_dropper.setOnClickListener { eyeDropperClicked() }
         eye_dropper.setOnLongClickListener {
             toast(R.string.eyedropper)
             true
         }
+
         checkIntents()
         if (!isImageCaptureIntent) {
             checkWhatsNewDialog()
@@ -356,7 +358,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
         } else {
             eyeDropper.stop()
         }
-        eye_dropper.setImageDrawable(ContextCompat.getDrawable(this, if (isEyeDropperOn) R.drawable.ic_colorize_off_vector else R.drawable.ic_colorize_vector))
+
+        val iconId = if (isEyeDropperOn) {
+            R.drawable.ic_colorize_off_vector
+        } else {
+            R.drawable.ic_colorize_on_vector
+        }
+
+        eye_dropper.setImageResource(iconId)
     }
 
     private fun confirmImage() {
