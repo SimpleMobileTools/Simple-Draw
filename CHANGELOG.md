@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.5.0 *(2021-12-29)*
+----------------------------
+
+ * Added an eyedropper tool
+ * Added some preset colors at the color picker
+ * Added many translation and UX improvements
+
 Version 6.4.1 *(2021-11-14)*
 ----------------------------
 
