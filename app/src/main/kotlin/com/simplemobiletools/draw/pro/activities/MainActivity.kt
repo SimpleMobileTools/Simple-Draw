@@ -327,6 +327,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun eraserClicked() {
+        if (isEyeDropperOn) {
+            eyeDropperClicked()
+        }
+
         isEraserOn = !isEraserOn
         updateEraserState()
     }
@@ -357,6 +361,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun eyeDropperClicked() {
+        if (isEraserOn) {
+            eraserClicked()
+        }
+
         isEyeDropperOn = !isEyeDropperOn
         if (isEyeDropperOn) {
             eyeDropper.start()
