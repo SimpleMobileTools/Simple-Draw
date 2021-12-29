@@ -33,7 +33,7 @@
         android:layout_height="@dimen/normal_icon_size"
         android:layout_toStartOf="@+id/color_picker"
         android:padding="@dimen/medium_margin"
-        android:src="@drawable/ic_colorize_vector"
+        android:src="@drawable/ic_colorize_on_vector"
         android:visibility="visible" />
 
     <ImageView
