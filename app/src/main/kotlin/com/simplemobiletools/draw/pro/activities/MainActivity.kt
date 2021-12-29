@@ -13,8 +13,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
-import android.widget.ImageView
 import android.widget.SeekBar
+import androidx.core.content.ContextCompat
 import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
@@ -30,6 +30,7 @@ import com.simplemobiletools.draw.pro.BuildConfig
 import com.simplemobiletools.draw.pro.R
 import com.simplemobiletools.draw.pro.dialogs.SaveImageDialog
 import com.simplemobiletools.draw.pro.extensions.config
+import com.simplemobiletools.draw.pro.helpers.EyeDropper
 import com.simplemobiletools.draw.pro.helpers.JPG
 import com.simplemobiletools.draw.pro.helpers.PNG
 import com.simplemobiletools.draw.pro.helpers.SVG
@@ -49,10 +50,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private val BITMAP_PATH = "bitmap_path"
     private val URI_TO_LOAD = "uri_to_load"
 
+    private lateinit var eyeDropper: EyeDropper
+
     private var defaultPath = ""
     private var defaultFilename = ""
-    private var defaultExtension = PNG
 
+    private var defaultExtension = PNG
     private var intentUri: Uri? = null
     private var uriToLoad: Uri? = null
     private var color = 0
@@ -60,6 +63,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var savedPathsHash = 0L
     private var lastSavePromptTS = 0L
     private var isEraserOn = false
+    private var isEyeDropperOn = false
     private var isImageCaptureIntent = false
     private var isEditIntent = false
     private var lastBitmapPath = ""
@@ -68,6 +72,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
+
+        eyeDropper = EyeDropper(my_canvas) { selectedColor ->
+            setColor(selectedColor)
+        }
+
         my_canvas.mListener = this
         stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
 
@@ -87,7 +96,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
             toast(R.string.eraser)
             true
         }
+
         redo.setOnClickListener { my_canvas.redo() }
+        eye_dropper.setOnClickListener { eyeDropperClicked() }
+        eye_dropper.setOnLongClickListener {
+            toast(R.string.eyedropper)
+            true
+        }
 
         checkIntents()
         if (!isImageCaptureIntent) {
@@ -184,7 +199,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val faqItems = arrayListOf(
             FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
             FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons),
-            FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons))
+            FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons)
+        )
 
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, false)
     }
@@ -317,7 +333,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateEraserState() {
-        eraser.setImageDrawable(resources.getDrawable(if (isEraserOn) R.drawable.ic_eraser_on else R.drawable.ic_eraser_off))
+        eraser.setImageDrawable(ContextCompat.getDrawable(this, if (isEraserOn) R.drawable.ic_eraser_on else R.drawable.ic_eraser_off))
         my_canvas.toggleEraser(isEraserOn)
     }
 
@@ -333,6 +349,23 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 }
             }
         }
+    }
+
+    private fun eyeDropperClicked() {
+        isEyeDropperOn = !isEyeDropperOn
+        if (isEyeDropperOn) {
+            eyeDropper.start()
+        } else {
+            eyeDropper.stop()
+        }
+
+        val iconId = if (isEyeDropperOn) {
+            R.drawable.ic_colorize_off_vector
+        } else {
+            R.drawable.ic_colorize_on_vector
+        }
+
+        eye_dropper.setImageResource(iconId)
     }
 
     private fun confirmImage() {
@@ -496,6 +529,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         undo.applyColorFilter(contrastColor)
         eraser.applyColorFilter(contrastColor)
         redo.applyColorFilter(contrastColor)
+        eye_dropper.applyColorFilter(contrastColor)
         if (isBlackAndWhiteTheme()) {
             stroke_width_bar.setColors(0, contrastColor, 0)
         }
