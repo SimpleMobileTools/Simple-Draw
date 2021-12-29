@@ -8,7 +8,6 @@ import android.view.View
 import android.view.View.DRAWING_CACHE_QUALITY_LOW
 import android.widget.ImageView
 
-
 // forked from  https://github.com/Madrapps/EyeDropper
 class EyeDropper(private val view: View, private val onColorSelected: ((Int) -> Unit)) {
     companion object {
@@ -64,9 +63,7 @@ class EyeDropper(private val view: View, private val onColorSelected: ((Int) -> 
                 INVERT_MATRIX.mapPoints(mappedPoints)
                 getPixelAtPoint(drawable.bitmap, mappedPoints[0].toInt(), mappedPoints[1].toInt())
             }
-            else -> {
-                NO_COLOR
-            }
+            else -> NO_COLOR
         }
     }
 
