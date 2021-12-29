@@ -14,7 +14,6 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
-import androidx.core.content.ContextCompat
 import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
@@ -333,7 +332,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateEraserState() {
-        eraser.setImageDrawable(ContextCompat.getDrawable(this, if (isEraserOn) R.drawable.ic_eraser_on else R.drawable.ic_eraser_off))
+        val iconId = if (isEraserOn) {
+            R.drawable.ic_eraser_off_vector
+        } else {
+            R.drawable.ic_eraser_on_vector
+        }
+
+        eraser.setImageResource(iconId)
         my_canvas.toggleEraser(isEraserOn)
     }
 

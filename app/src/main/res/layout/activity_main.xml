@@ -24,8 +24,8 @@
         android:layout_width="@dimen/normal_icon_size"
         android:layout_height="@dimen/normal_icon_size"
         android:layout_toStartOf="@+id/eye_dropper"
-        android:padding="@dimen/normal_margin"
-        android:src="@drawable/ic_eraser_off" />
+        android:padding="@dimen/medium_margin"
+        android:src="@drawable/ic_eraser_on_vector" />
 
     <ImageView
         android:id="@+id/eye_dropper"
