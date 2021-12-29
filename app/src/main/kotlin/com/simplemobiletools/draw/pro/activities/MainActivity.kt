@@ -18,10 +18,7 @@ import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
-import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
-import com.simplemobiletools.commons.helpers.SAVE_DISCARD_PROMPT_INTERVAL
-import com.simplemobiletools.commons.helpers.isQPlus
+import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
@@ -562,7 +559,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun setColor(pickedColor: Int) {
         color = pickedColor
-        color_picker.setFillWithStroke(color, config.canvasBackgroundColor.getContrastColor(), true)
+        color_picker.setFillWithStroke(color, config.canvasBackgroundColor, true)
         my_canvas.setColor(color)
         isEraserOn = false
         updateEraserState()
