@@ -519,12 +519,20 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun pickColor() {
         ColorPickerDialog(this, color) { wasPositivePressed, color ->
             if (wasPositivePressed) {
+                if (isEyeDropperOn) {
+                    eyeDropperClicked()
+                }
+
                 setColor(color)
             }
         }
     }
 
     fun setBackgroundColor(pickedColor: Int) {
+        if (isEyeDropperOn) {
+            eyeDropperClicked()
+        }
+
         val contrastColor = pickedColor.getContrastColor()
         undo.applyColorFilter(contrastColor)
         eraser.applyColorFilter(contrastColor)
