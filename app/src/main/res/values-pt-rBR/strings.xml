@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="show_brush_size">Mostrar ferramenta de tamanho do pincel</string>
+    <string name="allow_zooming_canvas">Permitir ampliar a tela com gestos</string>
+    <string name="allow_zooming_moving_canvas">Permitir ampliar e mover a tela com gestos</string>
+    <string name="clear">Limpar</string>
+    <string name="change_background_color">Mudar a cor de fundo</string>
+    <string name="app_launcher_name">Desenho</string>
+    <string name="open_file">Abrir arquivo</string>
+    <string name="app_name">Desenhos Simples</string>
+    <string name="eraser">Borracha</string>
+    <string name="eyedropper">Conta-gotas</string>
+    <string name="failed_to_load_image">Erro ao carregar a imagem %s</string>
+    <string name="app_title">Desenhos Simples Pro - Esboços fáceis e rápidos</string>
+</resources>
