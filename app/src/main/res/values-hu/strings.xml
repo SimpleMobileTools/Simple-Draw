@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="clear">Törlés</string>
+    <string name="app_title">Egyszerű rajzolás Pro – Vázlatok készítése gyorsan</string>
+    <string name="app_short_description">Toll és ceruza a gyors vázlatok készítéséhez.</string>
+    <string name="app_name">Egyszerű rajzolás</string>
+    <string name="app_launcher_name">Rajzolás</string>
+    <string name="open_file">Fájl megnyitása</string>
+    <string name="eraser">Radír</string>
+    <string name="eyedropper">Pipetta</string>
+    <string name="failed_to_load_image">A(z) %s kép betöltése sikertelen</string>
+    <string name="show_brush_size">Ecsetméret eszköz megjelenítése</string>
+    <string name="allow_zooming_canvas">A vászon kézmozdulatokkal történő nagyításának engedélyezése</string>
+    <string name="allow_zooming_moving_canvas">A vászon kézmozdulatokkal történő nagyításának és mozgatásának engedélyezése</string>
+    <string name="change_background_color">Háttérszín megváltoztatása</string>
+</resources>
