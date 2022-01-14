@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Dibuix</string>
+    <string name="open_file">Obre un fitxer</string>
+    <string name="eraser">Goma d\'esborrar</string>
+    <string name="eyedropper">Comptagotes</string>
+    <string name="failed_to_load_image">Ha fallat en carregar la imatge %s</string>
+    <!-- Settings -->
+    <string name="show_brush_size">Mostra l\'eina de mida del pinzell</string>
+    <string name="allow_zooming_canvas">Permet fer zoom al llenç amb gestos</string>
+    <string name="allow_zooming_moving_canvas">Permet fer zoom i moure el llenç amb gestos</string>
+    <string name="clear">Neteja</string>
+    <string name="change_background_color">Canvia el color del fons</string>
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Draw Pro: aplicació per a esbossos ràpids i fàcils</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Bolígraf i paper per als vostres esbossos ràpids.</string>
+    <string name="app_long_description"> Voleu dibuixar alguna cosa creativa, però no teniu paper\? Aquesta aplicació s\'adequarà perfectament. Només heu de triar un color i dibuixar, és tan fàcil com això. Podeu desar el dibuix en un fitxer, imprimir-lo o compartir-lo directament per correu electrònic o xarxes socials perquè els vostres amics també es diverteixin amb ell. Aquesta aplicació molt popular per a esbossos ràpids ofereix moltes funcions útils com Desfer/Refer, canviar el color de fons o utilitzar una imatge com a fons. Opcionalment, també podeu fer que l\'aplicació eviti que el dispositiu s\'adormi. També podeu canviar la mida del pinzell o utilitzar una goma d\'esborrar si us heu equivocat en alguna cosa. Admet la inserció de colors seleccionant-los en una paleta enorme o introduint el codi hexadecimal de colors. L\'aplicació admet molts formats diferents com ara PNG, JPG o SVG vectorials. Podeu dibuixar alguna cosa nova des de zero o obrir algun fitxer i jugar-hi. És perfectament utilitzable per vós, o per una família amb infants per jugar a alguns jocs. Després de tot, tothom té una ànima d\'artista en si mateix. Aquí no trobareu cap eina, pinzells, lletres o filtres fantàstics o avançats, se suposa que s\'utilitza per divertir-se. De manera predeterminada, inclou el «material design» i un tema fosc, proporciona una gran experiència d\'usuari per a un ús fàcil. La manca d\'accés a Internet us ofereix més privadesa, seguretat i estabilitat que altres aplicacions. No conté anuncis ni permisos innecessaris. És totalment de codi obert, proporciona colors personalitzables. <b>Consulteu el conjunt complet d\'eines Simples aquí:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
