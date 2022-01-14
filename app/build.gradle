@@ -45,6 +45,12 @@ android {
         }
     }
 
+    flavorDimensions "variants"
+    productFlavors {
+        core {}
+        fdroid {}
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -56,6 +62,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:14033f9b50'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:02b48c0b4d'
     implementation "androidx.print:print:1.0.0"
 }
