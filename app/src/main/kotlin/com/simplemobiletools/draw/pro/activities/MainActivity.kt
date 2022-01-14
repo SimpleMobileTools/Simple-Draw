@@ -619,7 +619,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun printImage() {
         val printHelper = PrintHelper(this)
         printHelper.scaleMode = PrintHelper.SCALE_MODE_FIT
-        printHelper.printBitmap(getString(R.string.app_name), my_canvas.getBitmap())
+        try {
+            printHelper.printBitmap(getString(R.string.app_name), my_canvas.getBitmap())
+        } catch (e: Exception) {
+            showErrorToast(e)
+        }
     }
 
     private fun checkWhatsNewDialog() {
