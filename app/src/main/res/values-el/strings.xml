@@ -3,13 +3,13 @@
     <string name="app_launcher_name">Ζωγραφική</string>
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="eraser">Γόμμα</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Επιλογέας χρώματος</string>
     <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
 
     <!-- Settings -->
     <string name="show_brush_size">Εμφάνιση εργαλείου για διαστάσεις του πινέλου</string>
     <string name="allow_zooming_canvas">Αποδοχή μεγέθυνσης καμβά με χειρονομίες</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Αποδοχή μεγέθυνσης &amp; μετακίνηση καμβά με χειρονομίες</string>
     <string name="clear">Καθαρισμός</string>
     <string name="change_background_color">Αλλαγή χρώματος παρασκηνίου</string>
 
@@ -17,7 +17,7 @@
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Απλή Ζωγραφική Pro - Εφαρμογή για γρήγορα σκίτσα</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Στυλό &amp; Χαρτί για γρήγορα σχέδια, χωρίς διαφημίσεις &amp; πρόσβαση στο δίκτυο</string>
+    <string name="app_short_description">Μολύβι &amp; Χαρτί για γρήγορα σχέδια, χωρίς διαφημίσεις &amp; πρόσβαση στο δίκτυο</string>
     <string name="app_long_description">
         Θέλετε να σχεδιάσετε κάτι δημιουργικό αλλά δεν έχετε χαρτί; Αυτή η εφαρμογή θα σας ταιριάξει τέλεια. Απλά επιλέξτε ένα χρώμα και σχεδιάστε, είναι τόσο εύκολο. Μπορείτε είτε να αποθηκεύσετε το σχέδιο σε ένα αρχείο, να το εκτυπώσετε ή να το μοιραστείτε απευθείας μέσω ηλεκτρονικού ταχυδρομείου ή κοινωνικών δικτύων, έτσι ώστε οι φίλοι σας να μπορούν να διασκεδάσουν μαζί του.
 
