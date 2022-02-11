@@ -186,6 +186,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun launchSettings() {
+        hideKeyboard()
         startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 
