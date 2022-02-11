@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.5.2 *(2022-02-11)*
+----------------------------
+
+ * Fixed saving images as PNG
+ * Added some translation and UX improvements
+
 Version 6.5.1 *(2022-01-14)*
 ----------------------------
 
