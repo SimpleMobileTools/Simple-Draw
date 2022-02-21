@@ -196,11 +196,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun launchAbout() {
         val licenses = LICENSE_GLIDE
 
-        val faqItems = arrayListOf(
-            FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
-            FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons),
-            FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons)
-        )
+        val faqItems = ArrayList<FAQItem>()
+
+        if (!resources.getBoolean(R.bool.hide_google_relations)) {
+            faqItems.add(FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons))
+            faqItems.add(FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons))
+            faqItems.add(FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons))
+        }
 
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, false)
     }

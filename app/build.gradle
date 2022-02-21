@@ -49,6 +49,7 @@ android {
     productFlavors {
         core {}
         fdroid {}
+        prepaid {}
     }
 
     sourceSets {
@@ -62,6 +63,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:03e4d214b1'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:b1ac82c8e1'
     implementation "androidx.print:print:1.0.0"
 }
