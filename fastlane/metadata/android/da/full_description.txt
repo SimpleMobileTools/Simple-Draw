@@ -1,5 +1,24 @@
-Vil du tegne en skitse men har ikke noget papir? Så er det denne app du skal bruge. Vælg en farve og tegn. Du kan gemme tegningen eller dele den direkte via mail elle socile medier.
+Vil du tegne noget kreativt, men du har ikke noget papir\? Denne app vil passe perfekt til dig. Bare vælg en farve og tegn, så nemt er det. 
 
-Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
+Du kan enten gemme tegningen i en fil, udskrive den eller dele den direkte via e-mail eller sociale netværk, så dine venner også kan have det sjovt med det. 
 
-Denne app er en enkelt del af en større serie apps. Du finder dem alle på siden https://www.simplemobiletools.com
+Denne meget populære app til hurtige skitser giver mange nyttige funktioner som Fortryd/Gentag, ændring af baggrundsfarven eller brug af et billede som baggrund. 
+
+Du kan eventuelt også få appen til at forhindre enheden i at falde i søvn. Du kan også ændre børstestørrelsen eller bruge et viskelæder, hvis du har rodet noget med. Det understøtter indsættelse af farver enten ved at vælge det på en stor palet eller ved at indtaste farvernes hex-kode. Appen understøtter mange forskellige formater som PNG, JPG eller SVG vektorer. 
+
+Du kan enten tegne noget nyt fra bunden, eller åbne en fil og bare lege med det. Det er perfekt brugbart enten af dig eller af en familie med børn til at spille nogle spil. 
+
+Alle har jo et stykke kunstner i sig selv. Du vil ikke finde nogle smarte eller avancerede værktøjer, pensler, skrifttyper, filtre her, det er meningen, at det skal bruges til at have det sjovt med. Den leveres som standard med materialedesign og mørkt tema, hvilket giver en fantastisk brugeroplevelse til nem brug. 
+
+Manglen på internetadgang giver dig mere privatliv, sikkerhed og stabilitet end andre apps. 
+
+Indeholder ingen annoncer eller unødvendige tilladelser. Det er fuldt opensource, giver brugerdefinerbare farver. 
+
+<b>Tjek hele pakken af Simple Tools her:</b>
+https://www.simplemobiletools.com
+
+<b>Facebook:</b>
+https://www.facebook.com/simplemobiletools
+
+<b>Reddit:</b>
+https://www.reddit.com/r/SimpleMobileTools
