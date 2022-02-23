@@ -56,6 +56,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mAllowMovingZooming = true
     private var mIsEraserOn = false
     private var mWasMultitouch = false
+    private var mIgnoreTouches = false
+    private var mWasScalingInGesture = false
     private var mBackgroundColor = 0
     private var mCenter: PointF? = null
 
@@ -103,6 +105,16 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
 
         val action = event.actionMasked
+        if (mIgnoreTouches && action == MotionEvent.ACTION_UP) {
+            mIgnoreTouches = false
+            mWasScalingInGesture = false
+            return true
+        }
+
+        if (mIgnoreTouches) {
+            return true
+        }
+
         if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
             mActivePointerId = event.getPointerId(0)
         }
@@ -130,6 +142,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
         when (action) {
             MotionEvent.ACTION_DOWN -> {
+                mWasScalingInGesture = false
                 mWasMultitouch = false
                 mStartX = x
                 mStartY = y
@@ -160,24 +173,18 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 mActivePointerId = INVALID_POINTER_ID
-                actionUp()
+                actionUp(false)
+                mWasScalingInGesture = false
             }
             MotionEvent.ACTION_POINTER_DOWN -> {
                 mWasMultitouch = true
                 mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
             }
             MotionEvent.ACTION_POINTER_UP -> {
-                val upPointerIndex = event.actionIndex
-                val pointerId = event.getPointerId(upPointerIndex)
-                if (pointerId == mActivePointerId) {
-                    val newPointerIndex = if (upPointerIndex == 0) 1 else 0
-                    mLastTouchX = event.getX(newPointerIndex)
-                    mLastTouchY = event.getY(newPointerIndex)
-                    mActivePointerId = event.getPointerId(newPointerIndex)
-                }
+                mIgnoreTouches = true
+                actionUp(!mWasScalingInGesture)
             }
         }
-
 
         mLastMotionEvent = MotionEvent.obtain(event)
 
@@ -349,8 +356,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mCurY = y
     }
 
-    private fun actionUp() {
-        if (!mWasMultitouch) {
+    private fun actionUp(forceLineDraw: Boolean) {
+        if (!mWasMultitouch || forceLineDraw) {
             mPath.lineTo(mCurX, mCurY)
 
             // draw a dot on click
@@ -390,6 +397,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
+            if (!mWasScalingInGesture) {
+                mPath.reset()
+            }
+
+            mIgnoreTouches = true
+            mWasScalingInGesture = true
             mScaleFactor *= detector.scaleFactor
             mScaleFactor = max(0.1f, min(mScaleFactor, 10.0f))
             setBrushSize(mCurrBrushSize)
