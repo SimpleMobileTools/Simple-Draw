@@ -79,6 +79,139 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         pathsUpdated()
     }
 
+    public override fun onSaveInstanceState(): Parcelable {
+        val superState = super.onSaveInstanceState()
+        val savedState = MyParcelable(superState!!)
+        savedState.paths = mPaths
+        return savedState
+    }
+
+    public override fun onRestoreInstanceState(state: Parcelable) {
+        if (state !is MyParcelable) {
+            super.onRestoreInstanceState(state)
+            return
+        }
+
+        super.onRestoreInstanceState(state.superState)
+        mPaths = state.paths
+        pathsUpdated()
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        if (mAllowMovingZooming) {
+            mScaleDetector!!.onTouchEvent(event)
+        }
+
+        val action = event.actionMasked
+        if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
+            mActivePointerId = event.getPointerId(0)
+        }
+
+        val pointerIndex = event.findPointerIndex(mActivePointerId)
+        val x: Float
+        val y: Float
+
+        try {
+            x = event.getX(pointerIndex)
+            y = event.getY(pointerIndex)
+        } catch (e: Exception) {
+            return true
+        }
+
+        val scaledWidth = width / mScaleFactor
+        val touchPercentageX = x / width
+        val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
+        val newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
+
+        val scaledHeight = height / mScaleFactor
+        val touchPercentageY = y / height
+        val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
+        val newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
+
+        when (action) {
+            MotionEvent.ACTION_DOWN -> {
+                mWasMultitouch = false
+                mStartX = x
+                mStartY = y
+                mLastTouchX = x
+                mLastTouchY = y
+                actionDown(newValueX, newValueY)
+                mUndonePaths.clear()
+                mListener?.toggleRedoVisibility(false)
+            }
+            MotionEvent.ACTION_MOVE -> {
+                if (mTouchSloppedBeforeMultitouch) {
+                    mPath.reset()
+                    mTouchSloppedBeforeMultitouch = false
+                }
+
+                if (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
+                    actionMove(newValueX, newValueY)
+                }
+
+                if (mAllowMovingZooming && mWasMultitouch) {
+                    mPosX += x - mLastTouchX
+                    mPosY += y - mLastTouchY
+                    invalidate()
+                }
+
+                mLastTouchX = x
+                mLastTouchY = y
+            }
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                mActivePointerId = INVALID_POINTER_ID
+                actionUp()
+            }
+            MotionEvent.ACTION_POINTER_DOWN -> {
+                mWasMultitouch = true
+                mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
+            }
+            MotionEvent.ACTION_POINTER_UP -> {
+                val upPointerIndex = event.actionIndex
+                val pointerId = event.getPointerId(upPointerIndex)
+                if (pointerId == mActivePointerId) {
+                    val newPointerIndex = if (upPointerIndex == 0) 1 else 0
+                    mLastTouchX = event.getX(newPointerIndex)
+                    mLastTouchY = event.getY(newPointerIndex)
+                    mActivePointerId = event.getPointerId(newPointerIndex)
+                }
+            }
+        }
+
+
+        mLastMotionEvent = MotionEvent.obtain(event)
+
+        invalidate()
+        return true
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        canvas.save()
+
+        if (mCenter == null) {
+            mCenter = PointF(width / 2f, height / 2f)
+        }
+
+        canvas.translate(mPosX, mPosY)
+        canvas.scale(mScaleFactor, mScaleFactor, mCenter!!.x, mCenter!!.y)
+
+        if (mBackgroundBitmap != null) {
+            val left = (width - mBackgroundBitmap!!.width) / 2
+            val top = (height - mBackgroundBitmap!!.height) / 2
+            canvas.drawBitmap(mBackgroundBitmap!!, left.toFloat(), top.toFloat(), null)
+        }
+
+        for ((key, value) in mPaths) {
+            changePaint(value)
+            canvas.drawPath(key, mPaint)
+        }
+
+        changePaint(mPaintOptions)
+        canvas.drawPath(mPath, mPaint)
+        canvas.restore()
+    }
+
     fun undo() {
         if (mPaths.isEmpty() && mLastPaths.isNotEmpty()) {
             mPaths = mLastPaths.clone() as LinkedHashMap<MyPath, PaintOptions>
@@ -185,33 +318,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         pathsUpdated()
     }
 
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-        canvas.save()
-
-        if (mCenter == null) {
-            mCenter = PointF(width / 2f, height / 2f)
-        }
-
-        canvas.translate(mPosX, mPosY)
-        canvas.scale(mScaleFactor, mScaleFactor, mCenter!!.x, mCenter!!.y)
-
-        if (mBackgroundBitmap != null) {
-            val left = (width - mBackgroundBitmap!!.width) / 2
-            val top = (height - mBackgroundBitmap!!.height) / 2
-            canvas.drawBitmap(mBackgroundBitmap!!, left.toFloat(), top.toFloat(), null)
-        }
-
-        for ((key, value) in mPaths) {
-            changePaint(value)
-            canvas.drawPath(key, mPaint)
-        }
-
-        changePaint(mPaintOptions)
-        canvas.drawPath(mPath, mPaint)
-        canvas.restore()
-    }
-
     private fun changePaint(paintOptions: PaintOptions) {
         mPaint.color = if (paintOptions.isEraser) mBackgroundColor else paintOptions.color
         mPaint.strokeWidth = paintOptions.strokeWidth
@@ -266,112 +372,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun getDrawingHashCode() = mPaths.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
-
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (mAllowMovingZooming) {
-            mScaleDetector!!.onTouchEvent(event)
-        }
-
-        val action = event.actionMasked
-        if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
-            mActivePointerId = event.getPointerId(0)
-        }
-
-        val pointerIndex = event.findPointerIndex(mActivePointerId)
-        val x: Float
-        val y: Float
-
-        try {
-            x = event.getX(pointerIndex)
-            y = event.getY(pointerIndex)
-        } catch (e: Exception) {
-            return true
-        }
-
-        val scaledWidth = width / mScaleFactor
-        val touchPercentageX = x / width
-        val compensationX = (scaledWidth / 2) * (1 - mScaleFactor)
-        val newValueX = scaledWidth * touchPercentageX - compensationX - (mPosX / mScaleFactor)
-
-        val scaledHeight = height / mScaleFactor
-        val touchPercentageY = y / height
-        val compensationY = (scaledHeight / 2) * (1 - mScaleFactor)
-        val newValueY = scaledHeight * touchPercentageY - compensationY - (mPosY / mScaleFactor)
-
-        when (action) {
-            MotionEvent.ACTION_DOWN -> {
-                mWasMultitouch = false
-                mStartX = x
-                mStartY = y
-                mLastTouchX = x
-                mLastTouchY = y
-                actionDown(newValueX, newValueY)
-                mUndonePaths.clear()
-                mListener?.toggleRedoVisibility(false)
-            }
-            MotionEvent.ACTION_MOVE -> {
-                if (mTouchSloppedBeforeMultitouch) {
-                    mPath.reset()
-                    mTouchSloppedBeforeMultitouch = false
-                }
-
-                if (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
-                    actionMove(newValueX, newValueY)
-                }
-
-                if (mAllowMovingZooming && mWasMultitouch) {
-                    mPosX += x - mLastTouchX
-                    mPosY += y - mLastTouchY
-                    invalidate()
-                }
-
-                mLastTouchX = x
-                mLastTouchY = y
-            }
-            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                mActivePointerId = INVALID_POINTER_ID
-                actionUp()
-            }
-            MotionEvent.ACTION_POINTER_DOWN -> {
-                mWasMultitouch = true
-                mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
-            }
-            MotionEvent.ACTION_POINTER_UP -> {
-                val upPointerIndex = event.actionIndex
-                val pointerId = event.getPointerId(upPointerIndex)
-                if (pointerId == mActivePointerId) {
-                    val newPointerIndex = if (upPointerIndex == 0) 1 else 0
-                    mLastTouchX = event.getX(newPointerIndex)
-                    mLastTouchY = event.getY(newPointerIndex)
-                    mActivePointerId = event.getPointerId(newPointerIndex)
-                }
-            }
-        }
-
-
-        mLastMotionEvent = MotionEvent.obtain(event)
-
-        invalidate()
-        return true
-    }
-
-    public override fun onSaveInstanceState(): Parcelable {
-        val superState = super.onSaveInstanceState()
-        val savedState = MyParcelable(superState!!)
-        savedState.paths = mPaths
-        return savedState
-    }
-
-    public override fun onRestoreInstanceState(state: Parcelable) {
-        if (state !is MyParcelable) {
-            super.onRestoreInstanceState(state)
-            return
-        }
-
-        super.onRestoreInstanceState(state.superState)
-        mPaths = state.paths
-        pathsUpdated()
-    }
 
     private fun MotionEvent?.isTouchSlop(pointerIndex: Int, startX: Float, startY: Float): Boolean {
         return if (this == null || actionMasked != MotionEvent.ACTION_MOVE) {
