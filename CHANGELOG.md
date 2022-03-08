@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.5.3 *(2022-03-08)*
+----------------------------
+
+ * Fixed some multitouch related glitches
+ * Added a Privacy policy
+ * Added some translation improvements
+
 Version 6.5.2 *(2022-02-11)*
 ----------------------------
 
