@@ -17,30 +17,7 @@
     <string name="app_title">Basit Çiz Pro - Hızlı kolay çizimler için uygulama</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Hızlı çizimleriniz için kalem ve kağıt.</string>
-    <string name="app_long_description">
-        Yaratıcı bir şeyler çizmek istiyorsunuz ama kağıdınız yok mu? Bu uygulama tam size göre. Sadece bir renk seçin ve çizmeye başlayın, bu kadar kolay. Çizimi bir dosyaya kaydedebilir, yazdırabilir veya e-posta veya sosyal ağlar aracılığıyla doğrudan paylaşabilir, böylece arkadaşlarınızın da onunla biraz eğlenebilmesini sağlayabilirsiniz.
-
-        Hızlı çizimler için oldukça gözde olan bu uygulama, Geri Al/Yinele, arka plan rengini değiştirme veya arka plan olarak bir resim kullanma gibi birçok kullanışlı işlev sunar. İsteğe bağlı olarak uygulamanın aygıtın uykuya geçmesini önlemesini de sağlayabilirsiniz. Ayrıca, fırça boyutunu değiştirebilir veya bir şeyi yanlış yaptıysanız bir silgi kullanabilirsiniz. Büyük bir palet üzerinde seçerek veya renklerin onaltılık kodunu girerek renk eklemeyi destekler.
-
-        Uygulama PNG, JPG veya SVG vektörleri gibi birçok farklı biçimi destekler.
-
-        Ya sıfırdan yeni bir şey çizebilir ya da bir dosya açıp onunla oynayabilirsiniz. İster sizin tarafınızdan, ister çocuklu bir aile tarafından oyun oynamak için mükemmel bir şekilde kullanılabilir. Ne de olsa herkesin kendi içinde bir parça sanatçı vardır.
-
-        Burada süslü veya gelişmiş araçlar, fırçalar, yazı tipleri, filtreler bulamayacaksınız, uygulamanın asıl amacı onunla eğlenceli zaman geçirmektir.
-
-        Varsayılan olarak materyal tasarım ve koyu tema ile birlikte gelir, kolay kullanım için harika bir kullanıcı deneyimi sağlar. İnternet erişiminin olmaması size diğer uygulamalardan daha fazla gizlilik, güvenlik ve istikrar sağlar.
-
-        Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sağlar.
-
-        <b>Basit Araçlar paketinin tamamını buradan inceleyin:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description"> Yaratıcı bir şeyler çizmek istiyorsunuz ama kağıdınız yok mu\? Bu uygulama tam size göre. Sadece bir renk seçin ve çizmeye başlayın, bu kadar kolay. Çizimi bir dosyaya kaydedebilir, yazdırabilir veya e-posta ya da sosyal ağlar aracılığıyla doğrudan paylaşabilir, böylece arkadaşlarınızın da onunla biraz eğlenebilmesini sağlayabilirsiniz. Hızlı çizimler için oldukça gözde olan bu uygulama, Geri Al/Yinele, arka plan rengini değiştirme veya arka plan olarak bir resim kullanma gibi birçok kullanışlı işlev sunar. İsteğe bağlı olarak uygulamanın aygıtın uykuya geçmesini önlemesini de sağlayabilirsiniz. Ayrıca, fırça boyutunu değiştirebilir veya bir şeyi yanlış yaptıysanız bir silgi kullanabilirsiniz. Büyük bir palet üzerinde seçerek veya renklerin onaltılık kodunu girerek renk eklemeyi destekler. Uygulama PNG, JPG veya SVG vektörleri gibi birçok farklı biçimi destekler. Ya sıfırdan yeni bir şey çizebilir ya da bir dosya açıp onunla oynayabilirsiniz. İster sizin tarafınızdan, ister çocuklu bir aile tarafından oyun oynamak için mükemmel bir şekilde kullanılabilir. Ne de olsa herkesin kendi içinde bir parça sanatçı vardır. Burada süslü veya gelişmiş araçlar, fırçalar, yazı tipleri, filtreler bulamayacaksınız, uygulamanın asıl amacı onunla eğlenceli zaman geçirmektir. Öntanımlı olarak materyal tasarım ve koyu tema ile birlikte gelir, kolay kullanım için harika bir kullanıcı deneyimi sağlar. İnternet erişiminin olmaması size diğer uygulamalardan daha fazla gizlilik, güvenlik ve istikrar sağlar. Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sağlar. <b>Basit Araçlar paketinin tamamını buradan inceleyin:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
