@@ -58,6 +58,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mWasMultitouch = false
     private var mIgnoreTouches = false
     private var mWasScalingInGesture = false
+    private var mWasMovingCanvasInGesture = false
     private var mBackgroundColor = 0
     private var mCenter: PointF? = null
 
@@ -108,6 +109,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (mIgnoreTouches && action == MotionEvent.ACTION_UP) {
             mIgnoreTouches = false
             mWasScalingInGesture = false
+            mWasMovingCanvasInGesture = false
             return true
         }
 
@@ -143,6 +145,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         when (action) {
             MotionEvent.ACTION_DOWN -> {
                 mWasScalingInGesture = false
+                mWasMovingCanvasInGesture = false
                 mWasMultitouch = false
                 mStartX = x
                 mStartY = y
@@ -165,6 +168,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 if (mAllowMovingZooming && mWasMultitouch) {
                     mPosX += x - mLastTouchX
                     mPosY += y - mLastTouchY
+                    mWasMovingCanvasInGesture = true
                     invalidate()
                 }
 
@@ -175,6 +179,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mActivePointerId = INVALID_POINTER_ID
                 actionUp(false)
                 mWasScalingInGesture = false
+                mWasMovingCanvasInGesture = false
             }
             MotionEvent.ACTION_POINTER_DOWN -> {
                 mWasMultitouch = true
@@ -182,12 +187,11 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
             MotionEvent.ACTION_POINTER_UP -> {
                 mIgnoreTouches = true
-                actionUp(!mWasScalingInGesture)
+                actionUp(!mWasScalingInGesture && !mWasMovingCanvasInGesture)
             }
         }
 
         mLastMotionEvent = MotionEvent.obtain(event)
-
         invalidate()
         return true
     }
