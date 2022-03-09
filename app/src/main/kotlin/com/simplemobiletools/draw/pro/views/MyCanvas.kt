@@ -182,12 +182,16 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mWasMovingCanvasInGesture = false
             }
             MotionEvent.ACTION_POINTER_DOWN -> {
-                mWasMultitouch = true
-                mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
+                if (mAllowMovingZooming) {
+                    mWasMultitouch = true
+                    mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
+                }
             }
             MotionEvent.ACTION_POINTER_UP -> {
-                mIgnoreTouches = true
-                actionUp(!mWasScalingInGesture && !mWasMovingCanvasInGesture)
+                if (mAllowMovingZooming) {
+                    mIgnoreTouches = true
+                    actionUp(!mWasScalingInGesture && !mWasMovingCanvasInGesture)
+                }
             }
         }
 
