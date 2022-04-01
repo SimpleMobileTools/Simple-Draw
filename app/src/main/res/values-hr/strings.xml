@@ -1,48 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednostavno crtanje</string>
+    <string name="app_name">Jednostavno Crtanje</string>
     <string name="app_launcher_name">Crtanje</string>
     <string name="open_file">Otvori datoteku</string>
     <string name="eraser">Gumica za brisanje</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Kapaljka za boje</string>
     <string name="failed_to_load_image">Neuspjelo učitavanje slike %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Prikaži alat za odabir veličine četkica</string>
     <string name="allow_zooming_canvas">Dopusti zumiranje platna pokretima</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Dopustite zumiranje i pomicanje platna pokretima</string>
     <string name="clear">Očisti</string>
     <string name="change_background_color">Promjeni boju pozadine</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Jednostavno Crtanje Pro - Aplikacija za brze i jednostavne skice</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
-    <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
-
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
-
-        The app supports many different formats like PNG, JPG or SVG vectors.
-
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
-
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_short_description">Olovka i papir za vaše brze skice.</string>
+    <string name="app_long_description"> Želite nacrtati nešto kreativno, ali nemate papir\? Ova aplikacija će vam savršeno odgovarati. Samo odaberite boju i nacrtajte, tako je jednostavno. Crtež možete spremiti u datoteku, ispisati ili podijeliti izravno putem e-pošte ili društvenih mreža kako bi se i vaši prijatelji mogli zabaviti s njim. Ova iznimno popularna aplikacija za brze skice nudi mnoge korisne funkcije kao što su Poništi/Ponovi, promjena boje pozadine ili korištenje slike kao pozadine. Po želji možete učiniti da aplikacija također spriječi da uređaj zaspi. Također možete promijeniti veličinu četkice ili koristiti gumicu, ako ste nešto zabrljali. Podržava umetanje boja bilo odabirom na velikoj paleti ili unosom heksadecimalnog koda boja. Aplikacija podržava mnoge različite formate poput PNG, JPG ili SVG vektora. Možete nacrtati nešto novo od nule ili otvoriti neku datoteku i jednostavno se igrati s njom. Savršeno ga možete koristiti ili vi, ili obitelj s djecom za igranje igara. Uostalom, svatko u sebi ima djelić umjetnika. Ovdje nećete pronaći fensi ili napredne alate, kistove, fontove, filtere, s njima bi se trebali zabaviti. Dolazi s materijalnim dizajnom i tamnom temom prema zadanim postavkama, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. Nedostatak pristupa internetu daje vam više privatnosti, sigurnosti i stabilnosti od drugih aplikacija. Ne sadrži oglase niti nepotrebna dopuštenja. Potpuno je otvorenog koda, pruža prilagodljive boje. <b>Pogledajte cijeli paket Jednostavni Alati ovdje:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

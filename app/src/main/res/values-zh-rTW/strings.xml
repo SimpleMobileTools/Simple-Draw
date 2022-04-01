@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">簡易繪圖</string>
     <string name="app_launcher_name">簡易繪圖</string>
@@ -5,17 +6,15 @@
     <string name="eraser">橡皮擦</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">無法載入圖片 %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">顯示畫筆尺寸工具</string>
     <string name="allow_zooming_canvas">允許使用手勢縮放畫布</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">清除</string>
     <string name="change_background_color">改變背景顏色</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">專業版 簡易繪圖 - 快速、方便繪圖的 app</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
     <string name="app_long_description">
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
