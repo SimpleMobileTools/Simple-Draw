@@ -1,5 +1,26 @@
-Želite li nacrtati nešto, ali bez papira? Ova aplikacija je stvorena za Vas. Samo odaberite boju i nacrtajte. Možete spremiti crtež ili ga podijeliti putem e-pošte ili društvenih mreža.
+Želite nacrtati nešto kreativno, ali nemate papir\? Ova aplikacija će vam savršeno odgovarati. Samo odaberite boju i nacrtajte, tako je jednostavno. 
 
-Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
+Crtež možete spremiti u datoteku, ispisati ili podijeliti izravno putem e-pošte ili društvenih mreža kako bi se i vaši prijatelji mogli zabaviti s njim. 
 
-Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na https://www.simplemobiletools.com
+Ova iznimno popularna aplikacija za brze skice nudi mnoge korisne funkcije kao što su Poništi/Ponovi, promjena boje pozadine ili korištenje slike kao pozadine. 
+
+Po želji možete učiniti da aplikacija također spriječi da uređaj zaspi. Također možete promijeniti veličinu četkice ili koristiti gumicu, ako ste nešto zabrljali. 
+
+Podržava umetanje boja bilo odabirom na velikoj paleti ili unosom heksadecimalnog koda boja. Aplikacija podržava mnoge različite formate poput PNG, JPG ili SVG vektora. 
+
+Možete nacrtati nešto novo od nule ili otvoriti neku datoteku i jednostavno se igrati s njom. Savršeno ga možete koristiti ili vi, ili obitelj s djecom za igranje igara. 
+
+Uostalom, svatko u sebi ima djelić umjetnika. Ovdje nećete pronaći fensi ili napredne alate, kistove, fontove, filtere, s njima bi se trebali zabaviti. 
+
+Dolazi s materijalnim dizajnom i tamnom temom prema zadanim postavkama, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. 
+
+Nedostatak pristupa internetu daje vam više privatnosti, sigurnosti i stabilnosti od drugih aplikacija. Ne sadrži oglase niti nepotrebna dopuštenja. Potpuno je otvorenog koda, pruža prilagodljive boje. 
+
+<b>Pogledajte cijeli paket Jednostavni Alati ovdje:</b>
+https://www.simplemobiletools.com
+
+<b>Facebook:</b>
+https://www.facebook.com/simplemobiletools
+
+<b>Reddit:</b>
+https://www.reddit.com/r/SimpleMobileTools
