@@ -1,6 +1,7 @@
 package com.simplemobiletools.draw.pro.activities
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
@@ -14,6 +15,7 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
@@ -226,7 +228,14 @@ class MainActivity : SimpleActivity(), CanvasListener {
         Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "image/*"
-            startActivityForResult(this, PICK_IMAGE_INTENT)
+
+            try {
+                startActivityForResult(this, PICK_IMAGE_INTENT)
+            } catch (e: ActivityNotFoundException) {
+                toast(R.string.no_app_found)
+            } catch (e: Exception) {
+                showErrorToast(e)
+            }
         }
     }
 
@@ -443,7 +452,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
                     putExtra(Intent.EXTRA_TITLE, "$filename.$extension")
                     addCategory(Intent.CATEGORY_OPENABLE)
 
-                    startActivityForResult(this, SAVE_IMAGE_INTENT)
+                    try {
+                        startActivityForResult(this, SAVE_IMAGE_INTENT)
+                    } catch (e: ActivityNotFoundException) {
+                        toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                    } catch (e: Exception) {
+                        showErrorToast(e)
+                    }
                 }
             }
         } else {
