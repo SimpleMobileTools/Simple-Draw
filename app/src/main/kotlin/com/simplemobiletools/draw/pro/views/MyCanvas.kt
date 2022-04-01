@@ -20,7 +20,6 @@ import com.simplemobiletools.draw.pro.interfaces.CanvasListener
 import com.simplemobiletools.draw.pro.models.MyParcelable
 import com.simplemobiletools.draw.pro.models.MyPath
 import com.simplemobiletools.draw.pro.models.PaintOptions
-import java.util.*
 import java.util.concurrent.ExecutionException
 import kotlin.math.abs
 import kotlin.math.max
@@ -110,10 +109,6 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mIgnoreTouches = false
             mWasScalingInGesture = false
             mWasMovingCanvasInGesture = false
-            return true
-        }
-
-        if (mIgnoreTouches) {
             return true
         }
 
