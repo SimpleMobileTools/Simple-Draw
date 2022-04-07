@@ -1,18 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Desenează</string>
-    <string name="open_file">Deschide un fișier</string>
+    <string name="open_file">Deschideți fișierul</string>
     <string name="eraser">Radieră</string>
     <string name="eyedropper">Găseşte culoarea</string>
     <string name="failed_to_load_image">Imaginea nu a reușit să se încarce %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Afișați instrumentul de mărime a pensulei</string>
     <string name="allow_zooming_canvas">Permiteți mărirea pânzei cu ajutorul gesturilor</string>
     <string name="allow_zooming_moving_canvas">Permiteți mărirea și deplasarea pânzei cu ajutorul gesturilor</string>
     <string name="clear">Curăţă</string>
     <string name="change_background_color">Schimbaţi culoarea de fundal</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Draw Pro - Schițe rapide &amp; ușoare</string>
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
