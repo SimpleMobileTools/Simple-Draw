@@ -17,30 +17,7 @@
     <string name="app_title">Desenhos Simples Pro - Esboços fáceis e rápidos</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Caneta e papel para seus rápidos rabiscos.</string>
-    <string name="app_long_description">
-        Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
-
-        This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code.
-
-        The app supports many different formats like PNG, JPG or SVG vectors.
-
-        You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself.
-
-        You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with.
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description"> Deseja desenhar algo criativo, mas não tem papel\? Este aplicativo vai servir perfeitamente. Basta escolher uma cor e desenhar, é tão fácil assim. Você pode salvar o desenho em um arquivo, imprimi-lo ou compartilhá-lo diretamente por e-mail ou redes sociais para que seus amigos também possam se divertir um pouco com ele. Este aplicativo popular para esboços rápidos oferece muitas funções úteis como Desfazer/Refazer, mudar a cor do fundo ou usar uma imagem como fundo. Opcionalmente, você pode fazer o aplicativo evitar que o dispositivo adormeça. Você também pode mudar o tamanho do pincel, ou usar uma borracha, caso estragar alguma coisa. Ele suporta a inserção de cores, seja selecionando-a em uma enorme paleta, ou inserindo o código hexadecimal de cores. O aplicativo suporta muitos formatos diferentes de imagens como PNG, JPG ou vetores SVG. Você pode desenhar algo novo ou abrir algum arquivo e simplesmente brincar com ele. É perfeitamente utilizável ou por você, ou por uma família com crianças para brincar com alguns jogos. Afinal, cada um tem um pequeno artista em si mesmo. Você não encontrará aqui nenhuma ferramenta sofisticada ou avançada, pincéis, fontes, filtros, este aplicativo deve ser usado para se divertir um pouco. Utiliza um design material e tema escuro por padrão, com uma ótima experiência de usuário para uso facilitado. Não é necessário a conexão com a internet, fornecendo mais privacidade, segurança e estabilidade em relação a outros apps. <b>Verifique todos os apps Simples Tools aqui:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
