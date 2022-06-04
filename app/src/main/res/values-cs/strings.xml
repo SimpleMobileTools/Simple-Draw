@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jednoduché kreslení</string>
     <string name="app_launcher_name">Kreslení</string>
     <string name="open_file">Otevřít soubor</string>
     <string name="eraser">Guma</string>
-    <string name="eyedropper">Eyedropper</string>
+    <string name="eyedropper">Kapátko</string>
     <string name="failed_to_load_image">Nepodařilo se načíst obrázek %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Zobrazit nástroj velikosti štětce</string>
     <string name="allow_zooming_canvas">Povolit přiblížení plátna gesty</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Povolit manipulaci plátna pomocí gest</string>
     <string name="clear">Vymazat</string>
     <string name="change_background_color">Změnit barvu pozadí</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Jednoduché kreslení Pro - snadné a rychlé kresby</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen &amp; paper for your creative quick easy drawings with no ads or internet access</string>
+    <string name="app_short_description">Pero a papír pro vaše rychlé skici.</string>
     <string name="app_long_description">
         Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
@@ -42,7 +41,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
