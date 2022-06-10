@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Невозможно загрузить изображение %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Показать размер кисти</string>
-    <string name="allow_zooming_canvas">Масштабирование холста жестами</string>
     <string name="allow_zooming_moving_canvas">Масштабирование и перемещение холста жестами</string>
     <string name="clear">Очистить</string>
     <string name="change_background_color">Изменить цвет фона</string>

@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">A(z) %s kép betöltése sikertelen</string>
     <!-- Settings -->
     <string name="show_brush_size">Ecsetméret eszköz megjelenítése</string>
-    <string name="allow_zooming_canvas">A vászon kézmozdulatokkal történő nagyításának engedélyezése</string>
     <string name="allow_zooming_moving_canvas">A vászon kézmozdulatokkal történő nagyításának és mozgatásának engedélyezése</string>
     <string name="clear">Törlés</string>
     <string name="change_background_color">Háttérszín megváltoztatása</string>

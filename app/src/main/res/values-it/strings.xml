@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Impossibile caricare l\'immagine %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Dimensione della gomma</string>
-    <string name="allow_zooming_canvas">Permetti l\'ingrandimento con i gesti</string>
     <string name="allow_zooming_moving_canvas">Permetti l\'ingrandimento e lo spostamento con i gesti</string>
     <string name="clear">Pulisci</string>
     <string name="change_background_color">Cambia colore di sfondo</string>

@@ -8,7 +8,6 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Tampilkan tombol ukuran kuas</string>
-    <string name="allow_zooming_canvas">Izinkan zum kanvas dengan gestur</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Hapus</string>
     <string name="change_background_color">Ubah warna latar</string>

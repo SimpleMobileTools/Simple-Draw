@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Falha ao carregar a imagem %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
-    <string name="allow_zooming_canvas">Permitir ampliar a tela com gestos</string>
     <string name="allow_zooming_moving_canvas">Permitir ampliar e mover a tela com gestos</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Alterar fundo</string>

@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Ha fallat en carregar la imatge %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Mostra l\'eina de mida del pinzell</string>
-    <string name="allow_zooming_canvas">Permet fer zoom al llenç amb gestos</string>
     <string name="allow_zooming_moving_canvas">Permet fer zoom i moure el llenç amb gestos</string>
     <string name="clear">Neteja</string>
     <string name="change_background_color">Canvia el color del fons</string>

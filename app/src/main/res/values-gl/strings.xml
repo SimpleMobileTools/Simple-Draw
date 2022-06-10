@@ -8,7 +8,6 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamaño do pincel</string>
-    <string name="allow_zooming_canvas">Permitir ampliar o lenzo con xestos</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Cambiar a cor do fondo</string>

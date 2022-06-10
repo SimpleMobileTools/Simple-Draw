@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">%s pildi laadimine ei õnnestunud</string>
     <!-- Settings -->
     <string name="show_brush_size">Näita pintsli suuruse tööriista</string>
-    <string name="allow_zooming_canvas">Luba lõuendit liigutustega suumida</string>
     <string name="allow_zooming_moving_canvas">Luba lõuendit liigutustega suumida ja liigutada</string>
     <string name="clear">Tühjenda</string>
     <string name="change_background_color">Vaheta taustavärvi</string>

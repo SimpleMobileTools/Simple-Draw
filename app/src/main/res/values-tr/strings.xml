@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">%s resmi yüklenemedi</string>
     <!-- Settings -->
     <string name="show_brush_size">Fırça boyutu aracını göster</string>
-    <string name="allow_zooming_canvas">Tuvali hareketlerle yakınlaştırmaya izin ver</string>
     <string name="allow_zooming_moving_canvas">Tuvali hareketlerle yakınlaştırmaya ve taşımaya izin ver</string>
     <string name="clear">Temizle</string>
     <string name="change_background_color">Arka plan rengini değiştir</string>

@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
-    <string name="allow_zooming_canvas">Permettre de zoomer sur l\'image avec des gestes</string>
     <string name="allow_zooming_moving_canvas">Permettre de zoomer et de déplacer le canevas avec des gestes</string>
     <string name="clear">Effacer</string>
     <string name="change_background_color">Changer l\'arrière-plan</string>

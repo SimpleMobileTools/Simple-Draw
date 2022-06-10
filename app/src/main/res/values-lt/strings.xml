@@ -8,7 +8,6 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Rodyti teptuko dydžio įrankį</string>
-    <string name="allow_zooming_canvas">Allow zooming the canvas with gestures</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Išvalyti</string>
     <string name="change_background_color">Pakeisti fono spalvą</string>

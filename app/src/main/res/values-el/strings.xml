@@ -8,7 +8,6 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Εμφάνιση εργαλείου για διαστάσεις του πινέλου</string>
-    <string name="allow_zooming_canvas">Αποδοχή μεγέθυνσης καμβά με χειρονομίες</string>
     <string name="allow_zooming_moving_canvas">Αποδοχή μεγέθυνσης &amp; μετακίνηση καμβά με χειρονομίες</string>
     <string name="clear">Καθαρισμός</string>
     <string name="change_background_color">Αλλαγή χρώματος παρασκηνίου</string>

@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Malsukcesis ŝargi la bildon %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Montri ilon por ŝanĝi grandon de peniko</string>
-    <string name="allow_zooming_canvas">Permesi zomi kanvazon per gestoj</string>
     <string name="allow_zooming_moving_canvas">Permesi zomi kaj movi kanvazon per gestoj</string>
     <string name="clear">Forviŝi</string>
     <string name="change_background_color">Ŝanĝi fonan koloron</string>

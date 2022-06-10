@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Kunne ikke laste inn bilde %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
-    <string name="allow_zooming_canvas">Tillat å zoome tegneflaten med fingerbevegelser</string>
     <string name="allow_zooming_moving_canvas">Tillat å zoome og flytte tegneflaten med fingerbevegelser</string>
     <string name="clear">Slett</string>
     <string name="change_background_color">Endre bakgrunnsfarge</string>

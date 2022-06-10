@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">无法加载图片 %s</string>
     <!-- Settings -->
     <string name="show_brush_size">显示笔刷尺寸工具</string>
-    <string name="allow_zooming_canvas">允许使用手势缩放画布</string>
     <string name="allow_zooming_moving_canvas">允许使用手势缩放和移动画布</string>
     <string name="clear">清除</string>
     <string name="change_background_color">改变背景颜色</string>

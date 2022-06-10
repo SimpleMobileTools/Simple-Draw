@@ -8,7 +8,6 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Mostrar tamaño de la herramienta pincel</string>
-    <string name="allow_zooming_canvas">Permite hacer zoom en el lienzo con gestos</string>
     <string name="allow_zooming_moving_canvas">Permitir hacer zoom y mover el lienzo con gestos</string>
     <string name="clear">Limpiar</string>
     <string name="change_background_color">Cambiar color de fondo</string>

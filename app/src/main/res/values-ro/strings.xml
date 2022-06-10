@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Imaginea nu a reușit să se încarce %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Afișați instrumentul de mărime a pensulei</string>
-    <string name="allow_zooming_canvas">Permiteți mărirea pânzei cu ajutorul gesturilor</string>
     <string name="allow_zooming_moving_canvas">Permiteți mărirea și deplasarea pânzei cu ajutorul gesturilor</string>
     <string name="clear">Curăţă</string>
     <string name="change_background_color">Schimbaţi culoarea de fundal</string>

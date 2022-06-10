@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">فشل تحميل الصورة %s</string>
     <!-- Settings -->
     <string name="show_brush_size">إظهار أداة حجم الفرشاة</string>
-    <string name="allow_zooming_canvas">السماح بتكبير لوحة الرسم باستخدام الإيماءات</string>
     <string name="allow_zooming_moving_canvas">السماح بتكبير الصورة وتحريكها باستخدام الإيماءات</string>
     <string name="clear">مسح</string>
     <string name="change_background_color">تغيير لون الخلفية</string>

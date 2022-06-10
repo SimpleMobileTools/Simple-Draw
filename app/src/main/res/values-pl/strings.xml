@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">Nie udało się wczytać obrazu %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Pokazuj narzędzie wyboru rozmiaru pędzla</string>
-    <string name="allow_zooming_canvas">Zezwalaj na powiększanie płótna gestami</string>
     <string name="allow_zooming_moving_canvas">Zezwalaj na powiększanie i przesuwanie płótna gestami</string>
     <string name="clear">Wyczyść</string>
     <string name="change_background_color">Zmień kolor tła</string>

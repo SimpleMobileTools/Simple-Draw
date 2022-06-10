@@ -8,7 +8,6 @@
 
     <!-- Settings -->
     <string name="show_brush_size">Dangos teclyn maint brws</string>
-    <string name="allow_zooming_canvas">Caniatáu chwyddo\'r cynfas gydag ystumiau</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">Clirio</string>
     <string name="change_background_color">Newid lliw cefndir</string>

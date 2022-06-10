@@ -8,7 +8,6 @@
     <string name="failed_to_load_image">無法載入圖片 %s</string>
     <!-- Settings -->
     <string name="show_brush_size">顯示畫筆尺寸工具</string>
-    <string name="allow_zooming_canvas">允許使用手勢縮放畫布</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
     <string name="clear">清除</string>
     <string name="change_background_color">改變背景顏色</string>
