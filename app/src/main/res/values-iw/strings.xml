@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="eyedropper">Eyedropper</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
-    <string name="clear">Clear</string>
-    <string name="change_background_color">Change background color</string>
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
-    <string name="app_long_description"> Want to draw something creative but you have no paper\? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too. This hugely popular app for quick sketches provides many useful functions like Undo/Redo, changing the background color, or using an image as the background. You can optionally make the app prevent the device from falling asleep too. You can also change the brush size, or use an eraser, if you messed something up. It supports inserting colors either by selecting it on a huge palette, or by entering the colors hex code. The app supports many different formats like PNG, JPG or SVG vectors. You can either draw something new from scratch, or open some file and just play around with it. It is perfectly usable either by you, or by a family with children to play some games. After all, everyone has a piece of artist in himself. You will not find any fancy or advanced tools, brushes, fonts, filters here, it is supposed to be used to have some fun with. It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps. Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors. <b>Check out the full suite of Simple Tools here:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
+    <string name="app_name">ציור פשוט</string>
+    <string name="app_launcher_name">ציור</string>
+    <string name="open_file">פתח קובץ</string>
+    <string name="eraser">מַחַק</string>
+    <string name="eyedropper">מפיל עיניים</string>
+    <string name="failed_to_load_image">טעינת התמונה %s נכשלה</string>
+    <string name="show_brush_size">הצג כלי גודל מברשת</string>
+    <string name="allow_zooming_moving_canvas">אפשר התקרבות והזזת הקנבס באמצעות מחוות</string>
+    <string name="clear">נקה</string>
+    <string name="change_background_color">שנה צבע רקע</string>
+    <string name="app_title">Simple Draw Pro - אפליקציה לסקיצות מהירות וקלות</string>
+    <string name="app_short_description">עט ונייר עבור הסקיצות המהירות שלך.</string>
+    <string name="app_long_description"> רוצה לצייר משהו יצירתי אבל אין לך נייר\? האפליקציה הזו תתאים לכם בצורה מושלמת. פשוט בחר צבע וצייר, זה קל כמו זה. אתה יכול לשמור את הציור בקובץ, להדפיס אותו או לשתף אותו ישירות באמצעות דואר אלקטרוני או רשתות חברתיות, כך שגם החברים שלך יוכלו ליהנות ממנו. האפליקציה הפופולרית ביותר הזו לסקיצות מהירות מספקת פונקציות שימושיות רבות כמו בטל/בצע מחדש, שינוי צבע הרקע או שימוש בתמונה כרקע. אפשר גם לגרום לאפליקציה למנוע מהמכשיר להירדם. אתה יכול גם לשנות את גודל המברשת, או להשתמש במחק, אם פישלת במשהו. זה תומך בהכנסת צבעים או על ידי בחירתם בלוח ענק, או על ידי הזנת קוד הקשת הצבעים. האפליקציה תומכת בפורמטים רבים ושונים כמו וקטורים PNG, JPG או SVG. אתה יכול לצייר משהו חדש מאפס, או לפתוח קובץ כלשהו ופשוט לשחק איתו. זה שמיש בצורה מושלמת גם על ידך, או על ידי משפחה עם ילדים לשחק כמה משחקים. הרי לכל אחד יש חתיכת אמן בעצמו. לא תמצאו כאן כלים מפוארים או מתקדמים, מברשות, פונטים, פילטרים, זה אמור לשמש כדי להשתעשע איתו. זה מגיע עם עיצוב חומר וערכת נושא כהה כברירת מחדל, מספק חווית משתמש נהדרת לשימוש קל. היעדר גישה לאינטרנט נותן לך יותר פרטיות, אבטחה ויציבות מאשר אפליקציות אחרות. אינו מכיל פרסומות או הרשאות מיותרות. זה קוד פתוח לחלוטין, מספק צבעים הניתנים להתאמה אישית. <b>בדוק את החבילה המלאה של כלים פשוטים כאן:</b> https://www.simplemobiletools.com <b>פייסבוק:</b> https://www.facebook.com/simplemobiletools <b>Reddit :</b> https://www.reddit.com/r/SimpleMobileTools </string>
 </resources>
