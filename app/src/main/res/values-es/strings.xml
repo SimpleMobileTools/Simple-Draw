@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Dibujo</string>
@@ -5,18 +6,16 @@
     <string name="eraser">Borrador</string>
     <string name="eyedropper">Cuentagotas</string>
     <string name="failed_to_load_image">Falló al cargar la imagen %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Mostrar tamaño de la herramienta pincel</string>
     <string name="allow_zooming_moving_canvas">Permitir hacer zoom y mover el lienzo con gestos</string>
     <string name="clear">Limpiar</string>
     <string name="change_background_color">Cambiar color de fondo</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Dibujo Simple Pro - Sketches fáciles y rápidos</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Lápiz y papel rápido y fácile para tus dibujos sin anuncios o acceso a internet</string>
+    <string name="app_short_description">Lápiz y papel para sus bocetos rápidos.</string>
     <string name="app_long_description">
         ¿Quieres dibujar algo creativo pero no tienes papel? Esta app servirá perfectamente. Solo escoge un color y dibuja, así de fácil. También puedes guardar el dibujo en un archivo, imprimirlo o compartirlo directamente a través de correo electrónico o redes sociales, así tus amigos se divertirán con él también.
 
@@ -41,7 +40,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
