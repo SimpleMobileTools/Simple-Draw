@@ -1,2 +1,0 @@
- * Fixed saving images as PNG
- * Added some translation and UX improvements

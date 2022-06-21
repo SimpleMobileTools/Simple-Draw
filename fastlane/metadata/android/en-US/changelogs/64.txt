@@ -1,3 +1,0 @@
- * Added an eyedropper tool
- * Added some preset colors at the color picker
- * Added many translation and UX improvements

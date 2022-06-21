@@ -1,3 +1,0 @@
- * Fixed some multitouch related glitches
- * Added a Privacy policy
- * Added some translation improvements
