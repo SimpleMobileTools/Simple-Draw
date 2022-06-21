@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
+    <string name="app_name">Обикновено рисуване</string>
+    <string name="app_launcher_name">Рисуване</string>
     <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
+    <string name="eraser">Гумичка</string>
     <string name="eyedropper">Eyedropper</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
+    <string name="failed_to_load_image">Неуспешно зареждане на изображение %s</string>
     <!-- Settings -->
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
-    <string name="clear">Clear</string>
-    <string name="change_background_color">Change background color</string>
+    <string name="show_brush_size">Показване на инструмент за размер на четка</string>
+    <string name="allow_zooming_moving_canvas">Позволяване на мащабиране и преместване на платното с жестове</string>
+    <string name="clear">Изчистване</string>
+    <string name="change_background_color">Промяна на цвета на фона</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - App for quick &amp; easy sketches</string>
+    <string name="app_title">Обикновено рисуване Pro - Бързо и лесно скициране</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen and paper for your quick sketches.</string>
+    <string name="app_short_description">Химикал и хартия за бързо скициране.</string>
     <string name="app_long_description">
         Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
