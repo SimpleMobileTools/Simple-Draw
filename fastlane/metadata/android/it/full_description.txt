@@ -1,22 +1,58 @@
-Vuoi disegnare qualcosa di creativo ma non hai carta? Questa app è perfetta per te. Scegli un colore e disegna, tutto qui. Puoi salvare il disegno in un file, stamparlo o condividerlo direttamente via email o social network, in modo che anche i tuoi amici possano ammirarlo.
+🎨 Stai cercando la migliore app di disegno per la tua tasca? Vuoi disegnare qualcosa di semplice e facile, ma non hai carta? Siete nel posto giusto!
 
-Questa app così popolare per schizzi veloci ha diverse funzioni utili come Annulla/Ripeti, modifica del colore di sfondo, o l\'uso di immagini come sfondo. Puoi anche facoltativamente impedire al dispositivo di spegnersi dall\'app. Puoi cambiare la dimensione del pennello, o usare una gomma se hai fatto un pasticcio. Supporta l\'inserimento di colori selezionandoli da una grande tavolozza, o inserendone il codice esadecimale.
+Goditi il momento con la nostra app di disegno appositamente progettata, disegna qualcosa di divertente e crea la tua opera d'arte, il tutto in una forma digitale!
 
-L\'app supporta molti formati diversi come PNG, JPG o vettoriali SVG.
+Semplice Disegnare è la migliore applicazione di disegno per chi ama disegnare. Basta scegliere la vernice e disegnare!
 
-Puoi disegnare qualcosa di nuovo da zero, o aprire un file e sbizzarrirti. È perfettamente utilizzabile da te o da una famiglia con bambini per fare qualche gioco. Dopotutto, chiunque ha un piccolo artista dentro di sè.
+<b>Dipingere e disegnare semplici schizzi per divertimento</b>
 
-Qui non troverai strumenti, pennelli, caratteri e filtri complessi o avanzati, è pensata solo per divertirsi un po'.
+Con Semplice Disegnare, non avrai bisogno di strumenti o filtri fantasiosi o avanzati per il tuo doodle o schizzo preferito. Basta usare la vostra creatività e disegno a mano libera per creare i migliori schizzi per il vostro album degli schizzi. 
 
-Progettato con material design, offre anche un tema scuro, per una migliore esperienza utente e un facile utilizzo. La mancanza dell\'accesso a internet ti dà maggiore privacy, sicurezza e stabilità rispetto ad altre app.
+Prova a scoprire perché siamo la migliore applicazione di disegno in cui chiunque può scarabocchiare qualcosa di semplice con divertimento!  
 
-L\'applicazione non contiene pubblicità o autorizzazioni non necessarie; è completamente opensource e la si può personalizzare con i propri colori preferiti.
+<b>Semplice Disegnare funzionalità</b>
 
-<b>Controlla l\'intera raccolta di Strumenti Semplici qui:</b>
+Questo album di schizzi popolare per schizzi rapidi e pitturare ha molte funzioni utili:
+
+✔️	Disegna qualcosa di colorato, un semplice schizzo o scarabocchio usando una vernice e una penna di dimensioni diverse
+✔️	 Cambiare il colore di sfondo, o utilizzando un'immagine dal vostro album da disegno come sfondo 
+✔️	Usa una gomma se hai preso la vernice sbagliata
+✔️	Inserire la vernice selezionandola su una tavolozza o inserendo il codice esadecimale dei colori
+✔️	Questo semplice album degli schizzi supporta molti formati diversi come PNG, JPG, o vettori SVG.
+✔️	Condividi i tuoi dipinti, disegni e schizzi con gli amici tramite e-mail o social network
+✔️	Semplice Disegnare funziona offline e online!
+
+Utilizza nient'altro che il dispositivo e la creatività per fare alcuni scarabocchi e schizzi!
+
+<b>Crea il tuo album da disegno! </b>
+
+Indipendentemente dall'età o dalle abilità che hai, la migliore app di disegno offre un'esperienza di disegno divertente! Disegna uno schizzo, usa la tua vernice preferita e salva la tua opera d'arte nel tuo album da disegno. Con Semplice Disegnare, puoi disegnare nuovi schizzi da zero o aprire un vecchio file di grafica dal tuo album da disegno e giocare con nuove vernici e colori.
+
+
+<b>Il miglior tappetino da disegno per la tua tasca! </b>
+
+La nostra applicazione di disegno a mano libera consente un modo digitale per disegnare uno schizzo o scarabocchio, dipingere ed esplorare l'artista in voi!
+
+Questa app appositamente progettata per il disegno e album da disegno andrà dove la vostra creatività vi porta da schizzo rapido ad opere d'arte divertenti. Quindi, aprite il foglio da disegno, dipingete e semplicemente disegnate qualcosa di bello! Fai un rapido disegno sul nostro foglio da disegno se sei in viaggio o in movimento, goditi l'esperienza di disegno e condividi i tuoi disegni e schizzi con i tuoi amici.
+
+ 
+<b>Divertimento a casa - imparare a disegnare </b>
+
+La nostra applicazione di disegno più popolare è perfettamente utilizzabile sia per bambini e principianti o per una famiglia con bambini per giocare alcuni giochi di disegno e imparare a disegnare. Dopo tutto, ognuno ha un pezzo di artista in sè stesso. 
+
+Scarica la nostra app di disegno, disegna la tua arte preferita e condividila sui social network con i tuoi amici.
+
+ <b>Disegno per bambini! </b>
+
+Disegnare per i bambini è importante, e i bambini sono comunicatori efficaci, e attraverso i disegni, i bambini imparano ad esprimere liberamente i loro sentimenti e le loro idee. Con il nostro tappetino da disegno digitale, possono disegnare auto, fiori, cani, gatti e altri dipinti e salvarli nella galleria! 
+
+La nostra migliore applicazione di disegno non contiene annunci o autorizzazioni inutili. Con Semplice Disegnare, creerai schizzi veloci o scarabocchierai qualcosa di divertente usando solo la tua creatività e immaginazione, quindi inizia a disegnare uno scarabocchio o uno schizzo e condividi il tuo amore e la tua gioia per creare arte semplice!
+
+<b>Scopri la suite completa di Simple Tools qui:</b>
 https://www.simplemobiletools.com
 
-<b>Facebook:</b>
+Facebook:
 https://www.facebook.com/simplemobiletools
 
-<b>Reddit:</b>
+Reddit:
 https://www.reddit.com/r/SimpleMobileTools
