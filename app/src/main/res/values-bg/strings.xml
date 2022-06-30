@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Обикновено рисуване</string>
+    <string name="app_name">Обикновено Рисуване</string>
     <string name="app_launcher_name">Рисуване</string>
-    <string name="open_file">Open file</string>
+    <string name="open_file">Отвори файл</string>
     <string name="eraser">Гумичка</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Неуспешно зареждане на изображение %s</string>
