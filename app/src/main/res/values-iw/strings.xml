@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ציור פשוט</string>
+    <string name="app_launcher_name">ציור</string>
+    <string name="open_file">פתח קובץ</string>
+    <string name="eraser">מַחַק</string>
+    <string name="eyedropper">מפיל עיניים</string>
+    <string name="failed_to_load_image">טעינת התמונה %s נכשלה</string>
+    <!-- Settings -->
+    <string name="show_brush_size">הצג כלי גודל מברשת</string>
+    <string name="allow_zooming_moving_canvas">אפשר התקרבות והזזת הקנבס באמצעות מחוות</string>
+    <string name="clear">נקה</string>
+    <string name="change_background_color">שנה צבע רקע</string>
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Draw Pro - אפליקציה לסקיצות מהירות וקלות</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">עט ונייר עבור הסקיצות המהירות שלך.</string>
+    <string name="app_long_description"> רוצה לצייר משהו יצירתי אבל אין לך נייר\? האפליקציה הזו תתאים לכם בצורה מושלמת. פשוט בחר צבע וצייר, זה קל כמו זה. אתה יכול לשמור את הציור בקובץ, להדפיס אותו או לשתף אותו ישירות באמצעות דואר אלקטרוני או רשתות חברתיות, כך שגם החברים שלך יוכלו ליהנות ממנו. האפליקציה הפופולרית ביותר הזו לסקיצות מהירות מספקת פונקציות שימושיות רבות כמו בטל/בצע מחדש, שינוי צבע הרקע או שימוש בתמונה כרקע. אפשר גם לגרום לאפליקציה למנוע מהמכשיר להירדם. אתה יכול גם לשנות את גודל המברשת, או להשתמש במחק, אם פישלת במשהו. זה תומך בהכנסת צבעים או על ידי בחירתם בלוח ענק, או על ידי הזנת קוד הקשת הצבעים. האפליקציה תומכת בפורמטים רבים ושונים כמו וקטורים PNG, JPG או SVG. אתה יכול לצייר משהו חדש מאפס, או לפתוח קובץ כלשהו ופשוט לשחק איתו. זה שמיש בצורה מושלמת גם על ידך, או על ידי משפחה עם ילדים לשחק כמה משחקים. הרי לכל אחד יש חתיכת אמן בעצמו. לא תמצאו כאן כלים מפוארים או מתקדמים, מברשות, פונטים, פילטרים, זה אמור לשמש כדי להשתעשע איתו. זה מגיע עם עיצוב חומר וערכת נושא כהה כברירת מחדל, מספק חווית משתמש נהדרת לשימוש קל. היעדר גישה לאינטרנט נותן לך יותר פרטיות, אבטחה ויציבות מאשר אפליקציות אחרות. אינו מכיל פרסומות או הרשאות מיותרות. זה קוד פתוח לחלוטין, מספק צבעים הניתנים להתאמה אישית. <b>בדוק את החבילה המלאה של כלים פשוטים כאן:</b> https://www.simplemobiletools.com <b>פייסבוק:</b> https://www.facebook.com/simplemobiletools <b>Reddit :</b> https://www.reddit.com/r/SimpleMobileTools </string>
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>

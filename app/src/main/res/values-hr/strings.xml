@@ -9,7 +9,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Prikaži alat za odabir veličine četkica</string>
     <string name="allow_zooming_moving_canvas">Dopustite zumiranje i pomicanje platna pokretima</string>
-    <string name="clear">Očisti</string>
+    <string name="clear">Izbriši</string>
     <string name="change_background_color">Promjeni boju pozadine</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
