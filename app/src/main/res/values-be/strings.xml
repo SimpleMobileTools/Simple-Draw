@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Draw</string>
+    <string name="app_launcher_name">Малюнкі</string>
+    <string name="open_file">Адкрыць файл</string>
+    <string name="eraser">Гумка</string>
+    <string name="eyedropper">Піпетка</string>
+    <string name="failed_to_load_image">Не атрымалася загрузіць выяву %s</string>
+    <!-- Settings -->
+    <string name="show_brush_size">Паказваць інструмент змены памера пэндзля</string>
+    <string name="allow_zooming_moving_canvas">Дазволіць масштабаванне і перамяшчэнне палатна жэстамі</string>
+    <string name="clear">Ачысціць</string>
+    <string name="change_background_color">Змяніць колер фону</string>
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>

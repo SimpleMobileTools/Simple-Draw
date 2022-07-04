@@ -4,13 +4,13 @@ Ciesz się chwilą dzięki naszej specjalnie zaprojektowanej aplikacji do rysowa
 
 Prosty szkicownik Pro to najlepsza aplikacja do rysowania dla każdego, kto uwielbia rysować. Po prostu wybierz kolor i rysuj!
 
-<b>Maluj i rysuj proste szkice dla zabawy</b>
+Maluj i rysuj proste szkice dla zabawy
 
 Dzięki Prostemu szkicownikowi Pro nie będziesz potrzebować żadnych wymyślnych ani zaawansowanych narzędzi czy filtrów do swojego ulubionego bazgrania lub szkicowania. Po prostu użyj kreatywności i rysowania odręcznego, aby stworzyć najlepsze szkice do swojego szkicownika.
 
 Przekonaj się, dlaczego jest to najlepsza aplikacja do rysowania, w której każdy może nabazgrolić coś prostego z frajdą!
 
-<b>Cechy Prostego szkicownika Pro:</b>
+Cechy Prostego szkicownika Pro:
 
 ✔️ Narysuj coś kolorowego, prosty szkic lub bazgroły, korzystając z innego koloru i rozmiaru ołówka
 ✔️ Ustaw kolor tła lub użyj obrazu ze szkicownika
@@ -19,21 +19,21 @@ Przekonaj się, dlaczego jest to najlepsza aplikacja do rysowania, w której ka�
 ✔️ Udostępniaj swoje obrazy, rysunki i szkice znajomym przez e-mail lub sieci społecznościowe
 ✔️ Obsługuje wiele różnych formatów, takich jak PNG, JPG lub SVG
 
-<b>Stwórz własny szkicownik!</b>
+Stwórz własny szkicownik!
 
 Bez względu na Twój wiek i umiejętności aplikacja oferuje przyjemne wrażenia z rysowania! Narysuj szkic, użyj ulubionego koloru i zapisz swoje dzieło we własnym szkicowniku. Dzięki Prostemu szkicownikowi Pro możesz albo zrobić nowe szkice od zera, albo otworzyć jakiś stary plik graficzny ze szkicownika i po prostu pobawić się nowymi malunkami i kolorami.
 
-<b>Najlepszy blok rysunkowy w Twojej kieszeni!</b>
+Najlepszy blok rysunkowy w Twojej kieszeni!
 
 Nasza aplikacja do rysowania odręcznego pozwala Ci w cyfrowy sposób narysować szkic lub gryzmoły, malować i odkrywać w Tobie artystę!
 
 Ta specjalnie zaprojektowana aplikacja do rysowania i szkicownik to miejsce, gdzie Twoja kreatywność przeniesie Cię od szybkiego szkicu po zabawne dzieło. Zatem otwórz blok rysunkowy, pomaluj i po prostu narysuj coś ładnego! Szybko rysuj niezależnie od tego, czy jesteś w podróży, czy w ruchu; ciesz się doświadczeniem z rysowania i udostępniaj swoje rysunki i szkice znajomym.
 
-<b>Zabawa w domu – naucz się szkicowania</b>
+Zabawa w domu – naucz się szkicowania
 
 Aplikacja doskonale nadaje się zarówno dla dzieci i początkujących, jak i dla rodzin z dziećmi, aby grać w gry rysunkowe i uczyć się szkicowania. W końcu każdy ma w sobie coś z artysty.
 
-<b>Rysowanie dla dzieci! </b>
+Rysowanie dla dzieci!
 
 Rysowanie dla dzieci jest ważne. Dzieci skutecznie się komunikują, a przez rysunki uczą swobodnego wyrażania swoich uczuć i pomysłów. Za pomocą naszego cyfrowego bloku rysunkowego mogą rysować samochody, kwiaty, psy, koty i inne obrazy oraz zapisywać je w galerii!
 
@@ -41,7 +41,7 @@ Domyślnie jest wyposażona w Material Design i ciemny motyw, zapewniając dosko
 
 Nie zawiera reklam ani niepotrzebnych uprawnień. Jest w pełni otwartoźródłowa, zapewnia konfigurowalną kolorystykę.
 
-<b>Sprawdź pełen zestaw od Simple Tools tutaj:</b>
+Sprawdź pełen zestaw od Simple Tools tutaj:
 https://www.simplemobiletools.com
 
 Facebook:
@@ -49,3 +49,6 @@ https://www.facebook.com/simplemobiletools
 
 Reddit:
 https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools
