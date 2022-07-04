@@ -11,12 +11,6 @@
     <string name="allow_zooming_moving_canvas">Dopusti zumiranje i pomicanje platna pokretima</string>
     <string name="clear">Izbriši</string>
     <string name="change_background_color">Promjeni boju pozadine</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Jednostavno crtanje Pro – Brze i jednostavne skice</string>
-    <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Olovka i papir za brzo skiciranje.</string>
-    <string name="app_long_description"> Želiš nacrtati nešto kreativno, ali nemaš papir\? Ova aplikacija će ti savršeno odgovarati. Jednostavno odaberi boju i crtaj. Crtež možeš spremiti u datoteku, ispisati ili podijeliti izravno putem e-pošte ili društvenih mreža kako bi se i tvoji prijatelji mogli zabaviti s njim. Ova iznimno popularna aplikacija za brze skice nudi mnoge korisne funkcije kao što su Poništi/Ponovi, mijenjanje boje pozadine ili korištenje slike kao pozadine. Po želji možeš aplikaciju tako postaviti, da spriječi da uređaj zaspi. Također možeš promijeniti veličinu kista ili koristiti gumicu. Podržava umetanje boja bilo odabirom na velikoj paleti ili unosom heksadecimalnog koda boja. Aplikacija podržava mnoge različite formate poput PNG, JPG ili SVG vektora. Možeš nacrtati nešto potpuno novo ili otvoriti neku datoteku i jednostavno se s njom poigrati. Koristiti je mogu i obitelj s djecom za igranje igara. Uostalom, svatko u sebi ima djelić umjetnika. Ovdje nećeš pronaći posebne ili napredne alate, kistove, fontove, filtre. Aplikacija je smišljena za zabavu. Aplikacija je izrađena u material-dizajnu i standardno koristi tamnu temu, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. Nedostatak pristupa internetu pruža bolju privatnost, sigurnost i stabilnost od drugih aplikacija. Ne sadrži oglase niti nepotrebne dozvole. Potpuno je otvorenog koda, pruža prilagodljive boje. <b>Pogledaj cijeli paket „Jednostavni alati” ovdje:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

@@ -11,37 +11,6 @@
     <string name="allow_zooming_moving_canvas">Met gebaren het canvas verplaatsen en inzoomen/uitzoomen</string>
     <string name="clear">Wissen</string>
     <string name="change_background_color">Achtergrondkleur</string>
-
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Eenvoudig Tekenen Pro- Snel &amp; gemakkelijk schetsen</string>
-    <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pen en papier voor snelle schetsen, zonder advertenties, zonder internettoegang</string>
-    <string name="app_long_description">
-        Snel iets tekenen, maar geen papier bij de hand? Deze app zal dan van pas komen. Kies een kleur en begin direct met tekenen. Sla de tekening op als bestand, of deel direct via e-mail of sociale netwerken zodat vrienden ermee aan de slag kunnen.
-
-        Deze populaire app voor snelle schetsen heeft veel handige functies, zoals Ongedaan maken/Opnieuw, het veranderen van de achtergrondkleur of het gebruiken van een afbeelding als achtergrond. Er is een optie om te voorkomen dat het scherm uitgaat. De penceelgrootte is aan te passen en er is een gum om foutjes weg te halen. Kleuren kunnen worden gekozen via een groot palet of via een HEX-kleurcode.
-
-        De app ondersteunt veel verschillende formaten, zoals PNG, JPG en SVG-vectorafbeeldingen.
-
-        Teken iets geheel nieuws op een blanco canvas, of open een bestaande afbeelding om mee te spelen. Het is dan ook uitstekend geschikt voor het gebruik met tekenspelletjes in de familie. Iedereen heeft wel een artiestje in zich verstopt zitten.
-
-        Verwacht geen geavanceerde gereedschappen, zoals penceelsoorten, lettertypes of filters: deze app is bedoeld om eenvoudigweg plezier te maken.
-
-        De app is ontworpen volgens material design en heeft standaard een donker thema. De app heeft geen toegang tot het internet nodig en voorziet van meer privacy, veiligheid en stabiliteit dan andere apps.
-
-        Bevat geen advertenties of onnodige machtigingen. Volledig open-source. Kleuren van de app kunnen worden aangepast.
-
-        <b>Probeer ook eens de andere apps van Simple Tools:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

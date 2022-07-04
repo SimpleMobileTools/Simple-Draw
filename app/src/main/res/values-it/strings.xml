@@ -11,35 +11,6 @@
     <string name="allow_zooming_moving_canvas">Permetti l\'ingrandimento e lo spostamento con i gesti</string>
     <string name="clear">Pulisci</string>
     <string name="change_background_color">Cambia colore di sfondo</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Semplice Disegnare Pro - Schizzi facili e veloci</string>
-    <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Carta e penna per i tuoi schizzi veloci.</string>
-    <string name="app_long_description">
-        Vuoi disegnare qualcosa di creativo ma non hai carta? Questa app è perfetta per te. Scegli un colore e disegna, tutto qui. Puoi salvare il disegno in un file, stamparlo o condividerlo direttamente via email o social network, in modo che anche i tuoi amici possano ammirarlo.
-
-        Questa app così popolare per schizzi veloci ha diverse funzioni utili come Annulla/Ripeti, modifica del colore di sfondo, o l\'uso di immagini come sfondo. Puoi anche facoltativamente impedire al dispositivo di spegnersi dall\'app. Puoi cambiare la dimensione del pennello, o usare una gomma se hai fatto un pasticcio. Supporta l\'inserimento di colori selezionandoli da una grande tavolozza, o inserendone il codice esadecimale.
-
-        L\'app supporta molti formati diversi come PNG, JPG o vettoriali SVG.
-
-        Puoi disegnare qualcosa di nuovo da zero, o aprire un file e sbizzarrirti. È perfettamente utilizzabile da te o da una famiglia con bambini per fare qualche gioco. Dopotutto, chiunque ha un piccolo artista dentro di sè.
-
-        Qui non troverai strumenti, pennelli, caratteri e filtri complessi o avanzati, è pensata solo per divertirsi un po\'.
-
-        Progettato con material design, offre anche un tema scuro, per una migliore esperienza utente e un facile utilizzo. La mancanza dell\'accesso a internet ti dà maggiore privacy, sicurezza e stabilità rispetto ad altre app.
-        
-        L\'applicazione non contiene pubblicità o autorizzazioni non necessarie; è completamente opensource e la si può personalizzare con i propri colori preferiti.
-
-        <b>Controlla l\'intera raccolta di Strumenti Semplici qui:</b>
-        https://www.simplemobiletools.com
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

@@ -11,12 +11,6 @@
     <string name="allow_zooming_moving_canvas">Permitir ampliar e mover a tela com gestos</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Alterar fundo</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Draw Pro - Desenhos rápidos</string>
-    <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Papel e caneta para criar desenhos simples.</string>
-    <string name="app_long_description"> Para desenhar descomplicadamente quando se sentir criativo e não tiver lápis nem papel. Escolha simplesmente uma cor e comece a fazer um esboço. Mesmo sem ferramentas avançadas, traz um pincel de tamanho modificável, e uma borracha para apagar. Seleccione as cores de uma ampla palete ou com o código Hex. Pode desfazer/refazer, e quanto ao fundo, pode alterar a cor ou usar uma imagem a partir de um ficheiro. Suporta vários formatos como PNG, JPG ou vectores SVG. E no final, guarde, imprima ou envie o seu desenho por e-mail ou pelas redes sociais. Tem ainda a opção de impedir que o ecrã se apague durante a sua utilização. Com design material num tema escuro por definição. Não requer acesso à internet o que lhe confere mais privacidade, segurança e estabilidade. Não contém anúncios nem permissões desnecessárias. É totalmente open source e oferece cores personalizáveis a gosto. <b>Consulte a gama completa de aplicações Simple Tools aqui:</b> https://www.simplemobiletools.com <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
