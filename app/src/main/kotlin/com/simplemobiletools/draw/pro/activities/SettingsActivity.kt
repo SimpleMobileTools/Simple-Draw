@@ -1,8 +1,8 @@
 package com.simplemobiletools.draw.pro.activities
 
 import android.os.Bundle
-import android.view.Menu
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.NavigationIcon
 import com.simplemobiletools.draw.pro.R
 import com.simplemobiletools.draw.pro.extensions.config
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -16,6 +16,7 @@ class SettingsActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
+        setupToolbar(settings_toolbar, NavigationIcon.Arrow)
 
         setupCustomizeColors()
         setupUseEnglish()
@@ -24,7 +25,6 @@ class SettingsActivity : SimpleActivity() {
         setupAllowZoomingCanvas()
         setupForcePortraitMode()
         updateTextColors(settings_holder)
-        invalidateOptionsMenu()
 
         arrayOf(settings_color_customization_label, settings_general_settings_label).forEach {
             it.setTextColor(getProperPrimaryColor())
@@ -33,11 +33,6 @@ class SettingsActivity : SimpleActivity() {
         arrayOf(settings_color_customization_holder, settings_general_settings_holder).forEach {
             it.background.applyColorFilter(getProperBackgroundColor().getContrastColor())
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        updateMenuItemColors(menu)
-        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setupCustomizeColors() {

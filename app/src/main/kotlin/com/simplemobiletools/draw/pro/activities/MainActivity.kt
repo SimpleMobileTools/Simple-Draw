@@ -10,8 +10,6 @@ import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.Menu
-import android.view.MenuItem
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.SeekBar
@@ -72,6 +70,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupOptionsMenu()
+        refreshMenuItems()
         appLaunched(BuildConfig.APPLICATION_ID)
 
         eyeDropper = EyeDropper(my_canvas) { selectedColor ->
@@ -113,6 +113,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onResume() {
         super.onResume()
+        setupToolbar(main_toolbar)
 
         val isShowBrushSizeEnabled = config.showBrushSize
         stroke_width_bar.beVisibleIf(isShowBrushSizeEnabled)
@@ -128,7 +129,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         requestedOrientation = if (config.forcePortraitMode) ActivityInfo.SCREEN_ORIENTATION_PORTRAIT else ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-        invalidateOptionsMenu()
+        refreshMenuItems()
     }
 
     override fun onPause() {
@@ -145,33 +146,31 @@ class MainActivity : SimpleActivity(), CanvasListener {
         my_canvas.mListener = null
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        menu.apply {
+    private fun refreshMenuItems() {
+        main_toolbar.menu.apply {
             findItem(R.id.menu_confirm).isVisible = isImageCaptureIntent || isEditIntent
             findItem(R.id.menu_save).isVisible = !isImageCaptureIntent && !isEditIntent
             findItem(R.id.menu_share).isVisible = !isImageCaptureIntent && !isEditIntent
             findItem(R.id.open_file).isVisible = !isEditIntent
         }
-
-        updateMenuItemColors(menu)
-        return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_confirm -> confirmImage()
-            R.id.menu_save -> trySaveImage()
-            R.id.menu_share -> shareImage()
-            R.id.clear -> clearCanvas()
-            R.id.open_file -> tryOpenFile()
-            R.id.change_background -> changeBackgroundClicked()
-            R.id.menu_print -> printImage()
-            R.id.settings -> launchSettings()
-            R.id.about -> launchAbout()
-            else -> return super.onOptionsItemSelected(item)
+    private fun setupOptionsMenu() {
+        main_toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_confirm -> confirmImage()
+                R.id.menu_save -> trySaveImage()
+                R.id.menu_share -> shareImage()
+                R.id.clear -> clearCanvas()
+                R.id.open_file -> tryOpenFile()
+                R.id.change_background -> changeBackgroundClicked()
+                R.id.menu_print -> printImage()
+                R.id.settings -> launchSettings()
+                R.id.about -> launchAbout()
+                else -> return@setOnMenuItemClickListener false
+            }
+            return@setOnMenuItemClickListener true
         }
-        return true
     }
 
     override fun onBackPressed() {
@@ -261,7 +260,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 isImageCaptureIntent = true
                 intentUri = output
                 defaultPath = output.path!!
-                invalidateOptionsMenu()
+                refreshMenuItems()
             }
         }
 

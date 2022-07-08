@@ -12,8 +12,10 @@ import com.simplemobiletools.draw.pro.helpers.SVG
 import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 
-class SaveImageDialog(val activity: SimpleActivity, val defaultPath: String, val defaultFilename: String, val defaultExtension: String,
-                      val hidePath: Boolean, callback: (fullPath: String, filename: String, extension: String) -> Unit) {
+class SaveImageDialog(
+    val activity: SimpleActivity, val defaultPath: String, val defaultFilename: String, val defaultExtension: String,
+    val hidePath: Boolean, callback: (fullPath: String, filename: String, extension: String) -> Unit
+) {
     private val SIMPLE_DRAW = "Simple Draw"
 
     init {
@@ -21,11 +23,13 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultPath: String, val
         var folder = if (defaultPath.isEmpty()) "${activity.internalStoragePath}/$SIMPLE_DRAW" else defaultPath
         val view = activity.layoutInflater.inflate(R.layout.dialog_save_image, null).apply {
             save_image_filename.setText(initialFilename)
-            save_image_radio_group.check(when (defaultExtension) {
-                JPG -> R.id.save_image_radio_jpg
-                SVG -> R.id.save_image_radio_svg
-                else -> R.id.save_image_radio_png
-            })
+            save_image_radio_group.check(
+                when (defaultExtension) {
+                    JPG -> R.id.save_image_radio_jpg
+                    SVG -> R.id.save_image_radio_svg
+                    else -> R.id.save_image_radio_png
+                }
+            )
 
             if (hidePath) {
                 save_image_path_label.beGone()
@@ -41,13 +45,13 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultPath: String, val
             }
         }
 
-        AlertDialog.Builder(activity)
+        activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
-            .create().apply {
-                activity.setupDialogStuff(view, this, R.string.save_as) {
-                    showKeyboard(view.save_image_filename)
-                    getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+            .apply {
+                activity.setupDialogStuff(view, this, R.string.save_as) { alertDialog ->
+                    alertDialog.showKeyboard(view.save_image_filename)
+                    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                         val filename = view.save_image_filename.value
                         if (filename.isEmpty()) {
                             activity.toast(R.string.filename_cannot_be_empty)
@@ -70,11 +74,11 @@ class SaveImageDialog(val activity: SimpleActivity, val defaultPath: String, val
                             val title = String.format(activity.getString(R.string.file_already_exists_overwrite), newPath.getFilenameFromPath())
                             ConfirmationDialog(activity, title) {
                                 callback(newPath, filename, extension)
-                                dismiss()
+                                alertDialog.dismiss()
                             }
                         } else {
                             callback(newPath, filename, extension)
-                            dismiss()
+                            alertDialog.dismiss()
                         }
                     }
                 }

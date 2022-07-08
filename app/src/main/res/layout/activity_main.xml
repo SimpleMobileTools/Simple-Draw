@@ -1,75 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_holder"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.simplemobiletools.draw.pro.views.MyCanvas
-        android:id="@+id/my_canvas"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_primary"
+            app:menu="@menu/menu"
+            app:title="@string/app_launcher_name"
+            app:titleTextAppearance="@style/AppTheme.ActionBar.TitleTextStyle" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.simplemobiletools.commons.views.MyScrollView
+        android:id="@+id/main_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white" />
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <ImageView
-        android:id="@+id/redo"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_toStartOf="@+id/eraser"
-        android:padding="@dimen/medium_margin"
-        android:src="@drawable/ic_redo_vector"
-        android:visibility="gone" />
+        <RelativeLayout
+            android:id="@+id/main_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/eraser"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_toStartOf="@+id/eye_dropper"
-        android:padding="@dimen/medium_margin"
-        android:src="@drawable/ic_eraser_on_vector" />
+            <com.simplemobiletools.draw.pro.views.MyCanvas
+                android:id="@+id/my_canvas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
 
-    <ImageView
-        android:id="@+id/eye_dropper"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_toStartOf="@+id/color_picker"
-        android:padding="@dimen/medium_margin"
-        android:src="@drawable/ic_colorize_on_vector"
-        android:visibility="visible" />
+            <ImageView
+                android:id="@+id/redo"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_toStartOf="@+id/eraser"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_redo_vector"
+                android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/color_picker"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_alignParentEnd="true" />
+            <ImageView
+                android:id="@+id/eraser"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_toStartOf="@+id/eye_dropper"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_eraser_on_vector" />
 
-    <ImageView
-        android:id="@+id/undo"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_below="@id/color_picker"
-        android:layout_alignParentEnd="true"
-        android:padding="@dimen/medium_margin"
-        android:src="@drawable/ic_undo_vector"
-        android:visibility="gone" />
+            <ImageView
+                android:id="@+id/eye_dropper"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_toStartOf="@+id/color_picker"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_colorize_on_vector"
+                android:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/stroke_width_preview"
-        android:layout_width="@dimen/full_brush_size"
-        android:layout_height="@dimen/full_brush_size"
-        android:layout_above="@+id/stroke_width_bar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/medium_margin"
-        android:background="@drawable/circle_background" />
+            <ImageView
+                android:id="@+id/color_picker"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_alignParentEnd="true" />
 
-    <com.simplemobiletools.commons.views.MySeekBar
-        android:id="@+id/stroke_width_bar"
-        android:layout_width="@dimen/stroke_bar_size"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:max="100"
-        android:padding="@dimen/medium_margin"
-        android:progress="50" />
+            <ImageView
+                android:id="@+id/undo"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_below="@id/color_picker"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_undo_vector"
+                android:visibility="gone" />
 
-</RelativeLayout>
+            <ImageView
+                android:id="@+id/stroke_width_preview"
+                android:layout_width="@dimen/full_brush_size"
+                android:layout_height="@dimen/full_brush_size"
+                android:layout_above="@+id/stroke_width_bar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:background="@drawable/circle_background" />
+
+            <com.simplemobiletools.commons.views.MySeekBar
+                android:id="@+id/stroke_width_bar"
+                android:layout_width="@dimen/stroke_bar_size"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:max="100"
+                android:padding="@dimen/medium_margin"
+                android:progress="50" />
+
+        </RelativeLayout>
+    </com.simplemobiletools.commons.views.MyScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
