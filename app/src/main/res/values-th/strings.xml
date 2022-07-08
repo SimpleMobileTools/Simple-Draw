@@ -1,11 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Draw</string>
-    <string name="open_file">Open file</string>
+    <string name="open_file">เปิดไฟล์</string>
     <string name="eraser">Eraser</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Failed to load image %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Show brush size tool</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
