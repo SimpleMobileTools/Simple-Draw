@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Paprastas piešimas</string>
     <string name="app_launcher_name">Piešimas</string>
@@ -5,7 +6,6 @@
     <string name="eraser">Trintukas</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Nepavyko įkelti paveikslėlio %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Rodyti teptuko dydžio įrankį</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>

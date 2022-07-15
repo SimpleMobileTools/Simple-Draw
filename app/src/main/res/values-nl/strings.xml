@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Eenvoudig Tekenen</string>
     <string name="app_launcher_name">Tekenen</string>
@@ -5,7 +6,6 @@
     <string name="eraser">Gum</string>
     <string name="eyedropper">Pipet</string>
     <string name="failed_to_load_image">Kan bestand %s niet laden</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Knop penceelgrootte tonen</string>
     <string name="allow_zooming_moving_canvas">Met gebaren het canvas verplaatsen en inzoomen/uitzoomen</string>

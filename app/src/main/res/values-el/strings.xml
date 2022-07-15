@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Απλή Ζωγραφική</string>
     <string name="app_launcher_name">Ζωγραφική</string>
@@ -5,7 +6,6 @@
     <string name="eraser">Γόμμα</string>
     <string name="eyedropper">Επιλογέας χρώματος</string>
     <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Εμφάνιση εργαλείου για διαστάσεις του πινέλου</string>
     <string name="allow_zooming_moving_canvas">Αποδοχή μεγέθυνσης &amp; μετακίνηση καμβά με χειρονομίες</string>

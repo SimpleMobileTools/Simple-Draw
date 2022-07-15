@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Piirrä</string>
@@ -5,7 +6,6 @@
     <string name="eraser">Pyyhin</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Kuvan %s lataaminen epäonnistui</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Näytä siveltimen koon työkalu</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
