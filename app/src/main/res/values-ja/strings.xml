@@ -1,11 +1,11 @@
-﻿<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <string name="app_name">シンプル ドロー</string>
     <string name="app_launcher_name">ドロー</string>
     <string name="open_file">ファイルを開く</string>
     <string name="eraser">消しゴム</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">画像 %s を読み込めませんでした</string>
-
     <!-- Settings -->
     <string name="show_brush_size">ブラシサイズツールを表示する</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
