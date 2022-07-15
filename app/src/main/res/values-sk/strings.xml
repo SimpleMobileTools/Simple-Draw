@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jednoduché kreslenie</string>
     <string name="app_launcher_name">Kreslenie</string>
@@ -5,7 +6,6 @@
     <string name="eraser">Guma</string>
     <string name="eyedropper">Kvapkadlo</string>
     <string name="failed_to_load_image">Nepodarilo sa načítať súbor %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Zobraziť menič veľkosti štetca</string>
     <string name="allow_zooming_moving_canvas">Povoliť približovanie a hýbanie plátna gestami</string>
