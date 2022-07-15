@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Draw</string>
     <string name="app_launcher_name">Llunio</string>
@@ -5,7 +6,6 @@
     <string name="eraser">Rwbiwr</string>
     <string name="eyedropper">Eyedropper</string>
     <string name="failed_to_load_image">Methwyd â llwytho\'r ddelwedd %s</string>
-
     <!-- Settings -->
     <string name="show_brush_size">Dangos teclyn maint brws</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
