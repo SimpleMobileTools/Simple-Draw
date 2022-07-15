@@ -8,17 +8,20 @@ Kreslenie podporuje veľa rôznych formátov ako PNG, JPG alebo SVG vektory.
 
 Viete buď nakresliť niečo od nuly, alebo otvoriť súbor a proste sa s ním pohrať. Dá sa jednoducho použiť buď vami, alebo vašou rodinou s deťmi. Každý má totižto v sebe kus umelca.
 
-Nenájdete tu žiadne extra pokročilé funkcie, štetce, písmo, filtre atď, ide iba o kreslenie jednoduchých vecí.
+Nenájdete tu žiadne extra pokročilé funkcie, štetce, písmo, filtre atď, ide iba o kreslenie jednoduchých vecí. 
 
 Táto apka je založená na Material dizajne a má prednastavenú tmavú tému, poskytuje výbornú používateľskú skúsenosť pre ľahké používanie. Chýbajúci prístup k internetu garantuje lepšie súkromie, bezpečnosť a stabilitu ako ostatné apky.
 
 Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
 
-<b>Pozrite si celú sadu aplikácií na:</b>
+Pozrite si celú sadu aplikácií na:
 https://www.simplemobiletools.com
 
-<b>Facebook:</b>
+Facebook:
 https://www.facebook.com/simplemobiletools
 
-<b>Reddit:</b>
+Reddit:
 https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools

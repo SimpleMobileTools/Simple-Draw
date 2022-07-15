@@ -1,0 +1,23 @@
+Vous voulez dessiner quelque chose de créatif mais vous n'avez pas de papier? Cette application de dessin de carnet de croquis vous conviendra parfaitement. Il suffit de choisir une couleur et de commencer à dessiner, c'est aussi simple que cela. Vous pouvez soit enregistrer le dessin dans un fichier, soit l'imprimer, soit le partager directement par e-mail ou sur les réseaux sociaux afin que vos amis puissent également s'amuser avec. Ce carnet de croquis vous offre la possibilité de dessiner tout ce que vous voulez d'un simple toucher du doigt.
+
+Cette application de dessin de carnet de croquis extrêmement populaire pour les croquis rapides fournit de nombreuses fonctions utiles telles que Annuler / Rétablir, modifier la couleur d'arrière-plan ou utiliser une image comme arrière-plan. Vous pouvez éventuellement faire en sorte que l'application empêche également l'appareil de s'endormir. Vous pouvez également modifier la taille du pinceau ou utiliser une gomme si vous avez raté quelque chose. Il prend en charge l'insertion de couleurs soit en le sélectionnant sur une immense palette, soit en entrant le code hexadécimal des couleurs.
+
+L'application prend en charge de nombreux formats différents tels que les vecteurs PNG, JPG ou SVG. Avec tous ces formats, vous avez la possibilité d'utiliser votre croquis comme vous le souhaitez. Cette application de dessin de carnet de croquis a tout simplifié pour vous afin que vous puissiez créer des chefs-d'œuvre sans vous soucier des navigations et des commandes complexes.
+
+Vous pouvez soit dessiner quelque chose de nouveau à partir de zéro dans cette application de dessin, soit ouvrir un fichier et jouer avec lui dans ce carnet de croquis. Il est parfaitement utilisable soit par vous, soit par une famille avec enfants pour jouer à quelques jeux. Après tout, chacun a un morceau d'artiste en lui-même.
+
+Vous ne trouverez pas d'outils, de pinceaux, de polices, de filtres sophistiqués ou avancés ici, il est censé être utilisé pour s'amuser. Cette application de dessin a gardé en vue la facilité pour tous les artistes afin que tout le monde puisse l'utiliser sans être coincé dans les détails techniques.
+
+Ne contient aucune publicité ou autorisations inutiles. Il est entièrement open source, fournit des couleurs personnalisables.
+
+Découvrez la suite complète des outils simples ici:
+https://www.simplemobiletools.com
+
+Facebook:
+https://www.facebook.com/simplemobiletools
+
+Reddit:
+https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools

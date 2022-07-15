@@ -2,4 +2,16 @@
 
 Aplikacija ne vsebuje oglasov in ne zahteva nepotrebnih dovoljenj. Je popolnoma odprtokodna in zelo prilagodljiva.
 
-Aplikacija je le ena v večji seriji aplikacij. Ostale lahko najdete na spletni strani https://www.simplemobiletools.com
+Aplikacija je le ena v večji seriji aplikacij. 
+
+Ostale lahko najdete na spletni strani 
+https://www.simplemobiletools.com
+
+Facebook:
+https://www.facebook.com/simplemobiletools
+
+Reddit:
+https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools

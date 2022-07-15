@@ -1,5 +1,5 @@
 # Simple Draw
-<img alt="Logo" src="fastlane/metadata/android/en-US/images/icon.png" width="120" />
+<img alt="Logo" src="graphics/icon.png" width="120" />
 
 Want to draw something creative but you have no paper? This app will suit you perfectly. Just pick a color and draw, it is as easy as that. You can either save the drawing in a file, print it or share it directly through email or social networks so that your friends can have some fun with it too.
 
@@ -28,7 +28,7 @@ https://www.reddit.com/r/SimpleMobileTools
 <a href='https://f-droid.org/packages/com.simplemobiletools.draw.pro'><img src='https://simplemobiletools.com/images/button-f-droid.png' alt='Get it on F-Droid' height=45 ></a>
 
 <div style="display:flex;">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" width="30%">
+<img alt="App image" src="fastlane/metadata/android/en-GB/images/phoneScreenshots/1_en-GB.jpeg" width="30%">
+<img alt="App image" src="fastlane/metadata/android/en-GB/images/phoneScreenshots/2_en-GB.jpeg" width="30%">
+<img alt="App image" src="fastlane/metadata/android/en-GB/images/phoneScreenshots/3_en-GB.jpeg" width="30%">
 </div>
