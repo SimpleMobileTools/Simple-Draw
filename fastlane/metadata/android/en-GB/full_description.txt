@@ -1,6 +1,6 @@
 🎨 Are you looking for the best drawing app for your pocket? Do you want to draw something simple and easy, but you have no paper? You are in the right place!
 
-Enjoy the moment with our specially designed drawing app, draw something fun and create your own artwork– all in a digital form!
+Enjoy the moment with our specially designed drawing app, draw something fun and create your own artwork – all in a digital form!
 
 Simple Draw is the best drawing app for anyone who loves to draw. Just pick paint and draw!
 
@@ -18,7 +18,7 @@ This popular sketchbook for quick sketch and painting provides many useful funct
 ✔️	Changing the background colour, or using an image from your sketchbook as the background 
 ✔️	Use an eraser if you took the wrong paint
 ✔️	Insert paint either by selecting it on a palette, or by entering the colours hex code
-✔️	This simple sketchbook supports many different formats like PNG, JPG, or SVG vectors.
+✔️	This simple sketchbook supports many different formats like PNG, JPG, or SVG vectors
 ✔️	Share your paintings, draws & sketches with friends through email or social networks
 ✔️	Simple Draw App works offline & online!
 
@@ -44,7 +44,11 @@ Drawing for kids!
 
 Drawing for kids is important, and children are effective communicators, and through drawings, children learn to express their feelings and ideas freely. With our digital drawing pad, they can draw cars, flowers, dogs, cats, and other paintings and save them into the Gallery! 
 
-Our best drawing app contains no ads or unnecessary permissions. With Simple Draw, you will create quick sketches or scribble something fun using just your creativity and imagination so just start drawing a doodle or sketch, and share your love and joy for creating simple art!
+With Simple Draw, you will create quick sketches or scribble something fun using just your creativity and imagination so just start drawing a doodle or sketch, and share your love and joy for creating simple art!
+
+It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+
+Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
 
 Check out the full suite of Simple Tools here:
 https://www.simplemobiletools.com

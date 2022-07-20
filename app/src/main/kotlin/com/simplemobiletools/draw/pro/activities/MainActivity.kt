@@ -70,9 +70,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
         refreshMenuItems()
-        appLaunched(BuildConfig.APPLICATION_ID)
 
         eyeDropper = EyeDropper(my_canvas) { selectedColor ->
             setColor(selectedColor)
