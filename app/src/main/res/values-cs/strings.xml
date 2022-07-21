@@ -8,7 +8,7 @@
     <string name="failed_to_load_image">Nepodařilo se načíst obrázek %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Zobrazit nástroj velikosti štětce</string>
-    <string name="allow_zooming_moving_canvas">Povolit manipulaci plátna pomocí gest</string>
+    <string name="allow_zooming_moving_canvas">Povolit přibližování a posun plátna pomocí gest</string>
     <string name="clear">Vymazat</string>
     <string name="change_background_color">Změnit barvu pozadí</string>
     <!--
