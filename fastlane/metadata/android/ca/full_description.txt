@@ -8,9 +8,9 @@ Pintar i dibuixar esbossos senzills per diversió
 
 Amb Simple Draw, no necessitareu cap eina o filtre fantàstic o avançat per al vostre gargot o dibuix preferit. Només cal que utilitzeu la creativitat i el dibuix a mà alçada per crear els millors esbossos per al quadern de dibuixos.
 
-Proveu per què som la millor aplicació de dibuix on qualsevol pot gargotejar alguna cosa senzilla per diversió!
+Proveu per què és la millor aplicació de dibuix on qualsevol pot gargotejar alguna cosa senzilla per diversió!
 
-Funcions de dibuix simples
+Funcions de Simple Draw
 
 Aquest popular llibre de dibuixos per dibuixar i pintar ràpidament ofereix moltes funcions útils:
 
@@ -26,23 +26,29 @@ No utilitzeu res més que el vostre dispositiu i la vostra creativitat per fer g
 
 Creeu un quadern propi de dibuixos!
 
-Independentment de l'edat o les habilitats que tingueu, la millor aplicació de dibuix ofereix una experiència de dibuix divertida! Dibuixeu un esbós, utilitzeu la vostra pintura preferida i deseu la vostra obra d'art al quadern de dibuixos. Amb Simple Draw, podeu dibuixar esbossos nous des de zero o obrir algun fitxer d'il·lustració antic del vostre quadern de dibuixos i jugar amb pintures i colors nous.
+Independentment de l'edat o les habilitats que tingueu, la millor aplicació de dibuix ofereix una experiència divertida! Dibuixeu un esbós, utilitzeu la vostra pintura preferida i deseu la vostra obra d'art al quadern de dibuixos. Amb Simple Draw, podeu dibuixar esbossos nous des de zero o obrir algun fitxer d'il·lustració antic del vostre quadern de dibuixos i jugar amb pintures i colors nous.
 
 El millor bloc de dibuix per a la butxaca!
 
-La nostra aplicació de dibuix a mà alçada permet una manera digital de dibuixar un esbós o gargotejar, pintar i explorar l'artista que teniu dins vós!
+Aquesta aplicació de dibuix a mà alçada permet una manera digital de dibuixar un esbós o gargotejar, pintar i explorar l'artista que teniu dins vós!
 
-Aquesta aplicació de dibuix i quadern de dibuix especialment dissenyats van on la vostra creativitat us porti, des d'un esbós ràpid fins a unes obres d'art divertides. Per tant, obriu el bloc de dibuix, pinteu i dibuixeu simplement alguna cosa bonica! Feu un dibuix ràpid al bloc de dibuix tant si esteu de viatge com si esteu en moviment, gaudiu de l'experiència de dibuix i compartiu els dibuixos i esbossos amb els amics.
+L'aplicació de dibuix i quadern de dibuix especialment dissenyats van on la vostra creativitat us porti, des d'un esbós ràpid fins a unes obres d'art divertides. Per tant, obriu el bloc de dibuix, pinteu i dibuixeu simplement alguna cosa bonica! Feu un dibuix ràpid al bloc de dibuix tant si esteu de viatge com si esteu en moviment, gaudiu de l'experiència de dibuix i compartiu els dibuixos i esbossos amb els amics.
+
+Diversió a casa, apreneu a dibuixar
 
 Aquesta aplicació de dibuix és perfectament utilitzable per a nens i principiants o per a una família amb nens per jugar a jocs de dibuix i per aprendre a dibuixar. Després de tot, tothom té una peça d'artista en si mateix.
 
-Descarregueu la nostra aplicació de dibuix, dibuixeu el vostre art preferit i compartiu-lo a les xarxes socials amb els amics.
+Descarregueu aquesta aplicació de dibuix, dibuixeu l'art que preferiu i compartiu-lo a les xarxes socials amb els amics.
 
 Dibuix per a nens!
 
 El dibuix per als nens és important: els nens són comunicadors eficaços, i a través dels dibuixos els nens aprenen a expressar els seus sentiments i idees amb llibertat. Amb el nostre bloc de dibuix digital poden dibuixar cotxes, flors, gossos, gats i altres quadres i guardar-los a la galeria!
 
 Aquesta aplicació de dibuix no conté anuncis ni permisos innecessaris. Amb Simple Draw, creareu esbossos ràpids o gargotejareu alguna cosa divertida utilitzant només la creativitat i la imaginació, així que només cal començar a dibuixar un gargot o un esbós i compartiu el vostre amor i alegria per crear art senzill!
+
+De manera predeterminada, inclou el «material design» i un tema fosc, proporciona una gran experiència d'usuari per a un ús fàcil. La manca d'accés a Internet us ofereix més privadesa, seguretat i estabilitat que altres aplicacions.
+
+No conté anuncis ni permisos innecessaris. El codi font és totalment obert, proporciona colors personalitzables.
 
 Consulteu el conjunt complet d'eines simples aquí:
 https://www.simplemobiletools.com
