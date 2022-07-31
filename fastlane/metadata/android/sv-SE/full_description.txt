@@ -1,8 +1,10 @@
 Vill du rita något men har inget papper? Denna app kommer att passa dig perfekt. Välj bara en färg och rita. Du kan antingen spara ritningen eller dela den direkt via e-post eller sociala nätverk.
 
+Den levereras med Material Design och mörkt tema som standard, och ger en bra användarupplevelse för enkel användning. Avsaknaden av internetåtkomst ger dig mer integritet, säkerhet och stabilitet än andra appar.
+
 Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
 
-Check out the full suite of Simple Tools here:
+Kolla in hela uppsättningen enkla verktyg här:
 https://www.simplemobiletools.com
 
 Facebook:
