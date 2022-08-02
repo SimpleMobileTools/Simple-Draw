@@ -1,16 +1,55 @@
-¿Quieres dibujar algo creativo pero no tienes papel? Esta aplicación de dibujo de cuaderno de bocetos de le conviene perfectamente. Simplemente elija un color y comience a dibujar, es tan fácil como eso. Puede guardar el dibujo en un archivo, imprimirlo o compartirlo directamente a través del correo electrónico o las redes sociales para que sus amigos también puedan divertirse con él. Este cuaderno de bocetos de le brinda flexibilidad para dibujar lo que desee con un toque de su dedo.
+🎨 ¿Buscas la mejor aplicación de dibujo para tu bolsillo? Quieres dibujar algo sencillo y fácil, pero no tienes papel? ¡Estás en el lugar correcto!
 
-Esta popular aplicación de dibujo de cuaderno de bocetos de para bocetos rápidos proporciona muchas funciones útiles como Deshacer / Rehacer, cambiar el color de fondo o usar una imagen como fondo. Opcionalmente, puede hacer que la aplicación evite que el dispositivo se duerma también. También puedes cambiar el tamaño del pincel o usar un borrador si estropeaste algo. Admite la inserción de colores, ya sea seleccionándolo en una paleta enorme o ingresando el código hexadecimal de colores.
+Disfruta del momento con nuestra aplicación de dibujo especialmente diseñada, dibuja algo divertido y crea tus propias obras de arte, ¡todo en forma digital!
 
-La aplicación admite muchos formatos diferentes como vectores PNG, JPG o SVG. Con todos estos formatos, tiene la capacidad de usar su boceto como desee. Esta aplicación de dibujo de cuaderno de bocetos de le ha facilitado todo para que pueda crear obras maestras sin preocuparse por navegaciones y controles complicados.
+Simple Draw es la mejor aplicación de dibujo para cualquier persona a la que le guste dibujar. ¡Sólo tienes que elegir pintar y dibujar!
 
-Puede dibujar algo nuevo desde cero en esta aplicación de dibujo o abrir algún archivo y simplemente jugar con él en este cuaderno de bocetos de. Es perfectamente utilizable por usted o por una familia con niños para jugar algunos juegos. Después de todo, todo el mundo tiene una pieza de artista en sí mismo.
+Pinta y dibuja bocetos sencillos para divertirte
 
-Aquí no encontrará herramientas, pinceles, fuentes, filtros sofisticados o avanzados, se supone que debe usarse para divertirse. Esta aplicación de dibujo ha mantenido a la vista la facilidad para todos los artistas para que cualquiera pueda usarla sin quedarse atascado en los tecnicismos.
+Con Simple Draw, no necesitarás ninguna herramienta o filtro sofisticado o avanzado para tu garabato o boceto favorito. Sólo tienes que usar tu creatividad y dibujar a mano alzada para crear los mejores bocetos para tu cuaderno de dibujo. 
 
-No contiene anuncios ni permisos innecesarios. Es totalmente de código abierto, proporciona colores personalizables.
+Prueba por qué somos la mejor aplicación de dibujo en la que cualquiera puede garabatear algo sencillo con diversión.  
 
-Consulte el conjunto completo de herramientas simples aquí:
+Características de Simple Draw 
+
+Este popular cuaderno de bocetos para dibujar y pintar rápidamente ofrece muchas funciones útiles:
+
+✔️ Dibujar algo colorido, simple boceto o garabato utilizando una pintura y un tamaño de pluma diferente.
+✔️ Cambiar el color de fondo, o usar una imagen de tu cuaderno de bocetos como fondo 
+✔️ Utilizar una goma de borrar si te equivocas de pintura
+✔️ Este sencillo cuaderno de bocetos admite muchos formatos diferentes como PNG, JPG o vectores SVG
+✔️ Comparte tus pinturas, dibujos y bocetos con tus amigos a través del correo electrónico o las redes sociales
+✔️ ¡Simple Draw App funciona offline & online!
+
+¡Utilice nada más que su dispositivo y la creatividad para hacer algunos garabatos y bocetos!
+
+¡Crea tu propio cuaderno de bocetos! 
+
+No importa la edad o las habilidades que tengas, ¡la mejor aplicación de dibujo ofrece una divertida experiencia de dibujo! Dibuja un boceto, utiliza tu pintura favorita y guarda tu obra de arte en tu propio cuaderno de bocetos. Con Simple Draw, puedes dibujar nuevos bocetos desde cero o abrir algún archivo de arte antiguo de tu cuaderno de bocetos y simplemente jugar con nuevas pinturas y colores.
+
+El mejor bloc de dibujo para tu bolsillo 
+
+Nuestra aplicación de dibujo a mano alzada te permite dibujar un boceto o garabatear, pintar y explorar el artista que llevas dentro.
+
+Esta aplicación de dibujo especialmente diseñada y el cuaderno de dibujo van donde tu creatividad te lleva, desde un boceto rápido hasta una divertida obra de arte. ¡Así que abre el bloc de dibujo, pinta y simplemente dibuja algo bonito! 
+ 
+Diversión en casa: aprende a dibujar 
+
+Nuestra aplicación de dibujo más popular es perfectamente utilizable tanto para niños y principiantes como para una familia con niños para jugar a algunos juegos de dibujo y aprender a dibujar. Al fin y al cabo, todo el mundo tiene una parte de artista en su interior. 
+
+Descarga nuestra aplicación de dibujo, dibuja tu obra favorita y compártela en la red social con tus amigos.
+
+Dibujo para niños 
+
+Dibujar para los niños es importante, y los niños son comunicadores eficaces, y a través de los dibujos, los niños aprenden a expresar sus sentimientos e ideas libremente. ¡Con nuestro bloc de dibujo digital, pueden dibujar coches, flores, perros, gatos y otros cuadros y guardarlos en la Galería! 
+
+Con Simple Draw, crearás bocetos rápidos o garabatearás algo divertido usando sólo tu creatividad e imaginación, así que ¡empieza a dibujar un garabato o boceto, y comparte tu amor y alegría por crear arte simple!
+
+Viene con material design y tema oscuro por defecto, proporciona una gran experiencia de usuario para un uso fácil. La falta de acceso a Internet le da más privacidad, seguridad y estabilidad que otras aplicaciones.
+
+No contiene anuncios ni permisos innecesarios. Es totalmente opensource, proporciona colores personalizables.
+
+Consulta el conjunto completo de Simple Tools aquí:
 https://www.simplemobiletools.com
 
 Facebook:
