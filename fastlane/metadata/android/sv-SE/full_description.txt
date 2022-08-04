@@ -1,10 +1,56 @@
-Vill du rita något men har inget papper? Denna app kommer att passa dig perfekt. Välj bara en färg och rita. Du kan antingen spara ritningen eller dela den direkt via e-post eller sociala nätverk.
+🎨 Letar du efter det bästa ritprogrammet för din ficka? Vill du rita något enkelt och lätt, men du har inget papper? Då är du på rätt ställe!
 
-Den levereras med Material Design och mörkt tema som standard, och ger en bra användarupplevelse för enkel användning. Avsaknaden av internetåtkomst ger dig mer integritet, säkerhet och stabilitet än andra appar.
+Njut av stunden med vår specialdesignade ritapp, rita något roligt och skapa dina egna konstverk - allt i digital form!
 
-Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
+Simple Draw är den bästa ritappen för alla som älskar att rita. Det är bara att välja färg och rita!
 
-Kolla in hela uppsättningen enkla verktyg här:
+Måla och rita enkla skisser för skojs skull
+
+Med Simple Draw behöver du inga tjusiga eller avancerade verktyg eller filter för ditt favoritkritstreck eller din favoritskiss. Använd bara din kreativitet och frihandsteckning för att skapa de bästa skisserna för din skissbok. 
+
+Prova varför vi är den bästa rit-appen där vem som helst kan klottra något enkelt och roligt!  
+
+Funktioner för Simple Draw 
+
+Denna populära skissbok för snabb skiss och målning ger många användbara funktioner:
+
+✔️ Rita något färgglatt, enkel skiss eller klotter med olika färg- och pennstorlekar.
+✔️ Ändra bakgrundsfärgen eller använd en bild från din skissbok som bakgrund. 
+✔️ Använd ett suddgummi om du tagit fel färg.
+✔️ Infoga färg antingen genom att välja den på en palett eller genom att skriva in färgernas hex-kod.
+✔️ Denna enkla skissbok stöder många olika format som PNG, JPG eller SVG-vektorer.
+✔️ Dela dina målningar, teckningar och skisser med vänner via e-post eller sociala nätverk.
+✔️ Simple Draw App fungerar offline och online!
+
+Använd inget annat än din enhet och kreativitet för att göra några klotter och skisser!
+
+Skapa din egen skissbok! 
+
+Oavsett vilken ålder eller vilka förmågor du har erbjuder den bästa rit-appen en rolig ritupplevelse! Gör en skiss, använd din favoritfärg och spara ditt konstverk i din egen skissbok. Med Simple Draw kan du antingen rita nya skisser från grunden eller öppna någon gammal konstverksfil från din skissbok och bara leka med nya färger och färg.
+
+Bästa ritblocket för din ficka! 
+
+Vår app för frihandsteckning ger dig ett digitalt sätt att rita en skiss eller klottra, måla och utforska konstnären inom dig!
+
+Den här specialdesignade rit-appen och skissboken går dit din kreativitet tar dig från snabb skiss till roliga konstverk. Så öppna ritblocket, måla och rita helt enkelt något fint! Gör en snabbteckning på vårt ritblock oavsett om du är på resa eller i rörelse, njut av ritupplevelsen och dela dina teckningar och skisser med dina vänner.
+ 
+Kul hemma - lär dig skissa 
+
+Vår mest populära teckningsapp är perfekt användbar antingen för barn och nybörjare eller för en familj med barn för att spela några teckningslekar och lära sig skissa. Alla har trots allt en bit av konstnären i sig själva. 
+
+Ladda ner vår teckningsapp, rita din favoritkonst och dela den på det sociala nätverket med dina vänner.
+
+Ritning för barn! 
+
+Att rita för barn är viktigt, och barn är effektiva kommunikatörer, och genom teckningar lär sig barn att uttrycka sina känslor och idéer fritt. Med vårt digitala ritblock kan de rita bilar, blommor, hundar, katter och andra målningar och spara dem i Galleriet! 
+
+Med Simple Draw kan du skapa snabba skisser eller klottra något roligt med hjälp av bara din kreativitet och fantasi, så börja bara rita en doodle eller skiss och dela din kärlek och glädje för att skapa enkel konst!
+
+Det kommer med materialdesign och mörkt tema som standard, ger bra användarupplevelse för enkel användning. Avsaknaden av internetåtkomst ger dig mer integritet, säkerhet och stabilitet än andra appar.
+
+Innehåller inga annonser eller onödiga behörigheter. Den är helt öppen källkod, ger anpassningsbara färger.
+
+Kolla in hela sviten av Simple Tools här:
 https://www.simplemobiletools.com
 
 Facebook:
