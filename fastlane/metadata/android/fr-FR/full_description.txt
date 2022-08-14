@@ -1,23 +1,48 @@
-Vous voulez dessiner quelque chose de créatif mais vous n'avez pas de papier? Cette application de dessin de carnet de croquis vous conviendra parfaitement. Il suffit de choisir une couleur et de commencer à dessiner, c'est aussi simple que cela. Vous pouvez soit enregistrer le dessin dans un fichier, soit l'imprimer, soit le partager directement par e-mail ou sur les réseaux sociaux afin que vos amis puissent également s'amuser avec. Ce carnet de croquis vous offre la possibilité de dessiner tout ce que vous voulez d'un simple toucher du doigt.
+🎨 Cherchez-vous la meilleure application de dessin pour votre poche? Voulez-vous dessiner quelque chose de simple et facile, mais vous n’avez pas de papier? Vous êtes au bon endroit !
 
-Cette application de dessin de carnet de croquis extrêmement populaire pour les croquis rapides fournit de nombreuses fonctions utiles telles que Annuler / Rétablir, modifier la couleur d'arrière-plan ou utiliser une image comme arrière-plan. Vous pouvez éventuellement faire en sorte que l'application empêche également l'appareil de s'endormir. Vous pouvez également modifier la taille du pinceau ou utiliser une gomme si vous avez raté quelque chose. Il prend en charge l'insertion de couleurs soit en le sélectionnant sur une immense palette, soit en entrant le code hexadécimal des couleurs.
+Profitez du moment avec notre application de dessin spécialement conçue, dessinez quelque chose d’amusant et créez votre propre œuvre – le tout sous forme numérique!
 
-L'application prend en charge de nombreux formats différents tels que les vecteurs PNG, JPG ou SVG. Avec tous ces formats, vous avez la possibilité d'utiliser votre croquis comme vous le souhaitez. Cette application de dessin de carnet de croquis a tout simplifié pour vous afin que vous puissiez créer des chefs-d'œuvre sans vous soucier des navigations et des commandes complexes.
+Simple Draw est la meilleure application de dessin pour tous ceux qui aiment dessiner. Il suffit de choisir la peinture et de dessiner!
 
-Vous pouvez soit dessiner quelque chose de nouveau à partir de zéro dans cette application de dessin, soit ouvrir un fichier et jouer avec lui dans ce carnet de croquis. Il est parfaitement utilisable soit par vous, soit par une famille avec enfants pour jouer à quelques jeux. Après tout, chacun a un morceau d'artiste en lui-même.
+Peindre et dessiner des croquis simples pour le plaisir
+Avec Simple Draw, vous n’aurez pas besoin d’outils ou de filtres sophistiqués pour votre doodle ou croquis préféré. Il suffit d’utiliser votre créativité et le dessin à main levée pour créer les meilleurs croquis pour votre carnet de croquis. 
 
-Vous ne trouverez pas d'outils, de pinceaux, de polices, de filtres sophistiqués ou avancés ici, il est censé être utilisé pour s'amuser. Cette application de dessin a gardé en vue la facilité pour tous les artistes afin que tout le monde puisse l'utiliser sans être coincé dans les détails techniques.
+Caractéristiques du tirage simple 
+Ce cahier de croquis populaire pour l’esquisse rapide et la peinture fournit de nombreuses fonctions utiles:
 
-Ne contient aucune publicité ou autorisations inutiles. Il est entièrement open source, fournit des couleurs personnalisables.
+✔️ Dessiner quelque chose de coloré, croquis simple ou gribouillis en utilisant une peinture et un stylo de taille différente
+✔️ Changer la couleur d’arrière-plan, ou utiliser une image de votre carnet de croquis comme arrière-plan 
+✔️ Utilisez une gomme si vous avez pris la mauvaise peinture
+✔️ Insérer la peinture en la sélectionnant sur une palette ou en saisissant le code hexadécimal des couleurs
+✔️ Ce carnet de croquis simple prend en charge de nombreux formats différents tels que les vecteurs PNG, JPG ou SVG
+✔️ Simple Draw App fonctionne hors ligne et en ligne!
 
-Découvrez la suite complète des outils simples ici:
+Créez votre propre carnet de croquis! 
+Peu importe l’âge ou les capacités que vous avez, la meilleure application de dessin offre une expérience de dessin amusant! Dessinez un croquis, utilisez votre peinture préférée et enregistrez votre œuvre dans votre propre carnet de croquis. Avec Simple Draw, vous pouvez soit dessiner de nouveaux croquis à partir de zéro ou ouvrir un vieux fichier d’illustrations de votre carnet de croquis et simplement jouer avec de nouvelles peintures et couleurs.
+
+Meilleur bloc de dessin pour votre poche! 
+Notre application de dessin à main levée vous permet de dessiner un croquis ou un doodle, de peindre et d’explorer l’artiste en vous !
+
+Cette application de dessin spécialement conçu et carnet de croquis aller où votre créativité vous emmène de croquis rapides à l’œuvre d’art drôle. Alors, ouvrez le bloc de dessin, peindre et simplement dessiner quelque chose de beau! Faites un tirage rapide sur notre bloc de dessin, que vous soyez en voyage ou en mouvement, profitez de l’expérience du dessin et partagez vos dessins et croquis avec vos amis.
+ 
+S’amuser à la maison – apprendre à dessiner 
+Notre application de dessin la plus populaire est parfaitement utilisable soit pour les enfants et les débutants ou pour une famille avec enfants pour jouer à des jeux de dessin et apprendre à dessiner. Après tout, chacun a une pièce de l’artiste en lui-même. 
+
+Dessiner pour les enfants! 
+Dessiner pour les enfants est important, et les enfants sont des communicateurs efficaces, et à travers les dessins, les enfants apprennent à exprimer leurs sentiments et leurs idées librement. Avec notre bloc de dessin numérique, ils peuvent dessiner des voitures, des fleurs, des chiens, des chats et d’autres peintures et les enregistrer dans la galerie! 
+
+Avec Simple Draw, vous allez créer des croquis rapides ou gribouiller quelque chose d’amusant en utilisant seulement votre créativité et votre imagination, alors commencez à dessiner un doodle ou un croquis, et partagez votre amour et votre joie pour créer de l’art simple!
+
+Ne contient pas d’annonces ou d’autorisations inutiles. Il est entièrement open-source et fournit des couleurs personnalisables.
+
+Découvrez la gamme complète d’outils simples ici :
 https://www.simplemobiletools.com
 
-Facebook:
+Facebook :
 https://www.facebook.com/simplemobiletools
 
-Reddit:
+Reddit :
 https://www.reddit.com/r/SimpleMobileTools
 
-Telegram:
-https://t.me/SimpleMobileTools
+Télégramme :
+https://t. me/SimpleMobileTools
