@@ -1,14 +1,43 @@
-Ingin menggambar sesuatu yang kreatif tetapi kamu tidak punya kertas? Aplikasi ini akan sangat cocok untukmu. Pilih saja satu warna dan mulai menggambar, semudah itu. Kamu dapat menyimpan gambar dalam sebuah file, mencetaknya atau membagikannya secara langsung melalui surel atau jejaring sosial sehingga teman kamu juga dapat bersenang-senang dengannya.
+🎨 Apakah Anda mencari aplikasi menggambar terbaik untuk saku Anda? Apakah Anda ingin menggambar sesuatu yang sederhana dan mudah, tetapi Anda tidak punya kertas? Anda berada di tempat yang tepat!
 
-Aplikasi yang sangat populer untuk sketsa cepat ini menyediakan banyak fungsi berguna seperti Undo / Redo, mengubah warna latar belakang, atau menggunakan gambar sebagai latar belakang. Kamu secara opsional dapat membuat aplikasi mencegah perangkat tertidur juga. Kamu juga dapat mengubah ukuran kuas, atau menggunakan penghapus, jika kamu membuat kesalahan. Aplikasi ini mampu memasukkan warna baik dengan memilihnya pada palet besar, atau dengan memasukkan kode warna hex.
+Nikmati momen dengan aplikasi menggambar kami yang dirancang khusus, menggambar sesuatu yang menyenangkan dan membuat karya seni Anda sendiri – semuanya dalam bentuk digital!
 
-Aplikasi ini mendukung berbagai format seperti vektor PNG, JPG atau SVG.
+Simple Draw adalah aplikasi menggambar terbaik untuk siapa saja yang suka menggambar. Pilih saja cat dan gambar!
 
-Kamu dapat menggambar sesuatu yang baru dari awal, atau membuka beberapa file dan hanya bermain-main dengannya. Aplikasi ini sangat dapat digunakan baik olehmu, atau oleh keluarga dengan anak-anak untuk memainkan beberapa permainan. Bagaimanapun juga, setiap orang memiliki jiwa seni dalam dirinya.
+Melukis dan menggambar sketsa sederhana untuk bersenang-senang
 
-Kamu tidak akan menemukan alat, kuas, font, filter yang mewah atau canggih di sini, aplikasi ini seharusnya digunakan untuk bersenang-senang.
+Coba mengapa kami adalah aplikasi menggambar terbaik di mana siapa pun dapat mencoret-coret sesuatu yang sederhana dengan menyenangkan!
 
-Tanpa iklan dan perizinan yang tidak perlu. Sepenuhnya sumber terbuka, dengan warna yang bisa disesuaikan.
+Fitur Menggambar sederhana
+Buku sketsa populer untuk membuat sketsa dan melukis cepat ini menyediakan banyak fungsi yang berguna:
+
+✔️ Gambarlah sesuatu yang berwarna-warni, sketsa sederhana, atau corat-coret menggunakan cat dan ukuran pena yang berbeda
+✔️ Mengubah warna latar belakang, atau menggunakan gambar dari buku sketsa Anda sebagai latar belakang
+✔️ Gunakan penghapus jika Anda mengambil cat yang salah
+✔️ Sisipkan cat baik dengan memilihnya pada palet atau dengan memasukkan kode hex warna
+✔️ Sketchbook sederhana ini mendukung berbagai format seperti vektor PNG, JPG, atau SVG
+✔️ Bagikan lukisan, gambar , & sketsa Anda dengan teman melalui email atau jejaring sosial
+✔️ Aplikasi Menggambar Sederhana bekerja secara offline &online!
+
+Gunakan apa pun selain perangkat dan kreativitas Anda untuk membuat beberapa corat-coret dan sketsa!
+
+Buat buku sketsa Anda sendiri!
+Apa pun usia atau kemampuan yang Anda miliki, aplikasi menggambar terbaik menawarkan pengalaman menggambar yang menyenangkan! Gambar sketsa, gunakan cat favorit Anda dan simpan karya seni Anda di buku sketsa Anda sendiri. Dengan Simple Draw, Anda dapat menggambar sketsa baru dari awal atau membuka beberapa file karya seni lama dari buku sketsa Anda dan hanya bermain-main dengan cat dan warna baru.
+
+Papan gambar terbaik untuk saku Anda!
+Aplikasi menggambar tangan bebas kami memungkinkan Anda cara digital untuk menggambar sketsa atau mencoret-coret, melukis, dan menjelajahi seniman dalam diri Anda!
+
+Aplikasi menggambar dan buku sketsa yang dirancang khusus ini pergi ke tempat kreativitas Anda membawa Anda dari sketsa cepat ke karya seni lucu. Jadi, buka papan gambar, cat dan cukup gambar sesuatu yang bagus! Lakukan undian cepat di papan gambar kami apakah Anda sedang dalam perjalanan atau bergerak, nikmati pengalaman menggambar, dan bagikan gambar dan sketsa Anda dengan teman-teman Anda.
+ 
+Bersenang-senang di rumah – belajar membuat sketsa
+Aplikasi menggambar kami yang paling populer dapat digunakan dengan sempurna baik untuk anak-anak dan pemula atau untuk keluarga dengan anak-anak untuk memainkan beberapa permainan menggambar dan belajar membuat sketsa. Bagaimanapun, setiap orang memiliki sepotong artis dalam dirinya sendiri.
+
+Menggambar untuk anak-anak!
+Menggambar untuk anak-anak itu penting, dan anak-anak adalah komunikator yang efektif, dan melalui gambar, anak-anak belajar mengekspresikan perasaan dan ide mereka dengan bebas. Dengan papan gambar digital kami, mereka dapat menggambar mobil, bunga, anjing, kucing, dan lukisan lainnya dan menyimpannya di Galeri!
+
+Dengan Simple Draw, Anda akan membuat sketsa cepat atau mencoret-coret sesuatu yang menyenangkan hanya dengan menggunakan kreativitas dan imajinasi Anda, jadi mulailah menggambar corat-coret atau sketsa, dan bagikan kecintaan dan kegembiraan Anda untuk menciptakan seni sederhana!
+
+Tidak berisi iklan atau izin yang tidak perlu. Ini sepenuhnya open-source dan menyediakan warna yang dapat disesuaikan.
 
 Periksa semua aplikasi Simple Tools di sini:
 https://www.simplemobiletools.com
