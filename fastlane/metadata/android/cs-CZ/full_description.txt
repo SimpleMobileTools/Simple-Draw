@@ -1,9 +1,57 @@
-Chcete něco rychle nakreslit, ale nemáte po ruce papír? Tato aplikace vám s tím pomůže. Stačí si zvolit barvu a kreslit. Kresbu poté můžete buď uložit, nebo ji přímo sdílet přes e-mail či sociální sítě.
+🎨 Hledáte nejlepší aplikaci pro kreslení do kapsy? Chcete si nakreslit něco jednoduchého a snadného, ale nemáte papír? Pak jste na správném místě!
 
-Neobsahuje žádné reklamy ani nepotřebná oprávnění. Má otevřený zdrojový kód a možnost změny barev.
+Užijte si chvíle s naší speciálně navrženou aplikací na kreslení, nakreslete něco zábavného a vytvořte si vlastní umělecké dílo - to vše v digitální podobě!
 
-Check out the full suite of Simple Tools here:
-https://www.simplemobiletools.com
+Simple Draw je nejlepší kreslící aplikace pro každého, kdo rád kreslí. Stačí si vybrat barvu a kreslit!
+
+Malujte a kreslete jednoduché náčrty pro zábavu
+
+S aplikací Simple Draw nebudete pro své oblíbené čmáranice nebo náčrty potřebovat žádné náročné nebo pokročilé nástroje či filtry. Stačí využít svou kreativitu a kreslení volnou rukou a vytvořit ty nejlepší náčrtky do svého skicáku. 
+
+Vyzkoušejte, proč jsme nejlepší aplikací pro kreslení, kde si každý může něco jednoduchého zábavně načmárat!  
+
+Funkce aplikace Simple Draw 
+
+Tento oblíbený skicák pro rychlé skicování a malování poskytuje mnoho užitečných funkcí:
+
+✔️ Nakreslete něco barevného, jednoduchý náčrtek nebo čmáranici pomocí různých velikostí barev a pera.
+✔️ změna barvy pozadí nebo použití obrázku ze skicáku jako pozadí 
+✔️ Použijte gumu, pokud jste vzali špatnou barvu.
+✔️ Vložení barvy buď výběrem na paletě, nebo zadáním hexadecimálního kódu barvy
+✔️ Tento jednoduchý skicák podporuje mnoho různých formátů, například PNG, JPG nebo vektory SVG
+✔️ Sdílejte své obrazy, kresby a náčrty s přáteli prostřednictvím e-mailu nebo sociálních sítí
+✔️ Aplikace Simple Draw funguje offline i online!
+
+K vytváření čmáranic a náčrtků nepoužívejte nic jiného než své zařízení a kreativitu!
+
+Vytvořte si vlastní skicák! 
+
+Nezáleží na věku ani schopnostech, nejlepší aplikace na kreslení nabízí zábavné kreslení! Nakreslete skicu, použijte oblíbenou barvu a uložte své dílo do vlastního skicáku. S aplikací Simple Draw můžete buď kreslit nové náčrty od nuly, nebo otevřít nějaký starý soubor s uměleckým dílem ze svého skicáku a jen si hrát s novými barvami a barvami.
+
+Nejlepší kreslící podložka do kapsy! 
+
+Naše aplikace pro kreslení volnou rukou vám umožní digitální způsob kreslení náčrtků nebo čmárání, malování a objevování umělce ve vás!
+
+Tato speciálně navržená aplikace pro kreslení a skicák vás zavede tam, kam vás zavede vaše kreativita od rychlých skic až po zábavná umělecká díla. Otevřete tedy kreslící blok, malujte a jednoduše něco pěkného nakreslete! Rychle si kreslete na našem kreslicím bloku, ať už jste na cestách nebo v pohybu, užijte si kreslení a sdílejte své kresby a náčrty s přáteli.
+ 
+Zábava na doma - naučte se skicovat 
+
+Naše nejoblíbenější aplikace na kreslení je dokonale použitelná buď pro děti a začátečníky, nebo pro rodinu s dětmi, aby si zahráli nějaké kreslící hry a naučili se skicovat. Koneckonců každý má v sobě kus umělce. 
+
+Stáhněte si naši aplikaci na kreslení, nakreslete své oblíbené dílo a sdílejte ho na sociální síti se svými přáteli.
+
+Kreslení pro děti! 
+
+Kreslení pro děti je důležité, děti jsou efektivní komunikátoři a prostřednictvím kreseb se učí svobodně vyjadřovat své pocity a myšlenky. S naší digitální kreslící podložkou mohou kreslit auta, květiny, psy, kočky a další obrazy a ukládat je do Galerie! 
+
+S aplikací Simple Draw vytvoříte rychlé náčrty nebo načmáráte něco zábavného jen pomocí své kreativity a představivosti, takže stačí začít kreslit čmáranice nebo náčrtky a podělit se o svou lásku a radost z vytváření jednoduchého umění!
+
+Ve výchozím nastavení přichází s designem Material a tmavým tématem, které poskytuje skvělé uživatelské prostředí pro snadné používání. Absence přístupu k internetu vám poskytuje více soukromí, bezpečnosti a stability než jiné aplikace.
+
+Neobsahuje žádné reklamy ani zbytečná oprávnění. Je plně open-source a poskytuje přizpůsobitelné barvy.
+
+Kompletní sadu jednoduchých nástrojů si můžete prohlédnout zde:
+https://www.simplemobiletools.com.
 
 Facebook:
 https://www.facebook.com/simplemobiletools
