@@ -104,7 +104,7 @@
                     style="@style/SettingsHolderTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ripple_background">
+                    android:background="@drawable/ripple_top_corners">
 
                     <com.simplemobiletools.commons.views.MyTextView
                         android:id="@+id/settings_language_label"
