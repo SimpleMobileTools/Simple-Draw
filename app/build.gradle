@@ -9,12 +9,12 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.simplemobiletools.draw.pro"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 72
         versionName "6.7.0"
         setProperty("archivesBaseName", "draw")
@@ -63,6 +63,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:c05de1687e'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:d4f7cbb8f0'
     implementation "androidx.print:print:1.0.0"
 }
