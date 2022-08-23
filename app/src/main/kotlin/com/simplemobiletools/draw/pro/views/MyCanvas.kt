@@ -408,6 +408,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mWasScalingInGesture = true
             mScaleFactor *= detector.scaleFactor
             mScaleFactor = max(0.1f, min(mScaleFactor, 10.0f))
+
+            if (mScaleFactor < 10.0f && mScaleFactor > 0.1f) {
+                mPosX *= detector.scaleFactor
+                mPosY *= detector.scaleFactor
+            }
+
             setBrushSize(mCurrBrushSize)
             invalidate()
             return true
