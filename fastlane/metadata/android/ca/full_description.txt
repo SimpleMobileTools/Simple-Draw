@@ -1,6 +1,6 @@
 🎨 Esteu buscant la millor aplicació de dibuix per a la vostra butxaca? Voleu dibuixar quelcom senzill i fàcil, però no teniu paper? Esteu al lloc correcte!
 
-Gaudiu del moment amb la nostra aplicació de dibuix especialment dissenyada, dibuixeu alguna cosa divertida i creeu la vostra pròpia obra d'art, tot de manera digital!
+Gaudiu del moment amb aquesta aplicació de dibuix especialment dissenyada, dibuixeu alguna cosa divertida i creeu la vostra pròpia obra d'art, tot de manera digital!
 
 Simple Draw és la millor aplicació de dibuix per a qualsevol persona que li agradi dibuixar. Només heu de triar la imatge i dibuixar!
 
@@ -10,16 +10,17 @@ Amb Simple Draw, no necessitareu cap eina o filtre fantàstic o avançat per al 
 
 Proveu per què és la millor aplicació de dibuix on qualsevol pot gargotejar alguna cosa senzilla per diversió!
 
-Funcions de Simple Draw
+Característiques de Simple Draw
 
-Aquest popular llibre de dibuixos per dibuixar i pintar ràpidament ofereix moltes funcions útils:
+Aquest popular quadern per dibuixar i pintar ràpidament ofereix moltes funcions útils:
 
 ✔️ Dibuixeu quelcom amb colors, dibuixos o gargots senzills amb una pintura i una mida de ploma diferents
 ✔️ Canvieu el color de fons o utilitzant una imatge del quadern de dibuixos com a fons
-✔️ Utilitzeu una goma d'esborrar si heu fet una equivocació
-✔️ Inseriu una pintura seleccionant-la en una paleta o introduint el codi hexadecimal de colors
-✔️ Aquest quadern de dibuixos senzill admet molts formats diferents com ara PNG, JPG o SVG.
+✔️ Utilitzeu una goma d'esborrar si hi ha una equivocació
+✔️ Inseriu un color seleccionant-la en una paleta o introduint el codi hexadecimal de colors
+✔️ Aquest quadern de dibuixos admet molts formats diferents com ara PNG, JPG o SVG.
 ✔️ Compartiu les pintures, dibuixos i esbossos amb els vostres amics per correu electrònic o xarxes socials
+✔️ L'aplicació Simple Draw funciona en línia i fora de línia
 
 No utilitzeu res més que el vostre dispositiu i la vostra creativitat per fer gargots i esbossos!
 
@@ -29,9 +30,9 @@ Independentment de l'edat o les habilitats que tingueu, la millor aplicació de 
 
 El millor bloc de dibuix per a la butxaca!
 
-Aquesta aplicació de dibuix a mà alçada permet una manera digital de dibuixar un esbós o gargotejar, pintar i explorar l'artista que teniu dins vós!
+Aquesta aplicació de dibuix a mà alçada permet una manera digital de dibuixar un esbós o gargotejar, pintar i explorar l'artista que teniu dins!
 
-L'aplicació de dibuix i quadern de dibuix especialment dissenyats van on la vostra creativitat us porti, des d'un esbós ràpid fins a unes obres d'art divertides. Feu un dibuix ràpid al bloc de dibuix tant si esteu de viatge com si esteu en moviment, gaudiu de l'experiència de dibuix i compartiu els dibuixos i esbossos amb els amics.
+L'aplicació de dibuix i quadern especialment dissenyada va on la vostra creativitat us porti, des d'un esbós ràpid fins a unes obres d'art divertides. Feu un dibuix ràpid al bloc de dibuix tant si esteu de viatge com si esteu en moviment, gaudiu de l'experiència de dibuix i compartiu els dibuixos i esbossos amb els amics.
 
 Diversió a casa, apreneu a dibuixar
 
