@@ -17,6 +17,7 @@ Este popular cuaderno de bocetos para dibujar y pintar rápidamente ofrece mucha
 ✔️ Dibujar algo colorido, simple boceto o garabato utilizando una pintura y un tamaño de pluma diferente.
 ✔️ Cambiar el color de fondo, o usar una imagen de tu cuaderno de bocetos como fondo 
 ✔️ Utilizar una goma de borrar si te equivocas de pintura
+✔️ Insertar pintura ya sea seleccionándola en una paleta, o introduciendo el código hexadecimal de los colores
 ✔️ Este sencillo cuaderno de bocetos admite muchos formatos diferentes como PNG, JPG o vectores SVG
 ✔️ Comparte tus pinturas, dibujos y bocetos con tus amigos a través del correo electrónico o las redes sociales
 ✔️ ¡Simple Draw App funciona offline & online!
@@ -31,7 +32,7 @@ El mejor bloc de dibujo para tu bolsillo
 
 Nuestra aplicación de dibujo a mano alzada te permite dibujar un boceto o garabatear, pintar y explorar el artista que llevas dentro.
 
-Esta aplicación de dibujo especialmente diseñada y el cuaderno de dibujo van donde tu creatividad te lleva, desde un boceto rápido hasta una divertida obra de arte. ¡Así que abre el bloc de dibujo, pinta y simplemente dibuja algo bonito! 
+Esta aplicación de dibujo especialmente diseñada y el cuaderno de dibujo van donde tu creatividad te lleva, desde un boceto rápido hasta una divertida obra de arte. ¡Así que abre el bloc de dibujo, pinta y simplemente dibuja algo bonito! Haz un dibujo rápido en nuestro bloc de dibujo tanto si estás de viaje como si estás de viaje, disfruta de la experiencia de dibujar y comparte tus dibujos y bocetos con tus amigos.
  
 Diversión en casa: aprende a dibujar 
 
@@ -43,7 +44,7 @@ Dibujo para niños
 
 Dibujar para los niños es importante, y los niños son comunicadores eficaces, y a través de los dibujos, los niños aprenden a expresar sus sentimientos e ideas libremente. ¡Con nuestro bloc de dibujo digital, pueden dibujar coches, flores, perros, gatos y otros cuadros y guardarlos en la Galería! 
 
-Con Simple Draw, crearás bocetos rápidos o garabatearás algo divertido usando sólo tu creatividad e imaginación, así que ¡empieza a dibujar un garabato o boceto, y comparte tu amor y alegría por crear arte simple!
+Con Simple Draw, podrás crear bocetos rápidos o garabatear algo divertido usando sólo tu creatividad e imaginación, así que ¡empieza a dibujar un garabato o un boceto, y comparte tu amor y alegría por crear arte simple!
 
 Viene con material design y tema oscuro por defecto, proporciona una gran experiencia de usuario para un uso fácil. La falta de acceso a Internet le da más privacidad, seguridad y estabilidad que otras aplicaciones.
 
