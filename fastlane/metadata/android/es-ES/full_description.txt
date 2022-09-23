@@ -20,7 +20,6 @@ Este popular cuaderno de bocetos para dibujar y pintar rápidamente ofrece mucha
 ✔️ Insertar pintura ya sea seleccionándola en una paleta, o introduciendo el código hexadecimal de los colores
 ✔️ Este sencillo cuaderno de bocetos admite muchos formatos diferentes como PNG, JPG o vectores SVG
 ✔️ Comparte tus pinturas, dibujos y bocetos con tus amigos a través del correo electrónico o las redes sociales
-✔️ ¡Simple Draw App funciona offline & online!
 
 ¡Utilice nada más que su dispositivo y la creatividad para hacer algunos garabatos y bocetos!
 
@@ -29,8 +28,6 @@ Este popular cuaderno de bocetos para dibujar y pintar rápidamente ofrece mucha
 No importa la edad o las habilidades que tengas, ¡la mejor aplicación de dibujo ofrece una divertida experiencia de dibujo! Dibuja un boceto, utiliza tu pintura favorita y guarda tu obra de arte en tu propio cuaderno de bocetos. Con Simple Draw, puedes dibujar nuevos bocetos desde cero o abrir algún archivo de arte antiguo de tu cuaderno de bocetos y simplemente jugar con nuevas pinturas y colores.
 
 El mejor bloc de dibujo para tu bolsillo 
-
-Nuestra aplicación de dibujo a mano alzada te permite dibujar un boceto o garabatear, pintar y explorar el artista que llevas dentro.
 
 Esta aplicación de dibujo especialmente diseñada y el cuaderno de dibujo van donde tu creatividad te lleva, desde un boceto rápido hasta una divertida obra de arte. ¡Así que abre el bloc de dibujo, pinta y simplemente dibuja algo bonito! Haz un dibujo rápido en nuestro bloc de dibujo tanto si estás de viaje como si estás de viaje, disfruta de la experiencia de dibujar y comparte tus dibujos y bocetos con tus amigos.
  
@@ -42,7 +39,7 @@ Descarga nuestra aplicación de dibujo, dibuja tu obra favorita y compártela en
 
 Dibujo para niños 
 
-Dibujar para los niños es importante, y los niños son comunicadores eficaces, y a través de los dibujos, los niños aprenden a expresar sus sentimientos e ideas libremente. ¡Con nuestro bloc de dibujo digital, pueden dibujar coches, flores, perros, gatos y otros cuadros y guardarlos en la Galería! 
+Dibujar para los niños es importante, y los niños son comunicadores eficaces, y a través de los dibujos, los niños aprenden a expresar sus sentimientos e ideas libremente.
 
 Con Simple Draw, podrás crear bocetos rápidos o garabatear algo divertido usando sólo tu creatividad e imaginación, así que ¡empieza a dibujar un garabato o un boceto, y comparte tu amor y alegría por crear arte simple!
 
