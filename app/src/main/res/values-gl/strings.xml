@@ -5,9 +5,9 @@
     <string name="open_file">Abrir ficheiro</string>
     <string name="eraser">Borrador</string>
     <string name="eyedropper">Contagotas</string>
-    <string name="failed_to_load_image">Erro ao cargar a imaxe %s</string>
+    <string name="failed_to_load_image">Produciuse un erro ao cargar a imaxe %s</string>
     <!-- Settings -->
-    <string name="show_brush_size">Mostrar ferramenta Tamaño do pincel</string>
+    <string name="show_brush_size">Mostrar ferramenta do tamaño do pincel</string>
     <string name="allow_zooming_moving_canvas">Permite facer zoom e mover o lenzo cos xestos</string>
     <string name="clear">Limpar</string>
     <string name="change_background_color">Cambiar a cor do fondo</string>
