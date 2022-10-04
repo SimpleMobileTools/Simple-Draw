@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Semplice Disegnare</string>
-    <string name="app_launcher_name">Disegna</string>
+    <string name="app_name">Disegno Semplice</string>
+    <string name="app_launcher_name">Disegno</string>
     <string name="open_file">Apri file</string>
     <string name="eraser">Gomma</string>
     <string name="eyedropper">Contagocce</string>
