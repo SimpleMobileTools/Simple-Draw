@@ -14,7 +14,6 @@ import com.simplemobiletools.draw.pro.activities.MainActivity
 import com.simplemobiletools.draw.pro.activities.SimpleActivity
 import com.simplemobiletools.draw.pro.views.MyCanvas
 import java.io.*
-import java.util.*
 
 object Svg {
     fun saveSvg(activity: SimpleActivity, path: String, canvas: MyCanvas) {
@@ -27,7 +26,7 @@ object Svg {
         if (outputStream != null) {
             val backgroundColor = (canvas.background as ColorDrawable).color
             val writer = BufferedWriter(OutputStreamWriter(outputStream))
-            writeSvg(writer, backgroundColor, canvas.mPaths, canvas.width, canvas.height)
+            writeSvg(writer, backgroundColor, canvas.getPathsMap(), canvas.width, canvas.height)
             writer.close()
             activity.toast(R.string.file_saved)
         } else {

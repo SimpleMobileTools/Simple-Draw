@@ -16,7 +16,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.extensions.contains
+import com.simplemobiletools.draw.pro.extensions.floodFill
 import com.simplemobiletools.draw.pro.interfaces.CanvasListener
+import com.simplemobiletools.draw.pro.models.CanvasOp
 import com.simplemobiletools.draw.pro.models.MyParcelable
 import com.simplemobiletools.draw.pro.models.MyPath
 import com.simplemobiletools.draw.pro.models.PaintOptions
@@ -27,14 +30,16 @@ import kotlin.math.min
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val MIN_ERASER_WIDTH = 20f
+    private val MAX_HISTORY_COUNT = 1000
+    private val BITMAP_MAX_HISTORY_COUNT = 60
     private val mScaledTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
 
-    var mPaths = LinkedHashMap<MyPath, PaintOptions>()
+    private var mOperations = ArrayList<CanvasOp>()
     var mBackgroundBitmap: Bitmap? = null
     var mListener: CanvasListener? = null
 
-    private var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
-    private var mUndonePaths = LinkedHashMap<MyPath, PaintOptions>()
+    private var mUndoneOperations = ArrayList<CanvasOp>()
+    private var mLastOperations = ArrayList<CanvasOp>()
     private var mLastBackgroundBitmap: Bitmap? = null
 
     private var mPaint = Paint()
@@ -54,6 +59,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mCurrBrushSize = 0f
     private var mAllowMovingZooming = true
     private var mIsEraserOn = false
+    private var mIsColorFillOn = false
     private var mWasMultitouch = false
     private var mIgnoreTouches = false
     private var mWasScalingInGesture = false
@@ -78,13 +84,13 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
 
         mScaleDetector = ScaleGestureDetector(context, ScaleListener())
-        pathsUpdated()
+        updateUndoVisibility()
     }
 
     public override fun onSaveInstanceState(): Parcelable {
         val superState = super.onSaveInstanceState()
         val savedState = MyParcelable(superState!!)
-        savedState.paths = mPaths
+        savedState.operations = mOperations
         return savedState
     }
 
@@ -95,8 +101,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
 
         super.onRestoreInstanceState(state.superState)
-        mPaths = state.paths
-        pathsUpdated()
+        mOperations = state.operations
+        updateUndoVisibility()
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -147,8 +153,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mLastTouchX = x
                 mLastTouchY = y
                 actionDown(newValueX, newValueY)
-                mUndonePaths.clear()
-                mListener?.toggleRedoVisibility(false)
+                mUndoneOperations.clear()
+                updateRedoVisibility(false)
             }
             MotionEvent.ACTION_MOVE -> {
                 if (mTouchSloppedBeforeMultitouch) {
@@ -156,7 +162,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     mTouchSloppedBeforeMultitouch = false
                 }
 
-                if (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch)) {
+                if (!mIsColorFillOn && (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch))) {
                     actionMove(newValueX, newValueY)
                 }
 
@@ -207,14 +213,27 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         canvas.scale(mScaleFactor, mScaleFactor, mCenter!!.x, mCenter!!.y)
 
         if (mBackgroundBitmap != null) {
-            val left = (width - mBackgroundBitmap!!.width) / 2
-            val top = (height - mBackgroundBitmap!!.height) / 2
-            canvas.drawBitmap(mBackgroundBitmap!!, left.toFloat(), top.toFloat(), null)
+            val bitmap = mBackgroundBitmap!!
+            val left = (width - bitmap.width) / 2f
+            val top = (height - bitmap.height) / 2f
+            canvas.drawBitmap(bitmap, left, top, null)
         }
 
-        for ((key, value) in mPaths) {
-            changePaint(value)
-            canvas.drawPath(key, mPaint)
+        if (mOperations.isNotEmpty()) {
+            val bitmapOps = mOperations.filterIsInstance<CanvasOp.BitmapOp>()
+            val bitmapOp = bitmapOps.lastOrNull()
+            if (bitmapOp != null) {
+                canvas.drawBitmap(bitmapOp.bitmap, 0f, 0f, null)
+            }
+
+            // only perform path ops after last bitmap op as any previous path operations are already visible due to the bitmap op
+            val startIndex = if (bitmapOp != null) mOperations.indexOf(bitmapOp) else 0
+            val endIndex = mOperations.lastIndex
+            val pathOps = mOperations.slice(startIndex..endIndex).filterIsInstance<CanvasOp.PathOp>()
+            for (pathOp in pathOps) {
+                changePaint(pathOp.paintOptions)
+                canvas.drawPath(pathOp.path, mPaint)
+            }
         }
 
         changePaint(mPaintOptions)
@@ -223,50 +242,40 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun undo() {
-        if (mPaths.isEmpty() && mLastPaths.isNotEmpty()) {
-            mPaths = mLastPaths.clone() as LinkedHashMap<MyPath, PaintOptions>
+        if (mOperations.isEmpty() && mLastOperations.isNotEmpty()) {
+            mOperations = mLastOperations.clone() as ArrayList<CanvasOp>
             mBackgroundBitmap = mLastBackgroundBitmap
-            mLastPaths.clear()
-            pathsUpdated()
+            mLastOperations.clear()
+            updateUndoVisibility()
             invalidate()
             return
         }
 
-        if (mPaths.isEmpty()) {
-            return
+        if (mOperations.isNotEmpty()) {
+            val lastOp = mOperations.removeLast()
+            mUndoneOperations.add(lastOp)
+            invalidate()
         }
-
-        val lastPath = mPaths.values.lastOrNull()
-        val lastKey = mPaths.keys.lastOrNull()
-
-        mPaths.remove(lastKey)
-        if (lastPath != null && lastKey != null) {
-            mUndonePaths[lastKey] = lastPath
-            mListener?.toggleRedoVisibility(true)
-        }
-        pathsUpdated()
-        invalidate()
+        updateUndoRedoVisibility()
     }
 
     fun redo() {
-        if (mUndonePaths.keys.isEmpty()) {
-            mListener?.toggleRedoVisibility(false)
-            return
+        if (mUndoneOperations.isNotEmpty()) {
+            val undoneOperation = mUndoneOperations.removeLast()
+            addOperation(undoneOperation)
+            invalidate()
         }
-
-        val lastKey = mUndonePaths.keys.last()
-        addPath(lastKey, mUndonePaths.values.last())
-        mUndonePaths.remove(lastKey)
-        if (mUndonePaths.isEmpty()) {
-            mListener?.toggleRedoVisibility(false)
-        }
-        invalidate()
+        updateUndoRedoVisibility()
     }
 
     fun toggleEraser(isEraserOn: Boolean) {
         mIsEraserOn = isEraserOn
         mPaintOptions.isEraser = isEraserOn
         invalidate()
+    }
+
+    fun toggleColorFill(isColorFillOn: Boolean) {
+        mIsColorFillOn = isColorFillOn
     }
 
     fun setColor(newColor: Int) {
@@ -300,17 +309,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         ensureBackgroundThread {
             val size = Point()
             activity.windowManager.defaultDisplay.getSize(size)
-            val options = RequestOptions()
-                .format(DecodeFormat.PREFER_ARGB_8888)
-                .disallowHardwareConfig()
-                .fitCenter()
+            val options = RequestOptions().format(DecodeFormat.PREFER_ARGB_8888).disallowHardwareConfig().fitCenter()
 
             try {
-                val builder = Glide.with(context)
-                    .asBitmap()
-                    .load(path)
-                    .apply(options)
-                    .submit(size.x, size.y)
+                val builder = Glide.with(context).asBitmap().load(path).apply(options).submit(size.x, size.y)
 
                 mBackgroundBitmap = builder.get()
                 activity.runOnUiThread {
@@ -324,8 +326,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun addPath(path: MyPath, options: PaintOptions) {
-        mPaths[path] = options
-        pathsUpdated()
+        val pathOp = CanvasOp.PathOp(path, options)
+        mOperations.add(pathOp)
+        updateUndoVisibility()
     }
 
     private fun changePaint(paintOptions: PaintOptions) {
@@ -337,12 +340,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     fun clearCanvas() {
-        mLastPaths = mPaths.clone() as LinkedHashMap<MyPath, PaintOptions>
+        mLastOperations = mOperations.clone() as ArrayList<CanvasOp>
         mLastBackgroundBitmap = mBackgroundBitmap
         mBackgroundBitmap = null
         mPath.reset()
-        mPaths.clear()
-        pathsUpdated()
+        mOperations.clear()
+        updateUndoVisibility()
         invalidate()
     }
 
@@ -360,28 +363,84 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun actionUp(forceLineDraw: Boolean) {
-        if (!mWasMultitouch || forceLineDraw) {
-            mPath.lineTo(mCurX, mCurY)
-
-            // draw a dot on click
-            if (mStartX == mCurX && mStartY == mCurY) {
-                mPath.lineTo(mCurX, mCurY + 2)
-                mPath.lineTo(mCurX + 1, mCurY + 2)
-                mPath.lineTo(mCurX + 1, mCurY)
-            }
-            mPaths[mPath] = mPaintOptions
+        if (mIsColorFillOn) {
+            colorFill()
+        } else if (!mWasMultitouch || forceLineDraw) {
+            drawADot()
         }
 
-        pathsUpdated()
+        updateUndoVisibility()
         mPath = MyPath()
         mPaintOptions = PaintOptions(mPaintOptions.color, mPaintOptions.strokeWidth, mPaintOptions.isEraser)
     }
 
-    private fun pathsUpdated() {
-        mListener?.toggleUndoVisibility(mPaths.isNotEmpty() || mLastPaths.isNotEmpty())
+    private fun updateUndoRedoVisibility() {
+        updateUndoVisibility()
+        updateRedoVisibility()
     }
 
-    fun getDrawingHashCode() = mPaths.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
+    private fun updateUndoVisibility() {
+        mListener?.toggleUndoVisibility(mOperations.isNotEmpty() || mLastOperations.isNotEmpty())
+    }
+
+    private fun updateRedoVisibility(visible: Boolean = mUndoneOperations.isNotEmpty()) {
+        mListener?.toggleRedoVisibility(visible)
+    }
+
+    private fun colorFill() {
+        val touchedX = mCurX.toInt()
+        val touchedY = mCurY.toInt()
+        if (contains(touchedX, touchedY)) {
+            val bitmap = getBitmap()
+            val color = mPaintOptions.color
+            val img = bitmap.floodFill(color = color, x = touchedX, y = touchedY)
+            addOperation(CanvasOp.BitmapOp(img))
+            invalidate()
+        }
+    }
+
+    private fun drawADot() {
+        mPath.lineTo(mCurX, mCurY)
+
+        // draw a dot on click
+        if (mStartX == mCurX && mStartY == mCurY) {
+            mPath.lineTo(mCurX, mCurY + 2)
+            mPath.lineTo(mCurX + 1, mCurY + 2)
+            mPath.lineTo(mCurX + 1, mCurY)
+        }
+        mOperations.add(CanvasOp.PathOp(mPath, mPaintOptions))
+    }
+
+    private fun addOperation(operation: CanvasOp) {
+        mOperations.add(operation)
+
+        // maybe free up some memory
+        while (mOperations.size > MAX_HISTORY_COUNT) {
+            val item = mOperations.removeFirst()
+            if (item is CanvasOp.BitmapOp) {
+                item.bitmap.recycle()
+            }
+        }
+
+        val ops = mOperations.filterIsInstance<CanvasOp.BitmapOp>()
+        if (ops.size > BITMAP_MAX_HISTORY_COUNT) {
+            val start = ops.lastIndex - BITMAP_MAX_HISTORY_COUNT
+            val bitmapOp = ops.slice(start..ops.lastIndex).first()
+
+            val startIndex = mOperations.indexOf(bitmapOp)
+            mOperations = mOperations.slice(startIndex..mOperations.lastIndex) as ArrayList<CanvasOp>
+        }
+    }
+
+    fun getPathsMap(): Map<MyPath, PaintOptions> {
+        val pathOps = mOperations
+            .filterIsInstance<CanvasOp.PathOp>()
+            .map { it.path to it.paintOptions }
+            .toTypedArray()
+        return mapOf(*pathOps)
+    }
+
+    fun getDrawingHashCode() = mOperations.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
 
     private fun MotionEvent?.isTouchSlop(pointerIndex: Int, startX: Float, startY: Float): Boolean {
         return if (this == null || actionMasked != MotionEvent.ACTION_MOVE) {
