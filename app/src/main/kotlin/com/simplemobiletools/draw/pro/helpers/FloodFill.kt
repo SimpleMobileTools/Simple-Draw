@@ -4,11 +4,9 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import java.util.*
 
-
 // Original algorithm by J. Dunlap http:// www.codeproject.com/KB/GDI-plus/queuelinearflood-fill.aspx
 // Java port by Owen Kaluza
 // Android port by Darrin Smith (Standard Android)
-
 class QueueLinearFloodFiller(img: Bitmap) {
 
     var image: Bitmap? = null

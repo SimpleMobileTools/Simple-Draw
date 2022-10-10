@@ -393,9 +393,12 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (contains(touchedX, touchedY)) {
             val bitmap = getBitmap()
             val color = mPaintOptions.color
-            val img = bitmap.floodFill(color = color, x = touchedX, y = touchedY)
-            addOperation(CanvasOp.BitmapOp(img))
-            invalidate()
+
+            ensureBackgroundThread {
+                val img = bitmap.floodFill(color = color, x = touchedX, y = touchedY)
+                addOperation(CanvasOp.BitmapOp(img))
+                post { invalidate() }
+            }
         }
     }
 
@@ -408,7 +411,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             mPath.lineTo(mCurX + 1, mCurY + 2)
             mPath.lineTo(mCurX + 1, mCurY)
         }
-        mOperations.add(CanvasOp.PathOp(mPath, mPaintOptions))
+        addOperation(CanvasOp.PathOp(mPath, mPaintOptions))
     }
 
     private fun addOperation(operation: CanvasOp) {
