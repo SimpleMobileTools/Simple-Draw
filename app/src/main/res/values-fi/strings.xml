@@ -5,6 +5,7 @@
     <string name="open_file">Avaa tiedosto</string>
     <string name="eraser">Pyyhekumi</string>
     <string name="eyedropper">Silmätippari</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Kuvan %s lataaminen epäonnistui</string>
     <!-- Settings -->
     <string name="show_brush_size">Näytä siveltimen koon työkalu</string>

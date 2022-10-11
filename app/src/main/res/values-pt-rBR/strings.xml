@@ -5,6 +5,7 @@
     <string name="open_file">Abrir arquivo</string>
     <string name="eraser">Borracha</string>
     <string name="eyedropper">Conta-gotas</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Erro ao carregar a imagem %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta de tamanho do pincel</string>

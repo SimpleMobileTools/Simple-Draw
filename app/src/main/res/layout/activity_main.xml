@@ -45,6 +45,7 @@
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_toStartOf="@+id/color_fill"
+                android:contentDescription="@string/redo"
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_redo_vector"
                 android:visibility="gone" />
@@ -54,6 +55,7 @@
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_toStartOf="@+id/eraser"
+                android:contentDescription="@string/bucket_fill"
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_color_fill_on_vector" />
 
@@ -62,6 +64,7 @@
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_toStartOf="@+id/eye_dropper"
+                android:contentDescription="@string/eraser"
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_eraser_on_vector" />
 
@@ -70,6 +73,7 @@
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_toStartOf="@+id/color_picker"
+                android:contentDescription="@string/eyedropper"
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_colorize_on_vector"
                 android:visibility="visible" />
@@ -78,7 +82,8 @@
                 android:id="@+id/color_picker"
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/change_color" />
 
             <ImageView
                 android:id="@+id/undo"
@@ -86,6 +91,7 @@
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_below="@id/color_picker"
                 android:layout_alignParentEnd="true"
+                android:contentDescription="@string/undo"
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_undo_vector"
                 android:visibility="gone" />

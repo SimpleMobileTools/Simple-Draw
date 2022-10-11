@@ -5,6 +5,7 @@
     <string name="open_file">Otwórz plik</string>
     <string name="eraser">Gumka</string>
     <string name="eyedropper">Pipeta</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Nie udało się wczytać obrazu %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Pokazuj narzędzie wyboru rozmiaru pędzla</string>

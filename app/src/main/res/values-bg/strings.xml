@@ -5,6 +5,7 @@
     <string name="open_file">Отвори файл</string>
     <string name="eraser">Гумичка</string>
     <string name="eyedropper">Копиране на цвят</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Неуспешно зареждане на изображение %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Показване на инструмент за размер на четка</string>

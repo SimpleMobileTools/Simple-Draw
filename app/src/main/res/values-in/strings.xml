@@ -5,6 +5,7 @@
     <string name="open_file">Buka berkas</string>
     <string name="eraser">Penghapus</string>
     <string name="eyedropper">Eyedropper</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Gagal memuat gambar %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Tampilkan tombol ukuran kuas</string>

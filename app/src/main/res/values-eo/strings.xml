@@ -5,6 +5,7 @@
     <string name="open_file">Malfermi dosieron</string>
     <string name="eraser">Skrapgumo</string>
     <string name="eyedropper">Gutigilo</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Malsukcesis ŝargi la bildon %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Montri ilon por ŝanĝi grandon de peniko</string>

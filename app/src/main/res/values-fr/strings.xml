@@ -5,6 +5,7 @@
     <string name="open_file">Ouvrir un fichier</string>
     <string name="eraser">Gommer</string>
     <string name="eyedropper">Pipette</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>

@@ -5,6 +5,7 @@
     <string name="open_file">Bestand openen</string>
     <string name="eraser">Gum</string>
     <string name="eyedropper">Pipet</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Kan bestand %s niet laden</string>
     <!-- Settings -->
     <string name="show_brush_size">Knop penceelgrootte tonen</string>

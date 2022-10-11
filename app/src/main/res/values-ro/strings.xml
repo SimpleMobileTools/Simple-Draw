@@ -5,6 +5,7 @@
     <string name="open_file">Deschideți fișierul</string>
     <string name="eraser">Radieră</string>
     <string name="eyedropper">Găseşte culoarea</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Imaginea nu a reușit să se încarce %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Afișați instrumentul de mărime a pensulei</string>

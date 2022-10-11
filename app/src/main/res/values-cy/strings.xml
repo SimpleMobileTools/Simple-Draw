@@ -5,6 +5,7 @@
     <string name="open_file">Agor ffeil</string>
     <string name="eraser">Rwbiwr</string>
     <string name="eyedropper">Eyedropper</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Methwyd â llwytho\'r ddelwedd %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Dangos teclyn maint brws</string>

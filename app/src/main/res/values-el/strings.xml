@@ -5,6 +5,7 @@
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="eraser">Γόμμα</string>
     <string name="eyedropper">Επιλογέας χρώματος</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Εμφάνιση εργαλείου για διαστάσεις του πινέλου</string>

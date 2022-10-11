@@ -5,6 +5,7 @@
     <string name="open_file">파일 열기</string>
     <string name="eraser">지우개</string>
     <string name="eyedropper">Eyedropper</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">%s 이미지 파일 로딩 실패</string>
     <!-- Settings -->
     <string name="show_brush_size">브러쉬 크기조절 도구 활성화</string>

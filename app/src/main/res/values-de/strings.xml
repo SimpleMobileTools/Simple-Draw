@@ -5,6 +5,7 @@
     <string name="open_file">Datei öffnen</string>
     <string name="eraser">Radierer</string>
     <string name="eyedropper">Augentropfer</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Fehler beim Laden des Bildes %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Zeige Pinselgröße</string>

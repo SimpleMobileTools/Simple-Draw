@@ -5,6 +5,7 @@
     <string name="open_file">ഫയൽ തുറക്കുക</string>
     <string name="eraser">ഇറേസർ</string>
     <string name="eyedropper">ഐഡ്രോപ്പർ</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">ചിത്രം %s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
     <!-- Settings -->
     <string name="show_brush_size">ബ്രഷ് സൈസ് ടൂൾ കാണിക്കുക</string>

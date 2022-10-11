@@ -5,6 +5,7 @@
     <string name="open_file">Открыть файл</string>
     <string name="eraser">Ластик</string>
     <string name="eyedropper">Пипетка</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Невозможно загрузить изображение %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Показать размер кисти</string>

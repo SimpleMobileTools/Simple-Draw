@@ -5,6 +5,7 @@
     <string name="open_file">Fayl aç</string>
     <string name="eraser">Pozan</string>
     <string name="eyedropper">Eyedropper</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">%s şəklini silmək olmur</string>
     <!-- Settings -->
     <string name="show_brush_size">Fırça ölçüsü alətini göstər</string>

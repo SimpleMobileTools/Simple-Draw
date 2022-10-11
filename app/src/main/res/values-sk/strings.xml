@@ -5,6 +5,7 @@
     <string name="open_file">Otvoriť súbor</string>
     <string name="eraser">Guma</string>
     <string name="eyedropper">Kvapkadlo</string>
+    <string name="bucket_fill">Farebná výplň</string>
     <string name="failed_to_load_image">Nepodarilo sa načítať súbor %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Zobraziť menič veľkosti štetca</string>

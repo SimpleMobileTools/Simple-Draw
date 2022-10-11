@@ -5,6 +5,7 @@
     <string name="open_file">打開檔案</string>
     <string name="eraser">橡皮擦</string>
     <string name="eyedropper">Eyedropper</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">無法載入圖片 %s</string>
     <!-- Settings -->
     <string name="show_brush_size">顯示畫筆尺寸工具</string>

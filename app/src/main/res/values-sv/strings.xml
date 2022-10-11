@@ -5,6 +5,7 @@
     <string name="open_file">Öppna fil</string>
     <string name="eraser">Radergummi</string>
     <string name="eyedropper">Ögondroppare</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">Det gick inte att läsa in bilden %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Visa penselstorleksverktyg</string>

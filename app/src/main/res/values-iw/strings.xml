@@ -5,6 +5,7 @@
     <string name="open_file">פתח קובץ</string>
     <string name="eraser">מַחַק</string>
     <string name="eyedropper">מפיל עיניים</string>
+    <string name="bucket_fill">Bucket fill</string>
     <string name="failed_to_load_image">טעינת התמונה %s נכשלה</string>
     <!-- Settings -->
     <string name="show_brush_size">הצג כלי גודל מברשת</string>
