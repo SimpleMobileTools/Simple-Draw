@@ -32,6 +32,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val MIN_ERASER_WIDTH = 20f
     private val MAX_HISTORY_COUNT = 1000
     private val BITMAP_MAX_HISTORY_COUNT = 60
+    private val DEFAULT_FLOOD_FILL_TOLERANCE = 160
+
     private val mScaledTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
 
     private var mOperations = ArrayList<CanvasOp>()
@@ -395,7 +397,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             val color = mPaintOptions.color
 
             ensureBackgroundThread {
-                val img = bitmap.floodFill(color = color, x = touchedX, y = touchedY)
+                val img = bitmap.floodFill(color = color, x = touchedX, y = touchedY, tolerance = DEFAULT_FLOOD_FILL_TOLERANCE)
                 addOperation(CanvasOp.BitmapOp(img))
                 post { invalidate() }
             }
