@@ -44,10 +44,18 @@
                 android:id="@+id/redo"
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
-                android:layout_toStartOf="@+id/eraser"
+                android:layout_toStartOf="@+id/color_fill"
                 android:padding="@dimen/medium_margin"
                 android:src="@drawable/ic_redo_vector"
                 android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/color_fill"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_toStartOf="@+id/eraser"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_color_fill_on_vector" />
 
             <ImageView
                 android:id="@+id/eraser"
