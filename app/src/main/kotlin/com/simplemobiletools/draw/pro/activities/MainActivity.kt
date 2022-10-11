@@ -407,6 +407,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateButtonStates() {
+        hideBrushSettings(isEyeDropperOn || isBucketFillOn)
+
         arrayOf(
             eraser to isEraserOn,
             eye_dropper to isEyeDropperOn,
@@ -425,6 +427,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
                     applyColorFilter(config.canvasBackgroundColor.getContrastColor())
                 }
             }
+        }
+    }
+
+    private fun hideBrushSettings(hide: Boolean) {
+        arrayOf(stroke_width_bar, stroke_width_preview).forEach {
+            it.beGoneIf(hide)
         }
     }
 
