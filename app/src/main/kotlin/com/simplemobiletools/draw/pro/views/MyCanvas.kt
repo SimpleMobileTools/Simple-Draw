@@ -32,7 +32,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val MIN_ERASER_WIDTH = 20f
     private val MAX_HISTORY_COUNT = 1000
     private val BITMAP_MAX_HISTORY_COUNT = 60
-    private val DEFAULT_FLOOD_FILL_TOLERANCE = 200
+    private val DEFAULT_FLOOD_FILL_TOLERANCE = 190
 
     private val mScaledTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
 
