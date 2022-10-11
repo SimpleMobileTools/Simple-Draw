@@ -107,6 +107,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="12dp"
                 android:max="100"
+                android:min="5"
                 android:padding="@dimen/medium_margin"
                 android:progress="50" />
 

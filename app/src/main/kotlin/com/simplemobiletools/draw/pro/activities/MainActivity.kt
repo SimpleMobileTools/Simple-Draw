@@ -644,7 +644,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
         override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-            brushSize = progress.toFloat()
+            brushSize = Math.max(progress.toFloat(), 5f)
             updateBrushSize()
         }
 
