@@ -40,6 +40,7 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.OutputStream
 
+
 class MainActivity : SimpleActivity(), CanvasListener {
     private val PICK_IMAGE_INTENT = 1
     private val SAVE_IMAGE_INTENT = 2
@@ -416,16 +417,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         ).forEach {
             val view = it.first
             val enabled = it.second
-
-            view.apply {
-                if (enabled) {
-                    val primaryColor = getProperPrimaryColor()
-                    background = ColorDrawable(primaryColor).apply { alpha = 220 }
-                    applyColorFilter(primaryColor.getContrastColor())
-                } else {
-                    background = null
-                    applyColorFilter(config.canvasBackgroundColor.getContrastColor())
-                }
+            if (enabled) {
+                view.applyColorFilter(getProperPrimaryColor())
+            } else {
+                view.applyColorFilter(config.canvasBackgroundColor.getContrastColor())
             }
         }
     }
