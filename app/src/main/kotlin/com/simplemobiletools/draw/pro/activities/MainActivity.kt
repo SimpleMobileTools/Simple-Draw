@@ -137,6 +137,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
         requestedOrientation = if (config.forcePortraitMode) ActivityInfo.SCREEN_ORIENTATION_PORTRAIT else ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
         refreshMenuItems()
+        updateButtonStates()
     }
 
     override fun onPause() {
@@ -348,6 +349,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun eraserClicked() {
         if (isEyeDropperOn) {
             eyeDropperClicked()
+        } else if (isBucketFillOn) {
+            bucketFillClicked()
         }
 
         isEraserOn = !isEraserOn
@@ -355,13 +358,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateEraserState() {
-        val iconId = if (isEraserOn) {
-            R.drawable.ic_eraser_off_vector
-        } else {
-            R.drawable.ic_eraser_on_vector
-        }
-
-        eraser.setImageResource(iconId)
+        updateButtonStates()
         my_canvas.toggleEraser(isEraserOn)
     }
 
@@ -382,6 +379,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun eyeDropperClicked() {
         if (isEraserOn) {
             eraserClicked()
+        } else if (isBucketFillOn) {
+            bucketFillClicked()
         }
 
         isEyeDropperOn = !isEyeDropperOn
@@ -391,26 +390,42 @@ class MainActivity : SimpleActivity(), CanvasListener {
             eyeDropper.stop()
         }
 
-        val iconId = if (isEyeDropperOn) {
-            R.drawable.ic_colorize_off_vector
-        } else {
-            R.drawable.ic_colorize_on_vector
-        }
-
-        eye_dropper.setImageResource(iconId)
+        updateButtonStates()
     }
 
     private fun bucketFillClicked() {
-        isBucketFillOn = !isBucketFillOn
-
-        val iconId = if (isBucketFillOn) {
-            R.drawable.ic_bucket_fill_off_vector
-        } else {
-            R.drawable.ic_bucket_fill_on_vector
+        if (isEraserOn) {
+            eraserClicked()
+        } else if (isEyeDropperOn) {
+            eyeDropperClicked()
         }
 
-        bucket_fill.setImageResource(iconId)
+        isBucketFillOn = !isBucketFillOn
+
+        updateButtonStates()
         my_canvas.toggleBucketFill(isBucketFillOn)
+    }
+
+    private fun updateButtonStates() {
+        arrayOf(
+            eraser to isEraserOn,
+            eye_dropper to isEyeDropperOn,
+            bucket_fill to isBucketFillOn
+        ).forEach {
+            val view = it.first
+            val enabled = it.second
+
+            view.apply {
+                if (enabled) {
+                    val primaryColor = getProperPrimaryColor()
+                    background = ColorDrawable(primaryColor).apply { alpha = 220 }
+                    applyColorFilter(primaryColor.getContrastColor())
+                } else {
+                    background = null
+                    applyColorFilter(config.canvasBackgroundColor.getContrastColor())
+                }
+            }
+        }
     }
 
     private fun confirmImage() {
