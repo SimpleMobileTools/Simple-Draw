@@ -61,7 +61,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mCurrBrushSize = 0f
     private var mAllowMovingZooming = true
     private var mIsEraserOn = false
-    private var mIsColorFillOn = false
+    private var mIsBucketFillOn = false
     private var mWasMultitouch = false
     private var mIgnoreTouches = false
     private var mWasScalingInGesture = false
@@ -164,7 +164,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     mTouchSloppedBeforeMultitouch = false
                 }
 
-                if (!mIsColorFillOn && (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch))) {
+                if (!mIsBucketFillOn && (!mAllowMovingZooming || (!mScaleDetector!!.isInProgress && event.pointerCount == 1 && !mWasMultitouch))) {
                     actionMove(newValueX, newValueY)
                 }
 
@@ -276,8 +276,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         invalidate()
     }
 
-    fun toggleColorFill(isColorFillOn: Boolean) {
-        mIsColorFillOn = isColorFillOn
+    fun toggleBucketFill(isBucketFillOn: Boolean) {
+        mIsBucketFillOn = isBucketFillOn
     }
 
     fun setColor(newColor: Int) {
@@ -365,8 +365,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun actionUp(forceLineDraw: Boolean) {
-        if (mIsColorFillOn) {
-            colorFill()
+        if (mIsBucketFillOn) {
+            bucketFill()
         } else if (!mWasMultitouch || forceLineDraw) {
             drawADot()
         }
@@ -389,7 +389,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         mListener?.toggleRedoVisibility(visible)
     }
 
-    private fun colorFill() {
+    private fun bucketFill() {
         val touchedX = mCurX.toInt()
         val touchedY = mCurY.toInt()
         if (contains(touchedX, touchedY)) {

@@ -63,7 +63,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var lastSavePromptTS = 0L
     private var isEraserOn = false
     private var isEyeDropperOn = false
-    private var isColorFillOn = false
+    private var isBucketFillOn = false
     private var isImageCaptureIntent = false
     private var isEditIntent = false
     private var lastBitmapPath = ""
@@ -106,7 +106,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
             true
         }
 
-        color_fill.setOnClickListener { colorFillClicked() }
+        bucket_fill.setOnClickListener { bucketFillClicked() }
+        bucket_fill.setOnLongClickListener {
+            toast(R.string.bucket_fill)
+            true
+        }
+
         checkIntents()
         if (!isImageCaptureIntent) {
             checkWhatsNewDialog()
@@ -395,18 +400,17 @@ class MainActivity : SimpleActivity(), CanvasListener {
         eye_dropper.setImageResource(iconId)
     }
 
-    private fun colorFillClicked() {
-        isColorFillOn = !isColorFillOn
+    private fun bucketFillClicked() {
+        isBucketFillOn = !isBucketFillOn
 
-        val iconId = if (isColorFillOn) {
-            R.drawable.ic_color_fill_off_vector
+        val iconId = if (isBucketFillOn) {
+            R.drawable.ic_bucket_fill_off_vector
         } else {
-            R.drawable.ic_color_fill_on_vector
+            R.drawable.ic_bucket_fill_on_vector
         }
 
-        color_fill.setImageResource(iconId)
-
-        my_canvas.toggleColorFill(isColorFillOn)
+        bucket_fill.setImageResource(iconId)
+        my_canvas.toggleBucketFill(isBucketFillOn)
     }
 
     private fun confirmImage() {
@@ -591,7 +595,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         eraser.applyColorFilter(contrastColor)
         redo.applyColorFilter(contrastColor)
         eye_dropper.applyColorFilter(contrastColor)
-        color_fill.applyColorFilter(contrastColor)
+        bucket_fill.applyColorFilter(contrastColor)
         if (isBlackAndWhiteTheme()) {
             stroke_width_bar.setColors(0, contrastColor, 0)
         }
