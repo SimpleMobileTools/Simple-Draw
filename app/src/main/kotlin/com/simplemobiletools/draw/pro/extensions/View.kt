@@ -3,7 +3,6 @@ package com.simplemobiletools.draw.pro.extensions
 import android.graphics.Rect
 import android.view.View
 
-
 val View.boundingBox: Rect
     get() {
         val rect = Rect()

@@ -40,7 +40,6 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.OutputStream
 
-
 class MainActivity : SimpleActivity(), CanvasListener {
     private val PICK_IMAGE_INTENT = 1
     private val SAVE_IMAGE_INTENT = 2
