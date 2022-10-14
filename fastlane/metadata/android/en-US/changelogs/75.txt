@@ -1,0 +1,2 @@
+ * Added a bucket fill tool
+ * Added some UX and translation improvements

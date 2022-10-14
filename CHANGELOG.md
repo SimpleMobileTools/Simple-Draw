@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.8.2 *(2022-10-14)*
+----------------------------
+
+ * Added a bucket fill tool
+ * Added some UX and translation improvements
+
 Version 6.8.1 *(2022-10-10)*
 ----------------------------
 
