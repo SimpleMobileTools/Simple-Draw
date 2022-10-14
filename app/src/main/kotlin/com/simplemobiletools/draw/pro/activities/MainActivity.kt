@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
+import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.print.PrintHelper
@@ -409,18 +410,16 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private fun updateButtonStates() {
         hideBrushSettings(isEyeDropperOn || isBucketFillOn)
 
-        arrayOf(
-            eraser to isEraserOn,
-            eye_dropper to isEyeDropperOn,
-            bucket_fill to isBucketFillOn
-        ).forEach {
-            val view = it.first
-            val enabled = it.second
-            if (enabled) {
-                view.applyColorFilter(getProperPrimaryColor())
-            } else {
-                view.applyColorFilter(config.canvasBackgroundColor.getContrastColor())
-            }
+        updateButtonColor(eraser, isEraserOn)
+        updateButtonColor(eye_dropper, isEyeDropperOn)
+        updateButtonColor(bucket_fill, isBucketFillOn)
+    }
+
+    private fun updateButtonColor(view: ImageView, enabled: Boolean) {
+        if (enabled) {
+            view.applyColorFilter(getProperPrimaryColor())
+        } else {
+            view.applyColorFilter(config.canvasBackgroundColor.getContrastColor())
         }
     }
 
