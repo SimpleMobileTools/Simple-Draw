@@ -4,7 +4,6 @@ import android.os.Parcel
 import android.os.Parcelable
 import android.view.View
 
-
 internal class MyParcelable : View.BaseSavedState {
     var operations = ArrayList<CanvasOp>()
 
