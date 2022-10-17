@@ -5,7 +5,7 @@
     <string name="open_file">Obre un fitxer</string>
     <string name="eraser">Goma d\'esborrar</string>
     <string name="eyedropper">Comptagotes</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Pot de pintura</string>
     <string name="failed_to_load_image">Ha fallat en carregar la imatge %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Mostra l\'eina de mida del pinzell</string>
