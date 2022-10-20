@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Enostavno risanje</string>
     <string name="app_launcher_name">Risanje</string>
-    <string name="open_file">Open file</string>
+    <string name="open_file">Odprite datoteko</string>
     <string name="eraser">Radirka</string>
     <string name="eyedropper">Kapalka</string>
     <string name="bucket_fill">Polnitev vedra</string>
