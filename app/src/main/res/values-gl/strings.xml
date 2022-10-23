@@ -5,7 +5,7 @@
     <string name="open_file">Abrir ficheiro</string>
     <string name="eraser">Borrador</string>
     <string name="eyedropper">Contagotas</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Recheo do balde</string>
     <string name="failed_to_load_image">Produciuse un erro ao cargar a imaxe %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta do tamaño do pincel</string>
