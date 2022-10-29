@@ -5,10 +5,10 @@
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="eraser">Γόμμα</string>
     <string name="eyedropper">Επιλογέας χρώματος</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Γέμισμα Κάδου</string>
     <string name="failed_to_load_image">Αποτυχία φόρτωσης της εικόνας %s</string>
     <!-- Settings -->
-    <string name="show_brush_size">Εμφάνιση εργαλείου για διαστάσεις του πινέλου</string>
+    <string name="show_brush_size">Εμφάνιση εργαλείου διαστάσεων πινέλου</string>
     <string name="allow_zooming_moving_canvas">Αποδοχή μεγέθυνσης &amp; μετακίνηση καμβά με χειρονομίες</string>
     <string name="clear">Καθαρισμός</string>
     <string name="change_background_color">Αλλαγή χρώματος παρασκηνίου</string>
