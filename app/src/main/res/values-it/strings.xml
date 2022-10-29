@@ -5,7 +5,7 @@
     <string name="open_file">Apri file</string>
     <string name="eraser">Gomma</string>
     <string name="eyedropper">Contagocce</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Riempi il secchio</string>
     <string name="failed_to_load_image">Impossibile caricare l\'immagine %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Dimensione della gomma</string>

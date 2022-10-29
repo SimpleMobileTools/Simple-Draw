@@ -5,7 +5,7 @@
     <string name="open_file">Dosya aç</string>
     <string name="eraser">Silici</string>
     <string name="eyedropper">Renk seçici</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Kova dolgusu</string>
     <string name="failed_to_load_image">%s resmi yüklenemedi</string>
     <!-- Settings -->
     <string name="show_brush_size">Fırça boyutu aracını göster</string>

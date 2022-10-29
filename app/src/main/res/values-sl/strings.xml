@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">Enostavno risanje</string>
     <string name="app_launcher_name">Risanje</string>
-    <string name="open_file">Odpri datoteko</string>
+    <string name="open_file">Odprite datoteko</string>
     <string name="eraser">Radirka</string>
     <string name="eyedropper">Kapalka</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Polnitev vedra</string>
     <string name="failed_to_load_image">Nalaganje slike %s ni uspelo</string>
     <!-- Settings -->
     <string name="show_brush_size">Omogoči spreminjanje velikosti čopiča</string>

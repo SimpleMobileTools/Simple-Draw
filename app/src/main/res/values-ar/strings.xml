@@ -5,7 +5,7 @@
     <string name="open_file">فتح ملف</string>
     <string name="eraser">الممحاة</string>
     <string name="eyedropper">القطارة</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">دلو التعبئة</string>
     <string name="failed_to_load_image">فشل تحميل الصورة %s</string>
     <!-- Settings -->
     <string name="show_brush_size">إظهار أداة حجم الفرشاة</string>

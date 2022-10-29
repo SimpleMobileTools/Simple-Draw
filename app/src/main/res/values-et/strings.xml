@@ -5,7 +5,7 @@
     <string name="open_file">Ava fail</string>
     <string name="eraser">Kustutuskumm</string>
     <string name="eyedropper">Pipett</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Ruumitäitja</string>
     <string name="failed_to_load_image">%s pildi laadimine ei õnnestunud</string>
     <!-- Settings -->
     <string name="show_brush_size">Näita pintsli suuruse tööriista</string>
