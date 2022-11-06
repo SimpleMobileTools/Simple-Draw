@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="eyedropper">Eyedropper</string>
-    <string name="clear">Clear</string>
-    <string name="bucket_fill">Bucket fill</string>
-    <string name="failed_to_load_image">Failed to load image %s</string>
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
-    <string name="change_background_color">Change background color</string>
+    <string name="app_name">Лако извлачење</string>
+    <string name="app_launcher_name">Цртати</string>
+    <string name="open_file">Отвори филе</string>
+    <string name="eraser">Гумица за брисање</string>
+    <string name="eyedropper">Капаљка за очи</string>
+    <string name="clear">Јасно</string>
+    <string name="bucket_fill">Напуните канту</string>
+    <string name="failed_to_load_image">Учитавање слике није успело %s</string>
+    <string name="show_brush_size">Прикажи алат за величину четкице</string>
+    <string name="allow_zooming_moving_canvas">Дозволите зумирање и померање платна покретима</string>
+    <string name="change_background_color">Промените боју позадине</string>
 </resources>
