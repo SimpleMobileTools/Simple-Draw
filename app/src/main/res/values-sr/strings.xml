@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Лако извлачење</string>
     <string name="app_launcher_name">Цртати</string>
-    <string name="open_file">Open file</string>
+    <string name="open_file">Отворена датотека</string>
     <string name="eraser">Гумица за брисање</string>
     <string name="eyedropper">Капаљка за очи</string>
     <string name="clear">Јасно</string>
