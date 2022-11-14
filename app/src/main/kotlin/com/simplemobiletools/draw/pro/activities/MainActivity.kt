@@ -408,7 +408,9 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateButtonStates() {
-        hideBrushSettings(isEyeDropperOn || isBucketFillOn)
+        if (config.showBrushSize) {
+            hideBrushSettings(isEyeDropperOn || isBucketFillOn)
+        }
 
         updateButtonColor(eraser, isEraserOn)
         updateButtonColor(eye_dropper, isEyeDropperOn)
