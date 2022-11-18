@@ -5,7 +5,7 @@
     <string name="open_file">打开文件</string>
     <string name="eraser">橡皮</string>
     <string name="eyedropper">吸管</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">装填油漆桶</string>
     <string name="failed_to_load_image">无法加载图片 %s</string>
     <!-- Settings -->
     <string name="show_brush_size">显示笔刷尺寸工具</string>
