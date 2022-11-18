@@ -5,10 +5,11 @@
     <string name="open_file">Отворена датотека</string>
     <string name="eraser">Гумица за брисање</string>
     <string name="eyedropper">Капаљка за очи</string>
-    <string name="clear">Јасно</string>
     <string name="bucket_fill">Напуните канту</string>
     <string name="failed_to_load_image">Учитавање слике није успело %s</string>
+    <!-- Settings -->
     <string name="show_brush_size">Прикажи алат за величину четкице</string>
     <string name="allow_zooming_moving_canvas">Дозволите зумирање и померање платна покретима</string>
+    <string name="clear">Јасно</string>
     <string name="change_background_color">Промените боју позадине</string>
 </resources>
