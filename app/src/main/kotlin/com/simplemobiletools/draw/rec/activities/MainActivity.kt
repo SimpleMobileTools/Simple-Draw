@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.pro.activities
+package com.simplemobiletools.draw.rec.activities
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -12,11 +12,13 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.*
+import android.view.ViewGroup.LayoutParams
 import android.webkit.MimeTypeMap
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.print.PrintHelper
+import com.google.android.material.appbar.AppBarLayout
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.extensions.*
@@ -27,16 +29,16 @@ import com.simplemobiletools.commons.helpers.isQPlus
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
-import com.simplemobiletools.draw.pro.BuildConfig
-import com.simplemobiletools.draw.pro.R
-import com.simplemobiletools.draw.pro.dialogs.SaveImageDialog
-import com.simplemobiletools.draw.pro.extensions.config
-import com.simplemobiletools.draw.pro.helpers.EyeDropper
-import com.simplemobiletools.draw.pro.helpers.JPG
-import com.simplemobiletools.draw.pro.helpers.PNG
-import com.simplemobiletools.draw.pro.helpers.SVG
-import com.simplemobiletools.draw.pro.interfaces.CanvasListener
-import com.simplemobiletools.draw.pro.models.Svg
+import com.simplemobiletools.draw.rec.BuildConfig
+import com.simplemobiletools.draw.rec.R
+import com.simplemobiletools.draw.rec.dialogs.SaveImageDialog
+import com.simplemobiletools.draw.rec.extensions.config
+import com.simplemobiletools.draw.rec.helpers.EyeDropper
+import com.simplemobiletools.draw.rec.helpers.JPG
+import com.simplemobiletools.draw.rec.helpers.PNG
+import com.simplemobiletools.draw.rec.helpers.SVG
+import com.simplemobiletools.draw.rec.interfaces.CanvasListener
+import com.simplemobiletools.draw.rec.models.Svg
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -70,12 +72,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
     private var isImageCaptureIntent = false
     private var isEditIntent = false
     private var lastBitmapPath = ""
+    private var isAppBarHidden = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_main)
-        setFullScreen()
+        toggleAppBar()
 
         appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
@@ -104,6 +107,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             toast(R.string.eraser)
             true
         }
+        burger.setOnClickListener { toggleAppBar() }
 
         redo.setOnClickListener { my_canvas.redo() }
         eye_dropper.setOnClickListener { eyeDropperClicked() }
@@ -180,6 +184,15 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
+    }
+
+    private fun toggleAppBar() {
+        val appBar = findViewById<AppBarLayout>(R.id.main_app_bar_layout)
+        val layoutParams = appBar.layoutParams
+        isAppBarHidden = !isAppBarHidden
+        layoutParams.height = if (isAppBarHidden) 0 else LayoutParams.WRAP_CONTENT
+        appBar.layoutParams = layoutParams
+        setFullScreen()
     }
 
     private fun refreshMenuItems() {

@@ -12,7 +12,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.simplemobiletools.draw.pro"
+        applicationId "com.simplemobiletools.draw.rec"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 75

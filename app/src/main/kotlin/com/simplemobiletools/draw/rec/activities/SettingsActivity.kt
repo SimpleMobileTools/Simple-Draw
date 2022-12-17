@@ -1,11 +1,11 @@
-package com.simplemobiletools.draw.pro.activities
+package com.simplemobiletools.draw.rec.activities
 
 import android.os.Bundle
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.NavigationIcon
 import com.simplemobiletools.commons.helpers.isTiramisuPlus
-import com.simplemobiletools.draw.pro.R
-import com.simplemobiletools.draw.pro.extensions.config
+import com.simplemobiletools.draw.rec.R
+import com.simplemobiletools.draw.rec.extensions.config
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Простое рисование</string>
-    <string name="app_launcher_name">Рисование</string>
+    <string name="app_launcher_name">Рисование(запись)</string>
     <string name="open_file">Открыть файл</string>
     <string name="eraser">Ластик</string>
     <string name="eyedropper">Пипетка</string>

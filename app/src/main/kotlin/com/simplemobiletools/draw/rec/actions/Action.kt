@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.pro.actions
+package com.simplemobiletools.draw.rec.actions
 
 import android.graphics.Path
 import java.io.Serializable

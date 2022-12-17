@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.pro.models
+package com.simplemobiletools.draw.rec.models
 
 import android.os.Parcel
 import android.os.Parcelable

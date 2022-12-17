@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.pro.extensions
+package com.simplemobiletools.draw.rec.extensions
 
 import android.graphics.Rect
 import android.view.View

@@ -1,4 +1,4 @@
-package com.simplemobiletools.draw.pro.views
+package com.simplemobiletools.draw.rec.views
 
 import android.app.Activity
 import android.content.Context

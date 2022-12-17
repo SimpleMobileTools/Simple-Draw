@@ -35,17 +35,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.simplemobiletools.draw.pro.views.MyCanvas
+            <com.simplemobiletools.draw.rec.views.MyCanvas
                 android:id="@+id/my_canvas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/white" />
 
             <ImageView
+                android:id="@+id/undo"
+                android:layout_width="@dimen/normal_icon_size"
+                android:layout_height="@dimen/normal_icon_size"
+                android:layout_alignParentStart="true"
+                android:background="?actionBarItemBackground"
+                android:contentDescription="@string/undo"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_undo_vector"
+                android:visibility="gone" />
+
+            <ImageView
                 android:id="@+id/redo"
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
-                android:layout_toStartOf="@+id/bucket_fill"
+                android:layout_toEndOf="@id/undo"
                 android:background="?actionBarItemBackground"
                 android:contentDescription="@string/redo"
                 android:padding="@dimen/medium_margin"
@@ -88,16 +99,15 @@
                 android:contentDescription="@string/change_color" />
 
             <ImageView
-                android:id="@+id/undo"
+                android:id="@+id/burger"
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_below="@id/color_picker"
                 android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/line_color_picker_margin"
                 android:background="?actionBarItemBackground"
-                android:contentDescription="@string/undo"
                 android:padding="@dimen/medium_margin"
-                android:src="@drawable/ic_undo_vector"
-                android:visibility="gone" />
+                android:src="@drawable/ic_burger_icon"/>
 
             <ImageView
                 android:id="@+id/stroke_width_preview"
