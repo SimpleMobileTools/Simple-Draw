@@ -15,14 +15,14 @@ import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.request.RequestOptions
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
-import com.simplemobiletools.draw.pro.R
-import com.simplemobiletools.draw.pro.extensions.contains
-import com.simplemobiletools.draw.pro.extensions.floodFill
-import com.simplemobiletools.draw.pro.interfaces.CanvasListener
-import com.simplemobiletools.draw.pro.models.CanvasOp
-import com.simplemobiletools.draw.pro.models.MyParcelable
-import com.simplemobiletools.draw.pro.models.MyPath
-import com.simplemobiletools.draw.pro.models.PaintOptions
+import com.simplemobiletools.draw.rec.R
+import com.simplemobiletools.draw.rec.extensions.contains
+import com.simplemobiletools.draw.rec.extensions.floodFill
+import com.simplemobiletools.draw.rec.interfaces.CanvasListener
+import com.simplemobiletools.draw.rec.models.CanvasOp
+import com.simplemobiletools.draw.rec.models.MyParcelable
+import com.simplemobiletools.draw.rec.models.MyPath
+import com.simplemobiletools.draw.rec.models.PaintOptions
 import java.util.concurrent.ExecutionException
 import kotlin.math.abs
 import kotlin.math.max
@@ -68,6 +68,8 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mWasMovingCanvasInGesture = false
     private var mBackgroundColor = 0
     private var mCenter: PointF? = null
+    private var maxCanvasWidth: Int = 0
+    private var maxCanvasHeight: Int = 0
 
     private var mScaleDetector: ScaleGestureDetector? = null
     private var mScaleFactor = 1f
@@ -210,6 +212,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         if (mCenter == null) {
             mCenter = PointF(width / 2f, height / 2f)
         }
+        updateMaxCanvasSize(width, height)
 
         canvas.translate(mPosX, mPosY)
         canvas.scale(mScaleFactor, mScaleFactor, mCenter!!.x, mCenter!!.y)
@@ -309,12 +312,10 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     fun drawBitmap(activity: Activity, path: Any) {
         ensureBackgroundThread {
-            val size = Point()
-            activity.windowManager.defaultDisplay.getSize(size)
             val options = RequestOptions().format(DecodeFormat.PREFER_ARGB_8888).disallowHardwareConfig().fitCenter()
 
             try {
-                val builder = Glide.with(context).asBitmap().load(path).apply(options).submit(size.x, size.y)
+                val builder = Glide.with(context).asBitmap().load(path).apply(options).submit(maxCanvasWidth, maxCanvasHeight)
 
                 mBackgroundBitmap = builder.get()
                 activity.runOnUiThread {
@@ -475,6 +476,15 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             setBrushSize(mCurrBrushSize)
             invalidate()
             return true
+        }
+    }
+
+    private fun updateMaxCanvasSize(width: Int, height: Int) {
+        if (maxCanvasWidth < width) {
+            maxCanvasWidth = width
+        }
+        if (maxCanvasHeight < height) {
+            maxCanvasHeight = height
         }
     }
 }
