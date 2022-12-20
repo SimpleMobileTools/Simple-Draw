@@ -161,6 +161,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
             findItem(R.id.menu_save).isVisible = !isImageCaptureIntent && !isEditIntent
             findItem(R.id.menu_share).isVisible = !isImageCaptureIntent && !isEditIntent
             findItem(R.id.open_file).isVisible = !isEditIntent
+            findItem(R.id.more_apps_from_us).isVisible = !resources.getBoolean(R.bool.hide_google_relations)
         }
     }
 
@@ -174,6 +175,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 R.id.open_file -> tryOpenFile()
                 R.id.change_background -> changeBackgroundClicked()
                 R.id.menu_print -> printImage()
+                R.id.more_apps_from_us -> launchMoreAppsFromUsIntent()
                 R.id.settings -> launchSettings()
                 R.id.about -> launchAbout()
                 else -> return@setOnMenuItemClickListener false
