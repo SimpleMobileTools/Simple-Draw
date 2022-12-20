@@ -15,7 +15,7 @@
         app:showAsAction="always" />
     <item
         android:id="@+id/clear"
-        android:icon="@drawable/ic_clear_vector"
+        android:icon="@drawable/ic_delete_vector"
         android:title="@string/clear"
         app:showAsAction="always" />
     <item
@@ -35,14 +35,14 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_print"
-        android:showAsAction="never"
+        android:icon="@drawable/ic_print_vector"
         android:title="@string/print"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/more_apps_from_us"
         android:icon="@drawable/ic_google_play_vector"
         android:title="@string/more_apps_from_us"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_settings_cog_vector"
