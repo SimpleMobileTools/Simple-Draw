@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.simplemobiletools.draw.pro"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 33
         versionCode 75
         versionName "6.8.2"
@@ -63,6 +63,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:c72bf5f2c4'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:c6d0ae9f50'
     implementation "androidx.print:print:1.0.0"
 }

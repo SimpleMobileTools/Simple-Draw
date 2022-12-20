@@ -3,7 +3,6 @@ package com.simplemobiletools.draw.pro.activities
 import android.os.Bundle
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getProperPrimaryColor
-import com.simplemobiletools.commons.extensions.isGone
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.helpers.NavigationIcon
 import com.simplemobiletools.commons.helpers.isTiramisuPlus
