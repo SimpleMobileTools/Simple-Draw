@@ -94,6 +94,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
         color_picker.setOnClickListener { pickColor() }
         undo.setOnClickListener { my_canvas.undo() }
+        undo.setOnLongClickListener {
+            toast(R.string.undo)
+            true
+        }
+
         eraser.setOnClickListener { eraserClicked() }
         eraser.setOnLongClickListener {
             toast(R.string.eraser)
@@ -101,6 +106,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         redo.setOnClickListener { my_canvas.redo() }
+        redo.setOnLongClickListener {
+            toast(R.string.redo)
+            true
+        }
+
         eye_dropper.setOnClickListener { eyeDropperClicked() }
         eye_dropper.setOnLongClickListener {
             toast(R.string.eyedropper)
