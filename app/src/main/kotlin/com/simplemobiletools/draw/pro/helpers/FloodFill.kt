@@ -59,7 +59,7 @@ class QueueLinearFloodFiller(img: Bitmap) {
         prepare()
         if (startColor[0] == 0) {
             // ***Get starting color.
-            val startPixel = pixels!![width * y + x]
+            val startPixel = pixels!!.getOrNull(width * y + x) ?: return
             startColor[0] = startPixel shr 16 and 0xff
             startColor[1] = startPixel shr 8 and 0xff
             startColor[2] = startPixel and 0xff
