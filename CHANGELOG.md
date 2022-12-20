@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.9.0 *(2022-12-20)*
+----------------------------
+
+ * Increased the minimal required Android OS version to 6
+ * Use Material You theme by default on Android 12+
+ * Added some UI, stability and translation improvements
+
 Version 6.8.2 *(2022-10-14)*
 ----------------------------
 

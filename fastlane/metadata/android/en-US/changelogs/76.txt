@@ -1,0 +1,3 @@
+Increased the minimal required Android OS version to 6
+Use Material You theme by default on Android 12+
+Added some UI, stability and translation improvements
