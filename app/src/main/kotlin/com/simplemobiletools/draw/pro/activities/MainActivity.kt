@@ -121,7 +121,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onResume() {
         super.onResume()
-        setupToolbar(main_toolbar)
+        setupToolbar(main_toolbar, statusBarColor = getProperBackgroundColor())
 
         val isShowBrushSizeEnabled = config.showBrushSize
         stroke_width_bar.beVisibleIf(isShowBrushSizeEnabled)
