@@ -5,13 +5,13 @@
     <string name="open_file">Abrir ficheiro</string>
     <string name="eraser">Borracha</string>
     <string name="eyedropper">Pipeta</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Balde de preenchimento</string>
     <string name="failed_to_load_image">Falha ao carregar a imagem %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Mostrar ferramenta Tamanho do pincel</string>
     <string name="allow_zooming_moving_canvas">Permitir ampliar e mover a tela com gestos</string>
     <string name="clear">Limpar</string>
-    <string name="change_background_color">Alterar fundo</string>
+    <string name="change_background_color">Alterar cor de fundo</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
