@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">الرسام البسيط</string>
+    <string name="app_name">الرسم البسيط</string>
     <string name="app_launcher_name">الرسام</string>
-    <string name="open_file">فتح ملف</string>
+    <string name="open_file">فتح الملف</string>
     <string name="eraser">الممحاة</string>
     <string name="eyedropper">القطارة</string>
     <string name="bucket_fill">دلو التعبئة</string>
