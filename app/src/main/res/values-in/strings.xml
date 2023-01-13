@@ -4,12 +4,12 @@
     <string name="app_launcher_name">Kanvas</string>
     <string name="open_file">Buka berkas</string>
     <string name="eraser">Penghapus</string>
-    <string name="eyedropper">Eyedropper</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="eyedropper">Penitis warna</string>
+    <string name="bucket_fill">Penuhi ember</string>
     <string name="failed_to_load_image">Gagal memuat gambar %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Tampilkan tombol ukuran kuas</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="allow_zooming_moving_canvas">Perbolehkan perbesaran dan menggerakkan kanvas dengan gestur</string>
     <string name="clear">Hapus</string>
     <string name="change_background_color">Ubah warna latar</string>
     <!--
