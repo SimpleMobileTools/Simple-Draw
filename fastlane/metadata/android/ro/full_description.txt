@@ -20,7 +20,6 @@ Acest caiet popular pentru schițe rapide și desenare oferă multe funcții uti
 ✔️ Introduceți vopsea fie prin selectarea ei pe o paletă, fie prin introducerea codului hexagonal al culorilor
 ✔️ Acest caiet de schițe simplu acceptă multe formate diferite, cum ar fi PNG, JPG sau vectori SVG
 ✔️ Împărtășește-ți picturile, desenele și schițele cu prietenii prin e-mail sau rețelele sociale
-✔️ Simple Draw App funcționează offline & online!
 
 Nu folosiți nimic altceva decât dispozitivul dvs. și creativitatea pentru a face niște mâzgălituri și schițe!
 
@@ -43,8 +42,6 @@ Descărcați aplicația noastră de desen, desenați-vă arta preferată și îm
 Desen pentru copii! 
 
 Desenul pentru copii este important, iar copiii sunt comunicatori eficienți, iar prin desene, copiii învață să-și exprime liber sentimentele și ideile. Cu blocul nostru de desen digital, ei pot desena mașini, flori, câini, pisici și alte picturi și le pot salva în Galerie! 
-
-Cu Simple Draw, veți crea schițe rapide sau veți mâzgăli ceva amuzant folosind doar creativitatea și imaginația voastră, așa că începeți să desenați un mâzgălit sau o schiță și împărtășiți dragostea și bucuria de a crea artă simplă!
 
 Acesta vine cu design material și tema întunecată în mod implicit, oferă o experiență de utilizare excelentă pentru o utilizare ușoară. Lipsa accesului la internet vă oferă mai multă intimitate, securitate și stabilitate decât alte aplicații.
 
