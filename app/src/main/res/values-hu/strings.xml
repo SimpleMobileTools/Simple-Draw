@@ -5,7 +5,7 @@
     <string name="open_file">Fájl megnyitása</string>
     <string name="eraser">Radír</string>
     <string name="eyedropper">Pipetta</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Kitöltés</string>
     <string name="failed_to_load_image">A(z) %s kép betöltése sikertelen</string>
     <!-- Settings -->
     <string name="show_brush_size">Ecsetméret eszköz megjelenítése</string>
