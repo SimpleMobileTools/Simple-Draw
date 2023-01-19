@@ -54,8 +54,8 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private var defaultPath = ""
     private var defaultFilename = ""
-
     private var defaultExtension = PNG
+
     private var intentUri: Uri? = null
     private var uriToLoad: Uri? = null
     private var color = 0
@@ -81,7 +81,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         my_canvas.mListener = this
-        stroke_width_bar.setOnSeekBarChangeListener(onStrokeWidthBarChangeListener)
+        stroke_width_bar.onSeekBarChangeListener { progress ->
+            brushSize = Math.max(progress.toFloat(), 5f)
+            updateBrushSize()
+        }
 
         setBackgroundColor(config.canvasBackgroundColor)
         setColor(config.brushColor)
@@ -674,17 +677,6 @@ class MainActivity : SimpleActivity(), CanvasListener {
             uriToLoad = Uri.parse(savedInstanceState.getString(URI_TO_LOAD))
             tryOpenUri(uriToLoad!!, intent)
         }
-    }
-
-    private var onStrokeWidthBarChangeListener: SeekBar.OnSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
-        override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-            brushSize = Math.max(progress.toFloat(), 5f)
-            updateBrushSize()
-        }
-
-        override fun onStartTrackingTouch(seekBar: SeekBar) {}
-
-        override fun onStopTrackingTouch(seekBar: SeekBar) {}
     }
 
     private fun updateBrushSize() {
