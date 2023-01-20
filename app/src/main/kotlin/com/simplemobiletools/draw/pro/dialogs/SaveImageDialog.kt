@@ -32,13 +32,12 @@ class SaveImageDialog(
             )
 
             if (hidePath) {
-                save_image_path_label.beGone()
-                save_image_path.beGone()
+                folder_hint.beGone()
             } else {
-                save_image_path.text = activity.humanizePath(folder)
-                save_image_path.setOnClickListener {
+                folder_value.setText(activity.humanizePath(folder))
+                folder_value.setOnClickListener {
                     FilePickerDialog(activity, folder, false, showFAB = true) {
-                        save_image_path.text = activity.humanizePath(it)
+                        folder_value.setText(activity.humanizePath(it))
                         folder = it
                     }
                 }

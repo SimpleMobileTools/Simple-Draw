@@ -432,11 +432,13 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateButtonColor(view: ImageView, enabled: Boolean) {
-        if (enabled) {
-            view.applyColorFilter(getProperPrimaryColor())
+        val buttonColor = if (enabled) {
+            getProperPrimaryColor()
         } else {
-            view.applyColorFilter(config.canvasBackgroundColor.getContrastColor())
+            config.canvasBackgroundColor.getContrastColor()
         }
+
+        view.applyColorFilter(buttonColor)
     }
 
     private fun hideBrushSettings(hide: Boolean) {
