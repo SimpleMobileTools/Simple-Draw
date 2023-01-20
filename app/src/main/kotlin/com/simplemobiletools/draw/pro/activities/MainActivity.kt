@@ -349,7 +349,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
                 defaultExtension = SVG
                 true
             }
-            "jpg", "jpeg", "png", "gif", "image/jpg", "image/png", "image/gif" -> {
+            "jpg", "jpeg", "png", "gif", "image/jpg", "image/png", "image/gif", "webp" -> {
                 my_canvas.drawBitmap(this, uri)
                 defaultExtension = JPG
                 true
