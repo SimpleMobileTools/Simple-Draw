@@ -16,6 +16,11 @@
         android:name="android.hardware.faketouch"
         android:required="false" />
 
+    <queries>
+        <package android:name="com.simplemobiletools.draw.debug" />
+        <package android:name="com.simplemobiletools.draw" />
+    </queries>
+
     <application
         android:name=".App"
         android:allowBackup="true"

@@ -58,7 +58,6 @@ class SettingsActivity : SimpleActivity() {
     private fun setupLanguage() {
         settings_language.text = Locale.getDefault().displayLanguage
         settings_language_holder.beVisibleIf(isTiramisuPlus())
-
         settings_language_holder.setOnClickListener {
             launchChangeAppLanguageIntent()
         }
