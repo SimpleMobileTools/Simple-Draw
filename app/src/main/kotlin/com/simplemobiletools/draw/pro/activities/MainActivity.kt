@@ -13,7 +13,6 @@ import android.provider.MediaStore
 import android.view.WindowManager
 import android.webkit.MimeTypeMap
 import android.widget.ImageView
-import android.widget.SeekBar
 import android.widget.Toast
 import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
