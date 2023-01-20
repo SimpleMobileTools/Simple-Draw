@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.9.1 *(2023-01-20)*
+----------------------------
+
+ * Avoid showing the Save/Discard dialog if nothing has been drawn
+ * Added some UI and translation improvements
+
 Version 6.9.0 *(2022-12-20)*
 ----------------------------
 
