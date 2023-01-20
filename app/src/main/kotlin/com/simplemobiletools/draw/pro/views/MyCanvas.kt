@@ -445,7 +445,13 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         return mapOf(*pathOps)
     }
 
-    fun getDrawingHashCode() = mOperations.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
+    fun getDrawingHashCode(): Long {
+        return if (mOperations.isEmpty()) {
+            0
+        } else {
+            mOperations.hashCode().toLong() + (mBackgroundBitmap?.hashCode()?.toLong() ?: 0L)
+        }
+    }
 
     private fun MotionEvent?.isTouchSlop(pointerIndex: Int, startX: Float, startY: Float): Boolean {
         return if (this == null || actionMasked != MotionEvent.ACTION_MOVE) {
