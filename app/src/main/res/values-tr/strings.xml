@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Basit Çiz</string>
+    <string name="app_name">Basit Çizim</string>
     <string name="app_launcher_name">Çiz</string>
     <string name="open_file">Dosya aç</string>
     <string name="eraser">Silici</string>
