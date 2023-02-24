@@ -64,6 +64,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mIsBucketFillOn = false
     private var mWasMultitouch = false
     private var mIgnoreTouches = false
+    private var mIgnoreMultitouchChanges = false
     private var mWasScalingInGesture = false
     private var mWasMovingCanvasInGesture = false
     private var mBackgroundColor = 0
@@ -168,7 +169,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     actionMove(newValueX, newValueY)
                 }
 
-                if (mAllowMovingZooming && mWasMultitouch) {
+                if (mAllowMovingZooming && mWasMultitouch && !mIgnoreMultitouchChanges) {
                     mPosX += x - mLastTouchX
                     mPosY += y - mLastTouchY
                     mWasMovingCanvasInGesture = true
@@ -177,6 +178,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
                 mLastTouchX = x
                 mLastTouchY = y
+                mIgnoreMultitouchChanges = false
             }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 mActivePointerId = INVALID_POINTER_ID
@@ -187,12 +189,14 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             MotionEvent.ACTION_POINTER_DOWN -> {
                 if (mAllowMovingZooming) {
                     mWasMultitouch = true
+                    mIgnoreMultitouchChanges = true
                     mTouchSloppedBeforeMultitouch = mLastMotionEvent.isTouchSlop(pointerIndex, mStartX, mStartY)
                 }
             }
             MotionEvent.ACTION_POINTER_UP -> {
                 if (mAllowMovingZooming) {
                     mIgnoreTouches = true
+                    mIgnoreMultitouchChanges = true
                     actionUp(!mWasScalingInGesture && !mWasMovingCanvasInGesture)
                 }
             }
