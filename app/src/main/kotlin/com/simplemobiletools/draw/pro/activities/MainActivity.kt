@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.print.PrintHelper
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
+import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_GLIDE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
@@ -128,6 +129,10 @@ class MainActivity : SimpleActivity(), CanvasListener {
         checkIntents()
         if (!isImageCaptureIntent) {
             checkWhatsNewDialog()
+        }
+
+        if (isPackageInstalled("com.simplemobiletools.draw")) {
+            ConfirmationDialog(this, "", R.string.upgraded_to_pro, R.string.ok, 0, false) {}
         }
     }
 
