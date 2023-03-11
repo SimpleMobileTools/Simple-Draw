@@ -28,7 +28,7 @@ import kotlin.math.min
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val MIN_ERASER_WIDTH = 20f
     private val MAX_HISTORY_COUNT = 1000
-    private val FLOOD_FILL_TOLERANCE = 10
+    private val FLOOD_FILL_TOLERANCE = 1
 
     private val mScaledTouchSlop = ViewConfiguration.get(context).scaledTouchSlop
 
