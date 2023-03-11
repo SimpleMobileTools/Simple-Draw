@@ -73,7 +73,7 @@ object Svg {
             path.readObject(it.data, activity)
             val options = PaintOptions(it.color, it.strokeWidth, it.isEraser)
 
-            canvas.addPath(path, options)
+            canvas.addOperation(path, options)
         }
     }
 
