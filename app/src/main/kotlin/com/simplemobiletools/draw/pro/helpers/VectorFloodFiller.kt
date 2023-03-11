@@ -96,53 +96,42 @@ class VectorFloodFiller(image: Bitmap) {
         var lFillLoc = x // the location to check/fill on the left
         var pxIdx = width * y + x
         path.moveTo(x.toFloat(), y.toFloat())
-
         while (true) {
-            // fill with the color
-            val newX = (pxIdx % width).toFloat()
-            val newY = (pxIdx - newX) / width
-            path.lineTo(newX, newY)
-
-            // indicate that this pixel has already been checked and filled
             pixelsChecked[pxIdx] = true
-
-            // de-increment
-            lFillLoc-- // de-increment counter
-            pxIdx-- // de-increment pixel index
-
+            lFillLoc--
+            pxIdx--
             // exit loop if we're at edge of bitmap or color area
             if (lFillLoc < 0 || pixelsChecked[pxIdx] || !isPixelColorWithinTolerance(pxIdx)) {
                 break
             }
         }
+        vectorFill(pxIdx + 1)
         lFillLoc++
 
         // Find Right Edge of Color Area
         var rFillLoc = x // the location to check/fill on the left
         pxIdx = width * y + x
         while (true) {
-            // fill with the color
-            val newX = (pxIdx % width).toFloat()
-            val newY = (pxIdx - newX) / width
-            path.lineTo(newX, newY)
-
-            // indicate that this pixel has already been checked and filled
             pixelsChecked[pxIdx] = true
-
-            // increment
-            rFillLoc++ // increment counter
-            pxIdx++ // increment pixel index
-
-            // exit loop if we're at edge of bitmap or color area
+            rFillLoc++
+            pxIdx++
             if (rFillLoc >= width || pixelsChecked[pxIdx] || !isPixelColorWithinTolerance(pxIdx)) {
                 break
             }
         }
+        vectorFill(pxIdx - 1)
         rFillLoc--
 
         // add range to queue
         val r = FloodFillRange(lFillLoc, rFillLoc, y)
         ranges.offer(r)
+    }
+
+    // vector fill pixels with color
+    private fun vectorFill(pxIndex: Int) {
+        val x = (pxIndex % width).toFloat()
+        val y = (pxIndex - x) / width
+        path.lineTo(x, y)
     }
 
     // Sees if a pixel is within the color tolerance range.
