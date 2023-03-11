@@ -376,7 +376,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
             ensureBackgroundThread {
                 val path = bitmap.vectorFloodFill(color = color, x = touchedX, y = touchedY, tolerance = FLOOD_FILL_TOLERANCE)
-                val paintOpts = PaintOptions(color = color, strokeWidth = 4f)
+                val paintOpts = PaintOptions(color = color, strokeWidth = 5f)
                 addOperation(path, paintOpts)
                 post { invalidate() }
             }
