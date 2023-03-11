@@ -18,7 +18,6 @@ import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.draw.pro.R
 import com.simplemobiletools.draw.pro.extensions.*
 import com.simplemobiletools.draw.pro.interfaces.CanvasListener
-import com.simplemobiletools.draw.pro.models.MyParcelable
 import com.simplemobiletools.draw.pro.models.MyPath
 import com.simplemobiletools.draw.pro.models.PaintOptions
 import java.util.concurrent.ExecutionException
@@ -86,21 +85,17 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
         updateUndoVisibility()
     }
 
-    public override fun onSaveInstanceState(): Parcelable {
-        val superState = super.onSaveInstanceState()
-        val savedState = MyParcelable(superState!!)
-        savedState.operations = mOperations
-        return savedState
+    public override fun onSaveInstanceState(): Parcelable? {
+        DrawingStateHolder.operations = mOperations
+        return super.onSaveInstanceState()
     }
 
     public override fun onRestoreInstanceState(state: Parcelable) {
-        if (state !is MyParcelable) {
-            super.onRestoreInstanceState(state)
-            return
+        val savedOperations = DrawingStateHolder.operations
+        if (savedOperations != null) {
+            mOperations = savedOperations
         }
-
-        super.onRestoreInstanceState(state.superState)
-        mOperations = state.operations
+        super.onRestoreInstanceState(state)
         updateUndoVisibility()
     }
 
@@ -449,4 +444,9 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
             return true
         }
     }
+}
+
+// since we don't use view models, this serves as a simple state holder to save drawing operations
+object DrawingStateHolder {
+    var operations: LinkedHashMap<MyPath, PaintOptions>? = null
 }
