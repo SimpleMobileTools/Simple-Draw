@@ -7,6 +7,7 @@
     <string name="eyedropper">Eyedropper</string>
     <string name="bucket_fill">Punan ng pintura</string>
     <string name="failed_to_load_image">Nagkaproblema sa pag-load ng larawang %s</string>
+    <!-- Settings -->
     <string name="show_brush_size">Ipakita ang pampalit ng laki ng brush</string>
     <string name="allow_zooming_moving_canvas">Payagan ang pag-zoom at paggalaw sa canvas gamit ang mga gesture</string>
     <string name="clear">Burahin</string>
