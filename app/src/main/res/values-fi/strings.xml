@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Yksinkertainen arvonta</string>
-    <string name="app_launcher_name">Piirrä</string>
+    <string name="app_name">Yksinkertainen piirto</string>
+    <string name="app_launcher_name">Piirto</string>
     <string name="open_file">Avaa tiedosto</string>
     <string name="eraser">Pyyhekumi</string>
     <string name="eyedropper">Silmätippari</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Ämpärin täyttö</string>
     <string name="failed_to_load_image">Kuvan %s lataaminen epäonnistui</string>
     <!-- Settings -->
     <string name="show_brush_size">Näytä siveltimen koon työkalu</string>
