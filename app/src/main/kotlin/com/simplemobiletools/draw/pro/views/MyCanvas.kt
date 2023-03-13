@@ -22,8 +22,6 @@ import com.simplemobiletools.draw.pro.models.MyPath
 import com.simplemobiletools.draw.pro.models.PaintOptions
 import java.util.concurrent.ExecutionException
 import kotlin.math.abs
-import kotlin.math.max
-import kotlin.math.min
 
 class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val MIN_ERASER_WIDTH = 20f
@@ -439,10 +437,17 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 mPath.reset()
             }
 
+            if (mScaleFactor * detector.scaleFactor !in 0.1f..10.0f) {
+                return true
+            }
+
             mIgnoreTouches = true
             mWasScalingInGesture = true
             mScaleFactor *= detector.scaleFactor
-            mScaleFactor = max(0.1f, min(mScaleFactor, 10.0f))
+
+            mPosX *= detector.scaleFactor
+            mPosY *= detector.scaleFactor
+
             setBrushSize(mCurrBrushSize)
             invalidate()
             return true
