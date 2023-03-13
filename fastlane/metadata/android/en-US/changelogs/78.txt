@@ -1,0 +1,4 @@
+ * Allow opening .webp files
+ * Improve bucket fill tool
+ * Added some zooming related improvements
+ * Added some UI, stability and translation improvements

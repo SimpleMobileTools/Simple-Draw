@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 6.9.2 *(2023-03-13)*
+----------------------------
+
+ * Allow opening .webp files
+ * Improve bucket fill tool
+ * Added some zooming related improvements
+ * Added some UI, stability and translation improvements
+
 Version 6.9.1 *(2023-01-20)*
 ----------------------------
 
