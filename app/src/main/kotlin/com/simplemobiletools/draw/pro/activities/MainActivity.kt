@@ -132,7 +132,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         if (isPackageInstalled("com.simplemobiletools.draw")) {
-            ConfirmationDialog(this, "", R.string.upgraded_to_pro, R.string.ok, 0, false) {}
+            ConfirmationDialog(this, "", R.string.upgraded_from_free, R.string.ok, 0, false) {}
         }
     }
 

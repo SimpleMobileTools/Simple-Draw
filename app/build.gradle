@@ -63,6 +63,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:136962b0cd'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:dfe84c0ee2'
     implementation "androidx.print:print:1.0.0"
 }
