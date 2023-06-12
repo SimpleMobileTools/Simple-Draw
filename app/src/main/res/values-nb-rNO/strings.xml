@@ -5,7 +5,7 @@
     <string name="open_file">Åpne fil</string>
     <string name="eraser">Viskelær</string>
     <string name="eyedropper">Pipette</string>
-    <string name="bucket_fill">Bucket fill</string>
+    <string name="bucket_fill">Malingsspannfyll</string>
     <string name="failed_to_load_image">Kunne ikke laste inn bilde %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Vis penselstørrelsesverktøy</string>
