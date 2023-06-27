@@ -144,6 +144,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         stroke_width_bar.beVisibleIf(isShowBrushSizeEnabled)
         stroke_width_preview.beVisibleIf(isShowBrushSizeEnabled)
         my_canvas.setAllowZooming(config.allowZoomingCanvas)
+        my_canvas.setRelativeBrushSize(config.relativeBrushSize)
         updateTextColors(main_holder)
         if (isBlackAndWhiteTheme()) {
             stroke_width_bar.setColors(0, config.canvasBackgroundColor.getContrastColor(), 0)

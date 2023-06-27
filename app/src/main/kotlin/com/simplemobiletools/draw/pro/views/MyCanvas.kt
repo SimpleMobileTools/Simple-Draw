@@ -54,6 +54,7 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     private var mCurrBrushSize = 0f
     private var mAllowMovingZooming = true
+    private var mRelativeBrushSize = true
     private var mIsEraserOn = false
     private var mIsBucketFillOn = false
     private var mWasMultitouch = false
@@ -278,11 +279,19 @@ class MyCanvas(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     fun setBrushSize(newBrushSize: Float) {
         mCurrBrushSize = newBrushSize
-        mPaintOptions.strokeWidth = resources.getDimension(R.dimen.full_brush_size) * (mCurrBrushSize / mScaleFactor / 100f)
+        mPaintOptions.strokeWidth = resources.getDimension(R.dimen.full_brush_size) * (mCurrBrushSize / 100f)
+        if (mRelativeBrushSize) {
+            mPaintOptions.strokeWidth /= mScaleFactor
+        }
     }
 
     fun setAllowZooming(allowZooming: Boolean) {
         mAllowMovingZooming = allowZooming
+    }
+
+    fun setRelativeBrushSize(relativeBrushSize: Boolean) {
+        mRelativeBrushSize = relativeBrushSize
+        setBrushSize(mCurrBrushSize)
     }
 
     fun getBitmap(): Bitmap {

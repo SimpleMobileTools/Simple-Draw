@@ -11,6 +11,7 @@
     <!-- Settings -->
     <string name="show_brush_size">Show brush size tool</string>
     <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
+    <string name="use_relative_brush_size">Use a relative (to zoom) brush size</string>
     <string name="clear">Clear</string>
     <string name="change_background_color">Change background color</string>
     <!--

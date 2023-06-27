@@ -7,6 +7,7 @@ const val BRUSH_SIZE = "brush_size_2"
 const val LAST_SAVE_FOLDER = "last_save_folder"
 const val LAST_SAVE_EXTENSION = "last_save_extension"
 const val ALLOW_ZOOMING_CANVAS = "allow_zooming_canvas"
+const val RELATIVE_BRUSH_SIZE = "relative_brush_size"
 const val FORCE_PORTRAIT_MODE = "force_portrait_mode"
 
 const val PNG = "png"

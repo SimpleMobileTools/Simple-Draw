@@ -147,6 +147,21 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/settings_relative_brush_size_holder"
+                style="@style/SettingsHolderCheckboxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.simplemobiletools.commons.views.MyAppCompatCheckbox
+                    android:id="@+id/settings_relative_brush_size"
+                    style="@style/SettingsCheckboxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/use_relative_brush_size" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/settings_force_portrait_holder"
                 style="@style/SettingsHolderCheckboxStyle"
                 android:layout_width="match_parent"
