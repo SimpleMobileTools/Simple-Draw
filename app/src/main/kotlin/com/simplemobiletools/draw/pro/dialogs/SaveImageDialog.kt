@@ -6,10 +6,10 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.draw.pro.R
 import com.simplemobiletools.draw.pro.activities.SimpleActivity
+import com.simplemobiletools.draw.pro.databinding.DialogSaveImageBinding
 import com.simplemobiletools.draw.pro.helpers.JPG
 import com.simplemobiletools.draw.pro.helpers.PNG
 import com.simplemobiletools.draw.pro.helpers.SVG
-import kotlinx.android.synthetic.main.dialog_save_image.view.*
 import java.io.File
 
 class SaveImageDialog(
@@ -21,9 +21,9 @@ class SaveImageDialog(
     init {
         val initialFilename = getInitialFilename()
         var folder = if (defaultPath.isEmpty()) "${activity.internalStoragePath}/$SIMPLE_DRAW" else defaultPath
-        val view = activity.layoutInflater.inflate(R.layout.dialog_save_image, null).apply {
-            save_image_filename.setText(initialFilename)
-            save_image_radio_group.check(
+        val binding = DialogSaveImageBinding.inflate(activity.layoutInflater).apply {
+            saveImageFilename.setText(initialFilename)
+            saveImageRadioGroup.check(
                 when (defaultExtension) {
                     JPG -> R.id.save_image_radio_jpg
                     SVG -> R.id.save_image_radio_svg
@@ -32,12 +32,12 @@ class SaveImageDialog(
             )
 
             if (hidePath) {
-                folder_hint.beGone()
+                folderHint.beGone()
             } else {
-                folder_value.setText(activity.humanizePath(folder))
-                folder_value.setOnClickListener {
+                folderValue.setText(activity.humanizePath(folder))
+                folderValue.setOnClickListener {
                     FilePickerDialog(activity, folder, false, showFAB = true) {
-                        folder_value.setText(activity.humanizePath(it))
+                        folderValue.setText(activity.humanizePath(it))
                         folder = it
                     }
                 }
@@ -48,16 +48,16 @@ class SaveImageDialog(
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.save_as) { alertDialog ->
-                    alertDialog.showKeyboard(view.save_image_filename)
+                activity.setupDialogStuff(binding.root, this, R.string.save_as) { alertDialog ->
+                    alertDialog.showKeyboard(binding.saveImageFilename)
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                        val filename = view.save_image_filename.value
+                        val filename = binding.saveImageFilename.value
                         if (filename.isEmpty()) {
                             activity.toast(R.string.filename_cannot_be_empty)
                             return@setOnClickListener
                         }
 
-                        val extension = when (view.save_image_radio_group.checkedRadioButtonId) {
+                        val extension = when (binding.saveImageRadioGroup.checkedRadioButtonId) {
                             R.id.save_image_radio_png -> PNG
                             R.id.save_image_radio_svg -> SVG
                             else -> JPG

@@ -28,6 +28,7 @@ import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.draw.pro.BuildConfig
 import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.databinding.ActivityMainBinding
 import com.simplemobiletools.draw.pro.dialogs.SaveImageDialog
 import com.simplemobiletools.draw.pro.extensions.config
 import com.simplemobiletools.draw.pro.helpers.EyeDropper
@@ -36,19 +37,22 @@ import com.simplemobiletools.draw.pro.helpers.PNG
 import com.simplemobiletools.draw.pro.helpers.SVG
 import com.simplemobiletools.draw.pro.interfaces.CanvasListener
 import com.simplemobiletools.draw.pro.models.Svg
-import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.OutputStream
 
 class MainActivity : SimpleActivity(), CanvasListener {
-    private val PICK_IMAGE_INTENT = 1
-    private val SAVE_IMAGE_INTENT = 2
+    companion object {
+        private const val PICK_IMAGE_INTENT = 1
+        private const val SAVE_IMAGE_INTENT = 2
 
-    private val FOLDER_NAME = "images"
-    private val FILE_NAME = "simple-draw.png"
-    private val BITMAP_PATH = "bitmap_path"
-    private val URI_TO_LOAD = "uri_to_load"
+        private const val FOLDER_NAME = "images"
+        private const val FILE_NAME = "simple-draw.png"
+        private const val BITMAP_PATH = "bitmap_path"
+        private const val URI_TO_LOAD = "uri_to_load"
+    }
+
+    private val binding by lazy(LazyThreadSafetyMode.NONE) { ActivityMainBinding.inflate(layoutInflater) }
 
     private lateinit var eyeDropper: EyeDropper
 
@@ -71,17 +75,17 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
         refreshMenuItems()
 
-        eyeDropper = EyeDropper(my_canvas) { selectedColor ->
+        eyeDropper = EyeDropper(binding.myCanvas) { selectedColor ->
             setColor(selectedColor)
         }
 
-        my_canvas.mListener = this
-        stroke_width_bar.onSeekBarChangeListener { progress ->
+        binding.myCanvas.mListener = this
+        binding.strokeWidthBar.onSeekBarChangeListener { progress ->
             brushSize = Math.max(progress.toFloat(), 5f)
             updateBrushSize()
         }
@@ -93,37 +97,39 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
         brushSize = config.brushSize
         updateBrushSize()
-        stroke_width_bar.progress = brushSize.toInt()
+        binding.strokeWidthBar.progress = brushSize.toInt()
 
-        color_picker.setOnClickListener { pickColor() }
-        undo.setOnClickListener { my_canvas.undo() }
-        undo.setOnLongClickListener {
-            toast(R.string.undo)
-            true
-        }
+        binding.apply {
+            colorPicker.setOnClickListener { pickColor() }
+            undo.setOnClickListener { myCanvas.undo() }
+            undo.setOnLongClickListener {
+                toast(R.string.undo)
+                true
+            }
 
-        eraser.setOnClickListener { eraserClicked() }
-        eraser.setOnLongClickListener {
-            toast(R.string.eraser)
-            true
-        }
+            eraser.setOnClickListener { eraserClicked() }
+            eraser.setOnLongClickListener {
+                toast(R.string.eraser)
+                true
+            }
 
-        redo.setOnClickListener { my_canvas.redo() }
-        redo.setOnLongClickListener {
-            toast(R.string.redo)
-            true
-        }
+            redo.setOnClickListener { myCanvas.redo() }
+            redo.setOnLongClickListener {
+                toast(R.string.redo)
+                true
+            }
 
-        eye_dropper.setOnClickListener { eyeDropperClicked() }
-        eye_dropper.setOnLongClickListener {
-            toast(R.string.eyedropper)
-            true
-        }
+            eyeDropper.setOnClickListener { eyeDropperClicked() }
+            eyeDropper.setOnLongClickListener {
+                toast(R.string.eyedropper)
+                true
+            }
 
-        bucket_fill.setOnClickListener { bucketFillClicked() }
-        bucket_fill.setOnLongClickListener {
-            toast(R.string.bucket_fill)
-            true
+            bucketFill.setOnClickListener { bucketFillClicked() }
+            bucketFill.setOnLongClickListener {
+                toast(R.string.bucket_fill)
+                true
+            }
         }
 
         checkIntents()
@@ -138,15 +144,17 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onResume() {
         super.onResume()
-        setupToolbar(main_toolbar, statusBarColor = getProperBackgroundColor())
+        setupToolbar(binding.mainToolbar, statusBarColor = getProperBackgroundColor())
 
-        val isShowBrushSizeEnabled = config.showBrushSize
-        stroke_width_bar.beVisibleIf(isShowBrushSizeEnabled)
-        stroke_width_preview.beVisibleIf(isShowBrushSizeEnabled)
-        my_canvas.setAllowZooming(config.allowZoomingCanvas)
-        updateTextColors(main_holder)
-        if (isBlackAndWhiteTheme()) {
-            stroke_width_bar.setColors(0, config.canvasBackgroundColor.getContrastColor(), 0)
+        binding.apply {
+            val isShowBrushSizeEnabled = config.showBrushSize
+            strokeWidthBar.beVisibleIf(isShowBrushSizeEnabled)
+            strokeWidthPreview.beVisibleIf(isShowBrushSizeEnabled)
+            myCanvas.setAllowZooming(config.allowZoomingCanvas)
+            updateTextColors(mainHolder)
+            if (isBlackAndWhiteTheme()) {
+                strokeWidthBar.setColors(0, config.canvasBackgroundColor.getContrastColor(), 0)
+            }
         }
 
         if (config.preventPhoneFromSleeping) {
@@ -169,11 +177,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     override fun onDestroy() {
         super.onDestroy()
-        my_canvas.mListener = null
+        binding.myCanvas.mListener = null
     }
 
     private fun refreshMenuItems() {
-        main_toolbar.menu.apply {
+        binding.mainToolbar.menu.apply {
             findItem(R.id.menu_confirm).isVisible = isImageCaptureIntent || isEditIntent
             findItem(R.id.menu_save).isVisible = !isImageCaptureIntent && !isEditIntent
             findItem(R.id.menu_share).isVisible = !isImageCaptureIntent && !isEditIntent
@@ -183,7 +191,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun setupOptionsMenu() {
-        main_toolbar.setOnMenuItemClickListener { menuItem ->
+        binding.mainToolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_confirm -> confirmImage()
                 R.id.menu_save -> trySaveImage()
@@ -202,7 +210,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     override fun onBackPressed() {
-        val hasUnsavedChanges = savedPathsHash != my_canvas.getDrawingHashCode()
+        val hasUnsavedChanges = savedPathsHash != binding.myCanvas.getDrawingHashCode()
         if (hasUnsavedChanges && System.currentTimeMillis() - lastSavePromptTS > SAVE_DISCARD_PROMPT_INTERVAL) {
             lastSavePromptTS = System.currentTimeMillis()
             ConfirmationAdvancedDialog(this, "", R.string.save_before_closing, R.string.save, R.string.discard) {
@@ -244,11 +252,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
         } else if (requestCode == SAVE_IMAGE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
             val outputStream = contentResolver.openOutputStream(resultData.data!!)
             if (defaultExtension == SVG) {
-                Svg.saveToOutputStream(this, outputStream, my_canvas)
+                Svg.saveToOutputStream(this, outputStream, binding.myCanvas)
             } else {
                 saveToOutputStream(outputStream, defaultExtension.getCompressionFormat(), false)
             }
-            savedPathsHash = my_canvas.getDrawingHashCode()
+            savedPathsHash = binding.myCanvas.getDrawingHashCode()
         }
     }
 
@@ -318,26 +326,30 @@ class MainActivity : SimpleActivity(), CanvasListener {
             uriToLoad = uri
             openPath(uri.path!!)
         }
+
         uri.scheme == "content" -> {
             uriToLoad = uri
             openUri(uri, intent)
         }
+
         else -> false
     }
 
     private fun openPath(path: String) = when {
         path.endsWith(".svg") -> {
-            my_canvas.mBackgroundBitmap = null
-            Svg.loadSvg(this, File(path), my_canvas)
+            binding.myCanvas.mBackgroundBitmap = null
+            Svg.loadSvg(this, File(path), binding.myCanvas)
             defaultExtension = SVG
             true
         }
+
         File(path).isImageSlow() -> {
             lastBitmapPath = path
-            my_canvas.drawBitmap(this, path)
+            binding.myCanvas.drawBitmap(this, path)
             defaultExtension = JPG
             true
         }
+
         else -> {
             toast(R.string.invalid_file_format)
             false
@@ -349,16 +361,18 @@ class MainActivity : SimpleActivity(), CanvasListener {
         val type = mime.getExtensionFromMimeType(contentResolver.getType(uri)) ?: intent.type ?: contentResolver.getType(uri)
         return when (type) {
             "svg", "image/svg+xml" -> {
-                my_canvas.mBackgroundBitmap = null
-                Svg.loadSvg(this, uri, my_canvas)
+                binding.myCanvas.mBackgroundBitmap = null
+                Svg.loadSvg(this, uri, binding.myCanvas)
                 defaultExtension = SVG
                 true
             }
+
             "jpg", "jpeg", "png", "gif", "image/jpg", "image/png", "image/gif", "webp" -> {
-                my_canvas.drawBitmap(this, uri)
+                binding.myCanvas.drawBitmap(this, uri)
                 defaultExtension = JPG
                 true
             }
+
             else -> {
                 toast(R.string.invalid_file_format)
                 false
@@ -379,11 +393,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun updateEraserState() {
         updateButtonStates()
-        my_canvas.toggleEraser(isEraserOn)
+        binding.myCanvas.toggleEraser(isEraserOn)
     }
 
     private fun changeBackgroundClicked() {
-        val oldColor = (my_canvas.background as ColorDrawable).color
+        val oldColor = (binding.myCanvas.background as ColorDrawable).color
         ColorPickerDialog(this, oldColor) { wasPositivePressed, color ->
             if (wasPositivePressed) {
                 config.canvasBackgroundColor = color
@@ -423,7 +437,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         isBucketFillOn = !isBucketFillOn
 
         updateButtonStates()
-        my_canvas.toggleBucketFill(isBucketFillOn)
+        binding.myCanvas.toggleBucketFill(isBucketFillOn)
     }
 
     private fun updateButtonStates() {
@@ -431,9 +445,11 @@ class MainActivity : SimpleActivity(), CanvasListener {
             hideBrushSettings(isEyeDropperOn || isBucketFillOn)
         }
 
-        updateButtonColor(eraser, isEraserOn)
-        updateButtonColor(eye_dropper, isEyeDropperOn)
-        updateButtonColor(bucket_fill, isBucketFillOn)
+        binding.apply {
+            updateButtonColor(eraser, isEraserOn)
+            updateButtonColor(eyeDropper, isEyeDropperOn)
+            updateButtonColor(bucketFill, isBucketFillOn)
+        }
     }
 
     private fun updateButtonColor(view: ImageView, enabled: Boolean) {
@@ -447,7 +463,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun hideBrushSettings(hide: Boolean) {
-        arrayOf(stroke_width_bar, stroke_width_preview).forEach {
+        arrayOf(binding.strokeWidthBar, binding.strokeWidthPreview).forEach {
             it.beGoneIf(hide)
         }
     }
@@ -462,10 +478,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
                     showErrorToast(e)
                 }
             }
+
             intentUri?.scheme == "content" -> {
                 val outputStream = contentResolver.openOutputStream(intentUri!!)
                 saveToOutputStream(outputStream, defaultPath.getCompressionFormat(), true)
             }
+
             else -> handlePermission(PERMISSION_WRITE_STORAGE) {
                 val fileDirItem = FileDirItem(defaultPath, defaultPath.getFilenameFromPath())
                 getFileOutputStream(fileDirItem, true) {
@@ -488,7 +506,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         }
 
         outputStream.use {
-            my_canvas.getBitmap().compress(format, quality, it)
+            binding.myCanvas.getBitmap().compress(format, quality, it)
         }
 
         if (finishAfterSaving) {
@@ -529,7 +547,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun saveImage() {
         SaveImageDialog(this, defaultPath, defaultFilename, defaultExtension, false) { fullPath, filename, extension ->
-            savedPathsHash = my_canvas.getDrawingHashCode()
+            savedPathsHash = binding.myCanvas.getDrawingHashCode()
             saveFile(fullPath)
             defaultPath = fullPath.getParentPath()
             defaultFilename = filename
@@ -541,7 +559,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun saveFile(path: String) {
         when (path.getFilenameExtension()) {
-            SVG -> Svg.saveSvg(this, path, my_canvas)
+            SVG -> Svg.saveSvg(this, path, binding.myCanvas)
             else -> saveImageFile(path)
         }
         rescanPaths(arrayListOf(path)) {}
@@ -561,12 +579,12 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun writeToOutputStream(path: String, out: OutputStream) {
         out.use {
-            my_canvas.getBitmap().compress(path.getCompressionFormat(), 70, out)
+            binding.myCanvas.getBitmap().compress(path.getCompressionFormat(), 70, out)
         }
     }
 
     private fun shareImage() {
-        getImagePath(my_canvas.getBitmap()) {
+        getImagePath(binding.myCanvas.getBitmap()) {
             if (it != null) {
                 sharePathIntent(it, BuildConfig.APPLICATION_ID)
             } else {
@@ -606,7 +624,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
 
     private fun clearCanvas() {
         uriToLoad = null
-        my_canvas.clearCanvas()
+        binding.myCanvas.clearCanvas()
         defaultExtension = PNG
         defaultPath = ""
         lastBitmapPath = ""
@@ -629,40 +647,42 @@ class MainActivity : SimpleActivity(), CanvasListener {
             eyeDropperClicked()
         }
 
-        val contrastColor = pickedColor.getContrastColor()
-        undo.applyColorFilter(contrastColor)
-        eraser.applyColorFilter(contrastColor)
-        redo.applyColorFilter(contrastColor)
-        eye_dropper.applyColorFilter(contrastColor)
-        bucket_fill.applyColorFilter(contrastColor)
-        if (isBlackAndWhiteTheme()) {
-            stroke_width_bar.setColors(0, contrastColor, 0)
-        }
+        binding.apply {
+            val contrastColor = pickedColor.getContrastColor()
+            undo.applyColorFilter(contrastColor)
+            eraser.applyColorFilter(contrastColor)
+            redo.applyColorFilter(contrastColor)
+            eyeDropper.applyColorFilter(contrastColor)
+            bucketFill.applyColorFilter(contrastColor)
+            if (isBlackAndWhiteTheme()) {
+                strokeWidthBar.setColors(0, contrastColor, 0)
+            }
 
-        my_canvas.updateBackgroundColor(pickedColor)
-        defaultExtension = PNG
-        getBrushPreviewView().setStroke(getBrushStrokeSize(), contrastColor)
+            myCanvas.updateBackgroundColor(pickedColor)
+            defaultExtension = PNG
+            getBrushPreviewView().setStroke(getBrushStrokeSize(), contrastColor)
+        }
     }
 
     private fun setColor(pickedColor: Int) {
         color = pickedColor
-        color_picker.setFillWithStroke(color, config.canvasBackgroundColor, true)
-        my_canvas.setColor(color)
+        binding.colorPicker.setFillWithStroke(color, config.canvasBackgroundColor, true)
+        binding.myCanvas.setColor(color)
         isEraserOn = false
         updateEraserState()
         getBrushPreviewView().setColor(color)
     }
 
-    private fun getBrushPreviewView() = stroke_width_preview.background as GradientDrawable
+    private fun getBrushPreviewView() = binding.strokeWidthPreview.background as GradientDrawable
 
     private fun getBrushStrokeSize() = resources.getDimension(R.dimen.preview_dot_stroke_size).toInt()
 
     override fun toggleUndoVisibility(visible: Boolean) {
-        undo.beVisibleIf(visible)
+        binding.undo.beVisibleIf(visible)
     }
 
     override fun toggleRedoVisibility(visible: Boolean) {
-        redo.beVisibleIf(visible)
+        binding.redo.beVisibleIf(visible)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -686,17 +706,19 @@ class MainActivity : SimpleActivity(), CanvasListener {
     }
 
     private fun updateBrushSize() {
-        my_canvas.setBrushSize(brushSize)
-        val scale = Math.max(0.03f, brushSize / 100f)
-        stroke_width_preview.scaleX = scale
-        stroke_width_preview.scaleY = scale
+        binding.apply {
+            myCanvas.setBrushSize(brushSize)
+            val scale = Math.max(0.03f, brushSize / 100f)
+            strokeWidthPreview.scaleX = scale
+            strokeWidthPreview.scaleY = scale
+        }
     }
 
     private fun printImage() {
         val printHelper = PrintHelper(this)
         printHelper.scaleMode = PrintHelper.SCALE_MODE_FIT
         try {
-            printHelper.printBitmap(getString(R.string.app_name), my_canvas.getBitmap())
+            printHelper.printBitmap(getString(R.string.app_name), binding.myCanvas.getBitmap())
         } catch (e: Exception) {
             showErrorToast(e)
         }
