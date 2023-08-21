@@ -6,24 +6,27 @@ import com.simplemobiletools.commons.extensions.getProperPrimaryColor
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.helpers.NavigationIcon
 import com.simplemobiletools.commons.helpers.isTiramisuPlus
-import com.simplemobiletools.draw.pro.R
+import com.simplemobiletools.draw.pro.databinding.ActivitySettingsBinding
 import com.simplemobiletools.draw.pro.extensions.config
-import kotlinx.android.synthetic.main.activity_settings.*
-import java.util.*
+import java.util.Locale
 
 class SettingsActivity : SimpleActivity() {
+    private val binding by lazy(LazyThreadSafetyMode.NONE) { ActivitySettingsBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        setContentView(binding.root)
 
-        updateMaterialActivityViews(settings_coordinator, settings_holder, useTransparentNavigation = true, useTopSearchMenu = false)
-        setupMaterialScrollListener(settings_nested_scrollview, settings_toolbar)
+        binding.apply {
+            updateMaterialActivityViews(settingsCoordinator, settingsHolder, useTransparentNavigation = true, useTopSearchMenu = false)
+            setupMaterialScrollListener(settingsNestedScrollview, settingsToolbar)
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        setupToolbar(settings_toolbar, NavigationIcon.Arrow)
+        setupToolbar(binding.settingsToolbar, NavigationIcon.Arrow)
 
         setupCustomizeColors()
         setupUseEnglish()
@@ -32,66 +35,78 @@ class SettingsActivity : SimpleActivity() {
         setupBrushSize()
         setupAllowZoomingCanvas()
         setupForcePortraitMode()
-        updateTextColors(settings_holder)
+        updateTextColors(binding.settingsHolder)
 
-        arrayOf(settings_color_customization_section_label, settings_general_settings_label).forEach {
+        arrayOf(binding.settingsColorCustomizationSectionLabel, binding.settingsGeneralSettingsLabel).forEach {
             it.setTextColor(getProperPrimaryColor())
         }
     }
 
     private fun setupCustomizeColors() {
-        settings_color_customization_holder.setOnClickListener {
+        binding.settingsColorCustomizationHolder.setOnClickListener {
             startCustomizationActivity()
         }
     }
 
     private fun setupUseEnglish() {
-        settings_use_english_holder.beVisibleIf((config.wasUseEnglishToggled || Locale.getDefault().language != "en") && !isTiramisuPlus())
-        settings_use_english.isChecked = config.useEnglish
-        settings_use_english_holder.setOnClickListener {
-            settings_use_english.toggle()
-            config.useEnglish = settings_use_english.isChecked
-            System.exit(0)
+        binding.apply {
+            settingsUseEnglishHolder.beVisibleIf((config.wasUseEnglishToggled || Locale.getDefault().language != "en") && !isTiramisuPlus())
+            settingsUseEnglish.isChecked = config.useEnglish
+            settingsUseEnglishHolder.setOnClickListener {
+                settingsUseEnglish.toggle()
+                config.useEnglish = settingsUseEnglish.isChecked
+                System.exit(0)
+            }
         }
     }
 
     private fun setupLanguage() {
-        settings_language.text = Locale.getDefault().displayLanguage
-        settings_language_holder.beVisibleIf(isTiramisuPlus())
-        settings_language_holder.setOnClickListener {
-            launchChangeAppLanguageIntent()
+        binding.apply {
+            settingsLanguage.text = Locale.getDefault().displayLanguage
+            settingsLanguageHolder.beVisibleIf(isTiramisuPlus())
+            settingsLanguageHolder.setOnClickListener {
+                launchChangeAppLanguageIntent()
+            }
         }
     }
 
     private fun setupPreventPhoneFromSleeping() {
-        settings_prevent_phone_from_sleeping.isChecked = config.preventPhoneFromSleeping
-        settings_prevent_phone_from_sleeping_holder.setOnClickListener {
-            settings_prevent_phone_from_sleeping.toggle()
-            config.preventPhoneFromSleeping = settings_prevent_phone_from_sleeping.isChecked
+        binding.apply {
+            settingsPreventPhoneFromSleeping.isChecked = config.preventPhoneFromSleeping
+            settingsPreventPhoneFromSleepingHolder.setOnClickListener {
+                settingsPreventPhoneFromSleeping.toggle()
+                config.preventPhoneFromSleeping = settingsPreventPhoneFromSleeping.isChecked
+            }
         }
     }
 
     private fun setupBrushSize() {
-        settings_show_brush_size.isChecked = config.showBrushSize
-        settings_show_brush_size_holder.setOnClickListener {
-            settings_show_brush_size.toggle()
-            config.showBrushSize = settings_show_brush_size.isChecked
+        binding.apply {
+            settingsShowBrushSize.isChecked = config.showBrushSize
+            settingsShowBrushSizeHolder.setOnClickListener {
+                settingsShowBrushSize.toggle()
+                config.showBrushSize = settingsShowBrushSize.isChecked
+            }
         }
     }
 
     private fun setupAllowZoomingCanvas() {
-        settings_allow_zooming_canvas.isChecked = config.allowZoomingCanvas
-        settings_allow_zooming_canvas_holder.setOnClickListener {
-            settings_allow_zooming_canvas.toggle()
-            config.allowZoomingCanvas = settings_allow_zooming_canvas.isChecked
+        binding.apply {
+            settingsAllowZoomingCanvas.isChecked = config.allowZoomingCanvas
+            settingsAllowZoomingCanvasHolder.setOnClickListener {
+                settingsAllowZoomingCanvas.toggle()
+                config.allowZoomingCanvas = settingsAllowZoomingCanvas.isChecked
+            }
         }
     }
 
     private fun setupForcePortraitMode() {
-        settings_force_portrait.isChecked = config.forcePortraitMode
-        settings_force_portrait_holder.setOnClickListener {
-            settings_force_portrait.toggle()
-            config.forcePortraitMode = settings_force_portrait.isChecked
+        binding.apply {
+            settingsForcePortrait.isChecked = config.forcePortraitMode
+            settingsForcePortraitHolder.setOnClickListener {
+                settingsForcePortrait.toggle()
+                config.forcePortraitMode = settingsForcePortrait.isChecked
+            }
         }
     }
 }

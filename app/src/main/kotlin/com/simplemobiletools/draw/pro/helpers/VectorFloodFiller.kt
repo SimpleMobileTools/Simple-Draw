@@ -3,7 +3,8 @@ package com.simplemobiletools.draw.pro.helpers
 import android.graphics.Bitmap
 import android.graphics.Color
 import com.simplemobiletools.draw.pro.models.MyPath
-import java.util.*
+import java.util.LinkedList
+import java.util.Queue
 
 // Original algorithm by J. Dunlap http:// www.codeproject.com/KB/GDI-plus/queuelinearflood-fill.aspx
 // Java port by Owen Kaluza
@@ -28,7 +29,7 @@ class VectorFloodFiller(image: Bitmap) {
         width = image.width
         height = image.height
         pixels = IntArray(width * height)
-        image.getPixels(pixels, 0, width, 0, 0, width, height)
+        image.getPixels(pixels!!, 0, width, 0, 0, width, height)
     }
 
     private fun prepare() {
