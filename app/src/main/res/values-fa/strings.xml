@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="failed_to_load_image">Failed to load image %s</string>
-    <string name="show_brush_size">Show brush size tool</string>
-    <string name="app_name">Simple Draw</string>
-    <string name="app_launcher_name">Draw</string>
-    <string name="open_file">Open file</string>
-    <string name="eraser">Eraser</string>
-    <string name="eyedropper">Eyedropper</string>
-    <string name="bucket_fill">Bucket fill</string>
-    <string name="allow_zooming_moving_canvas">Allow zooming and moving the canvas with gestures</string>
-    <string name="clear">Clear</string>
-    <string name="change_background_color">Change background color</string>
+    <string name="failed_to_load_image">بارگذاری پروندهٔ %s ناموفق بود</string>
+    <string name="show_brush_size">نمایش ابزار تغییر اندازهٔ قلم</string>
+    <string name="app_name">نقاشی ساده</string>
+    <string name="app_launcher_name">نقاشی</string>
+    <string name="open_file">بازکردن پرونده</string>
+    <string name="eraser">پاک‌کن</string>
+    <string name="eyedropper">قطره‌چکان</string>
+    <string name="bucket_fill">سطل رنگ</string>
+    <string name="allow_zooming_moving_canvas">فعالسازی زوم و جابه‌جایی بوم با اشاره</string>
+    <string name="clear">پاک‌کردن</string>
+    <string name="change_background_color">تغییر رنگ پس‌زمینه</string>
 </resources>
