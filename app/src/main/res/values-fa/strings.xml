@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="failed_to_load_image">بارگذاری پروندهٔ %s ناموفق بود</string>
-    <string name="show_brush_size">نمایش ابزار تغییر اندازهٔ قلم</string>
     <string name="app_name">نقاشی ساده</string>
     <string name="app_launcher_name">نقاشی</string>
     <string name="open_file">بازکردن پرونده</string>
     <string name="eraser">پاک‌کن</string>
     <string name="eyedropper">قطره‌چکان</string>
     <string name="bucket_fill">سطل رنگ</string>
+    <string name="failed_to_load_image">بارگذاری پروندهٔ %s ناموفق بود</string>
+    <!-- Settings -->
+    <string name="show_brush_size">نمایش ابزار تغییر اندازهٔ قلم</string>
     <string name="allow_zooming_moving_canvas">فعالسازی زوم و جابه‌جایی بوم با اشاره</string>
     <string name="clear">پاک‌کردن</string>
     <string name="change_background_color">تغییر رنگ پس‌زمینه</string>
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>
