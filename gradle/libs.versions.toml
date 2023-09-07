@@ -15,8 +15,8 @@ app-build-javaVersion = "VERSION_17"
 app-build-kotlinJVMTarget = "17"
 #versioning
 app-version-appId = "com.simplemobiletools.draw.pro"
-app-version-versionCode = "79"
-app-version-versionName = "6.9.3"
+app-version-versionCode = "80"
+app-version-versionName = "6.9.4"
 [libraries]
 #AndroidX
 androidx-print = { module = "androidx.print:print", version.ref = "androidx-print" }
