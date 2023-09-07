@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.9.4 *(2023-09-07)*
+----------------------------
+
+ * Added some UI, UX and translation improvements
+
 Version 6.9.3 *(2023-06-13)*
 ----------------------------
 
