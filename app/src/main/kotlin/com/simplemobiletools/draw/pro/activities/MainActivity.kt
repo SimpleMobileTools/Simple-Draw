@@ -52,7 +52,7 @@ class MainActivity : SimpleActivity(), CanvasListener {
         private const val URI_TO_LOAD = "uri_to_load"
     }
 
-    private val binding by lazy(LazyThreadSafetyMode.NONE) { ActivityMainBinding.inflate(layoutInflater) }
+    private val binding by viewBinding(ActivityMainBinding::inflate)
 
     private lateinit var eyeDropper: EyeDropper
 

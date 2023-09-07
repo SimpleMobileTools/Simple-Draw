@@ -4,7 +4,7 @@ kotlin = "1.9.0"
 #AndroidX
 androidx-print = "1.0.0"
 #Simple tools
-simple-commons = "0e173dc5ad"
+simple-commons = "de113ad025"
 #Gradle
 gradlePlugins-agp = "8.1.0"
 #build

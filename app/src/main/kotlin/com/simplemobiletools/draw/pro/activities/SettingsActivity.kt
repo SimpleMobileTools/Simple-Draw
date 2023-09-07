@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getProperPrimaryColor
 import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.extensions.viewBinding
 import com.simplemobiletools.commons.helpers.NavigationIcon
 import com.simplemobiletools.commons.helpers.isTiramisuPlus
 import com.simplemobiletools.draw.pro.databinding.ActivitySettingsBinding
@@ -11,7 +12,7 @@ import com.simplemobiletools.draw.pro.extensions.config
 import java.util.Locale
 
 class SettingsActivity : SimpleActivity() {
-    private val binding by lazy(LazyThreadSafetyMode.NONE) { ActivitySettingsBinding.inflate(layoutInflater) }
+    private val binding by viewBinding(ActivitySettingsBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
