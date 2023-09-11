@@ -12,9 +12,9 @@ import java.util.Queue
 class VectorFloodFiller(image: Bitmap) {
     val path = MyPath()
 
-    private var width = 0
-    private var height = 0
-    private var pixels: IntArray? = null
+    private val width: Int
+    private val height: Int
+    private val pixels: IntArray
 
     private lateinit var pixelsChecked: BooleanArray
     private lateinit var ranges: Queue<FloodFillRange>
@@ -29,12 +29,12 @@ class VectorFloodFiller(image: Bitmap) {
         width = image.width
         height = image.height
         pixels = IntArray(width * height)
-        image.getPixels(pixels!!, 0, width, 0, 0, width, height)
+        image.getPixels(pixels, 0, width, 0, 0, width, height)
     }
 
     private fun prepare() {
         // Called before starting flood-fill
-        pixelsChecked = BooleanArray(pixels!!.size)
+        pixelsChecked = BooleanArray(pixels.size)
         ranges = LinkedList()
     }
 
@@ -45,7 +45,7 @@ class VectorFloodFiller(image: Bitmap) {
         prepare()
 
         // Get starting color.
-        val startPixel = pixels!!.getOrNull(width * y + x) ?: return
+        val startPixel = pixels.getOrNull(width * y + x) ?: return
         if (startPixel == fillColor) {
             // No-op.
             return
@@ -137,9 +137,9 @@ class VectorFloodFiller(image: Bitmap) {
 
     // Sees if a pixel is within the color tolerance range.
     private fun isPixelColorWithinTolerance(px: Int): Boolean {
-        val red = pixels!![px] ushr 16 and 0xff
-        val green = pixels!![px] ushr 8 and 0xff
-        val blue = pixels!![px] and 0xff
+        val red = pixels[px] ushr 16 and 0xff
+        val green = pixels[px] ushr 8 and 0xff
+        val blue = pixels[px] and 0xff
         return red >= startColorRed - tolerance && red <= startColorRed + tolerance && green >= startColorGreen - tolerance && green <= startColorGreen + tolerance && blue >= startColorBlue - tolerance && blue <= startColorBlue + tolerance
     }
 
