@@ -5,6 +5,11 @@ import org.jetbrains.kotlin.konan.properties.Properties
 plugins {
     alias(libs.plugins.android)
     alias(libs.plugins.kotlinAndroid)
+    base
+}
+
+base {
+    archivesName.set("draw")
 }
 
 val keystorePropertiesFile: File = rootProject.file("keystore.properties")
@@ -22,7 +27,6 @@ android {
         targetSdk = project.libs.versions.app.build.targetSDK.get().toInt()
         versionName = project.libs.versions.app.version.versionName.get()
         versionCode = project.libs.versions.app.version.versionCode.get().toInt()
-        setProperty("archivesBaseName", "draw")
         vectorDrawables.useSupportLibrary = true
     }
 
