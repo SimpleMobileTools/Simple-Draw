@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Schlichtes Zeichnen</string>
+    <string name="app_name">Einfaches Zeichnen</string>
     <string name="app_launcher_name">Zeichnen</string>
     <string name="open_file">Datei öffnen</string>
     <string name="eraser">Radiergummi</string>
