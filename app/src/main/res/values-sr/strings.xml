@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Лако извлачење</string>
-    <string name="app_launcher_name">Цртати</string>
-    <string name="open_file">Отворена датотека</string>
+    <string name="app_name">Једноставно цртање</string>
+    <string name="app_launcher_name">Цртање</string>
+    <string name="open_file">Отвори фајл</string>
     <string name="eraser">Гумица за брисање</string>
     <string name="eyedropper">Капаљка за очи</string>
-    <string name="bucket_fill">Напуните канту</string>
-    <string name="failed_to_load_image">Учитавање слике није успело %s</string>
+    <string name="bucket_fill">Испун</string>
+    <string name="failed_to_load_image">Није успело учитавање слике %s</string>
     <!-- Settings -->
-    <string name="show_brush_size">Прикажи алат за величину четкице</string>
-    <string name="allow_zooming_moving_canvas">Дозволите зумирање и померање платна покретима</string>
-    <string name="clear">Јасно</string>
-    <string name="change_background_color">Промените боју позадине</string>
+    <string name="show_brush_size">Прикажи алатку за величину четкице</string>
+    <string name="allow_zooming_moving_canvas">Дозволи зумирање и померање платна покретима</string>
+    <string name="clear">Очисти</string>
+    <string name="change_background_color">Промени боју позадине</string>
 </resources>

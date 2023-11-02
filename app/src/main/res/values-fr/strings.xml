@@ -3,15 +3,15 @@
     <string name="app_name">Dessin simple</string>
     <string name="app_launcher_name">Dessin</string>
     <string name="open_file">Ouvrir un fichier</string>
-    <string name="eraser">Gommer</string>
+    <string name="eraser">Gomme</string>
     <string name="eyedropper">Pipette</string>
-    <string name="bucket_fill">Remplir</string>
-    <string name="failed_to_load_image">Échec du chargement de l\'image %s</string>
+    <string name="bucket_fill">Seau de remplissage</string>
+    <string name="failed_to_load_image">Impossible de charger l\'image %s</string>
     <!-- Settings -->
     <string name="show_brush_size">Afficher l\'outil de sélection de la taille du pinceau</string>
-    <string name="allow_zooming_moving_canvas">Permettre de zoomer et de déplacer le canevas avec des gestes</string>
+    <string name="allow_zooming_moving_canvas">Autoriser le zoom et le déplacement de la zone de travail avec des gestes</string>
     <string name="clear">Effacer</string>
-    <string name="change_background_color">Changer l\'arrière-plan</string>
+    <string name="change_background_color">Modifier la couleur de l\'arrière-plan</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
