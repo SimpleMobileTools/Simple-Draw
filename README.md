@@ -49,20 +49,17 @@ Drawing for kids is important, and children are effective communicators, and thr
 
 Our best drawing app contains no ads or unnecessary permissions. With Simple Draw, you will create quick sketches or scribble something fun using just your creativity and imagination so just start drawing a doodle or sketch, and share your love and joy for creating simple art!
 
-Check out the full suite of Simple Tools here:  
-https://www.simplemobiletools.com
+<a href="https://f-droid.org/packages/com.simplemobiletools.draw.pro">Get it on F-Droid</a>
 
-Facebook:  
-https://www.facebook.com/simplemobiletools
-
-Reddit:  
-https://www.reddit.com/r/SimpleMobileTools
-
-Telegram:  
-https://t.me/SimpleMobileTools
-
-<a href='https://play.google.com/store/apps/details?id=com.simplemobiletools.draw.pro'><img src='https://simplemobiletools.com/images/button-google-play.svg' alt='Get it on Google Play' height=45/></a>
-<a href='https://f-droid.org/packages/com.simplemobiletools.draw.pro'><img src='https://simplemobiletools.com/images/button-fdroid.svg' alt='Get it on F-Droid' height=45 ></a>
+Support us:  
+IBAN: SK4083300000002000965231  
+Bitcoin: 19Hc8A7sWGud8sP19VXDC5a5j28UyJfpyJ  
+Ethereum: 0xB7a2DD6f2408Bce77334655CF5E7639aE31feb30  
+Litecoin: LYACbHTKaM9ZubKQGxJ4NRyVy1gHUuztRP  
+Bitcoin Cash: qz6dvmhq5vzkcsypxpp2mnur30muxdah4gvulx3y85  
+Tether: 0x250f9cC32863E59b87037a14955Ed64F879653F0  
+<a href="https://paypal.me/SimpleMobileTools?country.x=SK&locale.x=en_US">PayPal</a>  
+<a href="https://www.patreon.com/tiborkaputa">Patreon</a>
 
 <div style="display:flex;">
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1_en-US.jpeg" width="30%">
